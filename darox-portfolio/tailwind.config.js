@@ -1,20 +1,22 @@
+// tailwind.config.js
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}'
+    './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
-      colors: {
-        bg: 'var(--color-bg)',
-        primary: 'var(--color-primary)',
-        accent: 'var(--color-accent)',
-        text: 'var(--color-text)'
+      keyframes: {
+        pulseScale: {
+          '0%,100%': { transform: 'scale(1)'    },
+          '50%':     { transform: 'scale(1.05)' },
+        },
       },
-      boxShadow: {
-        neon: '0 0 20px var(--color-primary)'
-      }
-    }
+      animation: {
+        pulseScale: 'pulseScale 1s ease-in-out infinite',
+      },
+    },
   },
-  plugins: []
-};
+  plugins: [],
+}
+

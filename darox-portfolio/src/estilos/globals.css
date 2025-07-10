@@ -1,38 +1,86 @@
-@tailwind base;
-@tailwind components;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
 @tailwind utilities;
 
-:root {
-  --color-bg: #000;
-  --color-primary: #e01e91;
-  --color-accent: #420067;
-  --color-text: #fff;
-}
-
 body {
-  @apply bg-bg text-text;
-  scroll-behavior: smooth;
   font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  background: #000;
+  color: #fff;
+  animation: fondoOscuro 8s infinite;
+  overflow-x: hidden;
 }
 
 @keyframes fondoOscuro {
   0%, 80%, 100% { background: #000; }
-  85%, 95%      { background: #0a1a33; }
-}
-
-body {
-  animation: fondoOscuro 8s infinite;
+  85%, 95% { background: #0a1a33; }
 }
 
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0; left: 0; width: 100vw; height: 100vh;
   pointer-events: none;
+  z-index: 0;
   background-image:
     radial-gradient(white 1px, transparent 1px),
     radial-gradient(white 1px, transparent 1px);
   background-size: 120px 120px, 200px 200px;
   background-position: 0 0, 60px 60px;
-  opacity: 0.1;
+  opacity: 0.10;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #150039 0%, #420067 40%, #a61982 75%, #e01e91 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-gradient {
+  background: linear-gradient(90deg, #150039 0%, #420067 40%, #a61982 75%, #e01e91 100%);
+}
+
+.logo-carousel {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(230, 30, 145, 0.15), 0 10px 10px -5px rgba(21, 0, 57, 0.08);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px 0 rgba(166, 25, 130, 0.15);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.btn-principal {
+  background: linear-gradient(90deg, #a61982 0%, #e01e91 100%);
+  color: #fff;
+  transition: background 0.3s;
+}
+.btn-principal:hover {
+  background: linear-gradient(90deg, #420067 0%, #a61982 100%);
+}
+.btn-secundario {
+  border: 2px solid #a61982;
+  color: #a61982;
+  background: transparent;
+  transition: background 0.3s, color 0.3s;
+}
+.btn-secundario:hover {
+  background: #a61982;
+  color: #fff;
 }
