@@ -1,52 +1,114 @@
-import { useEffect } from 'react'
+// src/components/About.tsx
+'use client'
+
+import Image from 'next/image'
+
+const Divider = ({ className = '' }) => (
+  <div
+    className={`w-24 h-1 mx-auto bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-full ${className}`}
+  />
+)
+
+const titleWords = ['Construimos', 'marcas', 'exitosas']
+const subtitleWords = ['Estrategia,', 'diseño', 'y', 'tecnología']
+const description =
+  'En DAROX combinamos inteligencia artificial, creatividad humana y un enfoque estratégico para diseñar experiencias digitales que convierten visitantes en clientes y hacen crecer tu negocio.'
+const metrics = [
+  '500 000 € generados en proyectos reales',
+  '47 % de aumento en tasa de conversión',
+]
 
 const About: React.FC = () => {
-  useEffect(() => {
-    const metrics = {
-      revenue: "De $0 a $500,000",
-      growth: "47%"
-    }
-    const metricsElement = document.getElementById('metrics')
-    if (metricsElement) {
-      metricsElement.innerHTML = `
-        <div>
-          <p class="text-3xl font-bold text-indigo-600 mb-2">${metrics.revenue}</p>
-          <p class="text-gray-300">en ingresos.</p>
-        </div>
-        <div>
-          <p class="text-3xl font-bold text-indigo-600 mb-2">${metrics.growth}</p>
-          <p class="text-gray-300">Crecimiento en nuevos clientes.</p>
-        </div>
-      `
-    }
-  }, [])
-
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 text-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-12 md:mb-0 md:pr-12">
-            <h2 className="text-sm font-medium text-indigo-600 mb-2">Sobre DAROX</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Construyendo Marcas Más Fuertes <br />
-              <span className="gradient-text">¡Creando Impresiones!</span>
-            </h3>
-            <p className="text-lg text-gray-200 mb-8">
-              Entregando diseños de alta calidad y bajo demanda con precisión. Eleva tu marca sin esfuerzo, una instantánea a la vez.
-            </p>
-            <div className="grid grid-cols-2 gap-8 mb-8" id="metrics"></div>
-            <a href="#" className="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">
-              Ver Sobre DAROX
-              <svg className="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </a>
+    <section
+      id="about"
+      aria-labelledby="about-title"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 text-white overflow-hidden"
+    >
+      {/* Línea decorativa superior */}
+      <Divider className="mb-8" />
+
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch gap-12">
+        {/* Imagen con borde, blur y tilt hover */}
+        <div className="md:w-1/2 flex justify-center">
+          <div className="relative flex flex-col w-full rounded-[30px] bg-black/90 backdrop-blur-md border border-white/20 p-2 shadow-xl overflow-hidden">
+            {/* Línea decorativa superior */}
+            <Divider className="absolute top-0 left-0 w-full h-1 rounded-none" />
+
+            <div
+              className="rounded-[19px] overflow-hidden border border-white/20 transition-transform duration-300 hover:rotate-2 hover:scale-105"
+            >
+              <Image
+                src="/images/foto_about.png"
+                alt="Persona trabajando en portátil"
+                width={800}
+                height={600}
+                className="object-cover w-full aspect-[4/3]"
+                priority
+              />
+            </div>
+
+            {/* Glow azul */}
+            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-32 h-16 bg-blue-500 opacity-40 blur-2xl rounded-full pointer-events-none" />
+
+            {/* Línea decorativa inferior */}
+            <Divider className="absolute bottom-0 left-0 w-full h-1 rounded-none" />
           </div>
-          <div className="md:w-1/2">
-            <img src="https://framerusercontent.com/images/oUAzCBZlCCsvzmsAiYQ3RDbhyg.jpeg" alt="Hombre usando portátil" className="rounded-2xl shadow-xl w-full" loading="lazy" />
+        </div>
+
+        {/* Texto, métricas y botón */}
+        <div className="md:w-1/2 flex flex-col gap-8 justify-center">
+          {/* Tag destacado */}
+          <div className="inline-block px-4 py-1 rounded-lg bg-gradient-to-b from-blue-200/30 to-gray-100/20 border border-white/10 mb-2 backdrop-blur-sm animate-fade-in-up">
+            <span className="text-white text-xs font-semibold tracking-wide">Sobre Darox</span>
           </div>
+          {/* Título principal con gradiente claro y animación */}
+          <h2
+            id="about-title"
+            className="text-4xl md:text-5xl font-extrabold mb-2 animate-fade-in-up gradient-text"
+            style={{ lineHeight: '1.1' }}
+          >
+            {titleWords.map((w, i) => (
+              <span key={i} className="inline-block mr-1">{w}</span>
+            ))}
+          </h2>
+
+          {/* Subtítulo con color claro y animación */}
+          <h3 className="text-2xl md:text-3xl font-semibold text-indigo-200 mb-4 animate-fade-in-up">
+            {subtitleWords.map((w, i) => (
+              <span key={i} className="inline-block mr-1">{w}</span>
+            ))}
+          </h3>
+
+          {/* Párrafo descriptivo */}
+          <p className="text-lg md:text-xl text-gray-100 mb-4 max-w-prose animate-fade-in-up">
+            {description}
+          </p>
+
+          {/* Métricas */}
+          <div className="grid grid-cols-1 gap-2 mb-4 animate-fade-in-up">
+            {metrics.map((m, i) => (
+              <div key={i} className="flex items-center text-base md:text-lg text-white/80 font-medium">
+                <svg className="w-5 h-5 text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 6.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l7-7a1 1 0 000-1.414z" clipRule="evenodd" />
+                </svg>
+                {m}
+              </div>
+            ))}
+          </div>
+
+          {/* Botón destacado */}
+          <a
+            href="./about"
+            className="inline-block w-full md:w-1/2 px-6 py-3 rounded-lg bg-[#233a5e] border-2 border-white/20 shadow-lg text-white font-semibold hover:bg-[#2c4066] transition-all duration-300 text-left animate-fade-in-up hover:scale-105 hover:shadow-2xl"
+          >
+            Ver Sobre DAROX
+          </a>
         </div>
       </div>
+
+      {/* Línea decorativa inferior */}
+      <Divider className="mt-8" />
     </section>
   )
 }

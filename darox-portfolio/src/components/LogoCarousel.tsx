@@ -1,13 +1,21 @@
+// src/components/LogoCarousel.tsx
+import React from 'react'
+
 const LogoCarousel: React.FC = () => {
   const logos = [
-    "https://framerusercontent.com/images/vniufJMsSAXh18yjYsUsriXaJgw.png",
-    "https://framerusercontent.com/images/yTyqzwdEKp9XJLQBwf8DmWnxws.png",
-    "https://framerusercontent.com/images/ffx7akDwhywGTdzIV6fqasW7N8.png",
-    "https://framerusercontent.com/images/QJyR5CNEY5EZDa18LPHJLBySZsY.png",
-    "https://framerusercontent.com/images/vniufJMsSAXh18yjYsUsriXaJgw.png",
-    "https://framerusercontent.com/images/yTyqzwdEKp9XJLQBwf8DmWnxws.png",
-    "https://framerusercontent.com/images/ffx7akDwhywGTdzIV6fqasW7N8.png",
-    "https://framerusercontent.com/images/QJyR5CNEY5EZDa18LPHJLBySZsY.png",
+    '/images/amazon.svg',
+    '/images/hostinger.svg',
+    '/images/whop.svg',
+    '/images/amazon.svg',
+    '/images/hostinger.svg',
+    '/images/whop.svg',
+    // Duplicados para efecto infinito
+    '/images/amazon.svg',
+    '/images/hostinger.svg',
+    '/images/whop.svg',
+    '/images/amazon.svg',
+    '/images/hostinger.svg',
+    '/images/whop.svg',
   ]
 
   return (
@@ -15,7 +23,19 @@ const LogoCarousel: React.FC = () => {
       <div className="relative">
         <div className="flex logo-carousel space-x-16 py-4">
           {logos.map((logo, index) => (
-            <img key={index} src={logo} alt="Logo" className="h-18 opacity-70 hover:opacity-100 transition duration-300" loading="lazy" />
+            <img
+              key={index}
+              src={logo}
+              alt={
+                logo.includes('amazon')
+                  ? 'Amazon'
+                  : logo.includes('hostinger')
+                  ? 'Hostinger'
+                  : 'Whop'
+              }
+              className="h-20 w-40 object-contain whitescale opacity-80 transition duration-300"
+              loading="lazy"
+            />
           ))}
         </div>
       </div>

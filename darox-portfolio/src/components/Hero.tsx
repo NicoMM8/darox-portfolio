@@ -4,9 +4,9 @@ import Image from 'next/image'
 
 export default function Hero() {
     return (
-        <section className="relative h-screen overflow-hidden flex flex-col items-center justify-start pt-16">
+        <section className="relative h-screen overflow-hidden flex flex-col items-center justify-center pt-16">
             {/* Logo grande y elevado */}
-            <div className="relative z-10 -mt-8">
+            <div className="relative z-10 -mt-8 mb-6">
                 <Image
                     src="/images/logo_horizontal.png"
                     alt="Logo DAROX"
@@ -17,14 +17,28 @@ export default function Hero() {
                 />
             </div>
 
-            {/* Texto estilo “crawl”, grande y en blanco */}
-            <div className="crawl-container relative z-20">
-                <div className="crawl-content">
-                    DAROX es el punto de encuentro entre innovación y diseño. Creamos
-                    experiencias digitales que laten al ritmo de tu marca, fusionando
-                    creatividad, tecnología y pasión por el detalle. Únete al viaje más
-                    emocionante hacia el futuro de tu identidad.
-                </div>
+            {/* NUEVO BLOQUE DE TEXTO DESTACADO */}
+            <div className="relative z-20 text-center max-w-5xl mx-auto px-2">
+                <h1 className="text-4xl md:text-5xl font-extrabold mb-8 text-white drop-shadow-lg whitespace-nowrap">
+                    Soluciones inteligentes para tu marca
+                </h1>
+                <p className="text-2xl md:text-3xl font-medium mb-10 mx-auto bg-black/50 rounded-xl px-8 py-6 text-white shadow-lg backdrop-blur-md">
+                    Fusionamos
+                    <span className="text-pink-400 font-bold pulse pulse-delay-0"> inteligencia artificial</span>,
+                    <span className="text-indigo-400 font-bold pulse pulse-delay-1"> creatividad humana</span>,
+                    <span className="text-purple-400 font-bold pulse pulse-delay-2"> diseño</span> y
+                    <span className="text-pink-400 font-bold pulse pulse-delay-3"> estrategia tecnológica </span>
+                    para que conquistes
+                    <span className="text-indigo-300 font-bold pulse pulse-delay-4"> clientes</span>,
+                    <span className="text-pink-300 font-bold pulse pulse-delay-5"> ingresos</span> y
+                    <span className="text-purple-300 font-bold pulse pulse-delay-6"> libertad financiera</span>.
+                </p>
+                <a
+                    href="#contacto"
+                    className="btn-principal px-12 py-5 rounded-full text-2xl font-bold shadow-xl hover:scale-105 transition-transform duration-200"
+                >
+                    Descubre cómo
+                </a>
             </div>
 
             {/* Fondo pulsante */}
@@ -32,39 +46,6 @@ export default function Hero() {
 
             {/* Overlay de contraste */}
             <div className="absolute inset-0 bg-black/40" />
-
-            <style jsx>{`
-                .crawl-container {
-                    position: relative;
-                    width: 100%;
-                    height: 40%;
-                    margin-top: 2rem;
-                    perspective: 600px;
-                    overflow: hidden;
-                }
-                .crawl-content {
-                    width: 80%;
-                    margin: 0 auto;
-                    padding-bottom: 2rem;
-                    font-size: 1.5rem;       /* antes 1.125rem */
-                    line-height: 1.8;        /* un poco más espaciado */
-                    text-align: center;
-                    color: #fff;             /* texto en blanco llano */
-                    transform-origin: 50% 100%;
-                    transform: rotateX(25deg) translateY(100%);
-                    animation: crawl 20s linear forwards;
-                }
-                @keyframes crawl {
-                    0% {
-                        transform: rotateX(25deg) translateY(100%);
-                        opacity: 1;
-                    }
-                    100% {
-                        transform: rotateX(25deg) translateY(-200%);
-                        opacity: 1;
-                    }
-                }
-            `}</style>
         </section>
     )
 }

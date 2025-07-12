@@ -32,7 +32,7 @@ body::before {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #150039 0%, #420067 40%, #a61982 75%, #e01e91 100%);
+  background: linear-gradient(90deg, #e0e7ff 0%, #b6c7f9 40%, #a5b4fc 75%, #fbcfe8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -68,12 +68,12 @@ body::before {
 }
 
 .btn-principal {
-  background: linear-gradient(90deg, #a61982 0%, #e01e91 100%);
+  background: linear-gradient(90deg, #420067 0%, #a61982 100%);
   color: #fff;
   transition: background 0.3s;
 }
 .btn-principal:hover {
-  background: linear-gradient(90deg, #420067 0%, #a61982 100%);
+  background: linear-gradient(90deg, #a61982 0%, #e01e91 100%);
 }
 .btn-secundario {
   border: 2px solid #a61982;
@@ -85,3 +85,75 @@ body::before {
   background: #a61982;
   color: #fff;
 }
+
+@keyframes pulse-highlight {
+  0%, 100% { filter: brightness(1); transform: scale(1);}
+  50% { filter: brightness(1.5); transform: scale(1.12);}
+}
+.pulse {
+  animation: pulse-highlight 1.2s;
+}
+.pulse-delay-0 { animation-delay: 0s; }
+.pulse-delay-1 { animation-delay: 0.4s; }
+.pulse-delay-2 { animation-delay: 0.8s; }
+.pulse-delay-3 { animation-delay: 1.2s; }
+.pulse-delay-4 { animation-delay: 1.6s; }
+.pulse-delay-5 { animation-delay: 2s; }
+.pulse-delay-6 { animation-delay: 2.4s; }
+
+.whitescale {
+  filter: brightness(0) invert(1);
+}
+
+@keyframes shine {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 0px #fff);
+  }
+  50% {
+    filter: brightness(2) drop-shadow(0 0 12px #fff);
+  }
+  100% {
+    filter: brightness(1) drop-shadow(0 0 0px #fff);
+  }
+}
+
+.logo-carousel img:hover {
+  animation: shine 0.6s;
+}
+
+.stars-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.18;
+  box-shadow: 0 0 2px 0.5px #fff;
+  animation: star-twinkle 2s linear infinite;
+}
+
+@keyframes star-appear {
+  0% { opacity: 0; }
+  80% { opacity: 0.25; }
+  100% { opacity: 0.25; }
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.7; filter: brightness(1);}
+  50% { opacity: 1; filter: brightness(2);}
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(30px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.4,0,0.2,1) both;
+}
+
