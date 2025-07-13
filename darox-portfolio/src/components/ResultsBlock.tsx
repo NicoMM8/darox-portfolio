@@ -1,5 +1,4 @@
 import React from 'react'
-import BlueShape from './BlueShape'
 
 const ResultsBlock: React.FC = () => (
   <section
