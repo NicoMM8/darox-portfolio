@@ -1,16 +1,7 @@
 const Results: React.FC = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 text-white">
-      <div className="max-w-7xl mx-auto text-center mb-16">
-        <h2 className="text-sm font-medium text-indigo-600 mb-2">200+ Agencias Calificadas</h2>
-        <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Entregando Resultados Tangibles <br />
-          <span className="gradient-text">Que Impulsan Tu Éxito</span>
-        </h3>
-        <p className="text-lg text-gray-200 max-w-3xl mx-auto">
-          En el centro de todo lo que hacemos hay un compromiso con la entrega de resultados medibles que impulsan tu éxito.
-        </p>
-      </div>
+      
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div className="bg-black bg-opacity-60 rounded-2xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
           <div className="relative h-48 overflow-hidden">

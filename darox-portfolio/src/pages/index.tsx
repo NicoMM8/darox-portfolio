@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import ResultsBlock from '../components/ResultsBlock';
 import LogoCarousel from '../components/LogoCarousel';
 import About from '../components/About';
 import Results from '../components/Resultados';
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <LogoCarousel />
       <About />
+      <ResultsBlock />
       <Results />
       <Process />
       <Features />

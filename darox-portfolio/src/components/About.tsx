@@ -32,12 +32,11 @@ const About: React.FC = () => {
         {/* Imagen con borde, blur y tilt hover */}
         <div className="md:w-1/2 flex justify-center">
           <div className="relative flex flex-col w-full rounded-[30px] bg-black/90 backdrop-blur-md border border-white/20 p-2 shadow-xl overflow-hidden">
-            {/* Línea decorativa superior */}
-            <Divider className="absolute top-0 left-0 w-full h-1 rounded-none" />
-
-            <div
-              className="rounded-[19px] overflow-hidden border border-white/20 transition-transform duration-300 hover:rotate-2 hover:scale-105"
-            >
+            {/* Línea azul decorativa superior */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent" />
+            
+            {/* Imagen con efecto hover */}
+            <div className="rounded-[19px] overflow-hidden border border-white/20 transition-transform duration-300 hover:rotate-2 hover:scale-105">
               <Image
                 src="/images/foto_about.png"
                 alt="Persona trabajando en portátil"
@@ -47,20 +46,30 @@ const About: React.FC = () => {
                 priority
               />
             </div>
-
-            {/* Glow azul */}
+            
+            {/* Glow azul debajo de la imagen */}
             <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-32 h-16 bg-blue-500 opacity-40 blur-2xl rounded-full pointer-events-none" />
-
-            {/* Línea decorativa inferior */}
-            <Divider className="absolute bottom-0 left-0 w-full h-1 rounded-none" />
+            
+            {/* Línea azul decorativa inferior */}
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent" />
           </div>
         </div>
 
         {/* Texto, métricas y botón */}
         <div className="md:w-1/2 flex flex-col gap-8 justify-center">
           {/* Tag destacado */}
-          <div className="inline-block px-4 py-1 rounded-lg bg-gradient-to-b from-blue-200/30 to-gray-100/20 border border-white/10 mb-2 backdrop-blur-sm animate-fade-in-up">
-            <span className="text-white text-xs font-semibold tracking-wide">Sobre Darox</span>
+          <div
+            className="inline-flex items-center gap-3 px-5 py-2 rounded-lg border border-white/10 backdrop-blur-md mb-2 animate-fade-in-up bg-framer-tag"
+            style={{
+              background: 'linear-gradient(90deg, rgba(0,85,255,0.08) 0%, rgba(153,153,153,0.1) 100%)'
+            }}
+          >
+            {/* Bullet blanco */}
+            <span className="w-2 h-2 rounded-full bg-white inline-block" />
+            {/* Texto con gradiente */}
+            <span className="font-semibold text-base bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Sobre DAROX
+            </span>
           </div>
           {/* Título principal con gradiente claro y animación */}
           <h2
@@ -100,7 +109,21 @@ const About: React.FC = () => {
           {/* Botón destacado */}
           <a
             href="./about"
-            className="inline-block w-full md:w-1/2 px-6 py-3 rounded-lg bg-[#233a5e] border-2 border-white/20 shadow-lg text-white font-semibold hover:bg-[#2c4066] transition-all duration-300 text-left animate-fade-in-up hover:scale-105 hover:shadow-2xl"
+            className="
+              inline-flex items-center justify-center
+              px-4 py-2
+              rounded-[10px]
+              border-4 border-white/15
+              bg-blue-700
+              shadow-[0_8px_40px_0_rgba(0,85,255,0.5),0_0_10px_1px_rgba(255,255,255,0)_inset,0_0_0_1px_rgba(0,85,255,0.12)]
+              text-white font-semibold
+              transition-all duration-300
+              hover:bg-blue-800 hover:scale-105
+              animate-fade-in-up
+              "
+            style={{
+              boxShadow: "0px 8px 40px 0px rgba(0,85,255,0.5), 0px 0px 10px 1px rgba(255,255,255,0) inset, 0px 0px 0px 1px rgba(0,85,255,0.12)"
+            }}
           >
             Ver Sobre DAROX
           </a>
