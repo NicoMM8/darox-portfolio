@@ -1,3 +1,5 @@
+import React from "react";
+
 const Process: React.FC = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 text-white">
@@ -16,6 +18,7 @@ const Process: React.FC = () => {
           <div className="bg-black bg-opacity-60 rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300">
             <div className="flex items-center mb-6">
               <div className="bg-indigo-100 p-3 rounded-full mr-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://framerusercontent.com/images/KfsUX7SjXWF8GYOil2kfkZ9e1PA.png" alt="Icono de Etapa" className="h-8 w-8" />
               </div>
               <div>
@@ -44,6 +47,7 @@ const Process: React.FC = () => {
           <div className="bg-black bg-opacity-60 rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300">
             <div className="flex items-center mb-6">
               <div className="bg-indigo-100 p-3 rounded-full mr-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://framerusercontent.com/images/KfsUX7SjXWF8GYOil2kfkZ9e1PA.png" alt="Icono de Etapa" className="h-8 w-8" />
               </div>
               <div>
@@ -72,6 +76,7 @@ const Process: React.FC = () => {
           <div className="bg-black bg-opacity-60 rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300">
             <div className="flex items-center mb-6">
               <div className="bg-indigo-100 p-3 rounded-full mr-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://framerusercontent.com/images/3fTl0jOeNCf5k69Fvi5Sj616o.svg" alt="Icono de Etapa" className="h-8 w-8" />
               </div>
               <div>

@@ -1,3 +1,5 @@
+import React from "react";
+
 interface Service {
   title: string
   description: string
@@ -40,6 +42,7 @@ const Services: React.FC = () => {
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col md:flex-row items-center mb-16">
           <div className="md:w-1/2 mb-8 md:mb-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="https://framerusercontent.com/images/Nx7bt7sxDAxlLsAxW9jTN1wUsY.jpeg" alt="Hombre usando tablet" className="rounded-2xl shadow-xl w-full" loading="lazy" />
           </div>
           <div className="md:w-1/2 md:pl-12">
@@ -58,6 +61,7 @@ const Services: React.FC = () => {
             <div key={index} className="bg-white rounded-2xl p-4 shadow-md hover:shadow-xl transition duration-300">
               <div className="flex items-center mb-6">
                 <div className="bg-indigo-100 p-3 rounded-full mr-4">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={service.icon} alt="Icono de Servicio" className="h-6 w-6" />
                 </div>
                 <h4 className="text-xl font-bold text-gray-900">{service.title}</h4>

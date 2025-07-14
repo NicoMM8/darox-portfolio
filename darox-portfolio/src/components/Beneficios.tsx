@@ -1,3 +1,5 @@
+import React from "react";
+
 const Benefits: React.FC = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 text-white">
@@ -44,6 +46,7 @@ const Benefits: React.FC = () => {
           </div>
           <div className="md:w-1/2">
             <div className="relative">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://framerusercontent.com/images/nt3TDX5zl4zsmwO69xL44yiUM.jpg" alt="Abstracto 3D Azul" className="rounded-2xl shadow-xl w-full" loading="lazy" />
               <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-lg max-w-xs">
                 <h4 className="text-xl font-bold text-gray-900 mb-3">Envía Solicitudes Ilimitadas</h4>

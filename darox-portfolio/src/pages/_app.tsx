@@ -11,9 +11,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="icon" href="/logo.png" type="image/png" />
       </Head>
-      <StarsBackground /> {/* <-- Añade aquí */}
+      <StarsBackground />
       <Component {...pageProps} />
       <SpeedInsights />
+      <div className="blur-bottom-overlay" />
     </>
   );
 }

@@ -2,6 +2,7 @@
 'use client'
 
 import Image from 'next/image'
+import React from "react";
 
 const Divider = ({ className = '' }) => (
   <div
@@ -59,10 +60,7 @@ const About: React.FC = () => {
         <div className="md:w-1/2 flex flex-col gap-8 justify-center">
           {/* Tag destacado */}
           <div
-            className="inline-flex items-center gap-3 px-5 py-2 rounded-lg border border-white/10 backdrop-blur-md mb-2 animate-fade-in-up bg-framer-tag"
-            style={{
-              background: 'linear-gradient(90deg, rgba(0,85,255,0.08) 0%, rgba(153,153,153,0.1) 100%)'
-            }}
+            className="inline-flex items-center gap-3 px-5 py-2 rounded-lg border border-white/10 backdrop-blur-md mb-2 animate-fade-in-up about-framer-tag"
           >
             {/* Bullet blanco */}
             <span className="w-2 h-2 rounded-full bg-white inline-block" />
@@ -74,8 +72,7 @@ const About: React.FC = () => {
           {/* Título principal con gradiente claro y animación */}
           <h2
             id="about-title"
-            className="text-4xl md:text-5xl font-extrabold mb-2 animate-fade-in-up gradient-text"
-            style={{ lineHeight: '1.1' }}
+            className="text-4xl md:text-5xl font-extrabold mb-2 animate-fade-in-up gradient-text about-title"
           >
             {titleWords.map((w, i) => (
               <span key={i} className="inline-block mr-1">{w}</span>
@@ -115,15 +112,12 @@ const About: React.FC = () => {
               rounded-[10px]
               border-4 border-white/15
               bg-blue-700
-              shadow-[0_8px_40px_0_rgba(0,85,255,0.5),0_0_10px_1px_rgba(255,255,255,0)_inset,0_0_0_1px_rgba(0,85,255,0.12)]
+              about-shadow
               text-white font-semibold
               transition-all duration-300
               hover:bg-blue-800 hover:scale-105
               animate-fade-in-up
-              "
-            style={{
-              boxShadow: "0px 8px 40px 0px rgba(0,85,255,0.5), 0px 0px 10px 1px rgba(255,255,255,0) inset, 0px 0px 0px 1px rgba(0,85,255,0.12)"
-            }}
+            "
           >
             Ver Sobre DAROX
           </a>

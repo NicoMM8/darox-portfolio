@@ -34,7 +34,7 @@ export default function Hero() {
                     <span className="text-purple-300 font-bold pulse pulse-delay-6"> libertad financiera</span>.
                 </p>
                 <a
-                    href="#contacto"
+                    href="#"
                     className="btn-principal px-12 py-5 rounded-full text-2xl font-bold shadow-xl hover:scale-105 transition-transform duration-200"
                 >
                     Descubre cómo

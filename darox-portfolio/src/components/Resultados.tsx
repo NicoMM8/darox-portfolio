@@ -1,94 +1,55 @@
+// src/components/Results.tsx
+'use client'
+import { results } from '@/data/results'
+import Image from 'next/image'
+import React from "react";
+
 const Results: React.FC = () => {
+  const items = results.slice(0, 3)
+
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 text-white">
-      
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div className="bg-black bg-opacity-60 rounded-2xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-          <div className="relative h-48 overflow-hidden">
-            <img src="https://framerusercontent.com/images/gJpgMqolxrZFesWkDXnNXZLWBoY.jpeg" alt="Botella Blanca" className="w-full h-full object-cover" loading="lazy" />
-            <div className="absolute top-4 right-4">
-              <img src="https://framerusercontent.com/images/Zjhy8gzEpQFU6Fq7lSmQUHLG3k0.svg" alt="Logo Crimson Studio" className="h-10" />
+    <section className="py-20 px-0 bg-gradient-to-b from-black/80 to-black/60 text-white">
+      {/* Grid solo imágenes grandes y grises */}
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 items-end">
+        {items.map((item, i) => (
+          <div
+            key={item.id}
+            className={`
+              w-full
+              transform transition-transform duration-300
+              ${i === 1 ? '-translate-y-12' : ''}
+            `}
+          >
+            <div className="relative w-full h-[520px] overflow-hidden rounded-xl bg-black/60 shadow-2xl group backdrop-blur-md">
+              <Image
+                src={item.imageUrl}
+                alt=""
+                fill
+                className="object-cover object-center filter grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+                placeholder="blur"
+                blurDataURL="/placeholder.png"
+              />
+              <a
+                href="#"
+                className="group resultados-btn absolute bottom-6 left-1/2 -translate-x-1/2 px-8 py-3 rounded-full bg-gray-300 bg-opacity-40 text-white text-lg font-medium flex items-center gap-2 border border-white/30 backdrop-blur-md transition hover:bg-opacity-60"
+              >
+                Ver Proyecto
+                <span className="relative flex items-center">
+                  {/* Flecha principal */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-2 resultados-svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M7 7h10v10" />
+                  </svg>
+                </span>
+              </a>
             </div>
           </div>
-          <div className="p-6">
-            <div className="flex items-center mb-2">
-              <h4 className="text-xl font-bold text-white">Crimson Studio</h4>
-              <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">NUEVO</span>
-            </div>
-            <p className="text-gray-300 mb-4">
-              Logró un aumento en las ventas en seis meses a través de una estrategia personalizada.
-            </p>
-            <div className="flex justify-between">
-              <div>
-                <p className="text-2xl font-bold text-indigo-600">30%</p>
-                <p className="text-sm text-gray-500">Aumento en Ventas</p>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-indigo-600">40%</p>
-                <p className="text-sm text-gray-500">Impulso en Retención</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bg-black bg-opacity-60 rounded-2xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-          <div className="relative h-48 overflow-hidden">
-            <img src="https://framerusercontent.com/images/JCaZzme2XYHwWAWbEWjb3W3WpE.jpeg" alt="Reloj Azul" className="w-full h-full object-cover" loading="lazy" />
-            <div className="absolute top-4 right-4">
-              <img src="https://framerusercontent.com/images/rQyxKxtqvKlVrHFyMDg7VnuiKNc.svg" alt="Logo Raven Company" className="h-10" />
-            </div>
-          </div>
-          <div className="p-6">
-            <h4 className="text-xl font-bold text-white mb-2">Raven Company Inc</h4>
-            <p className="text-gray-300 mb-4">
-              Operaciones optimizadas, reduciendo costos con nuestras soluciones de automatización.
-            </p>
-            <div className="flex justify-between">
-              <div>
-                <p className="text-2xl font-bold text-indigo-600">25%</p>
-                <p className="text-sm text-gray-500">Tasas de Conversión</p>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-indigo-600">50%</p>
-                <p className="text-sm text-gray-500">Reducción en CPA</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bg-black bg-opacity-60 rounded-2xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-          <div className="relative h-48 overflow-hidden">
-            <img src="https://framerusercontent.com/images/4sfXO1JN4OBl4RWb4t9FBOXw.jpeg" alt="Botella Negra" className="w-full h-full object-cover" loading="lazy" />
-            <div className="absolute top-4 right-4">
-              <img src="https://framerusercontent.com/images/w0R0sHJ0c5j0Ywm5U455ynsDo.svg" alt="Logo Gotham Wonder" className="h-10" />
-            </div>
-          </div>
-          <div className="p-6">
-            <div className="flex items-center mb-2">
-              <h4 className="text-xl font-bold text-white">Gotham Wonder</h4>
-              <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">FRESCO</span>
-            </div>
-            <p className="text-gray-300 mb-4">
-              Aumentó el compromiso del cliente con una presencia digital y campañas dirigidas.
-            </p>
-            <div className="flex justify-between">
-              <div>
-                <p className="text-2xl font-bold text-indigo-600">60%</p>
-                <p className="text-sm text-gray-500">Aumento de Tráfico</p>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-indigo-600">35%</p>
-                <p className="text-sm text-gray-500">Crecimiento en Ventas</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="text-center mt-12">
-        <a href="#" className="bg-indigo-600 text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-indigo-700 transition duration-300 inline-flex items-center">
-          Reserva una llamada de 15 minutos
-          <svg className="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-          </svg>
-        </a>
+        ))}
       </div>
     </section>
   )

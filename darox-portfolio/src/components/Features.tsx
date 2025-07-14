@@ -1,3 +1,5 @@
+import React from "react";
+
 const Features: React.FC = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -16,6 +18,7 @@ const Features: React.FC = () => {
           <div className="bg-white p-6 rounded-xl shadow-md feature-card transition duration-300">
             <div className="flex items-center mb-4">
               <div className="bg-indigo-100 p-2 rounded-lg mr-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://framerusercontent.com/images/AJiedqWbxVBOUN9xB5kV5MNLyw.svg" alt="Icono" className="h-6 w-6" />
               </div>
               <div>
@@ -36,6 +39,7 @@ const Features: React.FC = () => {
           <div className="bg-white p-6 rounded-xl shadow-md feature-card transition duration-300">
             <div className="flex items-center mb-4">
               <div className="bg-indigo-100 p-2 rounded-lg mr-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://framerusercontent.com/images/c7ewovWjVsAf198pTS4MtYSO8k.svg" alt="Icono" className="h-6 w-6" />
               </div>
               <div>
@@ -56,6 +60,7 @@ const Features: React.FC = () => {
           <div className="bg-white p-6 rounded-xl shadow-md feature-card transition duration-300">
             <div className="flex items-center mb-4">
               <div className="bg-indigo-100 p-2 rounded-lg mr-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://framerusercontent.com/images/sgcwYsOD6V0LWJJRJQ99llynBI.svg" alt="Icono" className="h-6 w-6" />
               </div>
               <div>
@@ -76,6 +81,7 @@ const Features: React.FC = () => {
           <div className="bg-white p-6 rounded-xl shadow-md feature-card transition duration-300">
             <div className="flex items-center mb-4">
               <div className="bg-indigo-100 p-2 rounded-lg mr-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://framerusercontent.com/images/qCPT61H8KatnJwS4aqpuVjWWdM.svg" alt="Icono" className="h-6 w-6" />
               </div>
               <div>
@@ -96,6 +102,7 @@ const Features: React.FC = () => {
           <div className="bg-white p-6 rounded-xl shadow-md feature-card transition duration-300">
             <div className="flex items-center mb-4">
               <div className="bg-indigo-100 p-2 rounded-lg mr-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://framerusercontent.com/images/Oyac3Rl5DdKSc0EQHWNG6R5Oyhg.svg" alt="Icono" className="h-6 w-6" />
               </div>
               <div>
@@ -116,6 +123,7 @@ const Features: React.FC = () => {
           <div className="bg-white p-6 rounded-xl shadow-md feature-card transition duration-300">
             <div className="flex items-center mb-4">
               <div className="bg-indigo-100 p-2 rounded-lg mr-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://framerusercontent.com/images/Iwdftj1FguNyuJzFy1omuAPYcc.svg" alt="Icono" className="h-6 w-6" />
               </div>
               <div>

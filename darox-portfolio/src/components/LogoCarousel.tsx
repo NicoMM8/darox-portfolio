@@ -23,6 +23,7 @@ const LogoCarousel: React.FC = () => {
       <div className="relative">
         <div className="flex logo-carousel space-x-16 py-4">
           {logos.map((logo, index) => (
+              // eslint-disable-next-line @next/next/no-img-element
             <img
               key={index}
               src={logo}

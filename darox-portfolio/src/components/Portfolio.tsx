@@ -1,3 +1,5 @@
+import React from "react";
+
 interface PortfolioItem {
   image: string
   title: string
@@ -51,6 +53,7 @@ const Portfolio: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {portfolioItems.map((item, index) => (
             <div key={index} className="relative group portfolio-item rounded-2xl overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={item.image} alt={item.title} className="w-full h-48 object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 portfolio-overlay transition duration-300 flex flex-col justify-end p-4">
                 <div className="flex items-center mb-2">
@@ -59,6 +62,7 @@ const Portfolio: React.FC = () => {
                 </div>
                 <div className="flex mb-4">
                   {Array(item.rating).fill(0).map((_, i) => (
+                      // eslint-disable-next-line @next/next/no-img-element
                     <img key={i} src="https://framerusercontent.com/images/5lfBMonMhYpKxn0XVQsyZrLGY.png" alt="Estrella" className="h-4 w-4 mr-1" />
                   ))}
                 </div>
