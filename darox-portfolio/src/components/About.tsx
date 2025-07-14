@@ -60,7 +60,7 @@ const About: React.FC = () => {
         <div className="md:w-1/2 flex flex-col gap-8 justify-center">
           {/* Tag destacado */}
           <div
-            className="inline-flex items-center gap-3 px-5 py-2 rounded-lg border border-white/10 backdrop-blur-md mb-2 animate-fade-in-up about-framer-tag"
+            className="inline-flex items-center gap-3 px-5 py-2 rounded-lg border border-white/10 backdrop-blur-md mb-2 animate-fade-in-up resultsblock-framer-tag"
           >
             {/* Bullet blanco */}
             <span className="w-2 h-2 rounded-full bg-white inline-block" />

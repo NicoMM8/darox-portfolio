@@ -22,7 +22,7 @@ export default function Hero() {
                 <h1 className="text-4xl md:text-5xl font-extrabold mb-8 text-white drop-shadow-lg whitespace-nowrap">
                     Soluciones inteligentes para tu marca
                 </h1>
-                <p className="text-2xl md:text-3xl font-medium mb-10 mx-auto bg-black/50 rounded-xl px-8 py-6 text-white shadow-lg backdrop-blur-md">
+                <p className="text-2xl md:text-3xl font-medium mb-10 mx-auto text-white shadow-lg">
                     Fusionamos
                     <span className="text-pink-400 font-bold pulse pulse-delay-0"> inteligencia artificial</span>,
                     <span className="text-indigo-400 font-bold pulse pulse-delay-1"> creatividad humana</span>,

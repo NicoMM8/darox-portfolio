@@ -44,7 +44,7 @@ body::before {
 
 .logo-carousel {
   display: flex;
-  animation: scroll 30s linear infinite;
+  animation: scroll 50s linear infinite;
   width: max-content;
 }
 
@@ -209,5 +209,6 @@ body::before {
   z-index: 2;
 }
 
-
-
+.img-shadow-indigo {
+  filter: drop-shadow(0 0 8px #6366f1);
+}
