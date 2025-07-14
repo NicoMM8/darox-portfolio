@@ -4,17 +4,17 @@ import React from 'react'
 const LogoCarousel: React.FC = () => {
   const logos = [
     '/images/amazon.svg',
-    '/images/hostinger.svg',
+    '/images/Hostinger.svg',
     '/images/whop.svg',
     '/images/amazon.svg',
-    '/images/hostinger.svg',
+    '/images/Hostinger.svg',
     '/images/whop.svg',
     // Duplicados para efecto infinito
     '/images/amazon.svg',
-    '/images/hostinger.svg',
+    '/images/Hostinger.svg',
     '/images/whop.svg',
     '/images/amazon.svg',
-    '/images/hostinger.svg',
+    '/images/Hostinger.svg',
     '/images/whop.svg',
   ]
 
