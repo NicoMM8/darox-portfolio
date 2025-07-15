@@ -31,28 +31,16 @@ const About: React.FC = () => {
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch gap-12">
         {/* Imagen con borde, blur y tilt hover */}
-        <div className="md:w-1/2 flex justify-center">
-          <div className="relative flex flex-col w-full rounded-[30px] bg-black/90 backdrop-blur-md border border-white/20 p-2 shadow-xl overflow-hidden">
-            {/* Línea azul decorativa superior, más fina y sutil */}
-            <div className="absolute left-0 top-0 w-full h-0 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-[5px] pointer-events-none opacity-70" />
-            
-            {/* Imagen con efecto hover */}
-            <div className="rounded-[19px] overflow-hidden border border-white/20 transition-transform duration-300 hover:rotate-2 hover:scale-105">
-              <Image
-                src="/images/foto_about.png"
-                alt="Persona trabajando en portátil"
-                width={800}
-                height={600}
-                className="object-cover w-full aspect-[4/3]"
-                priority
-              />
-            </div>
-            
-            {/* Glow azul debajo de la imagen */}
-            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-32 h-16 bg-blue-500 opacity-40 blur-2xl rounded-full pointer-events-none" />
-            
-            {/* Línea azul decorativa inferior */}
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent" />
+        <div className="md:w-1/2 flex justify-center items-center">
+          <div className="rounded-[19px] overflow-hidden border border-white/20 transition-transform duration-300 hover:rotate-2 hover:scale-105 w-full max-w-[420px] md:max-w-[520px] h-[520px] md:h-[650px] bg-black/80 shadow-xl">
+            <Image
+              src="/images/foto_about2.png"
+              alt="Persona trabajando en portátil"
+              width={800}
+              height={1000} // 4:5
+              className="object-cover w-full h-full"
+              priority
+            />
           </div>
         </div>
 
