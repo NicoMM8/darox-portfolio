@@ -3,55 +3,55 @@ import React from "react";
 const features = [
 	{
 		icon: "https://framerusercontent.com/images/AJiedqWbxVBOUN9xB5kV5MNLyw.svg",
-		title: "Boost Your Revenue",
+		title: "Aumenta tus ingresos",
 		badge: "PRO",
-		subtitle: "Increase Profits",
+		subtitle: "Aumenta tus ingresos",
 		description:
-			"Unlock new revenue streams with data-driven strategies and marketing.",
+			"Genera ganancias escalables desbloqueando nuevas fuentes de ingresos con estrategias basadas en datos y marketing de alto impacto.",
 	},
 	{
-		icon: "https://framerusercontent.com/images/2kQwQv9nQwQwQwQwQwQwQwQwQwQwQwQw.svg",
-		title: "Customizable Assets",
+		icon: "	https://framerusercontent.com/images/c7ewovWjVsAf198pTS4MtYSO8k.svg",
+		title: "Activos personalizables",
 		badge: "",
-		subtitle: "Editable Designs",
+		subtitle: "Activos personalizables",
 		description:
-			"Easily modify and personalize design elements to fit your brand’s identity.",
+			"Diseños editables sin límites. Modifica cada elemento para reflejar al máximo la esencia de tu marca, con total autonomía.",
 	},
 	{
-		icon: "https://framerusercontent.com/images/3jJjJjJjJjJjJjJjJjJjJjJjJjJjJjJj.svg",
-		title: "Bug Less Development",
+		icon: "https://framerusercontent.com/images/sgcwYsOD6V0LWJJRJQ99llynBI.svg",
+		title: "Desarrollo sin errores",
 		badge: "",
-		subtitle: "Optimized Code",
+		subtitle: "Desarrollo sin errores",
 		description:
-			"Our bug-less development ensures that your website runs smooth and fast.",
+			"Código optimizado, cero fricciones. Tu sitio web funcionará con velocidad, estabilidad y excelencia técnica.",
 	},
 ];
 
 // Añade las otras 3 características extra
 const extraFeatures = [
 	{
-		icon: "https://framerusercontent.com/images/extra1.svg",
-		title: "Fast Delivery",
-		badge: "",
-		subtitle: "Lightning Speed",
+		icon: "	https://framerusercontent.com/images/Oyac3Rl5DdKSc0EQHWNG6R5Oyhg.svg",
+		title: "Entrega rápida como un rayo",
+		badge: "PRO",
+		subtitle: "Entrega rápida como un rayo",
 		description:
-			"Get your assets delivered in record time, so you never have to wait.",
+			"Resultados ágiles sin comprometer calidad. Respondemos con precisión y eficiencia cuando más lo necesitas.",
 	},
 	{
-		icon: "https://framerusercontent.com/images/extra2.svg",
-		title: "24/7 Support",
+		icon: "https://framerusercontent.com/images/qCPT61H8KatnJwS4aqpuVjWWdM.svg",
+		title: "24/7 Soporte",
 		badge: "",
-		subtitle: "Always Available",
+		subtitle: "Siempre disponibles",
 		description:
-			"Our team is ready to help you at any hour, any day.",
+			"Nuestro Equipo siempre está disponible para cualquier duda o solución",
 	},
 	{
-		icon: "https://framerusercontent.com/images/extra3.svg",
-		title: "Scalable Solutions",
-		badge: "",
-		subtitle: "Grow With You",
+		icon: "	https://framerusercontent.com/images/Iwdftj1FguNyuJzFy1omuAPYcc.svg",
+		title: "Compatible con móviles",
+		badge: "NUEVO",
+		subtitle: "Compatible con móviles",
 		description:
-			"Our services scale as your business grows, always adapting to your needs.",
+			"Responsive total. Tu marca lucirá impecable en cualquier dispositivo, con experiencia fluida y adaptativa.",
 	},
 ];
 
