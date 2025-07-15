@@ -199,7 +199,7 @@ const Benefits: React.FC = () => {
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <h4 className="text-xl font-bold text-white">Precios sin sorpresas</h4>
-                <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NEW</span>
+                <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NUEVO</span>
               </div>
               <p className="text-white/60 text-base">
                 Ya sea que comiences o estés en pleno crecimiento, nuestros planes flexibles.
@@ -230,7 +230,7 @@ const Benefits: React.FC = () => {
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <h4 className="text-xl font-bold text-white">Entrega rápida</h4>
-                <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NEW</span>
+                <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NUEVO</span>
               </div>
               <p className="text-white/60 text-base">
                 Priorizamos la eficiencia sin sacrificar la calidad. Tu proyecto listo en 24–48 horas para que nunca pierdas ritmo.
@@ -266,7 +266,7 @@ const Benefits: React.FC = () => {
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <h4 className="text-xl font-bold text-white">Solicitudes y revisiones</h4>
-                <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NEW</span>
+                <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NUEVO</span>
               </div>
               <p className="text-white/60 text-base">
                 Incluimos varias rondas de solicitudes y revisiones para que tu feedback se incorpore al 100 % y el resultado sea perfecto.
@@ -299,7 +299,7 @@ const Benefits: React.FC = () => {
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <h4 className="text-xl font-bold text-white">Testimonios reales</h4>
-                <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NEW</span>
+                <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NUEVO</span>
               </div>
               <p className="text-white/60 text-base">
                 Descubre lo que dicen nuestros clientes y conoce los resultados reales de proyectos anteriores.
@@ -320,7 +320,7 @@ const Benefits: React.FC = () => {
               <div className="rounded-xl overflow-hidden mb-4 border border-white/10 relative">
                 <motion.img
                   src="https://framerusercontent.com/images/70Cw0V8JFQzVCIhorQ15yMIaI.jpg"
-                  alt="New Feature"
+                  alt="Nueva Feature"
                   className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                   initial={{ scale: 1 }}
@@ -332,7 +332,7 @@ const Benefits: React.FC = () => {
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <h4 className="text-xl font-bold text-white">Integraciones continuas</h4>
-                <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NEW</span>
+                <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NUEVO</span>
               </div>
               <p className="text-white/60 text-base">
                  Conecta tu CRM, plataforma de email y otras herramientas para un flujo de trabajo unificado.
