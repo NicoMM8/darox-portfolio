@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { motion, useAnimationFrame } from "framer-motion";
 
 const benefitsList = [
-  "Mejorada UX",
+  "Mejora UX",
   "Conversiones Aumentadas",
   "Carga Rápida",
   "Optimización SEO",
@@ -11,7 +11,21 @@ const benefitsList = [
   "Compromiso Aumentado",
   "Expandable",
   "Seguro",
-  "Fácil de Usar"
+  "Fácil de Usar",
+  "Integraciones Sencillas",
+  "Soporte 24/7",
+  "Multiplataforma",
+  "Accesible",
+  "Analíticas Integradas",
+  "Alta Disponibilidad",
+  "Automatización de Procesos",
+  "Interfaz Intuitiva",
+  "Multilenguaje",
+  "Mantenimiento Reducido",
+  "Diseño UI Moderno",
+  "Adaptable al Cliente",
+  "Control Total de Datos",
+  "Backup Automático"
 ];
 
 // Carrusel infinito real, sin cortes ni saltos
@@ -133,10 +147,10 @@ const Benefits: React.FC = () => {
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-28 h-10 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
             </div>
             <div className="w-full flex flex-col justify-center items-start mt-8 flex-1">
-              <h4 className="text-2xl md:text-3xl font-bold text-white mb-2">Submit Unlimited Requests</h4>
+              <h4 className="text-2xl md:text-3xl font-bold text-white mb-2">Solicitudes ilimitadas</h4>
               <div className="w-8 h-1 bg-gradient-to-r from-transparent via-blue-600 to-transparent rounded-full mb-4" />
               <p className="text-white/60 text-base mb-6 max-w-md">
-                Enjoy the freedom to submit unlimited requests without any restrictions. Whether you need design tweaks, we&apos;re here to assist you at every step.
+                Disfruta de la libertad de enviar solicitudes ilimitadas sin restricciones. Ajustes de diseño, nuevas ideas o retoques: te acompañamos en cada paso.
               </p>
               <div className="flex gap-4 mt-auto">
                 <motion.a
@@ -184,11 +198,11 @@ const Benefits: React.FC = () => {
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
               </div>
               <div className="flex items-center gap-2 mb-2">
-                <h4 className="text-xl font-bold text-white">Worry Free Pricing</h4>
+                <h4 className="text-xl font-bold text-white">Precios sin sorpresas</h4>
                 <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NEW</span>
               </div>
               <p className="text-white/60 text-base">
-                Whether youre just starting or scaling up, our flexible pricing plans are designed to fit your needs and budget, so you can get started without any financial stress.
+                Ya sea que comiences o estés en pleno crecimiento, nuestros planes flexibles.
               </p>
             </motion.div>
             {/* Card 4 */}
@@ -215,11 +229,11 @@ const Benefits: React.FC = () => {
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
               </div>
               <div className="flex items-center gap-2 mb-2">
-                <h4 className="text-xl font-bold text-white">References</h4>
+                <h4 className="text-xl font-bold text-white">Entrega rápida</h4>
                 <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NEW</span>
               </div>
               <p className="text-white/60 text-base">
-                Discover what our clients say about us and see real results from our previous projects.
+                Priorizamos la eficiencia sin sacrificar la calidad. Tu proyecto listo en 24–48 horas para que nunca pierdas ritmo.
               </p>
             </motion.div>
           </div>
@@ -251,11 +265,11 @@ const Benefits: React.FC = () => {
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
               </div>
               <div className="flex items-center gap-2 mb-2">
-                <h4 className="text-xl font-bold text-white">Requests &amp; Revisions</h4>
+                <h4 className="text-xl font-bold text-white">Solicitudes y revisiones</h4>
                 <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NEW</span>
               </div>
               <p className="text-white/60 text-base">
-                Our process includes multiple rounds of requests and revisions, ensuring that your feedback is incorporated and that the final product meets your expectations.
+                Incluimos varias rondas de solicitudes y revisiones para que tu feedback se incorpore al 100 % y el resultado sea perfecto.
               </p>
             </div>
           </motion.div>
@@ -284,11 +298,11 @@ const Benefits: React.FC = () => {
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
               </div>
               <div className="flex items-center gap-2 mb-2">
-                <h4 className="text-xl font-bold text-white">Quick Turnaround</h4>
+                <h4 className="text-xl font-bold text-white">Testimonios reales</h4>
                 <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NEW</span>
               </div>
               <p className="text-white/60 text-base">
-                We prioritize efficiency without compromising quality.
+                Descubre lo que dicen nuestros clientes y conoce los resultados reales de proyectos anteriores.
               </p>
             </div>
           </motion.div>
@@ -317,11 +331,11 @@ const Benefits: React.FC = () => {
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
               </div>
               <div className="flex items-center gap-2 mb-2">
-                <h4 className="text-xl font-bold text-white">New Feature</h4>
+                <h4 className="text-xl font-bold text-white">Integraciones continuas</h4>
                 <span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">NEW</span>
               </div>
               <p className="text-white/60 text-base">
-                Description for the new feature or benefit. You can customize este texto según lo que quieras destacar aquí.
+                 Conecta tu CRM, plataforma de email y otras herramientas para un flujo de trabajo unificado.
               </p>
             </div>
           </motion.div>
