@@ -45,16 +45,16 @@ const Process: React.FC = () => {
 					{/* Tag destacado tipo Framer igual que en About */}
 					<div
 						className="
-    relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px]
-    border border-white/10
-    bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)]
-    backdrop-blur-[2.5px]
-    mb-4 animate-fade-in-up
-    shadow
-    overflow-hidden
-    mx-auto
-    tag-destacado
-  "
+    						relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px]
+    						border border-white/10
+    						bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)]
+    						backdrop-blur-[2.5px]
+    						mb-4 animate-fade-in-up
+    						shadow
+    						overflow-hidden
+    						mx-auto
+    						tag-destacado
+  						"
 					>
 						{/* Línea azul decorativa superior, fina y sutil */}
 						<div className="absolute left-0 top-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-[10px] pointer-events-none opacity-70" />

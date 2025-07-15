@@ -38,9 +38,6 @@ body::before {
   color: transparent;
 }
 
-.hero-gradient {
-  background: linear-gradient(90deg, #150039 0%, #420067 40%, #a61982 75%, #e01e91 100%);
-}
 
 .logo-carousel {
   display: flex;

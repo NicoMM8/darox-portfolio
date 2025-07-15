@@ -63,16 +63,16 @@ const Features: React.FC = () => {
 					{/* Tag destacado tipo Framer igual que en About y Proceso */}
 					<div
 						className="
-    relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px]
-    border border-white/10
-    bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)]
-    backdrop-blur-[2.5px]
-    mb-4 animate-fade-in-up
-    shadow
-    overflow-hidden
-    mx-auto
-    tag-destacado
-  "
+    						relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px]
+    						border border-white/10
+    						bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)]
+    						backdrop-blur-[2.5px]
+    						mb-4 animate-fade-in-up
+    						shadow
+    						overflow-hidden
+    						mx-auto
+    						tag-destacado
+  						"
 					>
 						<div className="absolute left-0 top-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-[10px] pointer-events-none opacity-70" />
 						{/* Bullet blanco */}
@@ -97,12 +97,12 @@ const Features: React.FC = () => {
 							key={idx}
 							href="#Servicios"
 							className="
-    relative group rounded-2xl border border-white/10
-    bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)]
-    p-8 flex flex-col justify-between h-full
-    transition duration-300 hover:shadow-blue-800/40 cursor-pointer
-    features-card
-  "
+    						relative group rounded-2xl border border-white/10
+    						bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)]
+    						p-8 flex flex-col justify-between h-full
+    						transition duration-300 hover:shadow-blue-800/40 cursor-pointer
+    						features-card
+  						"
 						>
 							{/* Línea azul decorativa superior */}
 							<div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-2xl" />
@@ -146,7 +146,7 @@ const Features: React.FC = () => {
 							</div>
 							<div className="text-gray-300 text-base mb-1">{f.subtitle}</div>
 							{/* Línea difuminada */}
-							<div className="w-full h-0.5 my-4 rounded-full features-linea-difuminada" />
+							<div className="w-full h-0.5 my-4 rounded-full linea-difuminada" />
 							<div className="text-gray-400 text-base">{f.description}</div>
 						</a>
 					))}
@@ -158,12 +158,12 @@ const Features: React.FC = () => {
 							key={idx}
 							href="#Servicios"
 							className="
-    relative group rounded-2xl border border-white/10
-    bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)]
-    p-8 flex flex-col justify-between h-full
-    transition duration-300 hover:shadow-blue-800/40 cursor-pointer
-    features-card
-  "
+    						relative group rounded-2xl border border-white/10
+    						bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)]
+    						p-8 flex flex-col justify-between h-full
+    						transition duration-300 hover:shadow-blue-800/40 cursor-pointer
+    						features-card
+  						"
 						>
 							{/* Línea azul decorativa superior */}
 							<div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-2xl" />
