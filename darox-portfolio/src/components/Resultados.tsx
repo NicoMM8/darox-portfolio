@@ -21,6 +21,8 @@ const Results: React.FC = () => {
             `}
           >
             <div className="relative w-full h-[520px] overflow-hidden rounded-xl bg-black/60 shadow-2xl group backdrop-blur-md">
+              {/* Línea azul decorativa superior, fina y sutil */}
+              <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-xl pointer-events-none opacity-70" />
               <Image
                 src={item.imageUrl}
                 alt=""

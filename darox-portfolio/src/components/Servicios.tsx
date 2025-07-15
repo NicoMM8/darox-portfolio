@@ -46,7 +46,28 @@ const Services: React.FC = () => {
             <img src="https://framerusercontent.com/images/Nx7bt7sxDAxlLsAxW9jTN1wUsY.jpeg" alt="Hombre usando tablet" className="rounded-2xl shadow-xl w-full" loading="lazy" />
           </div>
           <div className="md:w-1/2 md:pl-12">
-            <h2 className="text-sm font-medium text-indigo-600 mb-2">Nuestros Servicios</h2>
+            {/* Tag destacado tipo Framer igual que en About, Features, Proceso y Beneficios */}
+            <div
+              className="
+                relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px]
+                border border-white/10
+                bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)]
+                backdrop-blur-[2.5px]
+                mb-2 animate-fade-in-up
+                shadow
+                overflow-hidden
+                tag-destacado
+              "
+            >
+              {/* Línea azul decorativa superior, fina y sutil */}
+              <div className="absolute left-0 top-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-[10px] pointer-events-none opacity-70" />
+              {/* Bullet blanco */}
+              <span className="w-2 h-2 rounded-full bg-white inline-block border border-white/50" />
+              {/* Texto con gradiente */}
+              <span className="font-semibold text-base tag-destacado-text">
+                Nuestros Servicios
+              </span>
+            </div>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Obtén Servicios de Alta Calidad <br />
               <span className="gradient-text">Claros y Remotos.</span>

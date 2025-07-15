@@ -33,8 +33,8 @@ const About: React.FC = () => {
         {/* Imagen con borde, blur y tilt hover */}
         <div className="md:w-1/2 flex justify-center">
           <div className="relative flex flex-col w-full rounded-[30px] bg-black/90 backdrop-blur-md border border-white/20 p-2 shadow-xl overflow-hidden">
-            {/* Línea azul decorativa superior */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent" />
+            {/* Línea azul decorativa superior, más fina y sutil */}
+            <div className="absolute left-0 top-0 w-full h-0 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-[5px] pointer-events-none opacity-70" />
             
             {/* Imagen con efecto hover */}
             <div className="rounded-[19px] overflow-hidden border border-white/20 transition-transform duration-300 hover:rotate-2 hover:scale-105">
@@ -60,12 +60,23 @@ const About: React.FC = () => {
         <div className="md:w-1/2 flex flex-col gap-8 justify-center">
           {/* Tag destacado */}
           <div
-            className="inline-flex items-center gap-3 px-5 py-2 rounded-lg border border-white/10 backdrop-blur-md mb-2 animate-fade-in-up resultsblock-framer-tag"
+            className="
+              relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px]
+              border border-white/10
+              bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)]
+              backdrop-blur-[2.5px]
+              mb-2 animate-fade-in-up
+              shadow
+              overflow-hidden
+              tag-destacado
+            "
           >
+            {/* Línea azul decorativa superior */}
+            <div className="absolute left-0 top-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-[10px] pointer-events-none" />
             {/* Bullet blanco */}
-            <span className="w-2 h-2 rounded-full bg-white inline-block" />
+            <span className="w-2 h-2 rounded-full bg-white inline-block border border-white/50" />
             {/* Texto con gradiente */}
-            <span className="font-semibold text-base bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <span className="font-semibold text-base tag-destacado-text">
               Sobre DAROX
             </span>
           </div>

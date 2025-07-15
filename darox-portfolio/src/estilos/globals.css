@@ -196,7 +196,15 @@ body::before {
   line-height: 1.1;
 }
 .about-framer-tag {
-  background: linear-gradient(90deg, rgba(0,85,255,0.08) 0%, rgba(153,153,153,0.1) 100%);
+  border-style: solid;
+  border-width: 1px;
+  opacity: 1;
+}
+.about-framer-text {
+  background-image: linear-gradient(90deg, rgb(255,255,255) 0%, rgba(153,153,153,0) 350%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .about-shadow {
   box-shadow: 0px 8px 40px 0px rgba(0,85,255,0.5), 0px 0px 10px 1px rgba(255,255,255,0) inset, 0px 0px 0px 1px rgba(0,85,255,0.12);
@@ -212,3 +220,64 @@ body::before {
 .img-shadow-indigo {
   filter: drop-shadow(0 0 8px #6366f1);
 }
+
+.servicios-framer-tag {
+  border-style: solid;
+  border-width: 1px;
+  opacity: 1;
+}
+.servicios-framer-text {
+  background-image: linear-gradient(90deg, rgb(255,255,255) 0%, rgba(153,153,153,0) 350%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.proceso-framer-tag {
+  border-style: solid;
+  border-width: 1px;
+  opacity: 1;
+}
+.proceso-framer-text {
+  background-image: linear-gradient(90deg, rgb(255,255,255) 0%, rgba(153,153,153,0) 350%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Tag destacado genérico */
+.tag-destacado {
+  border-style: solid;
+  border-width: 1px;
+  opacity: 1;
+}
+
+/* Texto con gradiente genérico */
+.tag-destacado-text {
+  background-image: linear-gradient(90deg, rgb(255,255,255) 0%, rgba(153,153,153,0) 350%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Línea difuminada genérica */
+.linea-difuminada {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
+}
+
+/* Fondo icono circular Features */
+.features-icon-bg {
+  border-radius: 50px;
+  box-shadow: 2px 4px 24px 0px rgba(0,85,255,0.35);
+  background: linear-gradient(0.07deg, rgba(0,85,255,0.09) 0%, rgba(153,153,153,0.09) 100%);
+}
+
+/* Badge Features */
+.features-badge {
+  background: rgb(0,85,255);
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.15);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  color: white;
+}
+

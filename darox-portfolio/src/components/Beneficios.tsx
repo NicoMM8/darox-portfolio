@@ -6,7 +6,28 @@ const Benefits: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-12 md:mb-0 md:pr-12">
-            <h2 className="text-sm font-medium text-indigo-600 mb-2">Beneficios de DAROX</h2>
+            {/* Tag destacado tipo Framer igual que en About, Features y Proceso */}
+            <div
+              className="
+                relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px]
+                border border-white/10
+                bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)]
+                backdrop-blur-[2.5px]
+                mb-4 animate-fade-in-up
+                shadow
+                overflow-hidden
+                tag-destacado
+              "
+            >
+              {/* Línea azul decorativa superior, fina y sutil */}
+              <div className="absolute left-0 top-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-[10px] pointer-events-none opacity-70" />
+              {/* Bullet blanco */}
+              <span className="w-2 h-2 rounded-full bg-white inline-block border border-white/50" />
+              {/* Texto con gradiente */}
+              <span className="font-semibold text-base tag-destacado-text">
+                Beneficios
+              </span>
+            </div>
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
               No Solo Diseñamos, <br />
               <span className="gradient-text">Construimos.</span>

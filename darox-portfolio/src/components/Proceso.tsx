@@ -42,9 +42,29 @@ const Process: React.FC = () => {
 		<section className="py-20 px-4 sm:px-6 lg:px-8 text-white">
 			<div className="max-w-5xl mx-auto">
 				<div className="text-center mb-16">
-					<h2 className="text-sm font-medium text-indigo-600 mb-2">
-						¿Cómo Trabajamos?
-					</h2>
+					{/* Tag destacado tipo Framer igual que en About */}
+					<div
+						className="
+    relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px]
+    border border-white/10
+    bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)]
+    backdrop-blur-[2.5px]
+    mb-4 animate-fade-in-up
+    shadow
+    overflow-hidden
+    mx-auto
+    tag-destacado
+  "
+					>
+						{/* Línea azul decorativa superior, fina y sutil */}
+						<div className="absolute left-0 top-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-[10px] pointer-events-none opacity-70" />
+						{/* Bullet blanco */}
+						<span className="w-2 h-2 rounded-full bg-white inline-block border border-white/50" />
+						{/* Texto con gradiente */}
+						<span className="font-semibold text-base tag-destacado-text">
+							¿Cómo Trabajamos?
+						</span>
+					</div>
 					<h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
 						Simplificamos el Viaje <br />
 						<span className="gradient-text">
@@ -79,8 +99,10 @@ const Process: React.FC = () => {
 											duration: 0.5,
 											ease: [0.39, 0.575, 0.565, 1],
 										}}
-										className="relative bg-gradient-to-br from-black/80 to-indigo-950 rounded-2xl p-8 shadow-2xl flex flex-col h-[400px] justify-between overflow-hidden border border-indigo-900/40"
+										className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)] p-8 shadow-2xl flex flex-col h-[400px] justify-between overflow-hidden transition duration-300 hover:shadow-blue-800/40"
 									>
+										{/* Línea azul decorativa superior */}
+										<div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-2xl" />
 										{/* Fondo blur detrás del icono */}
 										<div className="absolute left-6 top-6 w-20 h-20 rounded-full bg-indigo-700/30 blur-2xl z-0"></div>
 										{/* Icono y etapa */}
@@ -93,16 +115,20 @@ const Process: React.FC = () => {
 													className="h-full w-full object-cover img-shadow-indigo"
 												/>
 											</div>
-											<span className="px-4 py-1 rounded-lg bg-indigo-800/80 text-xs font-semibold text-gray-300 shadow border border-indigo-500/30">
-												{step.etapa}
-											</span>
+											{/* Recuadro de Etapa con mismo diseño */}
+											<div className="relative flex items-center">
+												<div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-lg" />
+												<span className="px-4 py-1 rounded-lg bg-indigo-800/80 text-xs font-semibold text-gray-300 shadow border border-indigo-500/30 relative z-10">
+													{step.etapa}
+												</span>
+											</div>
 										</div>
 										{/* Título */}
 										<h4 className="text-xl font-bold text-white mb-4 drop-shadow-lg">
 											{step.titulo}
 										</h4>
-										{/* Línea difuminada */}
-										<div className="w-full h-1 mb-4 bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent rounded-full blur-[2px]" />
+										{/* Línea difuminada sin estilos inline */}
+										<div className="w-full h-0.5 mb-4 rounded-full linea-difuminada" />
 										{/* Descripción */}
 										<p className="text-gray-400 mb-6">
 											{step.descripcion}
