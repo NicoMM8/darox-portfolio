@@ -7,7 +7,6 @@ import Results from '../components/Resultados';
 import Process from '../components/Proceso';
 import Features from '../components/Features';
 import Benefits from '../components/Beneficios';
-import Stats from '../components/Estadisticas';
 import Services from '../components/Servicios';
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
       <Process />
       <Features />
       <Benefits />
-      <Stats />
       <Services />
     </>
   );
