@@ -163,13 +163,16 @@ const Process: React.FC = () => {
 								duration: 0.5,
 								ease: [0.39, 0.575, 0.565, 1],
 							}}
-							className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)] p-6 sm:p-8 shadow-2xl flex flex-col justify-between items-start overflow-hidden transition duration-300 hover:shadow-blue-800/40 h-full"
+							className="
+    							relative group rounded-2xl border border-white/10
+    							bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)]
+    							p-8 flex flex-col justify-between h-full
+    							transition duration-300 hover:shadow-blue-800/40 cursor-pointer
+    							features-card
+  							"
 						>
-							{/* Glow animado extra */}
-							<div className="pointer-events-none absolute -inset-3 z-0">
-								<div className="w-full h-full rounded-3xl bg-blue-900/40 blur-2xl animate-pulseScale"></div>
-								<div className="absolute inset-0 rounded-3xl border-2 border-blue-900/40 animate-glow border-dashed"></div>
-							</div>
+							{/* Línea azul decorativa superior */}
+							<div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-2xl" />
 							{/* Contenido */}
 							<div className="flex items-center gap-4 mb-6 relative z-10">
 								<div className="bg-indigo-900/80 rounded-xl flex items-center justify-center shadow-lg border border-indigo-400/30 transition-transform duration-300 hover:scale-105 hover:shadow-indigo-500/40 h-16 w-16 overflow-hidden">
