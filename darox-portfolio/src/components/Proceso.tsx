@@ -32,9 +32,6 @@ const steps = [
 	},
 ];
 
-const ilustracionProceso =
-	"https://framerusercontent.com/images/djbcRHCD89IflJ1okJAa1J65cuM.png";
-
 // Hook para detectar si es móvil
 function useIsMobile() {
 	const [isMobile, setIsMobile] = useState(false);
