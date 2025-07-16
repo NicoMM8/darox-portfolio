@@ -10,7 +10,7 @@ const Results: React.FC = () => {
   return (
     <section className="py-20 px-0 bg-gradient-to-b from-black/80 to-black/10 text-white">
       {/* Grid solo imágenes grandes y grises */}
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 items-end">
+      <div className="w-full px-4 sm:px-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 items-end">
         {items.map((item, i) => (
           <div
             key={item.id}
