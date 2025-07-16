@@ -17,7 +17,7 @@ const Results: React.FC = () => {
             className={`
               w-full
               transform transition-transform duration-300
-              ${i === 1 ? '-translate-y-12' : ''}
+              ${i === 1 ? 'lg:-translate-y-12' : ''}
             `}
           >
             <div className="relative w-full h-[520px] overflow-hidden rounded-xl bg-black/60 shadow-2xl group backdrop-blur-md">
