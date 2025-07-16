@@ -44,7 +44,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-[url('/images/moon.png')] bg-cover bg-center animate-[heartbeat_1.5s_ease-in-out_infinite] transform origin-center" />
 
             {/* Overlay de contraste */}
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-black/10" />
         </section>
     )
 }

@@ -57,7 +57,7 @@ const extraFeatures = [
 
 const Features: React.FC = () => {
 	return (
-		<section className="py-20 px-4 sm:px-6 lg:px-8 text-white bg-black">
+		<section className="py-20 px-4 sm:px-6 lg:px-8 text-white bg-black/10">
 			<div className="max-w-7xl mx-auto">
 				<div className="text-center mb-16">
 					{/* Tag destacado tipo Framer igual que en About y Proceso */}
