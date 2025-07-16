@@ -249,3 +249,18 @@ body::before {
   will-change: transform;
 }
 
+@keyframes pulse-word {
+  0%, 100% { opacity: 1; transform: scale(1);}
+  50% { opacity: 0.7; transform: scale(1.08);}
+}
+.pulse-word {
+  animation: pulse-word 2.5s cubic-bezier(0.4,0,0.6,1) infinite;
+}
+.pulse-delay-0 { animation-delay: 0s; }
+.pulse-delay-1 { animation-delay: 0.5s; }
+.pulse-delay-2 { animation-delay: 1s; }
+.pulse-delay-3 { animation-delay: 1.5s; }
+.pulse-delay-4 { animation-delay: 2s; }
+.pulse-delay-5 { animation-delay: 2.5s; }
+.pulse-delay-6 { animation-delay: 3s; }
+
