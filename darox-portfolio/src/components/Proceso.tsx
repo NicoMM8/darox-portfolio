@@ -87,7 +87,7 @@ const Process: React.FC = () => {
 					concepto hasta un producto completamente lanzado.
 				</p>
 			</div>
-			{/* Grid responsivo: 1 columna móvil, 2 columnas en md+ */}
+			{/* Grid responsivo: 1 columna móvil, 3 columnas en escritorio */}
 			<div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-3"} gap-6 items-stretch w-full`}>
 				{/* Tarjetas */}
 				{isMobile ? (
@@ -115,6 +115,12 @@ const Process: React.FC = () => {
 										}}
 										className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)] p-6 sm:p-8 shadow-2xl flex flex-col justify-between items-start overflow-hidden transition duration-300 hover:shadow-blue-800/40 h-full"
 									>
+										{/* Glow animado extra */}
+										<div className="pointer-events-none absolute -inset-3 z-0">
+											<div className="w-full h-full rounded-3xl bg-blue-900/40 blur-2xl animate-pulseScale"></div>
+											<div className="absolute inset-0 rounded-3xl border-2 border-blue-900/40 animate-glow border-dashed"></div>
+										</div>
+										{/* Contenido */}
 										<div className="flex items-center gap-4 mb-6 relative z-10">
 											<div className="bg-indigo-900/80 rounded-xl flex items-center justify-center shadow-lg border border-indigo-400/30 transition-transform duration-300 hover:scale-105 hover:shadow-indigo-500/40 h-16 w-16 overflow-hidden">
 												<img
@@ -162,6 +168,12 @@ const Process: React.FC = () => {
 							}}
 							className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)] p-6 sm:p-8 shadow-2xl flex flex-col justify-between items-start overflow-hidden transition duration-300 hover:shadow-blue-800/40 h-full"
 						>
+							{/* Glow animado extra */}
+							<div className="pointer-events-none absolute -inset-3 z-0">
+								<div className="w-full h-full rounded-3xl bg-blue-900/40 blur-2xl animate-pulseScale"></div>
+								<div className="absolute inset-0 rounded-3xl border-2 border-blue-900/40 animate-glow border-dashed"></div>
+							</div>
+							{/* Contenido */}
 							<div className="flex items-center gap-4 mb-6 relative z-10">
 								<div className="bg-indigo-900/80 rounded-xl flex items-center justify-center shadow-lg border border-indigo-400/30 transition-transform duration-300 hover:scale-105 hover:shadow-indigo-500/40 h-16 w-16 overflow-hidden">
 									<img
@@ -194,19 +206,6 @@ const Process: React.FC = () => {
 							</div>
 						</motion.div>
 					))
-				)}
-				{/* Imagen solo en escritorio grande */}
-				{!isMobile && (
-					<div className="hidden lg:flex col-span-1 h-full items-center justify-center">
-						<div className="w-full aspect-[3/2] overflow-hidden rounded-2xl shadow-lg bg-white/10 flex items-center justify-center mx-auto">
-							<img
-								src={ilustracionProceso}
-								alt="Ilustración del proceso"
-								className="object-cover w-full h-full"
-								loading="lazy"
-							/>
-						</div>
-					</div>
 				)}
 			</div>
 		</section>

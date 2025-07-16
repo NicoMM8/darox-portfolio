@@ -264,3 +264,12 @@ body::before {
 .pulse-delay-5 { animation-delay: 2.5s; }
 .pulse-delay-6 { animation-delay: 3s; }
 
+/* Puedes ponerlo en src/estilos/globals.css */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 16px 4px #3b82f6, 0 0 0 0 transparent; }
+  50% { box-shadow: 0 0 32px 8px #3b82f6, 0 0 0 0 transparent; }
+}
+.animate-glow {
+  animation: glow 2s infinite alternate;
+}
+
