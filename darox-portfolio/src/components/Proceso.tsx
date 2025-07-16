@@ -80,7 +80,6 @@ const Process: React.FC = () => {
 					{/* Carrusel vertical */}
 					<div className="w-full md:w-1/2 flex flex-col items-center">
 						<Swiper
-							direction="vertical"
 							slidesPerView={1}
 							spaceBetween={32}
 							pagination={{ clickable: true }}
