@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const NUM_STARS = 60;
 
@@ -6,27 +6,46 @@ function getRandom(min: number, max: number) {
   return Math.random() * (max - min) + min;
 }
 
+interface StarData {
+  left: number;
+  top: number;
+  size: number;
+  delay: number;
+}
+
 const StarsBackground: React.FC = () => {
-  const stars = Array.from({ length: NUM_STARS }).map((_, i) => {
-    const left = getRandom(0, 100);
-    const top = getRandom(0, 100);
-    const size = getRandom(1, 2.5); // más pequeñas
-    const delay = getRandom(0, 6); // Más rango para delays
+  const [stars, setStars] = useState<StarData[]>([]);
 
-    const leftClass = `star-left-${Math.round(left / 10) * 10}`;
-    const topClass = `star-top-${Math.round(top / 10) * 10}`;
-    const sizeClass = `star-size-${Math.round(size)}`;
-    const delayClass = `star-delay-${Math.round(delay)}`;
+  useEffect(() => {
+    // Solo genera las estrellas una vez en el cliente
+    const generatedStars = Array.from({ length: NUM_STARS }).map(() => ({
+      left: getRandom(0, 100),
+      top: getRandom(0, 100),
+      size: getRandom(1, 2.5),
+      delay: getRandom(0, 6),
+    }));
+    setStars(generatedStars);
+  }, []);
 
-    return (
-      <div
-        key={i}
-        className={`star ${leftClass} ${topClass} ${sizeClass} ${delayClass}`}
-      />
-    );
-  });
+  // No renderizar nada en SSR
+  if (typeof window === 'undefined') return null;
 
-  return <div className="stars-bg">{stars}</div>;
+  return (
+    <div className="stars-bg">
+      {stars.map((star, i) => {
+        const leftClass = `star-left-${Math.round(star.left / 10) * 10}`;
+        const topClass = `star-top-${Math.round(star.top / 10) * 10}`;
+        const sizeClass = `star-size-${Math.round(star.size)}`;
+        const delayClass = `star-delay-${Math.round(star.delay)}`;
+        return (
+          <div
+            key={i}
+            className={`star ${leftClass} ${topClass} ${sizeClass} ${delayClass}`}
+          />
+        );
+      })}
+    </div>
+  );
 };
 
 export default StarsBackground;
