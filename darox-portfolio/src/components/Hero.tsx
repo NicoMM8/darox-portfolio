@@ -34,7 +34,20 @@ export default function Hero() {
                 </p>
                 <a
                     href="#"
-                    className="btn-principal px-6 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-full text-base sm:text-xl md:text-2xl font-bold shadow-xl hover:scale-105 transition-transform duration-200"
+                    className="
+        px-6 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5
+        rounded-full
+        text-base sm:text-xl md:text-2xl font-bold
+        shadow-xl
+        hover:scale-105
+        transition-transform duration-200
+        about-shadow
+        text-white
+        animate-fade-in-up
+        inline-flex items-center justify-center
+        bg-gradient-to-r from-blue-600 to-blue-400
+        hover:from-blue-700 hover:to-blue-500
+    "
                 >
                     Descubre cómo
                 </a>
