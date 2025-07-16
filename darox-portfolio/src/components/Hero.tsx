@@ -30,7 +30,7 @@ export default function Hero() {
                     <span className="inline text-pink-400 font-bold pulse-word pulse-delay-3"> estrategia tecnológica </span>
                     para que conquistes
                     <span className="inline text-indigo-300 font-bold pulse-word pulse-delay-4"> clientes</span>, y
-                    <span className="inline text-purple-300 font-bold pulse-word pulse-delay-6"> libertad financiera</span>.
+                    <span className="inline text-white font-bold"> libertad financiera</span>.
                 </p>
                 <a
                     href="#"
