@@ -251,7 +251,7 @@ body::before {
 
 @keyframes pulse-word {
   0%, 100% { opacity: 1; transform: scale(1);}
-  50% { opacity: 0.85; transform: scale(1.06);}
+  50% { opacity: 0.7; transform: scale(1.08);}
 }
 .pulse-word {
   animation: pulse-word 2.5s cubic-bezier(0.4,0,0.6,1) infinite;
