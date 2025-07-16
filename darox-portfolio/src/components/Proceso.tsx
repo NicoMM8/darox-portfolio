@@ -76,15 +76,15 @@ const Process: React.FC = () => {
 						concepto hasta un producto completamente lanzado.
 					</p>
 				</div>
-				<div className="flex flex-col md:flex-row items-start gap-12">
-					{/* Carrusel vertical */}
+				<div className="flex flex-col md:flex-row items-center gap-12">
+					{/* Carrusel responsive y centrado */}
 					<div className="w-full md:w-1/2 flex flex-col items-center">
 						<Swiper
 							slidesPerView={1}
 							spaceBetween={32}
 							pagination={{ clickable: true }}
 							modules={[Pagination]}
-							className="h-[600px] max-w-xl mx-auto"
+							className="w-full max-w-xl mx-auto h-[420px] sm:h-[500px] md:h-[600px]"
 							onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
 						>
 							{steps.map((step, idx) => (
@@ -97,7 +97,7 @@ const Process: React.FC = () => {
 											duration: 0.5,
 											ease: [0.39, 0.575, 0.565, 1],
 										}}
-										className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)] p-8 shadow-2xl flex flex-col h-[400px] justify-between overflow-hidden transition duration-300 hover:shadow-blue-800/40"
+										className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)] p-6 sm:p-8 shadow-2xl flex flex-col h-[340px] sm:h-[400px] md:h-[400px] justify-between items-center overflow-hidden transition duration-300 hover:shadow-blue-800/40"
 									>
 										{/* Línea azul decorativa superior */}
 										<div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-2xl" />
@@ -148,9 +148,8 @@ const Process: React.FC = () => {
 						</Swiper>
 					</div>
 					{/* Imagen ilustrativa alineada y grande */}
-					<div className="w-full md:w-1/2 flex flex-col items-center">
-						<div className="h-[400px] w-full flex items-center justify-center overflow-hidden rounded-2xl shadow-lg bg-white/10">
-							{/* eslint-disable-next-line @next/next/no-img-element */}
+					<div className="w-full md:w-1/2 flex flex-col items-center mt-8 md:mt-0">
+						<div className="h-[200px] sm:h-[300px] md:h-[400px] w-full flex items-center justify-center overflow-hidden rounded-2xl shadow-lg bg-white/10">
 							<img
 								src={ilustracionProceso}
 								alt="Ilustración del proceso"
