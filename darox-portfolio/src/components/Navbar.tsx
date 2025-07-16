@@ -13,8 +13,7 @@ export default function Navbar() {
     { label: 'Sobre Nosotros', href: '/#sobre' },
     { label: 'Portafolio', href: '/#portafolio' },
     { label: 'Contacto', href: '/#contacto' },
-    { label: 'Preguntas', href: '/#faq' },
-    { label: 'Contáctanos', href: '/#contacto' },
+    { label: 'Preguntas', href: '/#faq' }
   ]
 
   return (
