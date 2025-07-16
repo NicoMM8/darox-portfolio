@@ -38,8 +38,7 @@ const Services: React.FC = () => {
   ]
 
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 text-white bg-black overflow-hidden">
-      {/* Fondo de estrellas igual que el resto de la web */}
+    <section className="relative py-20 px-4 sm:px-6 lg:px-8 text-white bg-black/10 overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Tag destacado tipo Framer */}
         <div className="mb-8">

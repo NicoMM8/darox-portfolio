@@ -8,7 +8,7 @@ const Results: React.FC = () => {
   const items = results.slice(0, 3)
 
   return (
-    <section className="py-20 px-0 bg-gradient-to-b from-black/80 to-black/60 text-white">
+    <section className="py-20 px-0 bg-gradient-to-b from-black/80 to-black/10 text-white">
       {/* Grid solo imágenes grandes y grises */}
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 items-end">
         {items.map((item, i) => (

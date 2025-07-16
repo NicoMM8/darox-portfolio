@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination, Mousewheel } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import { motion } from "framer-motion"; // <-- Añade esto
 
 const steps = [
@@ -84,8 +84,7 @@ const Process: React.FC = () => {
 							slidesPerView={1}
 							spaceBetween={32}
 							pagination={{ clickable: true }}
-							mousewheel={{ forceToAxis: true, sensitivity: 1 }}
-							modules={[Pagination, Mousewheel]}
+							modules={[Pagination]}
 							className="h-[600px] max-w-xl mx-auto"
 							onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
 						>
