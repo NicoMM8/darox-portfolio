@@ -48,7 +48,6 @@ function useIsMobile() {
 
 const Process: React.FC = () => {
 	const isMobile = useIsMobile();
-	const [activeIndex, setActiveIndex] = useState(0);
 
 	return (
 		<section className="container mx-auto px-2 sm:px-4 lg:px-8 py-20 text-white">
@@ -98,7 +97,6 @@ const Process: React.FC = () => {
 							mousewheel={{ forceToAxis: true, sensitivity: 1 }}
 							modules={[Pagination, Mousewheel]}
 							className="h-full"
-							onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
 						>
 							{steps.map((step, idx) => (
 								<SwiperSlide key={idx}>
