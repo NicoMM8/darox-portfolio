@@ -186,7 +186,7 @@ body::before {
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 2.5rem; /* h-10 */
+  height: 2.5rem;
   z-index: 10;
   pointer-events: none;
   background: linear-gradient(0deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.03) 60%, transparent 100%);
