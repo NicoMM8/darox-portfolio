@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 interface FooterProps {
   onInViewChange?: (inView: boolean) => void;
@@ -36,7 +37,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-10 relative z-10">
         {/* Izquierda: Logo y texto */}
         <div className="flex flex-col gap-4 md:w-1/3">
-          <a href="/" className="inline-block w-16 h-6 relative">
+          <Link href="/" className="inline-block w-16 h-6 relative">
             <Image
               src="/images/logo.png"
               alt="Logo"
@@ -44,7 +45,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
               className="object-contain"
               priority
             />
-          </a>
+          </Link>
           <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-white/15 to-transparent rounded-full my-2" />
           <p className="text-sm text-white/60 leading-relaxed">
             Hecho con amor y pasión💙
@@ -71,36 +72,36 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
         <div className="flex flex-col gap-4 md:w-1/3">
           <h4 className="text-base font-semibold text-white mb-2">Páginas</h4>
           <div className="flex flex-col gap-2">
-            <a
+            <Link
               href="/"
               className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
             >
               About
-            </a>
-            <a
+            </Link>
+            <Link
               href="/portfolio"
               className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
             >
               Portfolio
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
             >
               Contact
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#faq"
               className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
             >
               FAQ
-            </a>
+            </Link>
           </div>
         </div>
         {/* Derecha: Social */}
@@ -140,13 +141,13 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
         <span>© 2025 DAROX</span>
         <div className="flex gap-4">
-          <a href="/terms-conditions" className="hover:text-white">
+          <Link href="/terms-conditions" className="hover:text-white">
             Términos & Condiciones
-          </a>
+          </Link>
           <span className="w-6 h-0.5 bg-gradient-to-r from-transparent via-white/15 to-transparent rounded-full mx-2 hidden md:inline-block" />
-          <a href="/privacy-policy" className="hover:text-white">
+          <Link href="/privacy-policy" className="hover:text-white">
             Política de Privacidad
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
