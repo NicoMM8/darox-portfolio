@@ -64,7 +64,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
               type="submit"
               className="bg-blue-700 border-2 border-white/15 rounded-xl px-4 py-2 text-white font-semibold shadow hover:bg-blue-800 transition"
             >
-              Subscribe Us
+              Síguenos
             </button>
           </form>
         </div>
