@@ -94,7 +94,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
               href="/contact"
               className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
             >
-              Contact
+              Contacto
             </Link>
             <Link
               href="/#faq"
