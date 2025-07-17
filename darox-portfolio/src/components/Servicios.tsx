@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface Service {
   title: string
@@ -114,7 +115,14 @@ const Services: React.FC = () => {
               {/* Icono grande con fondo y sombra */}
               <div className="flex justify-center items-center mb-6 relative">
                 <div className="bg-blue-900/10 p-5 rounded-xl border border-blue-600/15 shadow-lg">
-                  <img src={service.icon} alt="Icono de Servicio" className="h-12 w-12" />
+                  <Image
+                    src={service.icon}
+                    alt="Icono de Servicio"
+                    width={48}
+                    height={48}
+                    className="h-12 w-12"
+                    priority={index === 0}
+                  />
                 </div>
                 {/* Glow animado opcional */}
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
@@ -153,9 +161,11 @@ const Services: React.FC = () => {
                 <ul className="space-y-2">
                   {service.features.map((feature, i) => (
                     <li key={i} className="flex items-center text-white/80 text-sm">
-                      <img
+                      <Image
                         src="/images/tick.png"
                         alt="tick"
+                        width={20}
+                        height={20}
                         className="h-5 w-5 mr-2 flex-shrink-0"
                         loading="lazy"
                       />
@@ -185,9 +195,11 @@ const Services: React.FC = () => {
               </a>
               {/* Imagen en la esquina inferior derecha SOLO para la última card */}
               {index === 2 && (
-                <img
+                <Image
                   src="/images/icon.svg"
                   alt="Real Business Pack"
+                  width={96}
+                  height={96}
                   className="absolute right-2 bottom-8 h-24 w-24 object-contain opacity-80 pointer-events-none"
                   loading="lazy"
                 />

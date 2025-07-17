@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -111,10 +112,13 @@ const Process: React.FC = () => {
 										{/* Contenido */}
 										<div className="flex items-center gap-4 mb-6 relative z-10">
 											<div className="bg-indigo-900/80 rounded-xl flex items-center justify-center shadow-lg border border-indigo-400/30 transition-transform duration-300 hover:scale-105 hover:shadow-indigo-500/40 h-16 w-16 overflow-hidden">
-												<img
+												<Image
 													src={step.icon}
 													alt="Icono de Etapa"
+													width={64}
+													height={64}
 													className="h-full w-full object-cover img-shadow-indigo"
+													priority
 												/>
 											</div>
 											<div className="relative flex items-center">
@@ -167,10 +171,13 @@ const Process: React.FC = () => {
 							{/* Contenido */}
 							<div className="flex items-center gap-4 mb-6 relative z-10">
 								<div className="bg-indigo-900/80 rounded-xl flex items-center justify-center shadow-lg border border-indigo-400/30 transition-transform duration-300 hover:scale-105 hover:shadow-indigo-500/40 h-16 w-16 overflow-hidden">
-									<img
+									<Image
 										src={step.icon}
 										alt="Icono de Etapa"
+										width={64}
+										height={64}
 										className="h-full w-full object-cover img-shadow-indigo"
+										priority
 									/>
 								</div>
 								<div className="relative flex items-center">
