@@ -102,14 +102,7 @@ const Process: React.FC = () => {
 						>
 							{steps.map((step, idx) => (
 								<SwiperSlide key={idx}>
-									<motion.div
-										key={activeIndex}
-										initial={{ opacity: 0, y: 40, scale: 0.95 }}
-										animate={{ opacity: 1, y: 0, scale: 1 }}
-										transition={{
-											duration: 0.5,
-											ease: [0.39, 0.575, 0.565, 1],
-										}}
+									<div
 										className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)] p-6 sm:p-8 shadow-2xl flex flex-col justify-between items-start overflow-hidden transition duration-300 hover:shadow-blue-800/40 h-full"
 									>
 										{/* Glow animado extra */}
@@ -148,7 +141,7 @@ const Process: React.FC = () => {
 												</span>
 											))}
 										</div>
-									</motion.div>
+									</div>
 								</SwiperSlide>
 							))}
 						</Swiper>
