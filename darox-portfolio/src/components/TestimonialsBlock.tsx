@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const testimonials = [
   {
@@ -6,28 +6,28 @@ const testimonials = [
     position: "Creative Director & Lead Designer",
     image: "https://framerusercontent.com/images/GTWhJyJde9nAeuMXqgYJh6jQhrU.jpg",
     quote:
-      "Trabajar con Meily fue una experiencia fluida. Su capacidad para unir creatividad y funcionalidad resultó en diseños que no solo lucen increíbles, sino que generan engagement real. ¡Muy recomendada!",
+      "Trabajar con DAROX fue una experiencia fluida. Su capacidad para unir creatividad y funcionalidad resultó en diseños que no solo lucen increíbles, sino que generan engagement real. ¡Muy recomendada!",
   },
   {
     name: "June Lee",
     position: "CEO de GreenRoots",
     image: "https://framerusercontent.com/images/c5E9pkEhKO6BmnqFuXLWa9Xqw34.png",
     quote:
-      "El enfoque estratégico de Meily llevó nuestra visión de marca a otro nivel. El packaging y los elementos que desarrolló elevaron nuestra estética y se alinearon con nuestros valores de sostenibilidad.",
+      "El enfoque estratégico de DAROX llevó nuestra visión de marca a otro nivel. El packaging y los elementos que desarrolló elevaron nuestra estética y se alinearon con nuestros valores de sostenibilidad.",
   },
   {
     name: "Jona Carter",
     position: "Founder de EcoLux",
     image: "https://framerusercontent.com/images/hSbSnYWGLq3elsCJfJAmFGgQZOc.png",
     quote:
-      "Cada proyecto que toca Meily se convierte en una mezcla perfecta de diseño y propósito. El packaging reflejó nuestra misión eco y destacó nuestros productos en los estantes.",
+      "Cada proyecto que toca DAROX se convierte en una mezcla perfecta de diseño y propósito. El packaging reflejó nuestra misión eco y destacó nuestros productos en los estantes.",
   },
   {
     name: "Sofia Toms",
     position: "Founder at GreenK Studios",
     image: "https://framerusercontent.com/images/VG4Ga2U7ZktrC75M3Vg8eUynj4M.png",
     quote:
-      "Los diseños de Meily hablan por sí solos: audaces, estratégicos e impactantes. Entendió nuestra marca y entregó conceptos que resonaron con nuestro público objetivo.",
+      "Los diseños de DAROX hablan por sí solos: audaces, estratégicos e impactantes. Entendió nuestra marca y entregó conceptos que resonaron con nuestro público objetivo.",
   },
 ];
 
@@ -37,12 +37,9 @@ const stats = [
   { value: "15+", label: "Años de experiencia." },
 ];
 
+const animationDuration = 30; // velocidad fija
+
 const TestimonialsBlock: React.FC = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  // Duración normal y lenta
-  const animationDuration = isHovered ? 60 : 30;
-
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 text-white bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] backdrop-blur-[2.5px] overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col gap-16">
@@ -79,18 +76,8 @@ const TestimonialsBlock: React.FC = () => {
         </div>
         {/* Carrusel infinito */}
         <div className="w-full flex flex-col items-center">
-          <div
-            className="relative w-full overflow-hidden"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <div
-              className="flex gap-8 animate-[scroll-carousel_linear_infinite]"
-              style={{
-                width: "max-content",
-                animationDuration: `${animationDuration}s`,
-              }}
-            >
+          <div className="relative w-full overflow-hidden">
+            <div className="flex gap-8 animate-scroll-carousel w-max">
               {[...testimonials, ...testimonials].map((t, i) => (
                 <div
                   key={i}
@@ -102,11 +89,8 @@ const TestimonialsBlock: React.FC = () => {
                     transition duration-300 hover:scale-[1.03] hover:shadow-2xl
                     min-w-[90vw] max-w-[95vw] sm:min-w-[420px] sm:max-w-lg lg:min-w-[520px] lg:max-w-2xl
                     testimonial-card
+                    min-h-[480px] flex-none
                   "
-                  style={{
-                    minHeight: 480,
-                    flex: "0 0 auto",
-                  }}
                 >
                   {/* Línea azul decorativa superior */}
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-2xl pointer-events-none opacity-70" />
@@ -118,7 +102,6 @@ const TestimonialsBlock: React.FC = () => {
                         src={t.image}
                         alt={t.name}
                         className="h-24 w-24 object-cover rounded-full img-shadow-indigo"
-                        style={{ borderRadius: "50%" }}
                       />
                     </div>
                   </div>

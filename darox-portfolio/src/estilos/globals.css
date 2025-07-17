@@ -57,6 +57,9 @@ body::before {
 .animate-\[scroll-carousel_linear_infinite\] {
   animation: scroll-carousel linear infinite;
 }
+.animate-scroll-carousel {
+  animation: scroll-carousel 30s linear infinite;
+}
 
 .testimonial-card:hover {
   transform: translateY(-10px);
