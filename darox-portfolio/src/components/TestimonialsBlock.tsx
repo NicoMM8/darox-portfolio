@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -37,7 +38,6 @@ const stats = [
   { value: "15+", label: "Años de experiencia." },
 ];
 
-const animationDuration = 30; // velocidad fija
 
 const TestimonialsBlock: React.FC = () => {
   return (
@@ -98,9 +98,11 @@ const TestimonialsBlock: React.FC = () => {
                   {/* Imagen circular con borde y sombra, SIN glow */}
                   <div className="flex justify-center items-center mb-6 relative">
                     <div className="bg-white/10 p-5 rounded-xl border border-white/20 shadow-lg">
-                      <img
+                      <Image
                         src={t.image}
                         alt={t.name}
+                        width={96}
+                        height={96}
                         className="h-24 w-24 object-cover rounded-full img-shadow-indigo"
                       />
                     </div>
