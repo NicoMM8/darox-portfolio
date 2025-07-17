@@ -9,6 +9,7 @@ import Features from '../components/Features';
 import Benefits from '../components/Beneficios';
 import Services from '../components/Servicios';
 import TestimonialsBlock from '../components/TestimonialsBlock';
+import Questions from '../components/Questions';
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Benefits />
       <Services />
       <TestimonialsBlock />
+      <Questions />
     </>
   );
 }

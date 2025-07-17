@@ -36,8 +36,11 @@ body::before {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  /* Evita cortes */
+  overflow: visible;
+  line-height: 1.2;
+  word-break: break-word;
 }
-
 
 .logo-carousel {
   display: flex;
