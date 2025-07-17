@@ -43,7 +43,7 @@ const extraFeatures = [
 		badge: "",
 		subtitle: "Siempre disponibles",
 		description:
-			"Nuestro Equipo siempre está disponible para cualquier duda o solución",
+			"Nuestro Equipo siempre está disponible para cualquier duda o solución.",
 	},
 	{
 		icon: "	https://framerusercontent.com/images/Iwdftj1FguNyuJzFy1omuAPYcc.svg",

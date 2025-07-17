@@ -35,7 +35,7 @@ const Services: React.FC = () => {
       price: "980€",
       duration: "3 - 4 Semanas",
       features: [
-        "Todo lo del Start Pack",
+        "Todo lo incluido en el Start Pack",
         "Desarrollo de propuesta de valor, tono de marca y storytelling",
         "Página web profesional (One Page con scroll fluido)",
         "Diseño responsive + copy estratégico",
@@ -51,9 +51,9 @@ const Services: React.FC = () => {
       price: "1.950€",
       duration: "4 - 6 Semanas",
       features: [
-        "Todo lo del Grow Pack",
+        "Todo lo incluido en el Grow Pack",
         "Branding avanzado (motion logo, versión animada + versiones para apps/productos físicos)",
-        "Sitio web completo (hasta 5 secciones, con blog o portafolio si aplica)",
+        "Sitio web completo (hasta 5 secciones, con blog o portfolio si aplica)",
         "Implementación de embudo de conversión con automatización (correo, CRM, IA)",
         "Calendario editorial + asesoramiento de contenido",
         "1 mes de seguimiento personalizado para ayudarte a lanzar todo"

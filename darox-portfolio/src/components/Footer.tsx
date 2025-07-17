@@ -48,7 +48,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
           </Link>
           <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-white/15 to-transparent rounded-full my-2" />
           <p className="text-sm text-white/60 leading-relaxed">
-            Hecho con amor y pasión💙
+            Hecho con amor y pasión 💙
             <br />
             <span>- DAROX.</span>
           </p>
