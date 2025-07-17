@@ -46,7 +46,7 @@ const ResultsBlock: React.FC = () => (
 
       {/* Texto central */}
       <p className="text-lg text-center text-white/70 mb-4 animate-fade-in-up">
-        Al final de todo lo que hacemos hay un compromiso con la entrega de resultados medibles que impulsan tu éxito.
+        Al final de todo, lo que hacemos hay un compromiso con la entrega de resultados medibles que impulsan tu éxito.
       </p>
 
       {/* Botón Framer */}
