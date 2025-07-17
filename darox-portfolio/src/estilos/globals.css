@@ -54,9 +54,8 @@ body::before {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
-.animate-scroll-carousel {
-  animation: scroll-carousel 40s linear infinite;
+.animate-\[scroll-carousel_linear_infinite\] {
+  animation: scroll-carousel linear infinite;
 }
 
 .testimonial-card:hover {
@@ -280,5 +279,12 @@ body::before {
 }
 .animate-glow {
   animation: glow 2s infinite alternate;
+}
+
+.dev-tools-indicator-item {
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;     
+    user-select: none;         
 }
 
