@@ -38,7 +38,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
         <div className="flex flex-col gap-4 md:w-1/3">
           <a href="/" className="inline-block w-16 h-6 relative">
             <Image
-              src="https://framerusercontent.com/images/wQMKSnnnv6vhQZMcsArHcFBUlQ.svg"
+              src="/images/logo.png"
               alt="Logo"
               fill
               className="object-contain"
