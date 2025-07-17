@@ -90,15 +90,15 @@ const TestimonialsBlock: React.FC = () => (
                 className="
     relative group rounded-2xl border border-white/10
     bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)]
-    shadow-xl p-8 flex flex-col overflow-hidden
+    shadow-xl p-6 sm:p-8 flex flex-col overflow-hidden
     backdrop-blur-[2.5px]
     transition duration-300 hover:scale-[1.03] hover:shadow-2xl
-    min-w-[520px] max-w-2xl
+    min-w-[90vw] max-w-[95vw] sm:min-w-[420px] sm:max-w-lg lg:min-w-[520px] lg:max-w-2xl
     testimonial-card
   "
                 style={{
-                  minHeight: 580,
-                  flex: "0 0 520px",
+                  minHeight: 480,
+                  flex: "0 0 auto",
                 }}
               >
                 {/* Línea azul decorativa superior */}
