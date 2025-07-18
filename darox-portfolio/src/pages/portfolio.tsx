@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
-import { results } from '../data/results'
+import { results, Result } from '../data/results'
 import { motion, useViewportScroll, useTransform, useSpring } from 'framer-motion'
 import Image from 'next/image'
 import { useRef } from 'react'
 
-function PortfolioItem({ item, idx, total }: { item: any, idx: number, total: number }) {
+function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total: number }) {
   const ref = useRef(null)
   const { scrollY } = useViewportScroll()
   const start = idx * window.innerHeight * 0.7
