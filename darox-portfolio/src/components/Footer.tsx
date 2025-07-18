@@ -86,36 +86,37 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
           <div className="flex flex-col gap-2">
             <Link
               href="/"
-              className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
+              className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
+              className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
               About
             </Link>
             <Link
               href="/portfolio"
-              className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
+              className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
               Portfolio
             </Link>
             <Link
               href="/contact"
-              className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
+              className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
               Contacto
             </Link>
             <Link
               href="/#faq"
-              className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
+              className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
               FAQ
             </Link>
           </div>
         </div>
+
         {/* Derecha: Social */}
         <div className="flex flex-col gap-4 md:w-1/3">
           <h4 className="text-base font-semibold text-white mb-2">Social</h4>
@@ -124,7 +125,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
               href="https://x.com/MandroDesign"
               target="_blank"
               rel="noopener"
-              className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
+              className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
               Twitter (X)
             </a>
@@ -132,7 +133,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
               href="https://www.instagram.com/"
               target="_blank"
               rel="noopener"
-              className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
+              className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
               Instagram
             </a>
@@ -140,7 +141,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
               href="https://www.youtube.com/"
               target="_blank"
               rel="noopener"
-              className="text-white/60 hover:text-white transition bg-clip-text bg-gradient-to-r from-white to-gray-400"
+              className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
               Youtube
             </a>
