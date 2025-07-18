@@ -298,3 +298,19 @@ body::before {
   background: radial-gradient(ellipse at 40% 20%, #0a1a33 0%, #0a1a33 40%, #0e1d3a 70%, #0e1d3a 100%);
 }
 
+select,
+select option {
+  background-color: #18181b !important; /* similar a bg-neutral-900 */
+  color: #fff !important;
+}
+
+select option[disabled] {
+  color: #a1a1aa !important; /* similar a text-white/40 */
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #2563eb; /* azul Tailwind */
+  border-color: #2563eb;
+}
+

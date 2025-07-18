@@ -14,8 +14,15 @@ export default function Contact() {
 
       <Navbar />
 
-      <main className="min-h-screen w-full flex items-start justify-center pt-24 pb-16 px-4 bg-radial-darox">
-        <div className="w-full max-w-4xl">
+      <main className="min-h-screen w-full flex items-start justify-center pt-24 pb-16 px-4 bg-radial-darox relative overflow-hidden">
+        {/* Fondo imagen tipo Hero */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div
+            className="w-full h-full bg-[url('/images/moon.png')] bg-cover bg-[center_top]"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        <div className="w-full max-w-4xl relative z-10">
           {/* Badge y título */}
           <div className="flex flex-col items-center gap-6 mb-12">
             <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-2 shadow">
@@ -116,18 +123,23 @@ export default function Contact() {
                     required
                   />
                 </div>
-                <div className="flex flex-col flex-1 gap-2">
+                <div className="flex flex-col flex-1 gap-2 relative">
                   <label htmlFor="tipo" className="text-white font-medium text-sm">
                     ¿Cuál es el tipo de tu empresa?*
                   </label>
                   <select
                     id="tipo"
                     name="tipo"
-                    className="bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-700 transition"
+                    className="
+                      bg-neutral-900 border border-white/10 rounded-2xl px-4 py-3 pr-10
+                      text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-700 transition
+                      appearance-none
+                      cursor-pointer
+                    "
                     required
                     defaultValue=""
                   >
-                    <option value="" disabled>
+                    <option value="" disabled className="text-white/40">
                       Selecciona categoría
                     </option>
                     <option value="Agencia">Agencia</option>
@@ -136,6 +148,12 @@ export default function Contact() {
                     <option value="Negocio">Negocio</option>
                     <option value="Otro">Otro</option>
                   </select>
+                  {/* Icono flecha */}
+                  <div className="pointer-events-none absolute right-3 top-11 md:top-11 flex items-center h-5">
+                    <svg className="w-4 h-4 text-white/60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <div className="flex flex-col gap-2">

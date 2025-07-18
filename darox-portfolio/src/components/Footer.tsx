@@ -122,7 +122,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
           <h4 className="text-base font-semibold text-white mb-2">Social</h4>
           <div className="flex flex-col gap-2">
             <a
-              href="https://x.com/MandroDesign"
+              href="https://x.com"
               target="_blank"
               rel="noopener"
               className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"

@@ -12,7 +12,7 @@ export default function Navbar() {
     { label: 'Inicio', href: '/' },
     { label: 'Sobre Nosotros', href: '/#sobre' },
     { label: 'Portafolio', href: '/#portfolio' },
-    { label: 'Contacto', href: '/#contact' },
+    { label: 'Contacto', href: '/contact' },
     { label: 'Preguntas', href: '/#faq' }
   ]
 
