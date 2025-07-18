@@ -294,3 +294,7 @@ body::before {
     user-select: none;         
 }
 
+.bg-radial-darox {
+  background: radial-gradient(ellipse at 40% 20%, #0a1a33 0%, #0a1a33 40%, #0e1d3a 70%, #0e1d3a 100%);
+}
+
