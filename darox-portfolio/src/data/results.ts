@@ -8,6 +8,9 @@ export interface Result {
   logoUrl: string
   description: string
   metrics: { value: string; label: string }[]
+  url: string                // Añadido
+  year: number               // Añadido
+  categories: string[]       // Añadido
 }
 
 export const results: Result[] = [
@@ -25,6 +28,9 @@ export const results: Result[] = [
       { value: '30%', label: 'Aumento en Ventas' },
       { value: '40%', label: 'Impulso en Retención' },
     ],
+    url: 'https://crimsonstudio.com',      // Ejemplo
+    year: 2024,                            // Ejemplo
+    categories: ['E-Commerce', 'Portfolio'] // Ejemplo
   },
   {
     id: 'raven',
@@ -39,6 +45,9 @@ export const results: Result[] = [
       { value: '25%', label: 'Tasas de Conversión' },
       { value: '50%', label: 'Reducción en CPA' },
     ],
+    url: 'https://ravencompany.com',
+    year: 2023,
+    categories: ['Automatización', 'Empresa']
   },
   {
     id: 'gotham',
@@ -54,5 +63,8 @@ export const results: Result[] = [
       { value: '60%', label: 'Aumento de Tráfico' },
       { value: '35%', label: 'Crecimiento en Ventas' },
     ],
+    url: 'https://gothamwonder.com',
+    year: 2022,
+    categories: ['Branding', 'Campañas']
   },
 ]
