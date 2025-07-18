@@ -3,13 +3,21 @@ import Navbar from '../components/Navbar'
 import { results, Result } from '../data/results'
 import { motion, useViewportScroll, useTransform, useSpring } from 'framer-motion'
 import Image from 'next/image'
-import { useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total: number }) {
   const ref = useRef(null)
   const { scrollY } = useViewportScroll()
-  const start = idx * window.innerHeight * 0.7
-  const end = start + window.innerHeight * 0.8
+  const [vh, setVh] = useState(0)
+
+  useEffect(() => {
+    // Solo se ejecuta en el cliente
+    setVh(window.innerHeight)
+  }, [])
+
+  // Si aún no sabemos el alto, no renderizamos el efecto
+  const start = vh ? idx * vh * 0.7 : 0
+  const end = vh ? start + vh * 0.8 : 1
 
   const scale = useSpring(
     useTransform(scrollY, [start, end], [0.85, 1]),
