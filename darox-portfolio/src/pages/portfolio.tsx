@@ -79,14 +79,14 @@ function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total:
             </span>
 
             {/* Barra inferior de información */}
-            <div className="absolute left-6 right-6 bottom-6 flex items-center gap-4 bg-black/80 rounded-2xl px-6 py-4 backdrop-blur-md border border-white/10 pointer-events-none">
+            <div className="absolute left-4 right-4 bottom-4 flex flex-col md:flex-row md:items-center gap-3 md:gap-4 bg-black/80 rounded-2xl px-4 md:px-6 py-4 backdrop-blur-md border border-white/10 pointer-events-none">
               {/* Nombre y año */}
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col md:flex-row items-center gap-1 md:gap-2 w-full md:w-auto justify-center md:justify-start text-center md:text-left">
                 <span className="bg-neutral-900 text-white text-base font-semibold px-3 py-1 rounded-lg">{item.title}</span>
                 <span className="text-white/60 text-sm font-medium">· {item.year}</span>
               </div>
               {/* Barra de progreso */}
-              <div className="flex-1 mx-4">
+              <div className="w-full md:flex-1 mx-0 md:mx-4 mt-2 md:mt-0">
                 <div className="w-full h-4 bg-neutral-800 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-gradient-to-r from-blue-600 to-blue-400"
@@ -95,7 +95,7 @@ function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total:
                 </div>
               </div>
               {/* Categorías */}
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2 justify-center md:justify-end w-full md:w-auto">
                 {item.categories?.map((cat: string) => (
                   <span
                     key={cat}
