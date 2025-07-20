@@ -78,7 +78,7 @@ export default function Proyecto3() {
                 <span className="block text-white font-semibold">Confidencial</span>
               </div>
               {/* Botón */}
-              <a
+              <Link
                 href="/contact"
                 className="
                   inline-flex items-center justify-center
@@ -96,7 +96,7 @@ export default function Proyecto3() {
                 "
               >
                 Reserva una llamada
-              </a>
+              </Link>
             </div>
           </div>
         </div>
