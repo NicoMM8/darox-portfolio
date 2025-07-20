@@ -131,25 +131,39 @@ export default function ProyectoMiel() {
               <span className="gradient-text font-semibold">Responsividad:</span> experiencia consistente y fluida tanto en escritorio como en móvil.
             </li>
           </ul>
-          <div className="flex flex-col md:flex-row gap-12">
+          <div className="flex flex-col md:flex-row gap-12 mt-12 md:mt-20">
             {/* Bloque Performance */}
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-2">
-                <h3 className="text-2xl font-bold text-white"><span className="gradient-text">Performance</span></h3>
+            <div className="flex-1 mb-8 md:mb-0 md:mr-8">
+              <div className="flex items-center gap-3 mb-4 md:mb-6">
+                <h3 className="text-2xl font-bold text-white">
+                  <span className="gradient-text">Performance</span>
+                </h3>
                 <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-md">SEO</span>
               </div>
-              <ul className="text-gray-200 text-base space-y-2 list-disc list-inside">
-                <li><span className="gradient-text font-semibold">Carga rápida:</span> optimización de imágenes, scripts y recursos.</li>
-                <li><span className="gradient-text font-semibold">Código optimizado:</span> prácticas limpias y eficientes para reducir elementos innecesarios.</li>
-                <li><span className="gradient-text font-semibold">Escalabilidad:</span> diseño preparado para soportar mayor tráfico.</li>
+              <ul className="text-gray-200 text-base space-y-4 md:space-y-6 list-disc list-inside">
+                <li>
+                  <span className="gradient-text font-semibold">Carga rápida:</span> optimización de imágenes, scripts y recursos.
+                </li>
+                <li>
+                  <span className="gradient-text font-semibold">Código optimizado:</span> prácticas limpias y eficientes para reducir elementos innecesarios.
+                </li>
+                <li>
+                  <span className="gradient-text font-semibold">Escalabilidad:</span> diseño preparado para soportar mayor tráfico.
+                </li>
               </ul>
             </div>
             {/* Bloque Responsividad */}
             <div className="flex-1">
-              <h3 className="text-2xl font-bold text-white mb-2"><span className="gradient-text">Responsividad</span></h3>
-              <ul className="text-gray-200 text-base space-y-2 list-disc list-inside">
-                <li><span className="gradient-text font-semibold">Adaptabilidad total:</span> el sitio se ajusta perfectamente a móviles y escritorios.</li>
-                <li><span className="gradient-text font-semibold">Interfaz intuitiva:</span> navegación fluida y consistente en cualquier dispositivo.</li>
+              <h3 className="text-2xl font-bold text-white mb-4 md:mb-6">
+                <span className="gradient-text">Responsividad</span>
+              </h3>
+              <ul className="text-gray-200 text-base space-y-4 md:space-y-6 list-disc list-inside">
+                <li>
+                  <span className="gradient-text font-semibold">Adaptabilidad total:</span> el sitio se ajusta perfectamente a móviles y escritorios.
+                </li>
+                <li>
+                  <span className="gradient-text font-semibold">Interfaz intuitiva:</span> navegación fluida y consistente en cualquier dispositivo.
+                </li>
               </ul>
             </div>
           </div>
