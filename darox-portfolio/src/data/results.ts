@@ -28,7 +28,7 @@ export const results: Result[] = [
       { value: '30%', label: 'Aumento en Ventas' },
       { value: '40%', label: 'Impulso en Retención' },
     ],
-    url: 'https://crimsonstudio.com',      // Ejemplo
+    url: '/proyectos/miel',      // Ejemplo
     year: 2024,                            // Ejemplo
     categories: ['E-Commerce', 'Portfolio'] // Ejemplo
   },
@@ -45,7 +45,7 @@ export const results: Result[] = [
       { value: '25%', label: 'Tasas de Conversión' },
       { value: '50%', label: 'Reducción en CPA' },
     ],
-    url: 'https://ravencompany.com',
+    url: '/proyectos/proyecto2',
     year: 2023,
     categories: ['Automatización', 'Empresa']
   },
@@ -63,7 +63,7 @@ export const results: Result[] = [
       { value: '60%', label: 'Aumento de Tráfico' },
       { value: '35%', label: 'Crecimiento en Ventas' },
     ],
-    url: 'https://gothamwonder.com',
+    url: '/proyectos/proyecto3',
     year: 2022,
     categories: ['Branding', 'Campañas']
   },

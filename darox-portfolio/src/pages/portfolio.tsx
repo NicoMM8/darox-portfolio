@@ -4,6 +4,7 @@ import { results, Result } from '../data/results'
 import { motion, useViewportScroll, useTransform, useSpring } from 'framer-motion'
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
+import Link from 'next/link'
 
 function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total: number }) {
   const ref = useRef(null)
@@ -29,6 +30,12 @@ function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total:
   )
   const filter = useTransform(grayscale, (g: number) => `grayscale(${g})`)
 
+  // Asigna el enlace según el orden de aparición
+  let href = '#'
+  if (idx === 0) href = '/proyectos/miel'
+  else if (idx === 1) href = '/proyectos/proyecto2'
+  else if (idx === 2) href = '/proyectos/proyecto3'
+
   return (
     <div
       key={item.id}
@@ -44,21 +51,15 @@ function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total:
         transition={{ duration: 0.8, ease: "easeOut" }}
         style={{ scale }}
       >
-        <a
-          href={item.url}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href={href}
           className="block w-full h-full relative group focus:outline-none"
           tabIndex={0}
           aria-label={`Ver proyecto ${item.title}`}
         >
           <motion.div
-            style={{
-              width: '100%',
-              height: '100%',
-              position: 'relative',
-              filter
-            }}
+            className="portfolio-img-anim"
+            style={{ filter }}
           >
             <Image
               src={item.imageUrl}
@@ -70,7 +71,7 @@ function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total:
               draggable={false}
             />
 
-            {/* Botón "Ver ahora" (opcional, solo decorativo) */}
+            {/* Botón "Ver ahora" */}
             <span
               className="absolute left-8 top-8 bg-white text-black text-sm font-semibold px-4 py-1.5 rounded-full shadow group-hover:bg-gray-100 transition pointer-events-none"
             >
@@ -106,7 +107,7 @@ function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total:
               </div>
             </div>
           </motion.div>
-        </a>
+        </Link>
       </motion.div>
     </div>
   )
