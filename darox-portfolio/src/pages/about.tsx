@@ -118,13 +118,13 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-8 justify-center">
             <div className="bg-black/80 p-6 rounded-3xl border border-white/10 shadow-xl max-w-xs mx-auto">
               <p className="text-gray-300 mb-4">
-                "DAROX transformó nuestra presencia en línea. Su equipo es increíblemente talentoso y dedicado."
+                &quot;DAROX transformó nuestra presencia en línea. Su equipo es increíblemente talentoso y dedicado.&quot;
               </p>
               <p className="font-semibold text-white">- Cliente Satisfecho</p>
             </div>
             <div className="bg-black/80 p-6 rounded-3xl border border-white/10 shadow-xl max-w-xs mx-auto">
               <p className="text-gray-300 mb-4">
-                "Gracias a DAROX, nuestro negocio ha crecido exponencialmente. No podríamos estar más felices con los resultados."
+                &quot;Gracias a DAROX, nuestro negocio ha crecido exponencialmente. No podríamos estar más felices con los resultados.&quot;
               </p>
               <p className="font-semibold text-white">- Empresario Exitoso</p>
             </div>
@@ -147,26 +147,7 @@ export default function About() {
           </Link>
         </section>
 
-        {/* Footer */}
-        <footer className="w-full bg-black/80 rounded-3xl border border-white/10 p-8 md:p-16 text-center">
-          <p className="text-gray-400 mb-4">
-            © 2025 DAROX. Todos los derechos reservados.
-          </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <Link href="/" className="text-blue-400 hover:underline">
-              Inicio
-            </Link>
-            <Link href="/about" className="text-blue-400 hover:underline">
-              Sobre nosotros
-            </Link>
-            <Link href="/services" className="text-blue-400 hover:underline">
-              Servicios
-            </Link>
-            <Link href="/contact" className="text-blue-400 hover:underline">
-              Contáctanos
-            </Link>
-          </div>
-        </footer>
+        
       </main>
     </>
   )
