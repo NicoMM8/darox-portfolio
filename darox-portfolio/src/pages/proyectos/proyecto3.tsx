@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Navbar from '../../components/Navbar'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Proyecto3() {
   return (
@@ -238,7 +239,7 @@ export default function Proyecto3() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Miel */}
-            <a
+            <Link
               href="/proyectos/miel"
               className="group block rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black/60 hover:scale-[1.025] transition"
             >
@@ -257,9 +258,9 @@ export default function Proyecto3() {
                   Proyecto de branding, packaging y web para una marca de miel premium.
                 </p>
               </div>
-            </a>
+            </Link>
             {/* Proyecto 2 */}
-            <a
+            <Link
               href="/proyectos/proyecto2"
               className="group block rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black/60 hover:scale-[1.025] transition"
             >
@@ -278,7 +279,7 @@ export default function Proyecto3() {
                   Branding, desarrollo y estrategia digital para una marca innovadora.
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
         </section>
       </main>

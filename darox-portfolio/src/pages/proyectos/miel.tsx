@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Navbar from '../../components/Navbar'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function ProyectoMiel() {
   return (
@@ -76,8 +77,8 @@ export default function ProyectoMiel() {
                 <span className="block text-gray-400 text-sm mb-1">Cliente</span>
                 <span className="block text-white font-semibold">Confidencial</span>
               </div>
-              {/* Botón */}
-              <a
+              {/* Botón de contacto */}
+              <Link
                 href="/contact"
                 className="
                   inline-flex items-center justify-center
@@ -95,7 +96,7 @@ export default function ProyectoMiel() {
                 "
               >
                 Reserva una llamada
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -238,7 +239,7 @@ export default function ProyectoMiel() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Proyecto 2 */}
-            <a
+            <Link
               href="/proyectos/proyecto2"
               className="group block rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black/60 hover:scale-[1.025] transition"
             >
@@ -257,9 +258,9 @@ export default function ProyectoMiel() {
                   Branding, desarrollo y estrategia digital para una marca innovadora.
                 </p>
               </div>
-            </a>
+            </Link>
             {/* Proyecto 3 */}
-            <a
+            <Link
               href="/proyectos/proyecto3"
               className="group block rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black/60 hover:scale-[1.025] transition"
             >
@@ -278,7 +279,7 @@ export default function ProyectoMiel() {
                   Proyecto integral de transformación digital y diseño avanzado para una marca líder.
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
         </section>
       </main>
