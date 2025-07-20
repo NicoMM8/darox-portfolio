@@ -225,7 +225,7 @@ export default function ProyectoMiel() {
           <div className="flex flex-col md:flex-row gap-0 w-full max-w-6xl px-4">
             <div className="flex-1">
               <Image
-                src="/images/miel1.png"
+                src="/images/miel2.png"
                 alt="Detalle Miel 1"
                 width={1200}
                 height={800}
@@ -235,7 +235,7 @@ export default function ProyectoMiel() {
             </div>
             <div className="flex-1">
               <Image
-                src="/images/miel1.png"
+                src="/images/miel3.png"
                 alt="Detalle Miel 2"
                 width={1200}
                 height={800}
@@ -259,7 +259,7 @@ export default function ProyectoMiel() {
             >
               <div className="relative w-full h-64">
                 <Image
-                  src="/images/miel1.png"
+                  src="/images/miel2.png"
                   alt="Proyecto 2"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
