@@ -139,6 +139,8 @@ export default function About() {
               <img
                 src="https://img.youtube.com/vi/nziHP21GXRw/maxresdefault.jpg"
                 alt="DAROX video"
+                width={1280}
+                height={720}
                 className="w-full h-full object-cover group-hover:brightness-75 transition"
                 loading="lazy"
               />
@@ -172,7 +174,6 @@ export default function About() {
                   height="100%"
                   src="https://www.youtube.com/embed/nziHP21GXRw?autoplay=1"
                   title="YouTube video"
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="w-full h-full"
@@ -222,7 +223,7 @@ export default function About() {
                 className="mt-2 text-blue-400 hover:underline text-sm font-medium transition-transform duration-300 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 onClick={() => {
                   setShowFull(v => !v);
-                  // Efecto scroll suave al bloque (opcional, si quieres que siempre enfoque el bloque)
+                  // Efecto scroll suave al bloque
                   const el = document.getElementById('bloque-dario');
                   if (el) {
                     el.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -234,9 +235,11 @@ export default function About() {
             </div>
             {/* Imagen a la derecha */}
             <div className="flex-1 flex justify-center items-center">
-              <img
+              <Image
                 src="/images/bio.png"
                 alt="Darío, CEO de Darox BM"
+                width={320}
+                height={320}
                 className="rounded-2xl border border-white/10 shadow-lg max-w-xs w-full object-cover bg-black min-h-[220px]"
                 loading="lazy"
               />
@@ -247,7 +250,7 @@ export default function About() {
         <section
           className="w-full relative py-20 px-0 sm:px-0 lg:px-0 text-white overflow-hidden"
         >
-          {/* Bloque de características tipo Framer */}
+          {/* Bloque de características */}
           <section className="relative w-full py-24 px-0 flex flex-col items-center justify-center overflow-visible">
             {/* Detalle decorativo SVG izquierda */}
             <div className="hidden md:block absolute left-0 top-0 h-40 w-64 -translate-y-1/2 -translate-x-1/3 pointer-events-none opacity-60">
