@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import { useState } from 'react'
+import Image from 'next/image';
 
 export default function About() {
   const [showVideo, setShowVideo] = useState(false)
@@ -78,8 +79,7 @@ export default function About() {
         loop
         muted
         playsInline
-        className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none"
-        style={{ objectPosition: 'center top' }}
+        className="fixed inset-0 w-full h-full object-cover object-top z-0 pointer-events-none"
       >
         <source src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4" type="video/mp4" />
       </video>
@@ -99,7 +99,7 @@ export default function About() {
             </span>
           </div>
           {/* Título grande */}
-          <h1 className="text-[1.8rem] sm:text-[2.5rem] md:text-[3.2rem] font-extrabold leading-[1.1] text-white text-center tracking-tight mb-6" style={{ fontFamily: 'Inter, Arial, sans-serif' }}>
+          <h1 className="text-[1.8rem] sm:text-[2.5rem] md:text-[3.2rem] font-extrabold leading-[1.1] text-white text-center tracking-tight mb-6">
             Aprende más sobre DAROX<br />
             <span className="text-white/80">¡Vamos a profundizar!</span>
           </h1>
@@ -237,8 +237,7 @@ export default function About() {
               <img
                 src="/images/bio.png"
                 alt="Darío, CEO de Darox BM"
-                className="rounded-2xl border border-white/10 shadow-lg max-w-xs w-full object-cover bg-black"
-                style={{ minHeight: 220 }}
+                className="rounded-2xl border border-white/10 shadow-lg max-w-xs w-full object-cover bg-black min-h-[220px]"
                 loading="lazy"
               />
             </div>
@@ -322,9 +321,11 @@ export default function About() {
                     <div className="flex items-center mb-6">
                       <div className="relative mr-4 features-icon-bg">
                         <div className="relative z-10 h-12 w-12 flex items-center justify-center rounded-full">
-                          <img
+                          <Image
                             src={f.icon}
                             alt={f.title}
+                            width={48}
+                            height={48}
                             className="h-12 w-12 object-contain rounded-full"
                           />
                         </div>
