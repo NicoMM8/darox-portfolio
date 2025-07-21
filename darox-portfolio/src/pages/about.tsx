@@ -12,7 +12,58 @@ export default function About() {
     if (e.target === e.currentTarget) {
       setShowVideo(false)
     }
-  }
+  } 
+  
+  const features = [
+    {
+      icon: "https://framerusercontent.com/images/aSg5cKpLpgDrPCnxTLJDWkKpC2U.png",
+      title: "Zapier",
+      badge: "PRO",
+      subtitle: "Automatización",
+      description: "Zapier conecta tus apps favoritas y automatiza flujos de trabajo para que todo funcione sin esfuerzo.",
+      url: "https://zapier.com",
+    },
+    {
+      icon: "https://framerusercontent.com/images/HcVTLgrPBtmuIOlUnu7mZwQOA.png",
+      title: "Slack",
+      badge: "",
+      subtitle: "Comunicación",
+      description: "Slack es nuestra plataforma para comunicación y colaboración en tiempo real.",
+      url: "https://slack.com",
+    },
+    {
+      icon: "https://framerusercontent.com/images/Av328iRVHf5I0fJ42shDaIt1L8.svg",
+      title: "Dropbox",
+      badge: "",
+      subtitle: "Almacenamiento en la nube",
+      description: "Dropbox nos permite compartir archivos y colaborar de forma segura y eficiente.",
+      url: "https://dropbox.com",
+    },
+    {
+      icon: "https://framerusercontent.com/images/WMhDTCktsKDsmcWo1JrYGg6fe1c.png",
+      title: "Stripe",
+      badge: "",
+      subtitle: "Pagos",
+      description: "Stripe es nuestra herramienta para procesar pagos de forma segura y sencilla.",
+      url: "https://stripe.com",
+    },
+    {
+      icon: "https://framerusercontent.com/images/xtU2n341VGGcU87PrpBxCo4PEFo.svg",
+      title: "Mailchimp",
+      badge: "PRO",
+      subtitle: "Email Marketing",
+      description: "Mailchimp nos ayuda a crear campañas de email efectivas para nutrir a nuestros clientes.",
+      url: "https://mailchimp.com",
+    },
+    {
+      icon: "https://framerusercontent.com/images/e1zEk4xxTPo4zzl3Y6DhP5avQA.svg",
+      title: "GitHub",
+      badge: "",
+      subtitle: "Control de versiones",
+      description: "GitHub es nuestro sistema de control de versiones, facilitando la colaboración y el desarrollo ágil.",
+      url: "https://github.com",
+    },
+  ];
 
   return (
     <>
@@ -64,12 +115,18 @@ export default function About() {
             >
               Contacta con nosotros
             </Link>
-            <a
-              href="#testimonios"
+            <button
+              onClick={() => {
+                const el = document.getElementById('bloque-dario');
+                if (el) {
+                  el.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
               className="inline-block bg-black/70 text-white font-semibold px-8 py-3 rounded-xl border-2 border-white/10 transition hover:bg-white/10 text-base"
+              type="button"
             >
               ¿Qué es DAROX?
-            </a>
+            </button>
           </div>
           {/* Imagen clicable con botón de play */}
           <div className="w-full flex justify-center mb-20">
@@ -125,14 +182,21 @@ export default function About() {
           )}
 
           {/* Bloque de presentación de Darío, alineado a la izquierda con imagen a la derecha */}
-          <section className="w-full max-w-4xl mx-auto bg-black/80 border border-white/10 rounded-3xl shadow-xl p-8 md:p-12 mb-16 mt-4 flex flex-col md:flex-row items-center gap-8">
+          <section
+            id="bloque-dario"
+            className="w-full max-w-4xl mx-auto bg-black/80 border border-white/10 rounded-3xl shadow-xl p-8 md:p-12 mb-16 mt-4 flex flex-col md:flex-row items-center gap-8"
+          >
             {/* Texto a la izquierda */}
             <div className="flex-1 flex flex-col items-start text-left">
               <div className="flex items-center gap-3 mb-2">
                 <span className="inline-block bg-blue-700 text-white text-xs font-bold rounded-full px-3 py-1 shadow">Fundador</span>
                 <span className="text-white/80 font-semibold">Darío, CEO de Darox BM</span>
               </div>
-              <p className="text-lg md:text-xl text-white font-semibold mb-2">
+              <p
+                className={`text-lg md:text-xl text-white font-semibold mb-2 ${
+                  showFull ? 'text-justify' : 'text-left'
+                }`}
+              >
                 {showFull
                   ? <>
                       Soy Darío, fundador y CEO de Darox BM.<br /><br />
@@ -150,13 +214,20 @@ export default function About() {
                       Y eso, créeme, también me importa a mí.
                     </>
                   : <>
-                      Soy Darío, creador de Darox BM. Ayudo a emprendedores con grandes ideas a construir marcas reales que les den libertad, ingresos y visibilidad. Lo hacemos combinando estrategia, diseño e inteligencia artificial. No vendemos servicios. Construimos negocios que funcionan.
+                      Soy Darío, creador de Darox BM. <br />Ayudo a emprendedores con grandes ideas a construir marcas reales que les den libertad, ingresos y visibilidad. <br />Lo hacemos combinando estrategia, diseño e inteligencia artificial. <br />No vendemos servicios. <br />Construimos negocios que funcionan.
                     </>
                 }
               </p>
               <button
-                className="mt-2 text-blue-400 hover:underline text-sm font-medium"
-                onClick={() => setShowFull(v => !v)}
+                className="mt-2 text-blue-400 hover:underline text-sm font-medium transition-transform duration-300 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                onClick={() => {
+                  setShowFull(v => !v);
+                  // Efecto scroll suave al bloque (opcional, si quieres que siempre enfoque el bloque)
+                  const el = document.getElementById('bloque-dario');
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }
+                }}
               >
                 {showFull ? 'Ver versión reducida' : 'Leer mi historia completa'}
               </button>
@@ -170,6 +241,111 @@ export default function About() {
                 style={{ minHeight: 220 }}
                 loading="lazy"
               />
+            </div>
+          </section>
+        </section>
+        {/* Bloque de resultados a ancho completo */}
+        <section
+          className="w-full relative py-20 px-0 sm:px-0 lg:px-0 text-white overflow-hidden"
+        >
+          {/* Bloque de características tipo Framer */}
+          <section className="relative w-full py-24 px-0 flex flex-col items-center justify-center overflow-visible">
+            {/* Detalle decorativo SVG izquierda */}
+            <div className="hidden md:block absolute left-0 top-0 h-40 w-64 -translate-y-1/2 -translate-x-1/3 pointer-events-none opacity-60">
+              <svg viewBox="0 0 567 237" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                <path d="M0,237 Q283.5,0 567,237" stroke="#0055FF" strokeOpacity="0.08" strokeWidth="40" fill="none"/>
+              </svg>
+            </div>
+            {/* Detalle decorativo SVG derecha */}
+            <div className="hidden md:block absolute right-0 top-0 h-40 w-64 -translate-y-1/2 translate-x-1/3 pointer-events-none opacity-60">
+              <svg viewBox="0 0 567 237" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                <path d="M0,237 Q283.5,0 567,237" stroke="#0055FF" strokeOpacity="0.08" strokeWidth="40" fill="none"/>
+              </svg>
+            </div>
+            <div className="relative z-10 w-full max-w-5xl mx-auto">
+              {/* Tag destacado */}
+              <div className="flex flex-col items-center mb-8">
+                <div className="w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent my-3 rounded-full" />
+              </div>
+              {/* Títulos */}
+              <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-2 gradient-text">
+                <span className="inline-block">Herramientas</span>{" "}
+                <span className="inline-block">y</span>{" "}
+                <span className="inline-block">Tecnologías</span>
+              </h2>
+              <h3 className="text-2xl md:text-3xl font-semibold text-center text-white/70 mb-6">
+                Impulsando nuestra productividad
+              </h3>
+              {/* Descripción */}
+              <p className="text-lg text-center text-white/60 mb-10 max-w-2xl mx-auto">
+                Nuestro stack está compuesto por tecnología moderna y fiable para que tu proyecto se ejecute a la perfección.
+              </p>
+              {/* Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 w-full">
+                {features.map((f, idx) => (
+                  <a
+                    key={idx}
+                    href={f.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      relative group rounded-2xl border border-white/10
+                      bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)]
+                      p-8 flex flex-col justify-between h-full
+                      transition duration-300 hover:shadow-blue-800/40 cursor-pointer
+                      features-card
+                      w-full
+                      hover:scale-[1.03]
+                    "
+                    title={`Visitar ${f.title}`}
+                  >
+                    {/* Línea azul decorativa superior */}
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-2xl" />
+                    {/* Flecha animada en la esquina superior derecha */}
+                    <span className="absolute top-5 right-5 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6 text-white opacity-80"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M7 17L17 7M7 7h10v10"
+                        />
+                      </svg>
+                    </span>
+                    {/* Icono circular con glow y sombra */}
+                    <div className="flex items-center mb-6">
+                      <div className="relative mr-4 features-icon-bg">
+                        <div className="relative z-10 h-12 w-12 flex items-center justify-center rounded-full">
+                          <img
+                            src={f.icon}
+                            alt={f.title}
+                            className="h-12 w-12 object-contain rounded-full"
+                          />
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <h4 className="text-lg font-bold text-white">{f.title}</h4>
+                        {f.badge && (
+                          <span className="text-xs font-semibold px-3 py-1 ml-2 features-badge">
+                            {f.badge}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="text-gray-300 text-base mb-1">{f.subtitle}</div>
+                    {/* Línea difuminada */}
+                    <div className="w-full h-0.5 my-4 rounded-full linea-difuminada" />
+                    {/* Descripción */}
+                    <div className="text-gray-400 text-base">{f.description}</div>
+                  </a>
+                ))}
+              </div>
             </div>
           </section>
         </section>

@@ -203,7 +203,7 @@ export default function Contact() {
                 <span className="inline-block rounded-md px-2 py-0.5 bg-blue-600 text-xs font-bold text-white ml-2">24/7</span>
               </div>
               <hr className="border-white/10 my-1" />
-              <span className="text-gray-400 text-base break-all">legal@darox.com</span>
+              <span className="text-gray-400 text-base break-all">daroxbrandmaker@gmail.com</span>
             </div>
             {/* Teléfono */}
             <div className="bg-black/80 border border-white/10 rounded-2xl p-6 shadow flex flex-col gap-4">

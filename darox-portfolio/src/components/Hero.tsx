@@ -1,12 +1,19 @@
 // src/components/Hero.tsx
 'use client'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export default function Hero() {
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => setShow(true), 100); // pequeño delay para el efecto
+    }, []);
+
     return (
         <section className="relative min-h-[90vh] h-auto flex flex-col items-center justify-center pt-24 pb-20 overflow-hidden">
             {/* Logo grande y elevado */}
-            <div className="relative z-10 -mt-8 mb-6">
+            <div className={`relative z-10 -mt-8 mb-6 transition-all duration-700 ${show ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-16"}`}>
                 <Image
                     src="/images/logo_horizontal.png"
                     alt="Logo DAROX"
@@ -18,7 +25,7 @@ export default function Hero() {
             </div>
 
             {/* BLOQUE DE TEXTO DESTACADO */}
-            <div className="relative z-20 text-center max-w-3xl md:max-w-5xl mx-auto px-2 flex flex-col items-center">
+            <div className={`relative z-20 text-center max-w-3xl md:max-w-5xl mx-auto px-2 flex flex-col items-center transition-all duration-700 delay-200 ${show ? "opacity-100 translate-x-0" : "opacity-0 translate-x-16"}`}>
                 <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 md:mb-6 text-white drop-shadow-lg break-words leading-tight">
                     Soluciones inteligentes para tu marca
                 </h1>
