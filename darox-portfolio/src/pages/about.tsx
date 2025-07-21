@@ -1,153 +1,178 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
+import { useState } from 'react'
 
 export default function About() {
+  const [showVideo, setShowVideo] = useState(false)
+  const [showFull, setShowFull] = useState(false)
+
+  // Cierra el modal si se hace click fuera del iframe
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      setShowVideo(false)
+    }
+  }
+
   return (
     <>
       <Head>
         <title>Sobre nosotros | DAROX</title>
         <meta name="description" content="Conoce más sobre DAROX, nuestro equipo y nuestra filosofía de trabajo." />
-        {/* Script de Framer */}
-        <script
-          async
-          src="https://events.framer.com/script?v=2"
-          data-fid="aefd7726c04c19b9dd61c595a34eab5d0eb80d0628dd45fe33b18bc0492c09e0"
-          data-no-nt=""
-        ></script>
       </Head>
       <Navbar />
-      <main className="min-h-screen bg-black flex flex-col items-center justify-center px-4 py-16">
-        {/* Hero */}
-        <section className="max-w-3xl w-full text-center mb-16">
-          <span className="inline-block bg-blue-700/80 text-white px-4 py-1 rounded-lg mb-4 text-sm font-semibold tracking-widest">
-            2025
-          </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold gradient-text mb-4">
-            Aprende más sobre <span className="text-blue-400">DAROX</span>
+      {/* Fondo de video animado */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        style={{ objectPosition: 'center top' }}
+      >
+        <source src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4" type="video/mp4" />
+      </video>
+      {/* Capa oscura encima del video */}
+      <div className="fixed inset-0 bg-black/60 z-0 pointer-events-none" />
+      <main className="min-h-screen w-full flex flex-col items-center justify-start pt-24 pb-16 px-4 relative overflow-hidden">
+        <section className="w-full max-w-5xl relative z-10 flex flex-col items-center">
+          {/* Badge */}
+          <div className="flex justify-center mb-8">
+            <span className="flex items-center gap-3 bg-white/10 border border-white/10 rounded-xl px-6 py-2 shadow-lg backdrop-blur-md">
+              <span className="inline-block rounded-md px-3 py-1 bg-blue-600 text-xs font-bold text-white shadow">
+                2025
+              </span>
+              <span className="text-base font-medium text-white/80">
+                Profundiza sobre nosotros
+              </span>
+            </span>
+          </div>
+          {/* Título grande */}
+          <h1 className="text-[1.8rem] sm:text-[2.5rem] md:text-[3.2rem] font-extrabold leading-[1.1] text-white text-center tracking-tight mb-6" style={{ fontFamily: 'Inter, Arial, sans-serif' }}>
+            Aprende más sobre DAROX<br />
+            <span className="text-white/80">¡Vamos a profundizar!</span>
           </h1>
-          <h2 className="text-2xl md:text-3xl font-bold text-white/80 mb-6">
-            ¡Vamos a profundizar!
-          </h2>
-          <p className="text-lg text-gray-300 mb-8">
+          {/* Subtítulo */}
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 text-center max-w-2xl mb-10 font-medium">
             DAROX es tu agencia para creatividad, estrategia y soluciones digitales. Nos especializamos en branding, desarrollo web y marketing digital.
           </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
+          {/* Botones */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link
-              href="/contact"
-              className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-xl shadow-lg border-2 border-white/10 transition"
+              href="/contacto"
+              className="inline-block bg-white text-black font-semibold px-8 py-3 rounded-xl shadow-lg border-2 border-white/10 transition hover:bg-blue-700 hover:text-white hover:border-blue-700 text-base"
             >
               Contacta con nosotros
             </Link>
             <a
-              href="#about"
-              className="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-3 rounded-xl border-2 border-white/10 transition"
+              href="#testimonios"
+              className="inline-block bg-black/70 text-white font-semibold px-8 py-3 rounded-xl border-2 border-white/10 transition hover:bg-white/10 text-base"
             >
               ¿Qué es DAROX?
             </a>
           </div>
-        </section>
-
-        {/* Sobre nosotros */}
-        <section id="about" className="max-w-4xl w-full bg-black/80 rounded-3xl border border-white/10 shadow-xl p-8 md:p-16 mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 gradient-text">
-            Una agencia con visión y talento
-          </h2>
-          <h3 className="text-2xl text-white/70 mb-6">Revolucionando el sector digital</h3>
-          <p className="text-lg text-gray-300 mb-8">
-            En DAROX creemos en potenciar a nuestros clientes para lograr sus objetivos. Nuestro equipo trabaja de cerca contigo, guiando cada paso y asegurando resultados excepcionales.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-xl font-bold text-white mb-2">Tu éxito, nuestra prioridad</h4>
-              <p className="text-gray-400">
-                Nos comprometemos a acompañarte desde la idea hasta la ejecución, con soporte experto y atención personalizada.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-xl font-bold text-white mb-2">Soporte continuo</h4>
-              <p className="text-gray-400">
-                Nuestro compromiso no termina con la entrega: te apoyamos con mejoras y actualizaciones siempre que lo necesites.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row gap-4 mt-8">
-            <Link
-              href="/contact"
-              className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-xl shadow-lg border-2 border-white/10 transition w-full md:w-auto text-center"
+          {/* Imagen clicable con botón de play */}
+          <div className="w-full flex justify-center mb-20">
+            <button
+              className="w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 bg-black relative group focus:outline-none"
+              onClick={() => setShowVideo(true)}
+              aria-label="Reproducir vídeo"
+              type="button"
             >
-              Reserva una llamada
-            </Link>
+              <img
+                src="https://img.youtube.com/vi/nziHP21GXRw/maxresdefault.jpg"
+                alt="DAROX video"
+                className="w-full h-full object-cover group-hover:brightness-75 transition"
+                loading="lazy"
+              />
+              <span className="absolute inset-0 flex items-center justify-center">
+                <span className="bg-black/60 rounded-full p-6">
+                  <svg className="w-16 h-16 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 64 64">
+                    <circle cx="32" cy="32" r="32" fill="currentColor" opacity="0.3"/>
+                    <polygon points="26,20 50,32 26,44" fill="#fff"/>
+                  </svg>
+                </span>
+              </span>
+            </button>
           </div>
-        </section>
-
-        {/* FAQ */}
-        <section id="faq" className="max-w-4xl w-full bg-black/80 rounded-3xl border border-white/10 shadow-xl p-8 md:p-16 mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 gradient-text">
-            Preguntas frecuentes
-          </h2>
-          <ul className="space-y-6 text-left">
-            <li>
-              <span className="font-semibold text-white">¿Qué necesito para empezar?</span>
-              <p className="text-gray-400">Solo tu idea y ganas de crecer. Nosotros te guiamos en todo el proceso.</p>
-            </li>
-            <li>
-              <span className="font-semibold text-white">¿Qué tipo de personalización ofrecen?</span>
-              <p className="text-gray-400">Adaptamos cada proyecto a tus necesidades, desde branding hasta desarrollo y marketing.</p>
-            </li>
-            <li>
-              <span className="font-semibold text-white">¿Necesito saber programar?</span>
-              <p className="text-gray-400">No es necesario. Nuestro equipo se encarga de todo el aspecto técnico para que tú puedas enfocarte en hacer crecer tu negocio.</p>
-            </li>
-            <li>
-              <span className="font-semibold text-white">¿Cómo garantizan la calidad?</span>
-              <p className="text-gray-400">Implementamos controles de calidad en cada etapa del proyecto y mantenemos una comunicación constante contigo.</p>
-            </li>
-            <li>
-              <span className="font-semibold text-white">¿Qué pasa si necesito más ayuda después de que termine el proyecto?</span>
-              <p className="text-gray-400">Ofrecemos soporte y mantenimiento continuos para asegurarnos de que siempre estés satisfecho y tu proyecto funcione perfectamente.</p>
-            </li>
-          </ul>
-        </section>
-
-        {/* Testimonios */}
-        <section className="max-w-4xl w-full text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-8 gradient-text">
-            Lo que dicen nuestros clientes
-          </h2>
-          <div className="flex flex-col md:flex-row gap-8 justify-center">
-            <div className="bg-black/80 p-6 rounded-3xl border border-white/10 shadow-xl max-w-xs mx-auto">
-              <p className="text-gray-300 mb-4">
-                &quot;DAROX transformó nuestra presencia en línea. Su equipo es increíblemente talentoso y dedicado.&quot;
-              </p>
-              <p className="font-semibold text-white">- Cliente Satisfecho</p>
+          {/* Modal de vídeo */}
+          {showVideo && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+              onClick={handleOverlayClick}
+            >
+              <button
+                className="absolute top-6 right-8 text-white text-4xl font-bold z-50 hover:text-blue-400 transition"
+                onClick={() => setShowVideo(false)}
+                aria-label="Cerrar vídeo"
+                type="button"
+              >
+                &times;
+              </button>
+              <div className="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 bg-black relative">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/nziHP21GXRw?autoplay=1"
+                  title="YouTube video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
             </div>
-            <div className="bg-black/80 p-6 rounded-3xl border border-white/10 shadow-xl max-w-xs mx-auto">
-              <p className="text-gray-300 mb-4">
-                &quot;Gracias a DAROX, nuestro negocio ha crecido exponencialmente. No podríamos estar más felices con los resultados.&quot;
+          )}
+
+          {/* Bloque de presentación de Darío, alineado a la izquierda con imagen a la derecha */}
+          <section className="w-full max-w-4xl mx-auto bg-black/80 border border-white/10 rounded-3xl shadow-xl p-8 md:p-12 mb-16 mt-4 flex flex-col md:flex-row items-center gap-8">
+            {/* Texto a la izquierda */}
+            <div className="flex-1 flex flex-col items-start text-left">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="inline-block bg-blue-700 text-white text-xs font-bold rounded-full px-3 py-1 shadow">Fundador</span>
+                <span className="text-white/80 font-semibold">Darío, CEO de Darox BM</span>
+              </div>
+              <p className="text-lg md:text-xl text-white font-semibold mb-2">
+                {showFull
+                  ? <>
+                      Soy Darío, fundador y CEO de Darox BM.<br /><br />
+                      No nací con contactos, ni con presupuesto, ni con un máster en negocios. Lo que sí tenía era algo que probablemente tú también tienes:<br />
+                      una idea potente, una ambición que no se apaga y unas ganas inmensas de vivir de lo mío.<br /><br />
+                      Creé Darox BM para ayudar a personas como tú: emprendedores con visión, con talento, pero sin un sistema claro para hacer que su idea funcione.<br /><br />
+                      En Darox BM no vendemos servicios sueltos.<br />
+                      No hacemos “logos bonitos” ni webs que no convierten.<br />
+                      Creamos marcas reales, estratégicas, con una identidad clara, presencia profesional y una base sólida para crecer.<br /><br />
+                      Y lo hacemos aplicando diseño, estrategia de negocio e inteligencia artificial como herramientas prácticas para un solo objetivo:<br />
+                      que tu marca no solo se vea bien…<br />
+                      sino que te dé clientes, ingresos y libertad real.<br /><br />
+                      Aquí, no eres un número.<br />
+                      Eres alguien que quiere construir algo que le cambie la vida.<br />
+                      Y eso, créeme, también me importa a mí.
+                    </>
+                  : <>
+                      Soy Darío, creador de Darox BM. Ayudo a emprendedores con grandes ideas a construir marcas reales que les den libertad, ingresos y visibilidad. Lo hacemos combinando estrategia, diseño e inteligencia artificial. No vendemos servicios. Construimos negocios que funcionan.
+                    </>
+                }
               </p>
-              <p className="font-semibold text-white">- Empresario Exitoso</p>
+              <button
+                className="mt-2 text-blue-400 hover:underline text-sm font-medium"
+                onClick={() => setShowFull(v => !v)}
+              >
+                {showFull ? 'Ver versión reducida' : 'Leer mi historia completa'}
+              </button>
             </div>
-          </div>
+            {/* Imagen a la derecha */}
+            <div className="flex-1 flex justify-center items-center">
+              <img
+                src="/images/bio.png"
+                alt="Darío, CEO de Darox BM"
+                className="rounded-2xl border border-white/10 shadow-lg max-w-xs w-full object-cover bg-black"
+                style={{ minHeight: 220 }}
+                loading="lazy"
+              />
+            </div>
+          </section>
         </section>
-
-        {/* Llamado a la acción */}
-        <section className="max-w-4xl w-full text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 gradient-text">
-            ¿Estás listo para llevar tu proyecto al siguiente nivel?
-          </h2>
-          <p className="text-lg text-gray-300 mb-8">
-            En DAROX estamos listos para ayudarte a alcanzar tus metas. No esperes más, ¡contáctanos hoy mismo!
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-xl shadow-lg border-2 border-white/10 transition"
-          >
-            Hablemos
-          </Link>
-        </section>
-
-        
       </main>
     </>
   )
