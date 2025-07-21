@@ -9,7 +9,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
   const { ref, inView } = useInView({
-    threshold: 0.2, // Ajusta el porcentaje visible para activar
+    threshold: 0.2, 
   });
 
   // Notifica el cambio de visibilidad al padre

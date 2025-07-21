@@ -53,7 +53,7 @@ const Process: React.FC = () => {
 	return (
 		<section className="container mx-auto px-2 sm:px-4 lg:px-8 py-20 text-white">
 			<div className="text-center mb-16">
-				{/* Tag destacado tipo Framer igual que en About */}
+				{/* Tag destacado igual que en About */}
 				<div
 					className="
                         relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px]
@@ -84,7 +84,7 @@ const Process: React.FC = () => {
 					concepto hasta un producto completamente lanzado.
 				</p>
 			</div>
-			{/* Grid responsivo: 1 columna móvil, 3 columnas en escritorio */}
+			{/* Grid responsive: 1 columna móvil, 3 columnas en escritorio */}
 			<div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-3"} gap-6 items-stretch w-full`}>
 				{/* Tarjetas */}
 				{isMobile ? (

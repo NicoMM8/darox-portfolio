@@ -22,7 +22,7 @@ const ResultsBlock: React.FC = () => (
     />
 
     <div className="max-w-3xl mx-auto flex flex-col items-center gap-8 relative z-10">
-      {/* Tag destacado tipo Framer */}
+      {/* Tag destacado */}
       <div
         className="inline-flex items-center gap-3 px-5 py-2 rounded-lg border border-white/10 backdrop-blur-md resultsblock-framer-tag"
       >
@@ -49,7 +49,7 @@ const ResultsBlock: React.FC = () => (
         Al final de todo, lo que hacemos hay un compromiso con la entrega de resultados medibles que impulsan tu éxito.
       </p>
 
-      {/* Botón Framer */}
+      {/* Botón destacado */}
       <a
         href="./contacto"
         className="

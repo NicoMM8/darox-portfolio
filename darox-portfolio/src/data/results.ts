@@ -8,9 +8,9 @@ export interface Result {
   logoUrl: string
   description: string
   metrics: { value: string; label: string }[]
-  url: string                // Añadido
-  year: number               // Añadido
-  categories: string[]       // Añadido
+  url: string                
+  year: number               
+  categories: string[]       
 }
 
 export const results: Result[] = [

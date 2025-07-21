@@ -28,7 +28,7 @@ const benefitsList = [
   "Backup Automático"
 ];
 
-// Carrusel infinito real, sin cortes ni saltos
+// Carrusel infinito sin cortes ni saltos
 const InfiniteCarousel: React.FC<{
   items: string[];
   reverse?: boolean;

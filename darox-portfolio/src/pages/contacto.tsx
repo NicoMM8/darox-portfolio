@@ -15,7 +15,7 @@ export default function Contact() {
       <Navbar />
 
       <main className="min-h-screen w-full flex items-start justify-center pt-24 pb-16 px-4 bg-radial-darox relative overflow-hidden">
-        {/* Fondo imagen tipo Hero */}
+        {/* Fondo imagen */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div
             className="w-full h-full bg-[url('/images/moon.png')] bg-cover bg-[center_top]"

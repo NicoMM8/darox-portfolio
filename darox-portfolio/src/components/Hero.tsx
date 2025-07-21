@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function Hero() {
     return (
-        <section className="relative h-screen overflow-hidden flex flex-col items-center justify-center pt-16">
+        <section className="relative min-h-[90vh] h-auto flex flex-col items-center justify-center pt-24 pb-20 overflow-hidden">
             {/* Logo grande y elevado */}
             <div className="relative z-10 -mt-8 mb-6">
                 <Image
@@ -17,7 +17,7 @@ export default function Hero() {
                 />
             </div>
 
-            {/* NUEVO BLOQUE DE TEXTO DESTACADO */}
+            {/* BLOQUE DE TEXTO DESTACADO */}
             <div className="relative z-20 text-center max-w-3xl md:max-w-5xl mx-auto px-2">
                 <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 md:mb-8 text-white drop-shadow-lg break-words leading-tight">
                     Soluciones inteligentes para tu marca
@@ -35,19 +35,19 @@ export default function Hero() {
                 <a
                     href="contacto"
                     className="
-        px-6 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5
-        rounded-full
-        text-base sm:text-xl md:text-2xl font-bold
-        shadow-xl
-        hover:scale-105
-        transition-transform duration-200
-        about-shadow
-        text-white
-        animate-fade-in-up
-        inline-flex items-center justify-center
-        bg-gradient-to-r from-blue-600 to-blue-400
-        hover:from-blue-700 hover:to-blue-500
-    "
+                        px-6 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5
+                        rounded-full
+                        text-base sm:text-xl md:text-2xl font-bold
+                        shadow-xl
+                        hover:scale-105
+                        transition-transform duration-200
+                        about-shadow
+                        text-white
+                        animate-fade-in-up
+                        inline-flex items-center justify-center
+                        bg-gradient-to-r from-blue-600 to-blue-400
+                        hover:from-blue-700 hover:to-blue-500
+                    "
                 >
                     Descubre cómo
                 </a>

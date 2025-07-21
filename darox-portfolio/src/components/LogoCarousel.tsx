@@ -34,7 +34,7 @@ const LogoCarousel: React.FC = () => {
                   ? 'Hostinger'
                   : 'Whop'
               }
-              className="h-20 w-40 object-contain whitescale opacity-80 transition duration-300"
+              className="h-20 w-40 object-contain whitescale opacity-80 transition duration-600"
               loading="lazy"
             />
           ))}

@@ -27,7 +27,6 @@ const features = [
 	},
 ];
 
-// Añade las otras 3 características extra
 const extraFeatures = [
 	{
 		icon: "	https://framerusercontent.com/images/Oyac3Rl5DdKSc0EQHWNG6R5Oyhg.svg",
@@ -60,7 +59,7 @@ const Features: React.FC = () => {
 		<section className="py-20 px-4 sm:px-6 lg:px-8 text-white bg-black/10">
 			<div className="max-w-7xl mx-auto">
 				<div className="text-center mb-16">
-					{/* Tag destacado tipo Framer igual que en About y Proceso */}
+					{/* Tag destacado igual que en About y Proceso */}
 					<div
 						className="
     						relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px]
@@ -151,7 +150,7 @@ const Features: React.FC = () => {
 						</a>
 					))}
 				</div>
-				{/* Extra features abajo */}
+				{/* Extra features */}
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{extraFeatures.map((f, idx) => (
 						<a

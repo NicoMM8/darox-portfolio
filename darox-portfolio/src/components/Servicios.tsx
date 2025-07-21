@@ -65,7 +65,7 @@ const Services: React.FC = () => {
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 text-white bg-black/10 overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Tag destacado tipo Framer */}
+        {/* Tag destacado */}
         <div className="mb-8">
           <div className="
             relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px]
@@ -91,7 +91,7 @@ const Services: React.FC = () => {
             Conecta fácilmente con tus herramientas favoritas. Ya sea tu CRM, plataforma de email marketing, y más.
           </p>
         </div>
-        {/* Cards estilo Framer */}
+        {/* Cards estilo destacado */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
@@ -138,7 +138,7 @@ const Services: React.FC = () => {
                 <p className="text-base text-white/70 leading-relaxed mb-4 text-left">
                   {service.description}
                 </p>
-                {/* Badges opcionales, puedes personalizar según tu servicio */}
+                {/* Badges opcionales */}
                 {index === 0 && (
                   <div className="flex gap-2 mb-4">
                     <span className="bg-white/10 text-white/80 text-xs font-semibold px-3 py-1 rounded-lg">100+ Proyectos</span>
