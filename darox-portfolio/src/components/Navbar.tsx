@@ -12,7 +12,7 @@ export default function Navbar() {
     { label: 'Inicio', href: '/' },
     { label: 'Sobre Nosotros', href: '/about' },
     { label: 'Portafolio', href: '/portfolio' },
-    { label: 'Contacto', href: '/contact' },
+    { label: 'Contacto', href: '/contacto' },
     { label: 'Preguntas', href: '/#faq' }
   ]
 
@@ -25,14 +25,16 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0">
-              <Image
-                  src="/images/logo.png"
-                  alt="Logo DAROX"
-                  width={32}
-                  height={32}
-                  className="h-8 w-auto"
-                  priority
-              />
+              <Link href="/">
+                <Image
+                    src="/images/logo.png"
+                    alt="Logo DAROX"
+                    width={32}
+                    height={32}
+                    className="h-8 w-auto"
+                    priority
+                />
+              </Link>
             </div>
 
             {/* Menú escritorio */}

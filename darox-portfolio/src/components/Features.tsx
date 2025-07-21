@@ -95,7 +95,7 @@ const Features: React.FC = () => {
 					{features.map((f, idx) => (
 						<a
 							key={idx}
-							href="#Servicios"
+							href="about"
 							className="
     						relative group rounded-2xl border border-white/10
     						bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)]
@@ -156,7 +156,7 @@ const Features: React.FC = () => {
 					{extraFeatures.map((f, idx) => (
 						<a
 							key={idx}
-							href="#Servicios"
+							href="about"
 							className="
     						relative group rounded-2xl border border-white/10
     						bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)]

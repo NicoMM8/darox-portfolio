@@ -15,8 +15,10 @@ interface StarData {
 
 const StarsBackground: React.FC = () => {
   const [stars, setStars] = useState<StarData[]>([]);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     // Solo genera las estrellas una vez en el cliente
     const generatedStars = Array.from({ length: NUM_STARS }).map(() => ({
       left: getRandom(0, 100),
@@ -27,8 +29,7 @@ const StarsBackground: React.FC = () => {
     setStars(generatedStars);
   }, []);
 
-  // No renderizar nada en SSR
-  if (typeof window === 'undefined') return null;
+  if (!mounted) return null;
 
   return (
     <div className="stars-bg">

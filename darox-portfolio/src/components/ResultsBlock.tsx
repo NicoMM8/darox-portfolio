@@ -51,7 +51,7 @@ const ResultsBlock: React.FC = () => (
 
       {/* Botón Framer */}
       <a
-        href="./contact"
+        href="./contacto"
         className="
           inline-flex items-center justify-center
           px-6 py-3

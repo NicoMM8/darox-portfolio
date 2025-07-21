@@ -121,7 +121,7 @@ const Benefits: React.FC = () => {
           <InfiniteCarousel items={benefitsList.slice(0, 6)} speed={40} />
           <InfiniteCarousel items={benefitsList.slice(6)} reverse speed={30} />
         </div>
-        {/* Bloque principal: Card grande a la izquierda, dos cards apiladas a la derecha */}
+        {/* Bloque principal: Cart grande a la izquierda, dos cards apiladas a la derecha */}
         <div className="flex flex-col md:flex-row gap-8 items-start w-full">
           {/* Card grande a la izquierda */}
           <motion.div
@@ -154,7 +154,7 @@ const Benefits: React.FC = () => {
               </p>
               <div className="flex gap-4 mt-auto">
                 <motion.a
-                  href="#"
+                  href="contacto"
                   className="px-6 py-2 rounded-[10px] bg-blue-600 text-white font-semibold shadow-lg hover:bg-blue-700 transition border-2 border-blue-600"
                   whileHover={{ scale: 1.08, backgroundColor: "#2563eb" }}
                   transition={{ duration: 0.2 }}
@@ -162,7 +162,7 @@ const Benefits: React.FC = () => {
                   Reserva una llamada
                 </motion.a>
                 <motion.a
-                  href="#"
+                  href="about"
                   className="px-6 py-2 rounded-[10px] bg-white/10 text-white font-semibold shadow hover:bg-white/20 transition border-2 border-white/15 backdrop-blur-[2px]"
                   whileHover={{ scale: 1.08, backgroundColor: "rgba(255,255,255,0.15)" }}
                   transition={{ duration: 0.2 }}

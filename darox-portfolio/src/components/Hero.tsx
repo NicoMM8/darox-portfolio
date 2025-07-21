@@ -33,7 +33,7 @@ export default function Hero() {
                     <span className="inline text-white font-bold"> libertad financiera</span>.
                 </p>
                 <a
-                    href="#"
+                    href="contacto"
                     className="
         px-6 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5
         rounded-full

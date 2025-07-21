@@ -28,9 +28,9 @@ export const results: Result[] = [
       { value: '30%', label: 'Aumento en Ventas' },
       { value: '40%', label: 'Impulso en Retención' },
     ],
-    url: '/proyectos/miel',      // Ejemplo
-    year: 2024,                            // Ejemplo
-    categories: ['E-Commerce', 'Portfolio'] // Ejemplo
+    url: '/proyectos/miel',      
+    year: 2024,                            
+    categories: ['E-Commerce', 'Portfolio'] 
   },
   {
     id: 'raven',

@@ -3,6 +3,7 @@
 import { results } from '@/data/results'
 import Image from 'next/image'
 import React from "react";
+import Link from 'next/link'
 
 const Results: React.FC = () => {
   const items = results.slice(0, 3)
@@ -31,8 +32,8 @@ const Results: React.FC = () => {
                 placeholder="blur"
                 blurDataURL="/placeholder.png"
               />
-              <a
-                href="#"
+              <Link
+                href={item.url}
                 className="group resultados-btn absolute bottom-6 left-1/2 -translate-x-1/2 px-8 py-3 rounded-full bg-gray-300 bg-opacity-40 text-white text-lg font-medium flex items-center gap-2 border border-white/30 backdrop-blur-md transition hover:bg-opacity-60"
               >
                 Ver Proyecto
@@ -48,7 +49,7 @@ const Results: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M7 7h10v10" />
                   </svg>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         ))}
