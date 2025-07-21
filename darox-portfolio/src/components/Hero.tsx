@@ -18,20 +18,21 @@ export default function Hero() {
             </div>
 
             {/* BLOQUE DE TEXTO DESTACADO */}
-            <div className="relative z-20 text-center max-w-3xl md:max-w-5xl mx-auto px-2">
-                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 md:mb-8 text-white drop-shadow-lg break-words leading-tight">
+            <div className="relative z-20 text-center max-w-3xl md:max-w-5xl mx-auto px-2 flex flex-col items-center">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 md:mb-6 text-white drop-shadow-lg break-words leading-tight">
                     Soluciones inteligentes para tu marca
                 </h1>
-                <p className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-8 md:mb-10 mx-auto text-white shadow-lg break-words leading-snug">
-                    Fusionamos
-                    <span className="inline text-pink-400 font-bold pulse-word pulse-delay-0"> inteligencia artificial</span>,
-                    <span className="inline text-indigo-400 font-bold pulse-word pulse-delay-1"> creatividad humana</span>,
-                    <span className="inline text-purple-400 font-bold pulse-word pulse-delay-2"> diseño</span> y
-                    <span className="inline text-pink-400 font-bold pulse-word pulse-delay-3"> estrategia tecnológica </span>
-                    para que conquistes
-                    <span className="inline text-indigo-300 font-bold pulse-word pulse-delay-4"> clientes</span>, y
-                    <span className="inline text-white font-bold"> libertad financiera</span>.
-                </p>
+                <div className="mb-6 md:mb-8 mx-auto text-white shadow-lg break-words leading-snug max-w-4xl flex flex-col items-center">
+                    <span className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium">
+                        Fusionamos inteligencia artificial, creatividad humana,
+                    </span>
+                    <span className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium">
+                        diseño y estrategia tecnológica para que 
+                    </span>
+                    <span className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium">
+                        conquistes clientes y libertad.
+                    </span>
+                </div>
                 <a
                     href="contacto"
                     className="
@@ -47,6 +48,7 @@ export default function Hero() {
                         inline-flex items-center justify-center
                         bg-gradient-to-r from-blue-600 to-blue-400
                         hover:from-blue-700 hover:to-blue-500
+                        mt-2
                     "
                 >
                     Descubre cómo
