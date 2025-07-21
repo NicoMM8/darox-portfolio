@@ -4,7 +4,6 @@ import Head from 'next/head'
 import StarsBackground from '../components/StarsBackground' 
 import React, { useState } from "react";
 import Footer from "../components/Footer";
-import CookiePreferences from "../components/CookiePreferences";
 
 import type { AppProps } from 'next/app';
 
@@ -24,7 +23,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       )}
       <Footer onInViewChange={setFooterInView} />
       <SpeedInsights />
-      <CookiePreferences />
     </>
   );
 }
