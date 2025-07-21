@@ -136,7 +136,7 @@ export default function About() {
               aria-label="Reproducir vídeo"
               type="button"
             >
-              <img
+              <Image
                 src="https://img.youtube.com/vi/nziHP21GXRw/maxresdefault.jpg"
                 alt="DAROX video"
                 width={1280}
