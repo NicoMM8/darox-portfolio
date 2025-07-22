@@ -154,7 +154,7 @@ body::before {
   background: white;
   border-radius: 50%;
   opacity: 0.18;
-  box-shadow: 0 0 2px 0.5px #fff;
+  box-shadow: 0 0 2px 1px #fff;
   animation: star-twinkle 2s linear infinite;
 }
 
@@ -287,10 +287,10 @@ body::before {
 }
 
 .dev-tools-indicator-item {
-    -webkit-user-select: none; 
-    -moz-user-select: none;    
-    -ms-user-select: none;     
-    user-select: none;         
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .bg-radial-darox {

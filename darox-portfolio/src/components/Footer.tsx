@@ -103,7 +103,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
               Portfolio
             </Link>
             <Link
-              href="/contact"
+              href="/contacto"
               className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
               Contacto

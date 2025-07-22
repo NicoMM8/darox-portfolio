@@ -79,7 +79,7 @@ export default function ProyectoMiel() {
               </div>
               {/* Botón de contacto */}
               <Link
-                href="/contact"
+                href="/contacto"
                 className="
                   inline-flex items-center justify-center
                   px-6 py-3

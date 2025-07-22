@@ -1,22 +1,20 @@
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import { results, Result } from '../data/results'
-import { motion, useViewportScroll, useTransform, useSpring } from 'framer-motion'
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 
 function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total: number }) {
   const ref = useRef(null)
-  const { scrollY } = useViewportScroll()
   const [vh, setVh] = useState(0)
+  const { scrollY } = useScroll() 
 
   useEffect(() => {
-    // Solo se ejecuta en el cliente
     setVh(window.innerHeight)
   }, [])
 
-  // Si aún no sabemos el alto, no renderizamos el efecto
   const start = vh ? idx * vh * 0.7 : 0
   const end = vh ? start + vh * 0.8 : 1
 

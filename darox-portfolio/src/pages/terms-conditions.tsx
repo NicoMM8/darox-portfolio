@@ -69,7 +69,7 @@ export default function TermsConditions() {
             <section>
               <h2>4. Propiedad Intelectual</h2>
               <p>
-                Todos los derechos sobre el software, diseños, logotipos y marcas de DAROX pertenecen a DAROX o a sus licenciantes. Queda prohibida la copia, distribución o creación de obras derivadas sin autorización previa por escrito.
+                Todos los derechos sobre el software, diseños, logotipos y marcas de DAROX pertenecen a DAROX. Queda prohibida la copia, distribución o creación de obras derivadas sin autorización previa por escrito.
               </p>
             </section>
             <section>

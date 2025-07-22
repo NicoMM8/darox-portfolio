@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image';
 
 export default function About() {
