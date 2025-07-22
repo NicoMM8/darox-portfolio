@@ -3,46 +3,7 @@ import Navbar from '../components/Navbar'
 import { useState } from 'react'
 
 export default function Contact() {
-  const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState<string | null>(null)
-  const [error, setError] = useState<string | null>(null)
-
-  // Maneja el envío del formulario
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setLoading(true)
-    setSuccess(null)
-    setError(null)
-
-    const form = e.currentTarget
-    const data = {
-      nombre: (form.nombre as any).value,
-      apellidos: (form.apellidos as any).value,
-      email: (form.email as any).value,
-      pais: (form.pais as any).value,
-      tipo: (form.tipo as any).value,
-      mensaje: (form.mensaje as any).value,
-    }
-
-    try {
-      const res = await fetch('/api/contacto', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      })
-      const result = await res.json()
-      if (result.ok) {
-        setSuccess(result.message || '¡Mensaje enviado correctamente!')
-        form.reset()
-      } else {
-        setError(result.error || 'Error al enviar el mensaje.')
-      }
-    } catch {
-      setError('Error de red. Inténtalo más tarde.')
-    } finally {
-      setLoading(false)
-    }
-  }
 
   return (
     <>
@@ -77,7 +38,6 @@ export default function Contact() {
                 "@type": "ContactPoint",
                 "email": "daroxbrandmaker@gmail.com",
                 "contactType": "customer support",
-                "telephone": "+34 600 00 00 00",
                 "areaServed": "ES"
               }
             }
@@ -141,7 +101,12 @@ export default function Contact() {
             id="form"
             className="bg-black/80 border border-white/10 rounded-2xl p-8 md:p-12 shadow-lg mb-12"
           >
-            <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
+            <form
+              className="flex flex-col gap-6"
+              action="https://formspree.io/f/mldljjln"
+              method="POST"
+              onSubmit={() => setSuccess('¡Mensaje enviado correctamente!')}
+            >
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex flex-col flex-1 gap-2">
                   <label htmlFor="nombre" className="text-white font-medium text-sm">
@@ -244,26 +209,11 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                disabled={loading}
-                className="
-                  mt-2
-                  inline-flex items-center justify-center
-                  px-6 py-3
-                  rounded-[10px]
-                  border-4 border-white/15
-                  bg-blue-700
-                  about-shadow
-                  text-white font-semibold
-                  transition-all duration-300
-                  hover:bg-blue-800 hover:scale-105
-                  animate-fade-in-up
-                  w-full md:w-auto text-center
-                "
+                className="mt-2 inline-flex items-center justify-center px-6 py-3 rounded-[10px] border-4 border-white/15 bg-blue-700 about-shadow text-white font-semibold transition-all duration-300 hover:bg-blue-800 hover:scale-105 animate-fade-in-up w-full md:w-auto text-center"
               >
-                {loading ? 'Enviando...' : 'Enviar mensaje'}
+                Enviar mensaje
               </button>
               {success && <p className="text-green-400 mt-2">{success}</p>}
-              {error && <p className="text-red-400 mt-2">{error}</p>}
             </form>
           </section>
 
@@ -281,18 +231,6 @@ export default function Contact() {
               </div>
               <hr className="border-white/10 my-1" />
               <span className="text-gray-400 text-base break-all">daroxbrandmaker@gmail.com</span>
-            </div>
-            {/* Teléfono */}
-            <div className="bg-black/80 border border-white/10 rounded-2xl p-6 shadow flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                {/* Icono de teléfono */}
-                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" className="text-white/80">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.72 19.72 0 0 1 2 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72c.13 1.05.37 2.07.72 3.06a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.99.35 2.01.59 3.06.72A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                <span className="text-white font-medium text-lg">Teléfono</span>
-              </div>
-              <hr className="border-white/10 my-1" />
-              <span className="text-gray-400 text-base">+34 600 00 00 00</span>
             </div>
           </div>
         </div>
