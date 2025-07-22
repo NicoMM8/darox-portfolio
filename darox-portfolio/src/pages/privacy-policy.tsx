@@ -8,8 +8,41 @@ export default function PrivacyPolicy() {
         <title>Política de Privacidad | DAROX</title>
         <meta
           name="description"
-          content="Lee la política de privacidad de DAROX y cómo protegemos tus datos."
+          content="Lee la política de privacidad de DAROX y cómo protegemos tus datos personales y la información de tu empresa."
         />
+        {/* Open Graph */}
+        <meta property="og:title" content="Política de Privacidad | DAROX" />
+        <meta
+          property="og:description"
+          content="Lee la política de privacidad de DAROX y cómo protegemos tus datos personales y la información de tu empresa."
+        />
+        <meta
+          property="og:image"
+          content="https://darox.es/images/logo_horizontal.png"
+        />
+        <meta property="og:url" content="https://darox.es/privacy-policy" />
+        <meta property="og:type" content="article" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Política de Privacidad | DAROX" />
+        <meta
+          name="twitter:description"
+          content="Lee la política de privacidad de DAROX y cómo protegemos tus datos personales y la información de tu empresa."
+        />
+        <meta
+          name="twitter:image"
+          content="https://darox.es/images/logo_horizontal.png"
+        />
+        <script type="application/ld+json">
+          {`{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Política de Privacidad | DAROX",
+  "description": "Lee la política de privacidad de DAROX y cómo protegemos tus datos personales y la información de tu empresa.",
+  "url": "https://darox.es/privacy-policy"
+}`}
+        </script>
+        <link rel="canonical" href="https://darox.es/privacy-policy" />
       </Head>
 
       <Navbar />

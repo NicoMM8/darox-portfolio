@@ -16,7 +16,7 @@ export default function Hero() {
             <div className={`relative z-10 -mt-8 mb-6 transition-all duration-700 ${show ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-16"}`}>
                 <Image
                     src="/images/logo_horizontal.png"
-                    alt="Logo DAROX"
+                    alt="Logo de DAROX, agencia de branding y diseño web"
                     width={400}
                     height={400}
                     className="w-80 md:w-96 lg:w-[28rem] h-auto"

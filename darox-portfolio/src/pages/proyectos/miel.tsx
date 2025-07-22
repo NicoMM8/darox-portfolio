@@ -7,8 +7,41 @@ export default function ProyectoMiel() {
   return (
     <>
       <Head>
-        <title>Miel Premium | DAROX</title>
-        <meta name="description" content="Detalles del proyecto Miel realizado por DAROX." />
+        <title>Proyecto Miel Premium | Branding, Packaging y Web | DAROX</title>
+        <meta
+          name="description"
+          content="Caso de éxito: Branding, packaging y desarrollo web para marca de miel premium. Estrategia, diseño y resultados medibles para aumentar ventas y presencia digital."
+        />
+        {/* Open Graph */}
+        <meta property="og:title" content="Proyecto Miel Premium | Branding, Packaging y Web | DAROX" />
+        <meta property="og:description" content="Caso de éxito: Branding, packaging y desarrollo web para marca de miel premium. Estrategia, diseño y resultados medibles para aumentar ventas y presencia digital." />
+        <meta property="og:image" content="https://darox.es/images/miel1.png" />
+        <meta property="og:url" content="https://darox.es/proyectos/miel" />
+        <meta property="og:type" content="article" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Proyecto Miel Premium | Branding, Packaging y Web | DAROX" />
+        <meta name="twitter:description" content="Caso de éxito: Branding, packaging y desarrollo web para marca de miel premium. Estrategia, diseño y resultados medibles para aumentar ventas y presencia digital." />
+        <meta name="twitter:image" content="https://darox.es/images/miel1.png" />
+        {/* Schema.org JSON-LD */}
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            "name": "Miel Premium",
+            "description": "Branding, packaging y desarrollo web para marca de miel premium. Estrategia, diseño y resultados medibles para aumentar ventas y presencia digital.",
+            "image": "https://darox.es/images/miel1.png",
+            "url": "https://darox.es/proyectos/miel",
+            "author": {
+              "@type": "Organization",
+              "name": "DAROX"
+            },
+            "datePublished": "2024-01-01"
+          }
+          `}
+        </script>
+        <link rel="canonical" href="https://darox.es/proyectos/miel" />
       </Head>
       <Navbar />
       <main className="min-h-screen w-full bg-gradient-to-br from-black via-[#0a1333] to-[#1a237e] relative overflow-hidden pt-24 pb-16">
@@ -105,7 +138,7 @@ export default function ProyectoMiel() {
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
               src="/images/miel1.png"
-              alt="Proyecto Miel"
+              alt="Branding y packaging de Miel Premium realizado por DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -193,7 +226,7 @@ export default function ProyectoMiel() {
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
               src="/images/miel1.png"
-              alt="Detalle destacado Miel"
+              alt="Etiqueta personalizada para Miel Premium - diseño DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -226,7 +259,7 @@ export default function ProyectoMiel() {
             <div className="flex-1">
               <Image
                 src="/images/miel2.png"
-                alt="Detalle Miel 1"
+                alt="Packaging innovador para Miel Premium - proyecto DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
@@ -236,7 +269,7 @@ export default function ProyectoMiel() {
             <div className="flex-1">
               <Image
                 src="/images/miel3.png"
-                alt="Detalle Miel 2"
+                alt="Packaging innovador para Miel Premium - proyecto DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
@@ -260,7 +293,7 @@ export default function ProyectoMiel() {
               <div className="relative w-full h-64">
                 <Image
                   src="/images/miel2.png"
-                  alt="Proyecto 2"
+                  alt="Desarrollo web y branding para Raven Company Inc por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   style={{ borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}
@@ -281,7 +314,7 @@ export default function ProyectoMiel() {
               <div className="relative w-full h-64">
                 <Image
                   src="/images/miel1.png"
-                  alt="Proyecto 3"
+                  alt="Transformación digital y diseño avanzado para Gotham Wonder por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   style={{ borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}

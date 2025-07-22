@@ -69,8 +69,28 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>Sobre nosotros | DAROX</title>
-        <meta name="description" content="Conoce más sobre DAROX, nuestro equipo y nuestra filosofía de trabajo." />
+        <title>Sobre DAROX | Agencia de Branding y Web</title>
+        <meta
+          name="description"
+          content="Conoce al equipo de DAROX, nuestra filosofía y cómo ayudamos a empresas y emprendedores a crecer con branding, diseño web y marketing digital."
+        />
+        <script type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "DAROX",
+  "url": "https://darox.es",
+  "logo": "https://darox.es/images/logo_horizontal.png",
+  "founder": {
+    "@type": "Person",
+    "name": "Darío",
+    "jobTitle": "CEO"
+  }
+}
+`}
+</script>
+<link rel="canonical" href="https://darox.es/about" />
       </Head>
       <Navbar />
       {/* Fondo de video animado */}
@@ -326,7 +346,7 @@ export default function About() {
                         <div className="relative z-10 h-12 w-12 flex items-center justify-center rounded-full">
                           <Image
                             src={f.icon}
-                            alt={f.title}
+                            alt={`Logo de ${f.title}, herramienta de ${f.subtitle} utilizada por DAROX`}
                             width={48}
                             height={48}
                             className="h-12 w-12 object-contain rounded-full"

@@ -38,7 +38,6 @@ const stats = [
   { value: "15+", label: "Años de experiencia." },
 ];
 
-
 const TestimonialsBlock: React.FC = () => {
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 text-white bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] backdrop-blur-[2.5px] overflow-hidden">
@@ -100,7 +99,7 @@ const TestimonialsBlock: React.FC = () => {
                     <div className="bg-white/10 p-5 rounded-xl border border-white/20 shadow-lg">
                       <Image
                         src={t.image}
-                        alt={t.name}
+                        alt={`Foto de ${t.name}, ${t.position} - Testimonio sobre DAROX`}
                         width={96}
                         height={96}
                         className="h-24 w-24 object-cover rounded-full img-shadow-indigo"
@@ -127,7 +126,14 @@ const TestimonialsBlock: React.FC = () => {
                     </span>
                     <div className="flex gap-1">
                       {[...Array(5)].map((_, idx) => (
-                        <svg key={idx} className="w-6 h-6" fill="#FFD700" viewBox="0 0 24 24">
+                        <svg
+                          key={idx}
+                          className="w-6 h-6"
+                          fill="#FFD700"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
                           <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                         </svg>
                       ))}
@@ -139,6 +145,27 @@ const TestimonialsBlock: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Schema.org markup for Google+ */}
+      <script type="application/ld+json">
+        {`{
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Organization",
+            "name": "DAROX"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Richards Johnson"
+          },
+          "reviewBody": "Trabajar con DAROX fue una experiencia fluida. Su capacidad para unir creatividad y funcionalidad resultó en diseños que no solo lucen increíbles, sino que generan engagement real. ¡Muy recomendada!"
+        }`}
+      </script>
     </section>
   );
 };

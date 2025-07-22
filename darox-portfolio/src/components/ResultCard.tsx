@@ -22,7 +22,7 @@ export const ResultCard: React.FC<Props> = ({ caseData }) => {
       <div className="relative h-48 overflow-hidden">
         <Image
           src={caseData.imageUrl}
-          alt={`${caseData.title} preview`}
+          alt={`Vista previa del proyecto ${caseData.title} realizado por DAROX`}
           fill
           className="object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
           placeholder="blur"
@@ -32,7 +32,7 @@ export const ResultCard: React.FC<Props> = ({ caseData }) => {
         <div className="absolute top-4 right-4 bg-white/20 rounded-full p-1">
           <Image
             src={caseData.logoUrl}
-            alt={`${caseData.title} logo`}
+            alt={`Logo de ${caseData.title}`}
             width={40}
             height={40}
             className="object-contain"

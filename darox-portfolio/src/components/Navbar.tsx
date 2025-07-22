@@ -28,7 +28,7 @@ export default function Navbar() {
               <Link href="/">
                 <Image
                     src="/images/logo.png"
-                    alt="Logo DAROX"
+                    alt="Logo de DAROX, agencia de branding y diseño web"
                     width={32}
                     height={32}
                     className="h-8 w-auto"
@@ -54,6 +54,7 @@ export default function Navbar() {
             <div className="md:hidden">
               <button
                   type="button"
+                  aria-label="Abrir menú principal"
                   className="p-2 rounded-md text-gray-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
               >

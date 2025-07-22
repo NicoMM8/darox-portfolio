@@ -114,7 +114,7 @@ const Process: React.FC = () => {
 											<div className="bg-indigo-900/80 rounded-xl flex items-center justify-center shadow-lg border border-indigo-400/30 transition-transform duration-300 hover:scale-105 hover:shadow-indigo-500/40 h-16 w-16 overflow-hidden">
 												<Image
 													src={step.icon}
-													alt="Icono de Etapa"
+													alt={`Icono de la etapa ${step.titulo} del proceso DAROX`}
 													width={64}
 													height={64}
 													className="h-full w-full object-cover img-shadow-indigo"
@@ -173,7 +173,7 @@ const Process: React.FC = () => {
 								<div className="bg-indigo-900/80 rounded-xl flex items-center justify-center shadow-lg border border-indigo-400/30 transition-transform duration-300 hover:scale-105 hover:shadow-indigo-500/40 h-16 w-16 overflow-hidden">
 									<Image
 										src={step.icon}
-										alt="Icono de Etapa"
+										alt={`Icono de la etapa ${step.titulo} del proceso DAROX`}
 										width={64}
 										height={64}
 										className="h-full w-full object-cover img-shadow-indigo"

@@ -40,7 +40,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
           <Link href="/" className="inline-block w-16 h-6 relative">
             <Image
               src="/images/logo.png"
-              alt="Logo"
+              alt="Logo de DAROX, agencia de branding y diseño web"
               fill
               className="object-contain"
               priority
@@ -54,7 +54,11 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
           </p>
           {/* Newsletter */}
           <form className="mt-4 flex gap-2">
+            <label htmlFor="footer-newsletter" className="sr-only">
+              Introduce tu Email
+            </label>
             <input
+              id="footer-newsletter"
               type="email"
               name="Email"
               placeholder="Introduce tu Email..."
@@ -62,19 +66,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
             />
             <button
               type="submit"
-              className="
-    inline-flex items-center justify-center
-    px-4 py-2
-    rounded-[10px]
-    border-4 border-white/15
-    bg-blue-700
-    about-shadow
-    text-white font-semibold
-    transition-all duration-300
-    hover:bg-blue-800 hover:scale-105
-    animate-fade-in-up
-    w-full text-center
-  "
+              className="inline-flex items-center justify-center px-4 py-2 rounded-[10px] border-4 border-white/15 bg-blue-700 about-shadow text-white font-semibold transition-all duration-300 hover:bg-blue-800 hover:scale-105 animate-fade-in-up w-full text-center"
             >
               Síguenos
             </button>
@@ -117,7 +109,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
           </div>
         </div>
 
-        {/* Derecha: Social */}
+        {/* Derecha: Social y Contacto */}
         <div className="flex flex-col gap-4 md:w-1/3">
           <h4 className="text-base font-semibold text-white mb-2">Social</h4>
           <div className="flex flex-col gap-2">
@@ -146,6 +138,10 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
               Youtube
             </a>
           </div>
+          {/* Información de contacto */}
+          <h4 className="text-base font-semibold text-white mb-2">Contacto</h4>
+          <span className="text-white/60 text-sm">09001 Burgos, España</span>
+          <span className="text-white/60 text-sm">Email: daroxbrandmaker@gmail.com</span>
         </div>
       </div>
       {/* Separador inferior */}

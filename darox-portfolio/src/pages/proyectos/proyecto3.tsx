@@ -7,8 +7,22 @@ export default function Proyecto3() {
   return (
     <>
       <Head>
-        <title>Proyecto 3 | DAROX</title>
-        <meta name="description" content="Detalles del Proyecto 3 realizado por DAROX." />
+        <title>Transformación Digital y Diseño Avanzado | DAROX</title>
+        <meta
+          name="description"
+          content="Proyecto integral de transformación digital y diseño avanzado para una marca líder. Innovación, tecnología y resultados medibles."
+        />
+        {/* Open Graph */}
+        <meta property="og:title" content="Transformación Digital y Diseño Avanzado | DAROX" />
+        <meta property="og:description" content="Proyecto integral de transformación digital y diseño avanzado para una marca líder. Innovación, tecnología y resultados medibles." />
+        <meta property="og:image" content="https://darox.es/images/miel1.png" />
+        <meta property="og:url" content="https://darox.es/proyectos/proyecto3" />
+        <meta property="og:type" content="article" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Transformación Digital y Diseño Avanzado | DAROX" />
+        <meta name="twitter:description" content="Proyecto integral de transformación digital y diseño avanzado para una marca líder. Innovación, tecnología y resultados medibles." />
+        <meta name="twitter:image" content="https://darox.es/images/miel1.png" />
       </Head>
       <Navbar />
       <main className="min-h-screen w-full bg-gradient-to-br from-black via-[#0a1333] to-[#1a237e] relative overflow-hidden pt-24 pb-16">
@@ -105,7 +119,7 @@ export default function Proyecto3() {
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
               src="/images/miel1.png"
-              alt="Proyecto 3"
+              alt="Vista previa del proyecto Proyecto 3: transformación digital y diseño avanzado realizado por DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -179,7 +193,7 @@ export default function Proyecto3() {
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
               src="/images/miel1.png"
-              alt="Detalle destacado Proyecto 3"
+              alt="Detalle destacado del proyecto Proyecto 3 realizado por DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -212,7 +226,7 @@ export default function Proyecto3() {
             <div className="flex-1">
               <Image
                 src="/images/miel1.png"
-                alt="Detalle Proyecto 3 - 1"
+                alt="Detalle visual 1 del proyecto Proyecto 3 realizado por DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
@@ -222,7 +236,7 @@ export default function Proyecto3() {
             <div className="flex-1">
               <Image
                 src="/images/miel1.png"
-                alt="Detalle Proyecto 3 - 2"
+                alt="Detalle visual 2 del proyecto Proyecto 3 realizado por DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
@@ -246,7 +260,7 @@ export default function Proyecto3() {
               <div className="relative w-full h-64">
                 <Image
                   src="/images/miel1.png"
-                  alt="Miel Premium"
+                  alt="Vista previa del proyecto Miel Premium: branding, packaging y web realizados por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   style={{ borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}
@@ -267,7 +281,7 @@ export default function Proyecto3() {
               <div className="relative w-full h-64">
                 <Image
                   src="/images/miel1.png"
-                  alt="Proyecto 2"
+                  alt="Vista previa del proyecto Proyecto 2: branding, desarrollo y estrategia digital realizados por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   style={{ borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}

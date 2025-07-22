@@ -6,6 +6,12 @@ import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 
+const customDescriptions: Record<string, string> = {
+  "Miel Premium": "Desarrollamos la identidad visual y el packaging para Miel Premium, enfocándonos en transmitir la pureza y el origen natural del producto. El sitio web integra storytelling y fotografía de producto para aumentar la conversión.",
+  "Raven Company Inc": "Para Raven Company Inc, automatizamos procesos internos y optimizamos la web corporativa, logrando reducir costes operativos y mejorar la experiencia del usuario con dashboards personalizados.",
+  "Gotham Wonder": "Gotham Wonder necesitaba una transformación digital completa. Creamos una estrategia omnicanal, rediseñamos su branding y lanzamos campañas de marketing digital que incrementaron el tráfico y las ventas."
+};
+
 function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total: number }) {
   const ref = useRef(null)
   const [vh, setVh] = useState(0)
@@ -61,7 +67,7 @@ function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total:
           >
             <Image
               src={item.imageUrl}
-              alt={`Proyecto: ${item.title}. ${item.description || ''}`}
+              alt={`Proyecto de ${item.title}: ${customDescriptions[item.title] || item.description}`}
               fill
               style={{ objectFit: 'cover', objectPosition: 'center' }}
               sizes="(max-width: 768px) 100vw, 80vw"
@@ -115,11 +121,49 @@ export default function Portfolio() {
   return (
     <>
       <Head>
-        <title>Portafolio | DAROX</title>
+        <title>Portafolio de Proyectos | Branding y Web | DAROX</title>
         <meta
           name="description"
-          content="Descubre algunos de los proyectos y resultados reales de DAROX."
+          content="Explora casos de éxito en branding, diseño web y marketing digital realizados por DAROX. Resultados tangibles para empresas y startups."
         />
+        {/* Open Graph */}
+        <meta property="og:title" content="Portafolio de Proyectos | Branding y Web | DAROX" />
+        <meta property="og:description" content="Explora casos de éxito en branding, diseño web y marketing digital realizados por DAROX. Resultados tangibles para empresas y startups." />
+        <meta property="og:image" content="https://darox.es/images/logo_horizontal.png" />
+        <meta property="og:url" content="https://darox.es/portfolio" />
+        <meta property="og:type" content="website" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Portafolio de Proyectos | Branding y Web | DAROX" />
+        <meta name="twitter:description" content="Explora casos de éxito en branding, diseño web y marketing digital realizados por DAROX. Resultados tangibles para empresas y startups." />
+        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.png" />
+        {/* Schema.org para Google */}
+        <script type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://darox.es/proyectos/miel"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://darox.es/proyectos/proyecto2"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "url": "https://darox.es/proyectos/proyecto3"
+    }
+  ]
+}
+`}
+</script>
+        <link rel="canonical" href="https://darox.es/portfolio" />
       </Head>
       <Navbar />
 

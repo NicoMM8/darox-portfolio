@@ -7,8 +7,22 @@ export default function Proyecto2() {
   return (
     <>
       <Head>
-        <title>Proyecto 2 | DAROX</title>
-        <meta name="description" content="Detalles del Proyecto 2 realizado por DAROX." />
+        <title>Proyecto Branding y Web Innovadora | DAROX</title>
+        <meta
+          name="description"
+          content="Descubre cómo DAROX impulsó el crecimiento digital de una marca innovadora con branding, desarrollo web y estrategia digital personalizada."
+        />
+        {/* Open Graph */}
+        <meta property="og:title" content="Proyecto Branding y Web Innovadora | DAROX" />
+        <meta property="og:description" content="Descubre cómo DAROX impulsó el crecimiento digital de una marca innovadora con branding, desarrollo web y estrategia digital personalizada." />
+        <meta property="og:image" content="https://darox.es/images/miel1.png" />
+        <meta property="og:url" content="https://darox.es/proyectos/proyecto2" />
+        <meta property="og:type" content="article" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Proyecto Branding y Web Innovadora | DAROX" />
+        <meta name="twitter:description" content="Descubre cómo DAROX impulsó el crecimiento digital de una marca innovadora con branding, desarrollo web y estrategia digital personalizada." />
+        <meta name="twitter:image" content="https://darox.es/images/miel1.png" />
       </Head>
       <Navbar />
       <main className="min-h-screen w-full bg-gradient-to-br from-black via-[#0a1333] to-[#1a237e] relative overflow-hidden pt-24 pb-16">
@@ -179,7 +193,7 @@ export default function Proyecto2() {
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
               src="/images/miel1.png"
-              alt="Detalle destacado Proyecto 2"
+              alt="Detalle destacado del proyecto Miel Premium realizado por DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -212,7 +226,7 @@ export default function Proyecto2() {
             <div className="flex-1">
               <Image
                 src="/images/miel1.png"
-                alt="Detalle Proyecto 2 - 1"
+                alt="Detalle visual del proyecto Miel Premium realizado por DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
@@ -222,7 +236,7 @@ export default function Proyecto2() {
             <div className="flex-1">
               <Image
                 src="/images/miel1.png"
-                alt="Detalle Proyecto 2 - 2"
+                alt="Detalle visual adicional del proyecto Miel Premium realizado por DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
@@ -246,7 +260,7 @@ export default function Proyecto2() {
               <div className="relative w-full h-64">
                 <Image
                   src="/images/miel1.png"
-                  alt="Miel Premium"
+                  alt="Vista previa del proyecto Miel Premium: branding, packaging y web realizados por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   style={{ borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}
@@ -267,7 +281,7 @@ export default function Proyecto2() {
               <div className="relative w-full h-64">
                 <Image
                   src="/images/miel1.png"
-                  alt="Proyecto 3"
+                  alt="Vista previa del proyecto Proyecto 3: transformación digital y diseño avanzado por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   style={{ borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}

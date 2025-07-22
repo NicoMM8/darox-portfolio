@@ -5,11 +5,43 @@ export default function Contact() {
   return (
     <>
       <Head>
-        <title>Contacto | DAROX</title>
+        <title>Contacto Agencia de Branding y Web en España | DAROX</title>
         <meta
           name="description"
-          content="Contacta con DAROX para resolver tus dudas o empezar tu proyecto."
+          content="Contacta con DAROX, agencia líder en branding, diseño web y marketing digital en España. Solicita asesoría gratuita para tu proyecto, empresa o startup. ¡Impulsa tu presencia online hoy!"
         />
+        {/* Open Graph */}
+        <meta property="og:title" content="Contacto Agencia de Branding y Web en España | DAROX" />
+        <meta property="og:description" content="Contacta con DAROX, agencia líder en branding, diseño web y marketing digital en España. Solicita asesoría gratuita para tu proyecto, empresa o startup. ¡Impulsa tu presencia online hoy!" />
+        <meta property="og:image" content="https://darox.es/images/logo_horizontal.png" />
+        <meta property="og:url" content="https://darox.es/contacto" />
+        <meta property="og:type" content="website" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contacto Agencia de Branding y Web en España | DAROX" />
+        <meta name="twitter:description" content="Contacta con DAROX, agencia líder en branding, diseño web y marketing digital en España. Solicita asesoría gratuita para tu proyecto, empresa o startup. ¡Impulsa tu presencia online hoy!" />
+        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.png" />
+        <link rel="canonical" href="https://darox.es/contacto" />
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "DAROX",
+              "url": "https://darox.es",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "daroxbrandmaker@gmail.com",
+                "contactType": "customer support",
+                "telephone": "+34 600 00 00 00",
+                "areaServed": "ES"
+              }
+            }
+          }
+          `}
+        </script>
       </Head>
 
       <Navbar />

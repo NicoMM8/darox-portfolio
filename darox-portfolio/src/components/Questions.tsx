@@ -122,6 +122,8 @@ const Questions: React.FC = () => {
 							type="button"
 							onClick={() => toggle(idx)}
 							className={`relative border border-white/10 bg-black/80 rounded-2xl px-6 py-5 flex flex-col hover:shadow-lg transition group text-left focus:outline-none`}
+							aria-expanded={openIdx === idx}
+							aria-controls={`faq-answer-${idx}`}
 						>
 							<div className="flex items-center justify-between">
 								<span className="text-lg font-medium text-white">
@@ -139,6 +141,8 @@ const Questions: React.FC = () => {
 										fill="none"
 										viewBox="0 0 24 24"
 										className="text-white/70 group-hover:text-blue-400 transition"
+										aria-hidden="true"
+										focusable="false"
 									>
 										<path
 											d="M12 5v14M5 12h14"
@@ -150,7 +154,10 @@ const Questions: React.FC = () => {
 								</span>
 							</div>
 							{openIdx === idx && (
-								<span className="text-base text-white/70 mt-3 transition-opacity duration-300">
+								<span
+									id={`faq-answer-${idx}`}
+									className="text-base text-white/70 mt-3 transition-opacity duration-300"
+								>
 									{faq.answer}
 								</span>
 							)}

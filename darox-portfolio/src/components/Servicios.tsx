@@ -117,7 +117,7 @@ const Services: React.FC = () => {
                 <div className="bg-blue-900/10 p-5 rounded-xl border border-blue-600/15 shadow-lg">
                   <Image
                     src={service.icon}
-                    alt="Icono de Servicio"
+                    alt={`Icono del servicio ${service.title} de DAROX`}
                     width={48}
                     height={48}
                     className="h-12 w-12"
@@ -163,7 +163,7 @@ const Services: React.FC = () => {
                     <li key={i} className="flex items-center text-white/80 text-sm">
                       <Image
                         src="/images/tick.png"
-                        alt="tick"
+                        alt=""
                         width={20}
                         height={20}
                         className="h-5 w-5 mr-2 flex-shrink-0"
@@ -197,7 +197,7 @@ const Services: React.FC = () => {
               {index === 2 && (
                 <Image
                   src="/images/icon.svg"
-                  alt="Real Business Pack"
+                  alt="Icono decorativo del Real Business Pack"
                   width={96}
                   height={96}
                   className="absolute right-2 bottom-8 h-24 w-24 object-contain opacity-80 pointer-events-none"
@@ -208,6 +208,23 @@ const Services: React.FC = () => {
           ))}
         </div>
       </div>
+      {/* Schema.org markup for Google+ */}
+      <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Branding y Diseño Web",
+            "provider": {
+              "@type": "Organization",
+              "name": "DAROX",
+              "url": "https://darox.es"
+            },
+            "areaServed": "España",
+            "description": "Servicios de branding, diseño web, marketing digital e inteligencia artificial para empresas y startups."
+          }
+        `}
+      </script>
     </section>
   )
 }

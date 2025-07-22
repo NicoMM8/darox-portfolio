@@ -10,7 +10,7 @@ const features = [
 			"Genera ganancias escalables desbloqueando nuevas fuentes de ingresos con estrategias basadas en datos y marketing de alto impacto.",
 	},
 	{
-		icon: "	https://framerusercontent.com/images/c7ewovWjVsAf198pTS4MtYSO8k.svg",
+		icon: "https://framerusercontent.com/images/c7ewovWjVsAf198pTS4MtYSO8k.svg",
 		title: "Activos personalizables",
 		badge: "",
 		subtitle: "Activos personalizables",
@@ -29,7 +29,7 @@ const features = [
 
 const extraFeatures = [
 	{
-		icon: "	https://framerusercontent.com/images/Oyac3Rl5DdKSc0EQHWNG6R5Oyhg.svg",
+		icon: "https://framerusercontent.com/images/Oyac3Rl5DdKSc0EQHWNG6R5Oyhg.svg",
 		title: "Entrega rápida como un rayo",
 		badge: "PRO",
 		subtitle: "Entrega rápida como un rayo",
@@ -45,7 +45,7 @@ const extraFeatures = [
 			"Nuestro Equipo siempre está disponible para cualquier duda o solución.",
 	},
 	{
-		icon: "	https://framerusercontent.com/images/Iwdftj1FguNyuJzFy1omuAPYcc.svg",
+		icon: "https://framerusercontent.com/images/Iwdftj1FguNyuJzFy1omuAPYcc.svg",
 		title: "Compatible con móviles",
 		badge: "NUEVO",
 		subtitle: "Compatible con móviles",
@@ -129,7 +129,7 @@ const Features: React.FC = () => {
 										{/* eslint-disable-next-line @next/next/no-img-element */}
 										<img
 											src={f.icon}
-											alt="Icono"
+											alt={`Icono de ${f.title} - ${f.subtitle}`}
 											className="h-12 w-12 object-contain rounded-full"
 										/>
 									</div>
@@ -190,7 +190,7 @@ const Features: React.FC = () => {
 										{/* eslint-disable-next-line @next/next/no-img-element */}
 										<img
 											src={f.icon}
-											alt="Icono"
+											alt={`Icono de ${f.title} - ${f.subtitle}`}
 											className="h-12 w-12 object-contain rounded-full"
 										/>
 									</div>

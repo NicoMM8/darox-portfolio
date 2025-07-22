@@ -35,9 +35,9 @@ const About: React.FC = () => {
           <div className="rounded-[19px] overflow-hidden border border-white/20 transition-transform duration-300 hover:rotate-2 hover:scale-105 w-full max-w-[420px] md:max-w-[520px] h-[520px] md:h-[650px] bg-black/80 shadow-xl">
             <Image
               src="/images/foto_about2.png"
-              alt="Persona trabajando en portátil"
+              alt="Equipo DAROX trabajando en branding y diseño web"
               width={800}
-              height={1000} // 4:5
+              height={1000}
               className="object-cover w-full h-full"
               priority
             />
@@ -105,18 +105,8 @@ const About: React.FC = () => {
           {/* Botón destacado */}
           <a
             href="./about"
-            className="
-              inline-flex items-center justify-center
-              px-4 py-2
-              rounded-[10px]
-              border-4 border-white/15
-              bg-blue-700
-              about-shadow
-              text-white font-semibold
-              transition-all duration-300
-              hover:bg-blue-800 hover:scale-105
-              animate-fade-in-up
-            "
+            aria-label="Ver información sobre DAROX"
+            className="inline-flex items-center justify-center px-4 py-2 rounded-[10px] border-4 border-white/15 bg-blue-700 about-shadow text-white font-semibold transition-all duration-300 hover:bg-blue-800 hover:scale-105 animate-fade-in-up"
           >
             Ver Sobre DAROX
           </a>
