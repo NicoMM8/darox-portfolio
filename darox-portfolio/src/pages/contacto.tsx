@@ -1,7 +1,49 @@
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
+import { useState } from 'react'
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(null)
+
+  // Maneja el envío del formulario
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setLoading(true)
+    setSuccess(null)
+    setError(null)
+
+    const form = e.currentTarget
+    const data = {
+      nombre: (form.nombre as any).value,
+      apellidos: (form.apellidos as any).value,
+      email: (form.email as any).value,
+      pais: (form.pais as any).value,
+      tipo: (form.tipo as any).value,
+      mensaje: (form.mensaje as any).value,
+    }
+
+    try {
+      const res = await fetch('/api/contacto', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      const result = await res.json()
+      if (result.ok) {
+        setSuccess(result.message || '¡Mensaje enviado correctamente!')
+        form.reset()
+      } else {
+        setError(result.error || 'Error al enviar el mensaje.')
+      }
+    } catch {
+      setError('Error de red. Inténtalo más tarde.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <>
       <Head>
@@ -99,7 +141,7 @@ export default function Contact() {
             id="form"
             className="bg-black/80 border border-white/10 rounded-2xl p-8 md:p-12 shadow-lg mb-12"
           >
-            <form className="flex flex-col gap-6">
+            <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex flex-col flex-1 gap-2">
                   <label htmlFor="nombre" className="text-white font-medium text-sm">
@@ -202,6 +244,7 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
+                disabled={loading}
                 className="
                   mt-2
                   inline-flex items-center justify-center
@@ -217,8 +260,10 @@ export default function Contact() {
                   w-full md:w-auto text-center
                 "
               >
-                Enviar mensaje
+                {loading ? 'Enviando...' : 'Enviar mensaje'}
               </button>
+              {success && <p className="text-green-400 mt-2">{success}</p>}
+              {error && <p className="text-red-400 mt-2">{error}</p>}
             </form>
           </section>
 
