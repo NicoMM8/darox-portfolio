@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from 'next/link'
 
 interface Service {
   title: string
@@ -175,8 +176,8 @@ const Services: React.FC = () => {
                 </ul>
               </div>
               {/* Botón */}
-              <a
-                href="contacto"
+              <Link
+                href="/contacto"
                 className="
                   inline-flex items-center justify-center
                   px-4 py-2
@@ -192,7 +193,7 @@ const Services: React.FC = () => {
                 "
               >
                 Reserva una llamada
-              </a>
+              </Link>
               {/* Imagen en la esquina inferior derecha SOLO para la última card */}
               {index === 2 && (
                 <Image

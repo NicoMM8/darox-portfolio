@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const ResultsBlock: React.FC = () => (
   <section
@@ -50,8 +51,8 @@ const ResultsBlock: React.FC = () => (
       </p>
 
       {/* Botón destacado */}
-      <a
-        href="./contacto"
+      <Link
+        href="/contacto"
         className="
           inline-flex items-center justify-center
           px-6 py-3
@@ -66,7 +67,7 @@ const ResultsBlock: React.FC = () => (
         "
       >
         Agenda una llamada de 15 min
-      </a>
+      </Link>
     </div>
   </section>
 )

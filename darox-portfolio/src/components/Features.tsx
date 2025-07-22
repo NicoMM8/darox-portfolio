@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const features = [
 	{
@@ -92,9 +93,9 @@ const Features: React.FC = () => {
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
 					{features.map((f, idx) => (
-						<a
+						<Link
 							key={idx}
-							href="about"
+							href="/about"
 							className="
     						relative group rounded-2xl border border-white/10
     						bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)]
@@ -147,15 +148,15 @@ const Features: React.FC = () => {
 							{/* Línea difuminada */}
 							<div className="w-full h-0.5 my-4 rounded-full linea-difuminada" />
 							<div className="text-gray-400 text-base">{f.description}</div>
-						</a>
+						</Link>
 					))}
 				</div>
 				{/* Extra features */}
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{extraFeatures.map((f, idx) => (
-						<a
+						<Link
 							key={idx}
-							href="about"
+							href="/about"
 							className="
     						relative group rounded-2xl border border-white/10
     						bg-gradient-to-br from-[rgba(0,85,255,0.15)] to-[rgba(97,97,97,0.09)]
@@ -208,7 +209,7 @@ const Features: React.FC = () => {
 							{/* Línea difuminada */}
 							<div className="w-full h-0.5 my-4 rounded-full linea-difuminada" />
 							<div className="text-gray-400 text-base">{f.description}</div>
-						</a>
+						</Link>
 					))}
 				</div>
 			</div>

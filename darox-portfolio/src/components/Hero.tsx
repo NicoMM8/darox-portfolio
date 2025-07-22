@@ -1,6 +1,7 @@
 // src/components/Hero.tsx
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export default function Hero() {
@@ -40,8 +41,8 @@ export default function Hero() {
                         conquistes clientes y libertad.
                     </span>
                 </div>
-                <a
-                    href="contacto"
+                <Link
+                    href="/contacto"
                     className="
                         px-6 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5
                         rounded-full
@@ -59,7 +60,7 @@ export default function Hero() {
                     "
                 >
                     Descubre cómo
-                </a>
+                </Link>
             </div>
 
             {/* Fondo pulsante */}
