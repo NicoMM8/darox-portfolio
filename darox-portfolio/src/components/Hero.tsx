@@ -53,7 +53,16 @@ export default function Hero() {
             </div>
 
             {/* Fondo pulsante */}
-            <div className="absolute inset-0 bg-[url('/images/fondo.png')] bg-center bg-[length:120%] animate-[heartbeat_1.5s_ease-in-out_infinite] transform origin-center" />
+            <div className="
+                absolute inset-0
+                bg-[url('/images/fondo.png')]
+                bg-no-repeat
+                bg-center
+                bg-[length:180%]
+                sm:bg-[length:120%]
+                animate-[heartbeat_1.5s_ease-in-out_infinite]
+                transform origin-center
+            " />
 
             {/* Overlay de contraste */}
             <div className="absolute inset-0 bg-black/20" />
