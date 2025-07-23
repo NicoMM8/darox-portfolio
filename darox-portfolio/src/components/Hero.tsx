@@ -26,36 +26,25 @@ export default function Hero() {
             </div>
 
             {/* BLOQUE DE TEXTO DESTACADO */}
-            <div className={`relative z-20 text-center max-w-3xl md:max-w-5xl mx-auto px-2 flex flex-col items-center transition-all duration-700 delay-200 ${show ? "opacity-100 translate-x-0" : "opacity-0 translate-x-16"}`}>
-                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 md:mb-6 text-white drop-shadow-lg break-words leading-tight">
-                    Soluciones inteligentes para tu marca
+            <div className={`relative z-20 text-center max-w-4xl mx-auto px-2 flex flex-col items-center transition-all duration-700 delay-200 ${show ? "opacity-100 translate-x-0" : "opacity-0 translate-x-16"}`}>
+                <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 text-white drop-shadow-lg leading-tight">
+                    Construye Tu Marca
                 </h1>
-                <div className="mb-6 md:mb-8 mx-auto text-white shadow-lg break-words leading-snug max-w-4xl flex flex-col items-center">
-                    <span className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium">
-                        Fusionamos inteligencia artificial, creatividad humana,
-                    </span>
-                    <span className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium">
-                        diseño y estrategia tecnológica para que 
-                    </span>
-                    <span className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium">
-                        conquistes clientes y libertad.
-                    </span>
-                </div>
+                <p className="text-lg sm:text-2xl md:text-3xl font-normal text-gray-200 mb-8 max-w-3xl mx-auto drop-shadow">
+                    Transformamos ideas en marcas auténticas y potentes que atraen clientes, generan ingresos y te posicionan como líder en tu sector.
+                </p>
                 <Link
                     href="/contacto"
                     className="
-                        px-6 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5
-                        rounded-full
-                        text-base sm:text-xl md:text-2xl font-bold
+                        px-8 py-4 rounded-full
+                        text-lg sm:text-xl font-bold
                         shadow-xl
                         hover:scale-105
                         transition-transform duration-200
                         about-shadow
                         text-white
-                        animate-fade-in-up
-                        inline-flex items-center justify-center
-                        bg-gradient-to-r from-blue-600 to-blue-400
-                        hover:from-blue-700 hover:to-blue-500
+                        bg-gradient-to-r from-purple-700 to-fuchsia-500
+                        hover:from-purple-800 hover:to-fuchsia-600
                         mt-2
                     "
                 >
@@ -64,10 +53,10 @@ export default function Hero() {
             </div>
 
             {/* Fondo pulsante */}
-            <div className="absolute inset-0 bg-[url('/images/moon.png')] bg-cover bg-center animate-[heartbeat_1.5s_ease-in-out_infinite] transform origin-center" />
+            <div className="absolute inset-0 bg-[url('/images/fondo.png')] bg-center bg-[length:120%] animate-[heartbeat_1.5s_ease-in-out_infinite] transform origin-center" />
 
             {/* Overlay de contraste */}
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-black/20" />
         </section>
     )
 }
