@@ -120,12 +120,14 @@ export default function About() {
           </div>
           {/* Título grande */}
           <h1 className="text-[1.8rem] sm:text-[2.5rem] md:text-[3.2rem] font-extrabold leading-[1.1] text-white text-center tracking-tight mb-6">
-            Aprende más sobre DAROX<br />
-            <span className="text-white/80">¡Vamos a profundizar!</span>
+            Conoce el universo de DAROX BM<br />
+            <span className="text-white/80">Lideramos ideas hacia el éxito real</span>
           </h1>
           {/* Subtítulo */}
           <p className="text-base sm:text-lg md:text-xl text-gray-300 text-center max-w-2xl mb-10 font-medium">
-            DAROX es tu agencia para creatividad, estrategia y soluciones digitales. Nos especializamos en branding, desarrollo web y marketing digital.
+            En Darox BM combinamos diseño, estrategia y tecnología para transformar ideas en negocios rentables.
+            Somos tu socio creativo y resolutivo: expertos en branding, desarrollo web, automatización con IA y marketing digital.
+            Creemos en el poder de construir marcas auténticas con resultados tangibles.    
           </p>
           {/* Botones */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

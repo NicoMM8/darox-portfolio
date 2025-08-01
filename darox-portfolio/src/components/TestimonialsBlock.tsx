@@ -35,7 +35,7 @@ const testimonials = [
 const stats = [
   { value: "180+", label: "Proyectos de diseño completados." },
   { value: "96%", label: "Índice de satisfacción de clientes." },
-  { value: "15+", label: "Años de experiencia." },
+  { value: "5+", label: "Sectores diferentes." },
 ];
 
 const TestimonialsBlock: React.FC = () => {

@@ -68,12 +68,12 @@ export default function Contact() {
               </span>
             </div>
             <h1 className="text-6xl md:text-7xl font-extrabold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent leading-tight text-center">
-              ¿Tienes dudas?
+              ¿Listo para dar el primer paso?
               <br />
-              Estamos aquí.
+              Estamos aquí para ayudarte a convertir tu visión en resultados.
             </h1>
             <span className="text-base text-gray-400 text-center">
-              Ya sea para resolver una pregunta, pedir ayuda o empezar un nuevo proyecto, nuestro equipo está listo para ayudarte.
+              Ya sea que tengas dudas, quieras orientación o estés listo para empezar tu proyecto, estamos a solo una llamada de distancia. Completa el formulario y comencemos a construir algo real.
             </span>
             <a
               href="#form"
