@@ -16,23 +16,29 @@
 ## 🎯 Características destacadas
 
 ### Secciones estratégicas
-| Sección             | Descripción                                     |
-|---------------------|-------------------------------------------------|
-| **Hero Animado**    | Llamada a acción con efectos de entrada        |
-| **Clientes**        | Carrusel horizontal de logos con Swiper.js     |
-| **Resultados**      | Métricas animadas con contadores               |
-| **Proceso Vertical**| Carrusel vertical único con navegación táctil  |
-| **Features Grid**   | Grid interactivo con hover effects             |
-| **FAQs**            | Acordeón desplegable listo para producción     |
+| Componente          | Descripción                                                                 |
+|---------------------|-----------------------------------------------------------------------------|
+| **Hero Animado**🎬    | Llamada a la acción con animaciones de entrada y logo destacado             |
+| **Logo Carousel**🔁    | Carrusel horizontal infinito de logos de partners y clientes               |
+| **About & Results**📊 | Presentación de la agencia y resultados tangibles con métricas reales       |
+| **Resultados**📈      | Grid visual de proyectos con métricas animadas y enlaces a casos de éxito   |
+| **Proceso**🔄         | Carrusel vertical con Swiper.js para mostrar el workflow paso a paso        |
+| **Features**✨        | Grid interactivo de características con efectos hover y badges destacados   |
+| **Beneficios**💎      | Carrusel infinito de beneficios en cards animadas con Framer Motion         |
+| **Servicios**💼       | Cards de planes de servicio con precios, badges y detalles comparativos    |
+| **Testimonios**🗣️     | Carrusel infinito de testimonios reales y estadísticas de satisfacción     |
+| **FAQs**❓            | Acordeón desplegable de preguntas frecuentes listo para producción         |
 
 ### Tecnologías clave
 ```mermaid
 graph LR
-  A[Next.js 14] --> B[React 18]
+  A[Next.js 15] --> B[React 19]
   A --> C[Tailwind CSS]
   A --> D[Framer Motion]
   D --> E[Animaciones]
   C --> F[Diseño Responsive]
   A --> G[Swiper.js]
   G --> H[Carruseles]
+  A --> I[TypeScript]
+
 
