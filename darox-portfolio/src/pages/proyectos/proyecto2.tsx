@@ -225,7 +225,7 @@ export default function Proyecto2() {
           <div className="flex flex-col md:flex-row gap-0 w-full max-w-6xl px-4">
             <div className="flex-1">
               <Image
-                src="/images/miel1.png"
+                src="/images/miel5.png"
                 alt="Detalle visual del proyecto Miel Premium realizado por DAROX"
                 width={1200}
                 height={800}
@@ -235,7 +235,7 @@ export default function Proyecto2() {
             </div>
             <div className="flex-1">
               <Image
-                src="/images/miel1.png"
+                src="/images/miel2.png"
                 alt="Detalle visual adicional del proyecto Miel Premium realizado por DAROX"
                 width={1200}
                 height={800}
@@ -259,7 +259,7 @@ export default function Proyecto2() {
             >
               <div className="relative w-full h-64">
                 <Image
-                  src="/images/miel1.png"
+                  src="/images/miel3.png"
                   alt="Vista previa del proyecto Miel Premium: branding, packaging y web realizados por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
@@ -280,7 +280,7 @@ export default function Proyecto2() {
             >
               <div className="relative w-full h-64">
                 <Image
-                  src="/images/miel1.png"
+                  src="/images/miel2.png"
                   alt="Vista previa del proyecto Proyecto 3: transformación digital y diseño avanzado por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
