@@ -59,7 +59,7 @@ const Services: React.FC = () => {
         "Calendario editorial + asesoramiento de contenido",
         "1 mes de seguimiento personalizado para ayudarte a lanzar todo"
       ],
-      icon: "/images/Business_Pack.png"
+      icon: "/images/Bussiness_Pack.png"
     }
   ]
 

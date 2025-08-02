@@ -126,9 +126,9 @@ export default function About() {
           {/* Subtítulo */}
           <p className="text-base sm:text-lg md:text-xl text-gray-300 text-justify max-w-2xl mb-10 font-medium">
             En Darox BM combinamos diseño, estrategia y tecnología para transformar ideas en negocios rentables.
-            Somos tu socio creativo y resolutivo: expertos en branding, desarrollo web, automatización con IA y marketing digital.
-            Creemos en el poder de construir marcas
+            Somos tu socio creativo y resolutivo: expertos en branding, desarrollo web, automatización con 
             <span className="block text-center">
+              IA y marketing digital. Creemos en el poder de construir marcas
               auténticas con resultados tangibles.
             </span>
           </p>
