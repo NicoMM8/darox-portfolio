@@ -28,7 +28,7 @@ const Services: React.FC = () => {
         "Kit para redes sociales",
         "Foto de perfil, portada, plantilla de publicaciones"
       ],
-      icon: "/images/card1.png"
+      icon: "/images/Start_Pack.png"
     },
     {
       title: "Grow Pack",
@@ -44,7 +44,7 @@ const Services: React.FC = () => {
         "Optimización de bio y estrategia de redes sociales",
         "Integración de herramientas básicas con IA (por ejemplo: generación de contenido, automatización de respuestas, etc.)"
       ],
-      icon: "/images/card2.png"
+      icon: "/images/Growth_Pack.png"
     },
     {
       title: "Real Business Pack",
@@ -59,7 +59,7 @@ const Services: React.FC = () => {
         "Calendario editorial + asesoramiento de contenido",
         "1 mes de seguimiento personalizado para ayudarte a lanzar todo"
       ],
-      icon: "/images/card3.png"
+      icon: "/images/Business_Pack.png"
     }
   ]
 
