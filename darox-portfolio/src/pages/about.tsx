@@ -17,12 +17,12 @@ export default function About() {
   
   const features = [
     {
-      icon: "https://framerusercontent.com/images/aSg5cKpLpgDrPCnxTLJDWkKpC2U.png",
-      title: "Zapier",
+      icon: "/images/n8n.png",
+      title: "n8n",
       badge: "PRO",
       subtitle: "Automatización",
-      description: "Zapier conecta tus apps favoritas y automatiza flujos de trabajo para que todo funcione sin esfuerzo.",
-      url: "https://zapier.com",
+      description: "n8n conecta tus apps favoritas y automatiza flujos de trabajo para que todo funcione sin esfuerzo.",
+      url: "https://n8n.io",
     },
     {
       icon: "https://framerusercontent.com/images/HcVTLgrPBtmuIOlUnu7mZwQOA.png",
@@ -33,12 +33,12 @@ export default function About() {
       url: "https://slack.com",
     },
     {
-      icon: "https://framerusercontent.com/images/Av328iRVHf5I0fJ42shDaIt1L8.svg",
-      title: "Dropbox",
+      icon: "/images/drive.png",
+      title: "Drive",
       badge: "",
       subtitle: "Almacenamiento en la nube",
-      description: "Dropbox nos permite compartir archivos y colaborar de forma segura y eficiente.",
-      url: "https://dropbox.com",
+      description: "Drive nos permite compartir archivos y colaborar de forma segura y eficiente.",
+      url: "https://drive.google.com",
     },
     {
       icon: "https://framerusercontent.com/images/WMhDTCktsKDsmcWo1JrYGg6fe1c.png",
