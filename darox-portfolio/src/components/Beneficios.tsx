@@ -230,7 +230,7 @@ const Benefits: React.FC = () => {
 						>
 							<div className="rounded-xl overflow-hidden mb-4 border border-white/10 relative">
 								<motion.img
-									src="/images/.png"
+									src="/images/Beneficios1.png"
 									alt="Integraciones continuas para automatización y CRM en proyectos DAROX"
 									className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500"
 									loading="lazy"
@@ -343,7 +343,7 @@ const Benefits: React.FC = () => {
 						<div className="bg-black/80 border border-white/10 rounded-2xl shadow-xl p-6 flex flex-col h-full overflow-hidden">
 							<div className="rounded-xl overflow-hidden mb-4 border border-white/10 relative">
 								<motion.img
-									src="https://framerusercontent.com/images/70Cw0V8JFQzVCIhorQ15yMIaI.jpg"
+									src="/images/Beneficios2.png"
 									alt="Integraciones continuas para automatización y CRM en proyectos DAROX"
 									className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500"
 									loading="lazy"
