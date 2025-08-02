@@ -10,7 +10,7 @@ const steps = [
 	{
 		etapa: "Etapa 1",
 		titulo: "Inicio",
-		icon: "/images/cohete.png",
+		icon: "/images/etapa1.png",
 		descripcion:
 			"La etapa de inicio es donde todo comienza. Nos alineamos contigo para entender tus objetivos, visión y expectativas. A través de discusiones en profundidad e investigación exhaustiva.",
 		features: ["Consulta Integral", "Hoja de Ruta del Proyecto"],
@@ -18,7 +18,7 @@ const steps = [
 	{
 		etapa: "Etapa 2",
 		titulo: "Ejecución",
-		icon: "/images/equipo.png",
+		icon: "/images/etapa2.png",
 		descripcion:
 			"Con una estrategia clara en su lugar, pasamos a la fase de ejecución, donde las ideas cobran vida. Nuestro equipo trabaja de manera altamente eficiente y colaborativa para implementar el plan.",
 		features: ["Integración Perfecta", "Colaboración en Tiempo Real"],
@@ -26,7 +26,7 @@ const steps = [
 	{
 		etapa: "Etapa 3",
 		titulo: "Entrega",
-		icon: "/images/entrega.png",
+		icon: "/images/etapa3.png",
 		descripcion:
 			"Una vez que el diseño y el desarrollo están finalizados, hacemos la transición sin problemas a la etapa de entrega. Aquí, te proporcionamos todos los activos, documentación y soporte para un lanzamiento fluido.",
 		features: ["Soporte Continuo", "Documentación"],
