@@ -17,7 +17,7 @@ export default function About() {
   
   const features = [
     {
-      icon: "/images/n8n.png",
+      icon: "/images/n8n.svg",
       title: "n8n",
       badge: "PRO",
       subtitle: "Automatización",
@@ -33,7 +33,7 @@ export default function About() {
       url: "https://slack.com",
     },
     {
-      icon: "/images/drive.png",
+      icon: "/images/drive.svg",
       title: "Drive",
       badge: "",
       subtitle: "Almacenamiento en la nube",
