@@ -39,7 +39,7 @@ export const results: Result[] = [
     id: 'raven',
     title: 'Raven Company Inc',
     imageUrl:
-      'https://framerusercontent.com/images/JCaZzme2XYHwWAWbEWjb3W3WpE.jpeg',
+      '/images/miel1.png',
     logoUrl:
       'https://framerusercontent.com/images/rQyxKxtqvKlVrHFyMDg7VnuiKNc.svg',
     description:
