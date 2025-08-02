@@ -118,7 +118,7 @@ export default function Proyecto2() {
         <div className="relative z-10 max-w-6xl mx-auto mt-16 px-4">
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
-              src="/images/miel1.png"
+              src="/images/miel4.png"
               alt="Proyecto 2"
               width={1200}
               height={600}
