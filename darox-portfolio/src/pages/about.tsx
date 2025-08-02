@@ -25,12 +25,12 @@ export default function About() {
       url: "https://n8n.io",
     },
     {
-      icon: "https://framerusercontent.com/images/HcVTLgrPBtmuIOlUnu7mZwQOA.png",
-      title: "Slack",
+      icon: "/images/teams.svg",
+      title: "Teams",
       badge: "",
       subtitle: "Comunicación",
-      description: "Slack es nuestra plataforma para comunicación y colaboración en tiempo real.",
-      url: "https://slack.com",
+      description: "Teams es nuestra plataforma para comunicación y colaboración en tiempo real.",
+      url: "https://teams.microsoft.com",
     },
     {
       icon: "/images/drive.svg",
