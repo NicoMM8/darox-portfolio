@@ -20,7 +20,7 @@ export const results: Result[] = [
     title: 'Crimson Studio',
     status: 'NUEVO',
     imageUrl:
-      'https://framerusercontent.com/images/gJpgMqolxrZFesWkDXnNXZLWBoY.jpeg',
+      '/images/golf1.png',
     logoUrl:
       'https://framerusercontent.com/images/Zjhy8gzEpQFU6Fq7lSmQUHLG3k0.svg',
     description:
@@ -59,7 +59,7 @@ export const results: Result[] = [
     title: 'Gotham Wonder',
     status: 'FRESCO',
     imageUrl:
-      'https://framerusercontent.com/images/4sfXO1JN4OBl4RWb4t9FBOXw.jpeg',
+      '/images/scaperoom.png',
     logoUrl:
       'https://framerusercontent.com/images/w0R0sHJ0c5j0Ywm5U455ynsDo.svg',
     description:
