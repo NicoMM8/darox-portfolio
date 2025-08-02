@@ -21,7 +21,11 @@ const Results: React.FC = () => {
               ${i === 1 ? 'lg:-translate-y-12' : ''}
             `}
           >
-            <div className="relative w-full h-[520px] overflow-hidden rounded-xl bg-black/60 shadow-2xl group backdrop-blur-md">
+            <Link
+              href={item.url}
+              className="block relative w-full h-[520px] overflow-hidden rounded-xl bg-black/60 shadow-2xl group backdrop-blur-md focus:outline-none"
+              aria-label={`Ver proyecto ${item.title}`}
+            >
               {/* Línea azul decorativa superior, fina y sutil */}
               <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-xl pointer-events-none opacity-70" />
               <Image
@@ -32,13 +36,12 @@ const Results: React.FC = () => {
                 placeholder="blur"
                 blurDataURL="/placeholder.png"
               />
-              <Link
-                href={item.url}
-                className="group resultados-btn absolute bottom-6 left-1/2 -translate-x-1/2 px-8 py-3 rounded-full bg-gray-300 bg-opacity-40 text-white text-lg font-medium flex items-center gap-2 border border-white/30 backdrop-blur-md transition hover:bg-opacity-60"
+              {/* Botón visual */}
+              <span
+                className="group resultados-btn absolute bottom-6 left-1/2 -translate-x-1/2 px-8 py-3 rounded-full bg-gray-300 bg-opacity-40 text-white text-lg font-medium flex items-center gap-2 border border-white/30 backdrop-blur-md transition hover:bg-opacity-60 pointer-events-none"
               >
                 Ver Proyecto
                 <span className="relative flex items-center">
-                  {/* Flecha principal */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-2 resultados-svg"
@@ -49,8 +52,8 @@ const Results: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M7 7h10v10" />
                   </svg>
                 </span>
-              </Link>
-            </div>
+              </span>
+            </Link>
           </div>
         ))}
       </div>
