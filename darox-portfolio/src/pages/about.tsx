@@ -127,7 +127,10 @@ export default function About() {
           <p className="text-base sm:text-lg md:text-xl text-gray-300 text-justify max-w-2xl mb-10 font-medium">
             En Darox BM combinamos diseño, estrategia y tecnología para transformar ideas en negocios rentables.
             Somos tu socio creativo y resolutivo: expertos en branding, desarrollo web, automatización con IA y marketing digital.
-            Creemos en el poder de construir marcas auténticas con resultados tangibles.    
+            Creemos en el poder de construir marcas
+            <span className="block text-center">
+              auténticas con resultados tangibles.
+            </span>
           </p>
           {/* Botones */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
