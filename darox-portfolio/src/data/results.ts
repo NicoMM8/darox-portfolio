@@ -20,7 +20,7 @@ export const results: Result[] = [
     title: 'Crimson Studio',
     status: 'NUEVO',
     imageUrl:
-      '/images/golf1.png',
+      '/images/golf2.png',
     logoUrl:
       'https://framerusercontent.com/images/Zjhy8gzEpQFU6Fq7lSmQUHLG3k0.svg',
     description:
