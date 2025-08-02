@@ -35,7 +35,7 @@ const About: React.FC = () => {
         <div className="md:w-1/2 flex justify-center items-center">
           <div className="rounded-[19px] overflow-hidden border border-white/20 transition-transform duration-300 hover:rotate-2 hover:scale-105 w-full max-w-[420px] md:max-w-[520px] h-[520px] md:h-[650px] bg-black/80 shadow-xl">
             <Image
-              src="/images/foto_about2.png"
+              src="/images/sobre1.png"
               alt="Equipo DAROX trabajando en branding y diseño web"
               width={800}
               height={1000}
