@@ -7,21 +7,21 @@ export default function Proyecto2() {
   return (
     <>
       <Head>
-        <title>Proyecto Branding y Web Innovadora | DAROX</title>
+        <title>Proyecto Branding Marca Artesanal | DAROX</title>
         <meta
           name="description"
-          content="Descubre cómo DAROX impulsó el crecimiento digital de una marca innovadora con branding, desarrollo web y estrategia digital personalizada."
+          content="Descubre cómo DAROX impulsó el crecimiento digital de una marca artesanal con branding, desarrollo web y estrategia digital personalizada."
         />
         {/* Open Graph */}
-        <meta property="og:title" content="Proyecto Branding y Web Innovadora | DAROX" />
-        <meta property="og:description" content="Descubre cómo DAROX impulsó el crecimiento digital de una marca innovadora con branding, desarrollo web y estrategia digital personalizada." />
+        <meta property="og:title" content="Proyecto Branding Marca Artesanal | DAROX" />
+        <meta property="og:description" content="Descubre cómo DAROX impulsó el crecimiento digital de una marca artesanal con branding, desarrollo web y estrategia digital personalizada." />
         <meta property="og:image" content="https://darox.es/images/miel1.png" />
-        <meta property="og:url" content="https://darox.es/proyectos/proyecto2" />
+        <meta property="og:url" content="https://darox.es/proyectos/MajueloDelArlanza" />
         <meta property="og:type" content="article" />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Proyecto Branding y Web Innovadora | DAROX" />
-        <meta name="twitter:description" content="Descubre cómo DAROX impulsó el crecimiento digital de una marca innovadora con branding, desarrollo web y estrategia digital personalizada." />
+        <meta name="twitter:title" content="Proyecto Branding Marca Artesanal | DAROX" />
+        <meta name="twitter:description" content="Descubre cómo DAROX impulsó el crecimiento digital de una marca artesanal con branding, desarrollo web y estrategia digital personalizada." />
         <meta name="twitter:image" content="https://darox.es/images/miel1.png" />
       </Head>
       <Navbar />
@@ -60,12 +60,12 @@ export default function Proyecto2() {
 
             {/* Título grande */}
             <h1 className="gradient-text text-5xl md:text-6xl font-extrabold leading-tight animate-fade-in-up">
-              Proyecto 2
+              El Majuelo del Arlanza
             </h1>
             <div className="w-32 h-1 rounded-full bg-gradient-to-r from-transparent via-blue-600 to-transparent my-2 animate-pulse-slow" />
             {/* Descripción */}
             <p className="text-lg text-gray-300 max-w-xl animate-fade-in-up delay-100">
-              Proyecto de branding, desarrollo y estrategia digital para una marca innovadora. Diseño, tecnología y resultados para crecer online.
+              Proyecto de branding, desarrollo y estrategia digital para una marca casera. Diseño, creatividad y resultados para crecer online.
             </p>
             {/* Badges de categoría */}
             <div className="flex gap-3 mt-2">

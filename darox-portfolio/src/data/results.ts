@@ -36,23 +36,23 @@ export const results: Result[] = [
     categories: ['E-Commerce', 'Portfolio'] 
   },
   {
-    id: 'raven',
-    title: 'Raven Company Inc',
+    id: 'majuelo',
+    title: 'El Majuelo del Arlanza',
     imageUrl:
       '/images/miel4.png',
     logoUrl:
-      'https://framerusercontent.com/images/rQyxKxtqvKlVrHFyMDg7VnuiKNc.svg',
+      '/images/miel4.png',
     description:
-      'Operaciones optimizadas reduciendo costos con nuestras soluciones de automatización.',
+      'Proyecto de branding, desarrollo y estrategia digital para una marca casera.',
     webDescription:
-      'Implementamos soluciones de automatización en Raven Company Inc, logrando una notable reducción de costos y optimización de operaciones. Se buscó mejorar la eficiencia operativa y aumentar la rentabilidad en un mercado competitivo.',
+    'Proyecto de branding, desarrollo y estrategia digital para una marca casera. Diseño, creatividad y resultados para crecer online.',
     metrics: [
       { value: '25%', label: 'Tasas de Conversión' },
       { value: '50%', label: 'Reducción en CPA' },
     ],
-    url: '/proyectos/proyecto2',
-    year: 2023,
-    categories: ['Automatización', 'Empresa']
+    url: '/proyectos/MajueloDelArlanza',
+    year: 2024,
+    categories: ['Estrategia de Marca', 'Marca Casera']
   },
   {
     id: 'gotham',
