@@ -131,39 +131,30 @@ export default function Proyecto2() {
         {/* Sección tipo análisis debajo de la imagen */}
         <section className="relative z-10 max-w-6xl mx-auto mt-16 px-4 py-12 bg-black/80 rounded-3xl border border-white/10 shadow-xl animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 animate-fade-in-up">
-            <span className="gradient-text">Análisis</span> – <span className="gradient-text">Performance</span> y <span className="gradient-text">Responsividad</span>
+            <span className="gradient-text">Origen, Valores y Propósito</span>
           </h2>
           <hr className="border-white/10 mb-8" />
           <ul className="text-lg text-gray-300 max-w-3xl space-y-4 list-disc list-inside">
             <li className="animate-fade-in-up delay-100">
-              <span className="gradient-text font-semibold">Rendimiento óptimo:</span> tiempos de carga rápidos y navegación suave en todos los dispositivos.
+              <span className="gradient-text font-semibold">Autenticidad rural:</span> una miel que nace en el corazón del pueblo, con el cuidado de quienes conocen la tierra.
             </li>
             <li className="animate-fade-in-up delay-200">
-              <span className="gradient-text font-semibold">Performance:</span> optimización de imágenes, scripts y recursos, código limpio y escalabilidad.
-            </li>
-            <li className="animate-fade-in-up delay-300">
-              <span className="gradient-text font-semibold">Responsividad:</span> experiencia consistente y fluida tanto en escritorio como en móvil.
+              <span className="gradient-text font-semibold">Tradición apícola:</span> producción artesanal con técnicas heredadas y respeto absoluto por la naturaleza.
             </li>
           </ul>
-          <div className="flex flex-col md:flex-row gap-12 mt-12 md:mt-20">
-            {/* Bloque Performance */}
-            <div className="flex-1 mb-8 md:mb-0 md:mr-8">
-              <div className="flex items-center gap-3 mb-4 md:mb-6">
-                <h3 className="text-2xl font-bold text-white"><span className="gradient-text">Performance</span></h3>
-                <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-md">SEO</span>
-              </div>
-              <ul className="text-gray-200 text-base space-y-4 md:space-y-6 list-disc list-inside">
-                <li><span className="gradient-text font-semibold">Carga rápida:</span> optimización de imágenes, scripts y recursos.</li>
-                <li><span className="gradient-text font-semibold">Código optimizado:</span> prácticas limpias y eficientes para reducir elementos innecesarios.</li>
-                <li><span className="gradient-text font-semibold">Escalabilidad:</span> diseño preparado para soportar mayor tráfico.</li>
-              </ul>
+          <div className="mt-10 grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-4"><span className="gradient-text">Origen</span></h3>
+              <p className="text-gray-200 text-base mb-2">
+                <span className="gradient-text font-semibold">De la tierra al tarro:</span> El Majuelo del Arlanza nace en un pequeño pueblo castellano, donde la apicultura sigue siendo un arte transmitido de generación en generación. Cada bote de miel refleja el sabor del entorno: tomillo, romero, flores silvestres y el aire limpio del campo.
+              </p>
             </div>
-            {/* Bloque Responsividad */}
-            <div className="flex-1">
-              <h3 className="text-2xl font-bold text-white mb-4 md:mb-6"><span className="gradient-text">Responsividad</span></h3>
-              <ul className="text-gray-200 text-base space-y-4 md:space-y-6 list-disc list-inside">
-                <li><span className="gradient-text font-semibold">Adaptabilidad total:</span> el sitio se ajusta perfectamente a móviles y escritorios.</li>
-                <li><span className="gradient-text font-semibold">Interfaz intuitiva:</span> navegación fluida y consistente en cualquier dispositivo.</li>
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-4"><span className="gradient-text">Valores</span></h3>
+              <ul className="text-gray-200 text-base space-y-3 list-disc list-inside">
+                <li><span className="gradient-text font-semibold">100% natural:</span> sin aditivos, sin prisas, sin industrializar.</li>
+                <li><span className="gradient-text font-semibold">Artesanal:</span> producido en pequeñas cantidades, con mimo y control manual.</li>
+                <li><span className="gradient-text font-semibold">Compromiso local:</span> fomentamos la economía del pueblo y la conservación del entorno natural.</li>
               </ul>
             </div>
           </div>
@@ -177,13 +168,13 @@ export default function Proyecto2() {
           <hr className="border-white/10 mb-8" />
           <ul className="text-lg text-gray-300 max-w-3xl space-y-4 list-disc list-inside">
             <li>
-              <span className="gradient-text font-semibold">Identidad visual coherente:</span> alineada con los valores de la marca.
+              <span className="gradient-text font-semibold">Identidad visual coherente:</span> Refleja la esencia rural y artesanal de la marca.
             </li>
             <li>
-              <span className="gradient-text font-semibold">Diseño UX/UI:</span> claridad, confianza y conversión en cada interacción.
+              <span className="gradient-text font-semibold">Diseño UX/UI:</span> Cercanía, calidez y claridad en cada interacción.
             </li>
             <li>
-              <span className="gradient-text font-semibold">Mensaje premium:</span> cada detalle refuerza la percepción de calidad.
+              <span className="gradient-text font-semibold">Mensaje auténtico:</span> Cada detalle transmite el alma casera y el cariño de lo hecho a mano.
             </li>
           </ul>
         </section>
