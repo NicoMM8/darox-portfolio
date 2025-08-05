@@ -34,8 +34,8 @@ export const results: Result[] = [
   {
     id: 'majuelo',
     title: 'El Majuelo del Arlanza',
-    imageUrl: '/images/miel4.png',
-    logoUrl: '/images/miel4.png',
+    imageUrl: '/images/miel6.png',
+    logoUrl: '/images/miel6.png',
     description: 'Proyecto de branding, desarrollo y estrategia digital para una marca casera.',
     webDescription: 'Proyecto de branding, desarrollo y estrategia digital para una marca casera. Diseño, creatividad y resultados para crecer online.',
     metrics: [
