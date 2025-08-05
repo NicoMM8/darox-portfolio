@@ -36,9 +36,9 @@ function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total:
 
   // Asigna el enlace según el orden de aparición
   let href = '#'
-  if (idx === 0) href = '/proyectos/miel'
+  if (idx === 0) href = '/proyectos/golden-hole'
   else if (idx === 1) href = '/proyectos/MajueloDelArlanza'
-  else if (idx === 2) href = '/proyectos/proyecto3'
+  else if (idx === 2) href = '/proyectos/codice-13'
 
   return (
     <div
@@ -147,17 +147,17 @@ export default function Portfolio() {
     {
       "@type": "ListItem",
       "position": 1,
-      "url": "https://darox.es/proyectos/miel"
+      "url": "https://darox.es/proyectos/golden-hole"
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "url": "https://darox.es/proyectos/proyecto2"
+      "url": "https://darox.es/proyectos/MajueloDelArlanza"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "url": "https://darox.es/proyectos/proyecto3"
+      "url": "https://darox.es/proyectos/codice-13"
     }
   ]
 }

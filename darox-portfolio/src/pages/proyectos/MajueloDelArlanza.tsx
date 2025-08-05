@@ -70,7 +70,7 @@ export default function Proyecto2() {
             {/* Badges de categoría */}
             <div className="flex gap-3 mt-2">
               <span className="bg-blue-900/60 text-white/90 text-base px-4 py-2 rounded-lg border border-white/10 font-medium">Branding</span>
-              <span className="bg-blue-900/60 text-white/90 text-base px-4 py-2 rounded-lg border border-white/10 font-medium">Digital</span>
+              <span className="bg-blue-900/60 text-white/90 text-base px-4 py-2 rounded-lg border border-white/10 font-medium">Artesanal</span>
             </div>
           </div>
           {/* Columna derecha: Card de datos */}
@@ -84,7 +84,7 @@ export default function Proyecto2() {
               {/* Categoría */}
               <div>
                 <span className="block text-gray-400 text-sm mb-1">Categoría</span>
-                <span className="block text-white font-semibold">Negocio Digital</span>
+                <span className="block text-white font-semibold">Negocio Artesanal</span>
               </div>
               {/* Cliente */}
               <div>
@@ -119,7 +119,7 @@ export default function Proyecto2() {
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
               src="/images/miel4.png"
-              alt="Proyecto 2"
+              alt="Detalle del proyecto Miel Premium realizado por DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -243,45 +243,45 @@ export default function Proyecto2() {
             Otros proyectos destacados
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Miel */}
+            {/* Golden Hole */}
             <Link
-              href="/proyectos/miel"
+              href="/proyectos/golden-hole"
               className="group block rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black/60 hover:scale-[1.025] transition"
             >
               <div className="relative w-full h-64">
                 <Image
-                  src="/images/miel3.png"
-                  alt="Vista previa del proyecto Miel Premium: branding, packaging y web realizados por DAROX"
+                  src="/images/golf2.png"
+                  alt="Vista previa del proyecto Golden Hole: branding, web y estrategia digital realizados por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   style={{ borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}
                 />
               </div>
               <div className="p-6">
-                <span className="text-lg font-bold text-white">Miel Premium</span>
+                <span className="text-lg font-bold text-white">Golden Hole</span>
                 <p className="text-gray-300 mb-2 text-base">
-                  Proyecto de branding, packaging y web para una marca de miel premium.
+                  Branding, desarrollo web y estrategia digital para un club de golf de alto standing.
                 </p>
               </div>
             </Link>
-            {/* Proyecto 3 */}
+            {/* Códice 13 */}
             <Link
-              href="/proyectos/proyecto3"
+              href="/proyectos/codice-13"
               className="group block rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black/60 hover:scale-[1.025] transition"
             >
               <div className="relative w-full h-64">
                 <Image
-                  src="/images/miel2.png"
-                  alt="Vista previa del proyecto Proyecto 3: transformación digital y diseño avanzado por DAROX"
+                  src="/images/scaperoom.png"
+                  alt="Vista previa del proyecto Códice 13: branding, web y narrativa inmersiva realizados por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   style={{ borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}
                 />
               </div>
               <div className="p-6">
-                <span className="text-lg font-bold text-white">Proyecto 3</span>
+                <span className="text-lg font-bold text-white">Códice 13</span>
                 <p className="text-gray-300 mb-2 text-base">
-                  Proyecto integral de transformación digital y diseño avanzado para una marca líder.
+                  Branding, desarrollo web y narrativa inmersiva para un escape room de misterio.
                 </p>
               </div>
             </Link>

@@ -3,45 +3,26 @@ import Navbar from '../../components/Navbar'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function ProyectoMiel() {
+export default function Proyecto3() {
   return (
     <>
       <Head>
-        <title>Proyecto Miel Premium | Branding, Packaging y Web | DAROX</title>
+        <title>Códice 13 | Branding, Web y Estrategia Digital | DAROX</title>
         <meta
           name="description"
-          content="Caso de éxito: Branding, packaging y desarrollo web para marca de miel premium. Estrategia, diseño y resultados medibles para aumentar ventas y presencia digital."
+          content="Códice 13: Proyecto de branding, desarrollo web y estrategia digital para un Scape Room. Misterio, Intriga y resultados tangibles."
         />
         {/* Open Graph */}
-        <meta property="og:title" content="Proyecto Miel Premium | Branding, Packaging y Web | DAROX" />
-        <meta property="og:description" content="Caso de éxito: Branding, packaging y desarrollo web para marca de miel premium. Estrategia, diseño y resultados medibles para aumentar ventas y presencia digital." />
+        <meta property="og:title" content="Códice 13 | Branding, Web y Estrategia Digital | DAROX" />
+        <meta property="og:description" content="Caso de éxito: Branding, narrativa y desarrollo web para un Escape Room. Misterio, intriga y resultados tangibles." />
         <meta property="og:image" content="https://darox.es/images/miel1.png" />
-        <meta property="og:url" content="https://darox.es/proyectos/miel" />
+        <meta property="og:url" content="https://darox.es/proyectos/codice-13" />
         <meta property="og:type" content="article" />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Proyecto Miel Premium | Branding, Packaging y Web | DAROX" />
-        <meta name="twitter:description" content="Caso de éxito: Branding, packaging y desarrollo web para marca de miel premium. Estrategia, diseño y resultados medibles para aumentar ventas y presencia digital." />
+        <meta name="twitter:title" content="Códice 13 | Branding, Web y Estrategia Digital | DAROX" />
+        <meta name="twitter:description" content="Caso de éxito: Branding, narrativa y desarrollo web para un Escape Room. Misterio, intriga y resultados tangibles." />
         <meta name="twitter:image" content="https://darox.es/images/miel1.png" />
-        {/* Schema.org JSON-LD */}
-        <script type="application/ld+json">
-          {`
-          {
-            "@context": "https://schema.org",
-            "@type": "CreativeWork",
-            "name": "Miel Premium",
-            "description": "Branding, packaging y desarrollo web para marca de miel premium. Estrategia, diseño y resultados medibles para aumentar ventas y presencia digital.",
-            "image": "https://darox.es/images/miel1.png",
-            "url": "https://darox.es/proyectos/miel",
-            "author": {
-              "@type": "Organization",
-              "name": "DAROX"
-            },
-            "datePublished": "2024-01-01"
-          }
-          `}
-        </script>
-        <link rel="canonical" href="https://darox.es/proyectos/miel" />
       </Head>
       <Navbar />
       <main className="min-h-screen w-full bg-gradient-to-br from-black via-[#0a1333] to-[#1a237e] relative overflow-hidden pt-24 pb-16">
@@ -57,18 +38,7 @@ export default function ProyectoMiel() {
           {/* Columna izquierda: Título, descripción, badges */}
           <div className="flex-1 flex flex-col justify-center gap-8">
             {/* Fecha y badge */}
-            <div
-              className="
-                inline-flex items-center gap-3
-                px-4 py-2
-                rounded-xl
-                border border-white/10
-                bg-white/5
-                shadow
-                w-fit
-                animate-fade-in-up
-              "
-            >
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-xl border border-white/10 bg-white/5 shadow w-fit animate-fade-in-up">
               <span className="inline-block rounded-md px-3 py-1 bg-blue-600 text-xs font-bold text-white shadow">
                 Portafolio
               </span>
@@ -79,17 +49,18 @@ export default function ProyectoMiel() {
 
             {/* Título grande */}
             <h1 className="gradient-text text-5xl md:text-6xl font-extrabold leading-tight animate-fade-in-up">
-              Miel Premium
+              Códice 13
             </h1>
             <div className="w-32 h-1 rounded-full bg-gradient-to-r from-transparent via-blue-600 to-transparent my-2 animate-pulse-slow" />
-            {/* Descripción */}
+            {/* Subtítulo */}
             <p className="text-lg text-gray-300 max-w-xl animate-fade-in-up delay-100">
-              Proyecto de branding, packaging y web para una marca de miel premium. Estrategia, diseño y desarrollo para aumentar ventas y presencia digital.
+              Proyecto de branding, desarrollo web y estrategia digital para un Scape Room. <b>Misterio, Intriga y resultados tangibles.</b>
             </p>
             {/* Badges de categoría */}
             <div className="flex gap-3 mt-2">
-              <span className="bg-blue-900/60 text-white/90 text-base px-4 py-2 rounded-lg border border-white/10 font-medium">E-Commerce</span>
-              <span className="bg-blue-900/60 text-white/90 text-base px-4 py-2 rounded-lg border border-white/10 font-medium">Producto</span>
+              <span className="bg-blue-900/60 text-white/90 text-base px-4 py-2 rounded-lg border border-white/10 font-medium">Branding</span>
+              <span className="bg-blue-900/60 text-white/90 text-base px-4 py-2 rounded-lg border border-white/10 font-medium">Web</span>
+              <span className="bg-blue-900/60 text-white/90 text-base px-4 py-2 rounded-lg border border-white/10 font-medium">Escape Room</span>
             </div>
           </div>
           {/* Columna derecha: Card de datos */}
@@ -98,19 +69,21 @@ export default function ProyectoMiel() {
               {/* Servicios */}
               <div>
                 <span className="block text-gray-400 text-sm mb-1">Servicios</span>
-                <span className="block text-white font-semibold">Branding, Packaging, Web</span>
+                <span className="block text-white font-semibold">
+                  Branding, Identidad visual, Diseño de experiencia (UX/UI), Narrativa de marca, Diseño web, Dirección de arte
+                </span>
               </div>
               {/* Categoría */}
               <div>
                 <span className="block text-gray-400 text-sm mb-1">Categoría</span>
-                <span className="block text-white font-semibold">Alimentación Premium</span>
+                <span className="block text-white font-semibold">Entretenimiento inmersivo / Escape Room</span>
               </div>
               {/* Cliente */}
               <div>
                 <span className="block text-gray-400 text-sm mb-1">Cliente</span>
-                <span className="block text-white font-semibold">Confidencial</span>
+                <span className="block text-white font-semibold">Emprendedores creativos (confidencial)</span>
               </div>
-              {/* Botón de contacto */}
+              {/* Botón */}
               <Link
                 href="/contacto"
                 className="
@@ -138,7 +111,7 @@ export default function ProyectoMiel() {
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
               src="/images/miel1.png"
-              alt="Branding y packaging de Miel Premium realizado por DAROX"
+              alt="Vista previa del proyecto Proyecto 3: transformación digital y diseño avanzado realizado por DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -150,59 +123,37 @@ export default function ProyectoMiel() {
         {/* Sección tipo análisis debajo de la imagen */}
         <section className="relative z-10 max-w-6xl mx-auto mt-16 px-4 py-12 bg-black/80 rounded-3xl border border-white/10 shadow-xl animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 animate-fade-in-up">
-            <span className="gradient-text">Análisis</span> – <span className="gradient-text">Performance</span> y <span className="gradient-text">Responsividad</span>
+            <span className="gradient-text">Identidad de Marca</span> – <span className="gradient-text">Origen, Valores y Propósito</span>
           </h2>
           <hr className="border-white/10 mb-8" />
           <ul className="text-lg text-gray-300 max-w-3xl space-y-4 list-disc list-inside">
             <li className="animate-fade-in-up delay-100">
-              <span className="gradient-text font-semibold">Rendimiento óptimo:</span> tiempos de carga rápidos y navegación suave en todos los dispositivos.
+              <span className="gradient-text font-semibold">Suspense narrativo:</span> una experiencia que se vive como si fueras parte de una película.
             </li>
             <li className="animate-fade-in-up delay-200">
-              <span className="gradient-text font-semibold">Performance:</span> optimización de imágenes, scripts y recursos, código limpio y escalabilidad.
-            </li>
-            <li className="animate-fade-in-up delay-300">
-              <span className="gradient-text font-semibold">Responsividad:</span> experiencia consistente y fluida tanto en escritorio como en móvil.
+              <span className="gradient-text font-semibold">Estética enigmática:</span> cada detalle visual está pensado para generar intriga y tensión.
             </li>
           </ul>
-          <div className="flex flex-col md:flex-row gap-12 mt-12 md:mt-20">
-            {/* Bloque Performance */}
-            <div className="flex-1 mb-8 md:mb-0 md:mr-8">
-              <div className="flex items-center gap-3 mb-4 md:mb-6">
-                <h3 className="text-2xl font-bold text-white">
-                  <span className="gradient-text">Performance</span>
-                </h3>
-                <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-md">SEO</span>
-              </div>
-              <ul className="text-gray-200 text-base space-y-4 md:space-y-6 list-disc list-inside">
-                <li>
-                  <span className="gradient-text font-semibold">Carga rápida:</span> optimización de imágenes, scripts y recursos.
-                </li>
-                <li>
-                  <span className="gradient-text font-semibold">Código optimizado:</span> prácticas limpias y eficientes para reducir elementos innecesarios.
-                </li>
-                <li>
-                  <span className="gradient-text font-semibold">Escalabilidad:</span> diseño preparado para soportar mayor tráfico.
-                </li>
-              </ul>
+          <div className="mt-10 grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-4"><span className="gradient-text">Origen</span></h3>
+              <p className="text-gray-200 text-base mb-2">
+                <span className="gradient-text font-semibold">Nacido del misterio:</span> Códice 13 surge de la pasión por las historias ocultas, los acertijos imposibles y las sociedades secretas. Su inspiración proviene del cine de suspense, la simbología críptica y los thrillers psicológicos. No es solo un escape room: es un universo narrativo donde cada sala es un capítulo.
+              </p>
             </div>
-            {/* Bloque Responsividad */}
-            <div className="flex-1">
-              <h3 className="text-2xl font-bold text-white mb-4 md:mb-6">
-                <span className="gradient-text">Responsividad</span>
-              </h3>
-              <ul className="text-gray-200 text-base space-y-4 md:space-y-6 list-disc list-inside">
-                <li>
-                  <span className="gradient-text font-semibold">Adaptabilidad total:</span> el sitio se ajusta perfectamente a móviles y escritorios.
-                </li>
-                <li>
-                  <span className="gradient-text font-semibold">Interfaz intuitiva:</span> navegación fluida y consistente en cualquier dispositivo.
-                </li>
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-4"><span className="gradient-text">Valores</span></h3>
+              <ul className="text-gray-200 text-base space-y-3 list-disc list-inside">
+                <li><span className="gradient-text font-semibold">Inmersión, tensión y narrativa:</span></li>
+                <li><span className="gradient-text font-semibold">Inmersión total:</span> desde que entras, el mundo exterior desaparece.</li>
+                <li><span className="gradient-text font-semibold">Diseño con propósito:</span> cada elemento tiene sentido dentro de la historia.</li>
+                <li><span className="gradient-text font-semibold">Respeto por el jugador:</span> los retos están pensados para desafiar, no frustrar.</li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* Bloque de texto adicional */}
+        {/* Estrategia de Marca y Experiencia de Usuario */}
         <section className="relative z-10 max-w-6xl mx-auto mt-16 px-4 py-12 bg-black/80 rounded-3xl border border-white/10 shadow-xl animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4 animate-fade-in-up">
             <span className="gradient-text">Estrategia de Marca</span> y <span className="gradient-text">Experiencia de Usuario</span>
@@ -210,31 +161,18 @@ export default function ProyectoMiel() {
           <hr className="border-white/10 mb-8" />
           <ul className="text-lg text-gray-300 max-w-3xl space-y-4 list-disc list-inside">
             <li>
-              <span className="gradient-text font-semibold">Identidad visual coherente:</span> alineada con los valores de la marca.
+              <span className="gradient-text font-semibold">Identidad visual coherente:</span> un universo visual oscuro y enigmático que refuerza el misterio.
             </li>
             <li>
-              <span className="gradient-text font-semibold">Diseño UX/UI:</span> claridad, confianza y conversión en cada interacción.
+              <span className="gradient-text font-semibold">Diseño UX/UI:</span> tensión, inmersión y claridad para guiar sin revelar.
             </li>
             <li>
-              <span className="gradient-text font-semibold">Mensaje premium:</span> cada detalle refuerza la percepción de calidad.
+              <span className="gradient-text font-semibold">Mensaje inmersivo:</span> cada elemento transmite la sensación de estar dentro del enigma.
             </li>
           </ul>
         </section>
 
-        {/* Imagen grande centrada */}
-        <div className="relative z-10 max-w-6xl mx-auto mt-16 px-4">
-          <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
-            <Image
-              src="/images/miel1.png"
-              alt="Etiqueta personalizada para Miel Premium - diseño DAROX"
-              width={1200}
-              height={600}
-              className="w-full h-auto object-cover"
-            />
-          </div>
-        </div>
-
-        {/* Otro bloque de texto */}
+        {/* Resultados y Aprendizajes */}
         <section className="relative z-10 max-w-6xl mx-auto mt-16 px-4 py-12 bg-black/80 rounded-3xl border border-white/10 shadow-xl animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4 animate-fade-in-up">
             <span className="gradient-text">Resultados</span> y <span className="gradient-text">Aprendizajes</span>
@@ -242,13 +180,13 @@ export default function ProyectoMiel() {
           <hr className="border-white/10 mb-8" />
           <ul className="text-lg text-gray-300 max-w-3xl space-y-4 list-disc list-inside">
             <li>
-              <span className="gradient-text font-semibold">Aumento de percepción de marca:</span> el proyecto mejoró significativamente la imagen y el reconocimiento.
+              <span className="gradient-text font-semibold">Impacto en la narrativa de marca:</span> se consolidó una identidad visual oscura, coherente y memorable.
             </li>
             <li>
-              <span className="gradient-text font-semibold">Incremento en ventas online:</span> resultados tangibles tras el lanzamiento.
+              <span className="gradient-text font-semibold">Incremento en reservas:</span> mayor tráfico y conversión gracias a una experiencia digital alineada con la inmersión del juego.
             </li>
             <li>
-              <span className="gradient-text font-semibold">Iteración y mejora continua:</span> colaboración cercana con el cliente para una solución robusta y escalable.
+              <span className="gradient-text font-semibold">Iteración creativa constante:</span> trabajo conjunto para pulir cada detalle como si fuera parte del enigma.
             </li>
           </ul>
         </section>
@@ -258,8 +196,8 @@ export default function ProyectoMiel() {
           <div className="flex flex-col md:flex-row gap-0 w-full max-w-6xl px-4">
             <div className="flex-1">
               <Image
-                src="/images/miel2.png"
-                alt="Packaging innovador para Miel Premium - proyecto DAROX"
+                src="/images/miel1.png"
+                alt="Detalle visual 1 del proyecto Códice 13 realizado por DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
@@ -268,8 +206,8 @@ export default function ProyectoMiel() {
             </div>
             <div className="flex-1">
               <Image
-                src="/images/miel3.png"
-                alt="Packaging innovador para Miel Premium - proyecto DAROX"
+                src="/images/miel1.png"
+                alt="Detalle visual 2 del proyecto Códice 13 realizado por DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
@@ -285,45 +223,45 @@ export default function ProyectoMiel() {
             Otros proyectos destacados
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Proyecto 2 */}
+            {/* Golden Hole */}
             <Link
-              href="/proyectos/proyecto2"
+              href="/proyectos/golden-hole"
               className="group block rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black/60 hover:scale-[1.025] transition"
             >
               <div className="relative w-full h-64">
                 <Image
-                  src="/images/miel2.png"
-                  alt="Desarrollo web y branding para Raven Company Inc por DAROX"
+                  src="/images/golf2.png"
+                  alt="Vista previa del proyecto Golden Hole: branding, web y estrategia digital realizados por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   style={{ borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}
                 />
               </div>
               <div className="p-6">
-                <span className="text-lg font-bold text-white">Proyecto 2</span>
+                <span className="text-lg font-bold text-white">Golden Hole</span>
                 <p className="text-gray-300 mb-2 text-base">
-                  Branding, desarrollo y estrategia digital para una marca innovadora.
+                  Branding, desarrollo web y estrategia digital para un club de golf de alto standing.
                 </p>
               </div>
             </Link>
-            {/* Proyecto 3 */}
+            {/* El Majuelo del Arlanza */}
             <Link
-              href="/proyectos/proyecto3"
+              href="/proyectos/MajueloDelArlanza"
               className="group block rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black/60 hover:scale-[1.025] transition"
             >
               <div className="relative w-full h-64">
                 <Image
-                  src="/images/miel1.png"
-                  alt="Transformación digital y diseño avanzado para Gotham Wonder por DAROX"
+                  src="/images/miel4.png"
+                  alt="Vista previa del proyecto El Majuelo del Arlanza: branding, desarrollo y estrategia digital realizados por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   style={{ borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}
                 />
               </div>
               <div className="p-6">
-                <span className="text-lg font-bold text-white">Proyecto 3</span>
+                <span className="text-lg font-bold text-white">El Majuelo del Arlanza</span>
                 <p className="text-gray-300 mb-2 text-base">
-                  Proyecto integral de transformación digital y diseño avanzado para una marca líder.
+                  Branding, desarrollo y estrategia digital para una marca de miel artesanal.
                 </p>
               </div>
             </Link>
