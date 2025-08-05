@@ -184,7 +184,7 @@ export default function ProyectoMiel() {
               <span className="gradient-text font-semibold">Diseño UX/UI:</span> claridad, distinción y confianza en cada interacción.
             </li>
             <li>
-              <span className="gradient-text font-semibold">Mensaje premium:</span> cada elemento visual y verbal refuerza el valor de "alto standing".
+              <span className="gradient-text font-semibold">Mensaje premium:</span> cada elemento visual y verbal refuerza el valor de &quot;alto standing&quot;.
             </li>
           </ul>
         </section>
