@@ -15,14 +15,14 @@ export default function ProyectoMiel() {
         {/* Open Graph */}
         <meta property="og:title" content="Proyecto Golden Hole | Branding, Web y Estrategia Digital | DAROX" />
         <meta property="og:description" content="Caso de éxito: Branding, packaging y desarrollo web para un Club de Golf. Estrategia, diseño y resultados medibles para aumentar ventas y mayor presencia." />
-        <meta property="og:image" content="https://darox.es/images/miel1.png" />
-        <meta property="og:url" content="https://darox.es/proyectos/miel" />
+        <meta property="og:image" content="https://darox.es/images/golf1.png" />
+        <meta property="og:url" content="https://darox.es/proyectos/golden-hole" />
         <meta property="og:type" content="article" />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Proyecto Golden Hole | Branding, Web y Estrategia Digital | DAROX" />
         <meta name="twitter:description" content="Caso de éxito: Branding, estrategia digital y desarrollo web para un Club de Golf. Estrategia, diseño y resultados medibles para aumentar ventas y mayor presencia." />
-        <meta name="twitter:image" content="https://darox.es/images/miel1.png" />
+        <meta name="twitter:image" content="https://darox.es/images/golf1.png" />
         {/* Schema.org JSON-LD */}
         <script type="application/ld+json">
           {`
@@ -31,8 +31,8 @@ export default function ProyectoMiel() {
             "@type": "CreativeWork",
             "name": "Golden Hole",
             "description": "Branding, packaging y desarrollo web para un Club de Golf. Estrategia, diseño y resultados medibles para aumentar ventas y mayor presencia.",
-            "image": "https://darox.es/images/miel1.png",
-            "url": "https://darox.es/proyectos/miel",
+            "image": "https://darox.es/images/golf1.png",
+            "url": "https://darox.es/proyectos/golden-hole",
             "author": {
               "@type": "Organization",
               "name": "DAROX"
@@ -127,8 +127,8 @@ export default function ProyectoMiel() {
         <div className="relative z-10 max-w-6xl mx-auto mt-16 px-4">
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
-              src="/images/miel1.png"
-              alt="Branding y packaging de Miel Premium realizado por DAROX"
+              src="/images/golf1.png"
+              alt="Branding y packaging de Club de Golf premium realizado por DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -213,8 +213,8 @@ export default function ProyectoMiel() {
           <div className="flex flex-col md:flex-row gap-0 w-full max-w-6xl px-4">
             <div className="flex-1">
               <Image
-                src="/images/miel2.png"
-                alt="Packaging innovador para Miel Premium - proyecto DAROX"
+                src="/images/golf2.png"
+                alt="Packaging innovador para Club de Golf Premium - proyecto DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
@@ -223,8 +223,8 @@ export default function ProyectoMiel() {
             </div>
             <div className="flex-1">
               <Image
-                src="/images/miel3.png"
-                alt="Packaging innovador para Miel Premium - proyecto DAROX"
+                src="/images/golf3.png"
+                alt="Packaging innovador para Club de Golf Premium - proyecto DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
