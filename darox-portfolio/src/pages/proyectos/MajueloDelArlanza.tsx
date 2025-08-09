@@ -183,7 +183,7 @@ export default function Proyecto2() {
         <div className="relative z-10 max-w-6xl mx-auto mt-16 px-4">
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
-              src="/images/miel1.png"
+              src="/images/miel2.png"
               alt="Detalle destacado del proyecto Miel Premium realizado por DAROX"
               width={1200}
               height={600}
@@ -226,7 +226,7 @@ export default function Proyecto2() {
             </div>
             <div className="flex-1">
               <Image
-                src="/images/miel2.png"
+                src="/images/miel3.png"
                 alt="Detalle visual adicional del proyecto Miel Premium realizado por DAROX"
                 width={1200}
                 height={800}

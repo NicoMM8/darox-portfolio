@@ -307,7 +307,7 @@ const Benefits: React.FC = () => {
 						<div className="bg-black/80 border border-white/10 rounded-2xl shadow-xl p-6 flex flex-col h-full overflow-hidden">
 							<div className="rounded-xl overflow-hidden mb-4 border border-white/10 relative">
 								<motion.img
-									src="https://framerusercontent.com/images/JRAKWKlMtuarIVCJ574VvX8hUDQ.png"
+									src="/images/reales.png"
 									alt="Testimonios reales de clientes satisfechos con DAROX"
 									className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500"
 									loading="lazy"
