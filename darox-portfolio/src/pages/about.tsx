@@ -154,7 +154,7 @@ export default function About() {
             </button>
           </div>
           {/* Imagen clicable con botón de play */}
-          <div className="w-full flex justify-center mb-20">
+          {/* <div className="w-full flex justify-center mb-20">
             <button
               className="w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 bg-black relative group focus:outline-none"
               onClick={() => setShowVideo(true)}
@@ -206,7 +206,7 @@ export default function About() {
               </div>
             </div>
           )}
-
+        
           {/* Bloque de presentación de Darío, alineado a la izquierda con imagen a la derecha */}
           <section
             id="bloque-dario"
