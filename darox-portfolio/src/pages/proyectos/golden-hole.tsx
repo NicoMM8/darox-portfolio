@@ -170,6 +170,19 @@ export default function ProyectoMiel() {
           </div>
         </section>
 
+        {/* Imagen grande centrada */}
+        <div className="relative z-10 max-w-6xl mx-auto mt-16 px-4">
+          <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
+            <Image
+              src="/images/golf3.png"
+              alt="Detalle destacado del proyecto Club de Golf Premium realizado por DAROX"
+                      width={1200}
+                      height={600}
+                      className="w-full h-auto object-cover"
+                  />
+                  </div>
+                </div>
+
         {/* Estrategia de Marca y Experiencia de Usuario */}
         <section className="relative z-10 max-w-6xl mx-auto mt-16 px-4 py-12 bg-black/80 rounded-3xl border border-white/10 shadow-xl animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4 animate-fade-in-up">
@@ -213,7 +226,7 @@ export default function ProyectoMiel() {
           <div className="flex flex-col md:flex-row gap-0 w-full max-w-6xl px-4">
             <div className="flex-1">
               <Image
-                src="/images/golf2.png"
+                src="/images/golf7.png"
                 alt="Packaging innovador para Club de Golf Premium - proyecto DAROX"
                 width={1200}
                 height={800}
@@ -223,7 +236,7 @@ export default function ProyectoMiel() {
             </div>
             <div className="flex-1">
               <Image
-                src="/images/golf3.png"
+                src="/images/golf4.png"
                 alt="Packaging innovador para Club de Golf Premium - proyecto DAROX"
                 width={1200}
                 height={800}
