@@ -250,7 +250,7 @@ export default function Proyecto2() {
             >
               <div className="relative w-full h-64">
                 <Image
-                  src="/images/golf1.png"
+                  src="/images/golf8.png"
                   alt="Vista previa del proyecto Golden Hole: branding, web y estrategia digital realizados por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"

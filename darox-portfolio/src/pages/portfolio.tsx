@@ -7,9 +7,9 @@ import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 
 const customDescriptions: Record<string, string> = {
-  "Miel Premium": "Desarrollamos la identidad visual y el packaging para Miel Premium, enfocándonos en transmitir la pureza y el origen natural del producto. El sitio web integra storytelling y fotografía de producto para aumentar la conversión.",
-  "Raven Company Inc": "Para Raven Company Inc, automatizamos procesos internos y optimizamos la web corporativa, logrando reducir costes operativos y mejorar la experiencia del usuario con dashboards personalizados.",
-  "Gotham Wonder": "Gotham Wonder necesitaba una transformación digital completa. Creamos una estrategia omnicanal, rediseñamos su branding y lanzamos campañas de marketing digital que incrementaron el tráfico y las ventas."
+  "Golden Hole": "Proyecto de branding, desarrollo web y estrategia digital para un Club de Golf. Lujo, Precisión y Exclusividad.",
+  "El Majuelo del Arlanza": "Proyecto de branding, desarrollo y estrategia digital para una marca de miel artesanal. Naturalidad, dedicación y respeto.",
+  "Códice 13": "Proyecto de branding, desarrollo web y estrategia digital para un Escape Room. Misterio, Intriga y resultados tangibles."
 };
 
 function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total: number }) {
@@ -66,7 +66,7 @@ function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total:
             style={{ filter }}
           >
             <Image
-              src={item.imageUrl}
+              src={item.portfolioImageUrl || item.imageUrl}
               alt={`Proyecto de ${item.title}: ${customDescriptions[item.title] || item.description}`}
               fill
               style={{ objectFit: 'cover', objectPosition: 'center' }}
@@ -94,7 +94,7 @@ function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total:
                 <div className="w-full h-4 bg-neutral-800 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-gradient-to-r from-blue-600 to-blue-400"
-                    style={{ width: `${(idx + 1) / total * 100}%` }}
+                    style={{ width: '100%' }} // <-- Siempre al 100%
                   />
                 </div>
               </div>
