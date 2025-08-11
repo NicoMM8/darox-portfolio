@@ -53,16 +53,21 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
             <span>- DAROX.</span>
           </p>
           {/* Newsletter */}
-          <form className="mt-4 flex gap-2">
+          <form
+            className="mt-4 flex gap-2"
+            action="https://formspree.io/f/mldljjln"
+            method="POST"
+          >
             <label htmlFor="footer-newsletter" className="sr-only">
               Introduce tu Email
             </label>
             <input
               id="footer-newsletter"
               type="email"
-              name="Email"
+              name="email"
               placeholder="Introduce tu Email..."
               className="bg-black/40 border border-white/10 rounded-xl px-4 py-2 text-sm text-white placeholder:text-white/60 focus:outline-none"
+              required
             />
             <button
               type="submit"
