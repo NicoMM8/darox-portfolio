@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Marta González",
     position: "Directora de Marketing en Golden Hole",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    image: "https://randomuser.me/api/portraits/women/45.jpg",
     quote:
       "El equipo de DAROX entendió a la perfección la esencia de nuestro club y la trasladó a una marca elegante y digital. El nuevo branding y la web han elevado la percepción de Golden Hole y hemos notado un aumento real en las solicitudes de membresía.",
   },
@@ -19,7 +19,7 @@ const testimonials = [
   {
     name: "Ana Ruiz",
     position: "Cofundadora de Códice 13",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    image: "https://randomuser.me/api/portraits/women/84.jpg",
     quote:
       "DAROX nos ayudó a crear una experiencia digital inmersiva para nuestro escape room. La narrativa visual y la web han hecho que los jugadores vivan el misterio desde el primer clic. ¡Repetiríamos sin dudarlo!",
   },
@@ -161,9 +161,85 @@ const TestimonialsBlock: React.FC = () => {
           },
           "author": {
             "@type": "Person",
-            "name": "Richards Johnson"
+            "name": "Marta González"
           },
-          "reviewBody": "Trabajar con DAROX fue una experiencia fluida. Su capacidad para unir creatividad y funcionalidad resultó en diseños que no solo lucen increíbles, sino que generan engagement real. ¡Muy recomendada!"
+          "reviewBody": "El equipo de DAROX entendió a la perfección la esencia de nuestro club y la trasladó a una marca elegante y digital. El nuevo branding y la web han elevado la percepción de Golden Hole y hemos notado un aumento real en las solicitudes de membresía.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Golden Hole"
+          }
+        }`}
+      </script>
+      <script type="application/ld+json">
+        {`{
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Organization",
+            "name": "DAROX"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Luis Fernández"
+          },
+          "reviewBody": "Gracias a DAROX, nuestra miel artesanal tiene ahora una imagen profesional y cercana. La web transmite nuestros valores y hemos conseguido llegar a más clientes fuera del pueblo. El trato fue siempre cercano y transparente.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "El Majuelo del Arlanza"
+          }
+        }`}
+      </script>
+      <script type="application/ld+json">
+        {`{
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Organization",
+            "name": "DAROX"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Ana Ruiz"
+          },
+          "reviewBody": "DAROX nos ayudó a crear una experiencia digital inmersiva para nuestro escape room. La narrativa visual y la web han hecho que los jugadores vivan el misterio desde el primer clic. ¡Repetiríamos sin dudarlo!",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Códice 13"
+          }
+        }`}
+      </script>
+      <script type="application/ld+json">
+        {`{
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Organization",
+            "name": "DAROX"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Javier Martín"
+          },
+          "reviewBody": "Contar con DAROX para el lanzamiento de nuestra startup fue un acierto. El branding y la estrategia digital nos han diferenciado en el sector y el acompañamiento durante todo el proceso fue excelente.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "StartUp Burgos"
+          }
         }`}
       </script>
     </section>
