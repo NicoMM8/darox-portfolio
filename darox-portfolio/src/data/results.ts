@@ -57,8 +57,8 @@ export const results: Result[] = [
     title: 'Códice 13',
     status: 'FRESCO',
     imageUrl: '/images/scaperoom.png',
-    portfolioImageUrl: '/images/golf7.png', // Imagen para /portfolio
-    resultImageUrl: '/images/golf5.png',    // Imagen para Resultados del index
+    portfolioImageUrl: '/images/scaperoom4.png', // Imagen para /portfolio
+    resultImageUrl: '/images/scaperoom.png',    // Imagen para Resultados del index
     logoUrl: '/images/scaperoom.png',
     description: 'Estrategia personalizada que disparó reservas y engagement en solo seis meses.',
     webDescription: 'Desarrollamos la identidad visual y la experiencia digital de Códice 13, integrando narrativa inmersiva, branding enigmático y una web que convierte visitantes en jugadores. El reto fue transmitir misterio y aumentar la conversión en un sector competitivo.',

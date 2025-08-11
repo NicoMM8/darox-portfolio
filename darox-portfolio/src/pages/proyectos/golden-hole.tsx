@@ -176,12 +176,12 @@ export default function ProyectoMiel() {
             <Image
               src="/images/golf3.png"
               alt="Detalle destacado del proyecto Club de Golf Premium realizado por DAROX"
-                      width={1200}
-                      height={600}
-                      className="w-full h-auto object-cover"
-                  />
-                  </div>
-                </div>
+              width={1200}
+              height={600}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
 
         {/* Estrategia de Marca y Experiencia de Usuario */}
         <section className="relative z-10 max-w-6xl mx-auto mt-16 px-4 py-12 bg-black/80 rounded-3xl border border-white/10 shadow-xl animate-fade-in-up">
@@ -260,7 +260,7 @@ export default function ProyectoMiel() {
             >
               <div className="relative w-full h-64">
                 <Image
-                  src="/images/miel4.png"
+                  src="/images/miel1.png"
                   alt="Vista previa del proyecto El Majuelo del Arlanza: branding, desarrollo y estrategia digital realizados por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
