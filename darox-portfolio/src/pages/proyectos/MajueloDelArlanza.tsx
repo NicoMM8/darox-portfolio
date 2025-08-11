@@ -119,7 +119,7 @@ export default function Proyecto2() {
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
               src="/images/miel4.png"
-              alt="Detalle del proyecto Miel Premium realizado por DAROX"
+              alt="El Majuelo del Arlanza: branding, desarrollo web y estrategia digital para marca de miel artesanal realizado por DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -184,7 +184,7 @@ export default function Proyecto2() {
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
               src="/images/miel2.png"
-              alt="Detalle destacado del proyecto Miel Premium realizado por DAROX"
+              alt="El Majuelo del Arlanza: detalle visual del branding y experiencia digital desarrollados por DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -217,7 +217,7 @@ export default function Proyecto2() {
             <div className="flex-1">
               <Image
                 src="/images/miel5.png"
-                alt="Detalle visual del proyecto Miel Premium realizado por DAROX"
+                alt="El Majuelo del Arlanza: detalle visual de packaging y branding para miel artesanal realizado por DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
@@ -227,7 +227,7 @@ export default function Proyecto2() {
             <div className="flex-1">
               <Image
                 src="/images/miel3.png"
-                alt="Detalle visual adicional del proyecto Miel Premium realizado por DAROX"
+                alt="El Majuelo del Arlanza: detalle visual adicional del proyecto de branding y web realizado por DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"

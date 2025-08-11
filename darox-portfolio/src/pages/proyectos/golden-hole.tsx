@@ -128,7 +128,7 @@ export default function ProyectoMiel() {
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
               src="/images/golf1.png"
-              alt="Branding y packaging de Club de Golf premium realizado por DAROX"
+              alt="Golden Hole: branding, desarrollo web y packaging para club de golf premium realizado por DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -175,7 +175,7 @@ export default function ProyectoMiel() {
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
               src="/images/golf3.png"
-              alt="Detalle destacado del proyecto Club de Golf Premium realizado por DAROX"
+              alt="Golden Hole: detalle visual del branding y experiencia digital desarrollados por DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -227,7 +227,7 @@ export default function ProyectoMiel() {
             <div className="flex-1">
               <Image
                 src="/images/golf7.png"
-                alt="Packaging innovador para Club de Golf Premium - proyecto DAROX"
+                alt="Golden Hole: packaging innovador y branding para club de golf premium realizado por DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
@@ -237,7 +237,7 @@ export default function ProyectoMiel() {
             <div className="flex-1">
               <Image
                 src="/images/golf4.png"
-                alt="Packaging innovador para Club de Golf Premium - proyecto DAROX"
+                alt="Golden Hole: detalle de packaging y diseño visual para club de golf premium realizado por DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"

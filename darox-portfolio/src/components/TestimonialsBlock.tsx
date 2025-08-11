@@ -3,32 +3,32 @@ import Image from "next/image";
 
 const testimonials = [
   {
-    name: "Richards Johnson",
-    position: "Creative Director & Lead Designer",
-    image: "https://framerusercontent.com/images/GTWhJyJde9nAeuMXqgYJh6jQhrU.jpg",
+    name: "Marta González",
+    position: "Directora de Marketing en Golden Hole",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
     quote:
-      "Trabajar con DAROX fue una experiencia fluida. Su capacidad para unir creatividad y funcionalidad resultó en diseños que no solo lucen increíbles, sino que generan engagement real. ¡Muy recomendada!",
+      "El equipo de DAROX entendió a la perfección la esencia de nuestro club y la trasladó a una marca elegante y digital. El nuevo branding y la web han elevado la percepción de Golden Hole y hemos notado un aumento real en las solicitudes de membresía.",
   },
   {
-    name: "June Lee",
-    position: "CEO de GreenRoots",
-    image: "https://framerusercontent.com/images/c5E9pkEhKO6BmnqFuXLWa9Xqw34.png",
+    name: "Luis Fernández",
+    position: "Fundador de El Majuelo del Arlanza",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
     quote:
-      "El enfoque estratégico de DAROX llevó nuestra visión de marca a otro nivel. El packaging y los elementos que desarrolló elevaron nuestra estética y se alinearon con nuestros valores de sostenibilidad.",
+      "Gracias a DAROX, nuestra miel artesanal tiene ahora una imagen profesional y cercana. La web transmite nuestros valores y hemos conseguido llegar a más clientes fuera del pueblo. El trato fue siempre cercano y transparente.",
   },
   {
-    name: "Jona Carter",
-    position: "Founder de EcoLux",
-    image: "https://framerusercontent.com/images/hSbSnYWGLq3elsCJfJAmFGgQZOc.png",
+    name: "Ana Ruiz",
+    position: "Cofundadora de Códice 13",
+    image: "https://randomuser.me/api/portraits/women/68.jpg",
     quote:
-      "Cada proyecto que toca DAROX se convierte en una mezcla perfecta de diseño y propósito. El packaging reflejó nuestra misión eco y destacó nuestros productos en los estantes.",
+      "DAROX nos ayudó a crear una experiencia digital inmersiva para nuestro escape room. La narrativa visual y la web han hecho que los jugadores vivan el misterio desde el primer clic. ¡Repetiríamos sin dudarlo!",
   },
   {
-    name: "Sofia Toms",
-    position: "Founder at GreenK Studios",
-    image: "https://framerusercontent.com/images/VG4Ga2U7ZktrC75M3Vg8eUynj4M.png",
+    name: "Javier Martín",
+    position: "CEO de StartUp Burgos",
+    image: "https://randomuser.me/api/portraits/men/65.jpg",
     quote:
-      "Los diseños de DAROX hablan por sí solos: audaces, estratégicos e impactantes. Entendió nuestra marca y entregó conceptos que resonaron con nuestro público objetivo.",
+      "Contar con DAROX para el lanzamiento de nuestra startup fue un acierto. El branding y la estrategia digital nos han diferenciado en el sector y el acompañamiento durante todo el proceso fue excelente.",
   },
 ];
 

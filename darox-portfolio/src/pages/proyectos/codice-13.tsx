@@ -15,14 +15,14 @@ export default function Proyecto3() {
         {/* Open Graph */}
         <meta property="og:title" content="Códice 13 | Branding, Web y Estrategia Digital | DAROX" />
         <meta property="og:description" content="Caso de éxito: Branding, narrativa y desarrollo web para un Escape Room. Misterio, intriga y resultados tangibles." />
-        <meta property="og:image" content="https://darox.es/images/scaperoom.png" />
+        <meta property="og:image" content="https://darox.es/images/scaperoom4.png" />
         <meta property="og:url" content="https://darox.es/proyectos/codice-13" />
         <meta property="og:type" content="article" />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Códice 13 | Branding, Web y Estrategia Digital | DAROX" />
         <meta name="twitter:description" content="Caso de éxito: Branding, narrativa y desarrollo web para un Escape Room. Misterio, intriga y resultados tangibles." />
-        <meta name="twitter:image" content="https://darox.es/images/scaperoom.png" />
+        <meta name="twitter:image" content="https://darox.es/images/scaperoom4.png" />
       </Head>
       <Navbar />
       <main className="min-h-screen w-full bg-gradient-to-br from-black via-[#0a1333] to-[#1a237e] relative overflow-hidden pt-24 pb-16">
@@ -111,7 +111,7 @@ export default function Proyecto3() {
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
               src="/images/scaperoom4.png"
-              alt="Vista previa del proyecto Proyecto 3: transformación digital y diseño avanzado realizado por DAROX"
+              alt="Códice 13: página principal del proyecto de branding, web y narrativa inmersiva realizado por DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -158,7 +158,7 @@ export default function Proyecto3() {
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
               src="/images/scaperoom1.png"
-              alt="Detalle destacado del proyecto Club de Golf Premium realizado por DAROX"
+              alt="Códice 13: detalle visual de la experiencia inmersiva y branding desarrollado por DAROX"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -210,7 +210,7 @@ export default function Proyecto3() {
             <div className="flex-1">
               <Image
                 src="/images/scaperoom2.png"
-                alt="Detalle visual 1 del proyecto Códice 13 realizado por DAROX"
+                alt="Códice 13: detalle visual de sala en escape room, branding y diseño por DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
@@ -220,7 +220,7 @@ export default function Proyecto3() {
             <div className="flex-1">
               <Image
                 src="/images/scaperoom3.png"
-                alt="Detalle visual 2 del proyecto Códice 13 realizado por DAROX"
+                alt="Códice 13: detalle visual de acertijo y ambientación en escape room, proyecto de DAROX"
                 width={1200}
                 height={800}
                 className="w-full h-[350px] md:h-[500px] object-cover"
@@ -244,7 +244,7 @@ export default function Proyecto3() {
               <div className="relative w-full h-64">
                 <Image
                   src="/images/golf5.png"
-                  alt="Vista previa del proyecto Golden Hole: branding, web y estrategia digital realizados por DAROX"
+                  alt="Golden Hole: branding, desarrollo web y estrategia digital para club de golf premium realizado por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   style={{ borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}
@@ -265,7 +265,7 @@ export default function Proyecto3() {
               <div className="relative w-full h-64">
                 <Image
                   src="/images/miel1.png"
-                  alt="Vista previa del proyecto El Majuelo del Arlanza: branding, desarrollo y estrategia digital realizados por DAROX"
+                  alt="El Majuelo del Arlanza: branding, desarrollo y estrategia digital para marca de miel artesanal realizado por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   style={{ borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}
