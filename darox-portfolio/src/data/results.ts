@@ -4,7 +4,7 @@ export interface Result {
   id: string
   title: string
   status?: string
-  imageUrl: string // Imagen por defecto (puedes dejarla como principal)
+  imageUrl: string // Imagen por defecto
   portfolioImageUrl?: string // Imagen para /portfolio
   resultImageUrl?: string    // Imagen para Resultados del index
   logoUrl: string
@@ -22,7 +22,7 @@ export const results: Result[] = [
     title: 'Golden Hole',
     status: 'NUEVO',
     imageUrl: '/images/golf5.png', // Imagen por defecto
-    portfolioImageUrl: '/images/golf7.png', // Imagen para /portfolio
+    portfolioImageUrl: '/images/golf1.png', // Imagen para /portfolio
     resultImageUrl: '/images/golf5.png',    // Imagen para Resultados del index
     logoUrl: '/images/golf5.png',
     description: 'Aumentó el compromiso del cliente con presencia digital y campañas dirigidas.',

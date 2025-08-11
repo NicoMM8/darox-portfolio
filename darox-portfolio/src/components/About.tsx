@@ -16,7 +16,7 @@ const subtitleWords = ['Estrategia,', 'diseño', 'y', 'tecnología']
 const description =
   'En DAROX combinamos inteligencia artificial, creatividad humana y un enfoque estratégico para diseñar experiencias digitales que convierten visitantes en clientes y hacen crecer tu negocio.'
 const metrics = [
-  '500 000 € generados en proyectos reales',
+  'Experiencia avanzada en proyectos reales',
   '47 % de aumento en tasa de conversión',
 ]
 
