@@ -294,11 +294,9 @@ export default function About() {
               <div className="flex flex-col items-center mb-8">
                 <div className="w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent my-3 rounded-full" />
               </div>
-              {/* Títulos */}
+              {/* Títulos reordenados */}
               <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-2 gradient-text">
-                <span className="inline-block">Herramientas</span>{" "}
-                <span className="inline-block">y</span>{" "}
-                <span className="inline-block">Tecnologías</span>
+                Herramientas y Tecnologías
               </h2>
               <h3 className="text-2xl md:text-3xl font-semibold text-center text-white/70 mb-6">
                 Impulsando nuestra productividad
