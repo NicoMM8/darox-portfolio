@@ -51,7 +51,7 @@ export default function Proyecto2() {
               "
             >
               <span className="inline-block rounded-md px-3 py-1 bg-blue-600 text-xs font-bold text-white shadow">
-                Portafolio
+                Portfolio
               </span>
               <span className="text-base font-medium text-white/80">
                 Proyectos reales
@@ -109,7 +109,7 @@ export default function Proyecto2() {
                   mt-2
                 "
               >
-                Reserva una llamada
+                Ver más información
               </Link>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function Proyecto2() {
             <div>
               <h3 className="text-2xl font-bold text-white mb-4"><span className="gradient-text">Origen</span></h3>
               <p className="text-gray-200 text-base mb-2">
-                <span className="gradient-text font-semibold">De la tierra al tarro:</span> El Majuelo del Arlanza nace en un pequeño pueblo castellano, donde la apicultura sigue siendo un arte transmitido de generación en generación. Cada bote de miel refleja el sabor del entorno: tomillo, romero, flores silvestres y el aire limpio del campo.
+                <span className="gradient-text font-semibold">De la colmena al tarro:</span> El Majuelo del Arlanza nace en un pequeño pueblo castellano, donde la apicultura sigue siendo un arte transmitido de generación en generación. Cada bote de miel refleja el sabor del entorno: tomillo, romero, flores silvestres y el aire limpio del campo.
               </p>
             </div>
             <div>
@@ -206,7 +206,7 @@ export default function Proyecto2() {
               <span className="gradient-text font-semibold">Incremento en ventas online:</span> resultados tangibles tras el lanzamiento.
             </li>
             <li>
-              <span className="gradient-text font-semibold">Iteración y mejora continua:</span> colaboración cercana con el cliente para una solución robusta y escalable.
+              <span className="gradient-text font-semibold">Integración y mejora continua:</span> colaboración cercana con el cliente para una solución robusta y escalable.
             </li>
           </ul>
         </section>

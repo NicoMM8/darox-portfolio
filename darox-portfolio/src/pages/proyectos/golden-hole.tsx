@@ -59,7 +59,7 @@ export default function ProyectoMiel() {
             {/* Fecha y badge */}
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-xl border border-white/10 bg-white/5 shadow w-fit animate-fade-in-up">
               <span className="inline-block rounded-md px-3 py-1 bg-blue-600 text-xs font-bold text-white shadow">
-                Portafolio
+                Portfolio
               </span>
               <span className="text-base font-medium text-white/80">
                 Proyectos reales
@@ -118,7 +118,7 @@ export default function ProyectoMiel() {
                   mt-2
                 "
               >
-                Reserva una llamada
+                Ver más información
               </Link>
             </div>
           </div>

@@ -11,7 +11,7 @@ export default function Navbar() {
   const links = [
     { label: 'Inicio', href: '/' },
     { label: 'Sobre Nosotros', href: '/about' },
-    { label: 'Portafolio', href: '/portfolio' },
+    { label: 'Portfolio', href: '/portfolio' },
     { label: 'Contacto', href: '/contacto' },
     { label: 'Preguntas', href: '/#faq' }
   ]

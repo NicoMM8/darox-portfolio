@@ -189,7 +189,7 @@ export default function Portfolio() {
               {/* Badge y título */}
               <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-2 shadow">
                 <span className="inline-block rounded-md px-3 py-1 bg-blue-600 text-xs font-bold text-white shadow">
-                  Portafolio
+                  Portfolio
                 </span>
                 <span className="text-base font-medium text-white/80">
                   Proyectos reales
