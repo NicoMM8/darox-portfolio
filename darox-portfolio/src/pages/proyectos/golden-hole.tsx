@@ -102,7 +102,7 @@ export default function ProyectoMiel() {
               </div>
               {/* Botón de contacto */}
               <Link
-                href="/contacto"
+                href="https://www.behance.net/gallery/222602013/Golden-Hole-Golf-Club-Visual-Identity"
                 className="
                   inline-flex items-center justify-center
                   px-6 py-3

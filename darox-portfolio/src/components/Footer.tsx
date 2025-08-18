@@ -119,7 +119,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
           <h4 className="text-base font-semibold text-white mb-2">Social</h4>
           <div className="flex flex-col gap-2">
             <a
-              href="https://x.com"
+              href=":https://x.com/DaroxBrandMaker"
               target="_blank"
               rel="noopener"
               className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
@@ -127,7 +127,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
               Twitter (X)
             </a>
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/darox.bm/"
               target="_blank"
               rel="noopener"
               className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
@@ -135,7 +135,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
               Instagram
             </a>
             <a
-              href="https://www.youtube.com/"
+              href="https://www.youtube.com/@daroxbrandmaker"
               target="_blank"
               rel="noopener"
               className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"

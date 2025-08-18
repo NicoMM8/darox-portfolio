@@ -93,7 +93,7 @@ export default function Proyecto2() {
               </div>
               {/* Botón */}
               <Link
-                href="/contacto"
+                href="https://www.behance.net/gallery/223804751/El-Majuelo-del-Arlanza-Miel-Identidad-Visual"
                 className="
                   inline-flex items-center justify-center
                   px-6 py-3

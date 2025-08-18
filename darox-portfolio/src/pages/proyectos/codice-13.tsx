@@ -85,7 +85,7 @@ export default function Proyecto3() {
               </div>
               {/* Botón */}
               <Link
-                href="/contacto"
+                href="https://www.behance.net/gallery/224897733/Codice-13-Escape-Room-Identidad-VIsual"
                 className="
                   inline-flex items-center justify-center
                   px-6 py-3
