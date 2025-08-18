@@ -55,7 +55,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
           {/* Newsletter */}
           <form
             className="mt-4 flex gap-2"
-            action="https://formspree.io/f/mldljjln"
+            action="https://formspree.io/f/xgvzbbry"
             method="POST"
           >
             <label htmlFor="footer-newsletter" className="sr-only">

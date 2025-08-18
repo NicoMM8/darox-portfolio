@@ -101,7 +101,7 @@ export default function Contact() {
           >
             <form
               className="flex flex-col gap-6"
-              action="https://formspree.io/f/mldljjln"
+              action="https://formspree.io/f/xgvzbbry"
               method="POST"
               onSubmit={() => setSuccess('¡Mensaje enviado correctamente!')}
             >
