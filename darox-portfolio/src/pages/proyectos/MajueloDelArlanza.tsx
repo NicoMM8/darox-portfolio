@@ -7,7 +7,7 @@ export default function Proyecto2() {
   return (
     <>
       <Head>
-        <title>Proyecto Branding Marca Artesanal | DAROX</title>
+        <title>Majuelo del Arlanza | Proyecto Branding Marca Artesanal | DAROX</title>
         <meta
           name="description"
           content="Descubre cómo DAROX impulsó el crecimiento digital de una marca artesanal con branding, desarrollo web y estrategia digital personalizada."

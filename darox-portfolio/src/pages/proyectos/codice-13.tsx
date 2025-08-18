@@ -10,7 +10,7 @@ export default function Proyecto3() {
         <title>Códice 13 | Branding, Web y Estrategia Digital | DAROX</title>
         <meta
           name="description"
-          content="Códice 13: Proyecto de branding, desarrollo web y estrategia digital para un Scape Room. Misterio, Intriga y resultados tangibles."
+          content="Códice 13: Proyecto de branding, desarrollo web y estrategia digital para un Escape Room. Misterio, Intriga y resultados tangibles."
         />
         {/* Open Graph */}
         <meta property="og:title" content="Códice 13 | Branding, Web y Estrategia Digital | DAROX" />
@@ -54,7 +54,7 @@ export default function Proyecto3() {
             <div className="w-32 h-1 rounded-full bg-gradient-to-r from-transparent via-blue-600 to-transparent my-2 animate-pulse-slow" />
             {/* Subtítulo */}
             <p className="text-lg text-gray-300 max-w-xl animate-fade-in-up delay-100">
-              Proyecto de branding, desarrollo web y estrategia digital para un Scape Room. <b>Misterio, Intriga y resultados tangibles.</b>
+              Proyecto de branding, desarrollo web y estrategia digital para un Escape Room. <b>Misterio, Intriga y resultados tangibles.</b>
             </p>
             {/* Badges de categoría */}
             <div className="flex gap-3 mt-2">
