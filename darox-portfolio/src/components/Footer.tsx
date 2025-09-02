@@ -65,6 +65,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
               id="footer-newsletter"
               type="email"
               name="email"
+              autoComplete="email"
               placeholder="Introduce tu Email..."
               className="bg-black/40 border border-white/10 rounded-xl px-4 py-2 text-sm text-white placeholder:text-white/60 focus:outline-none"
               required

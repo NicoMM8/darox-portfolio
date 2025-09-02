@@ -1,9 +1,28 @@
-import Head from 'next/head'
-import Navbar from '../components/Navbar'
-import { useState } from 'react'
+import { useState } from "react";
+import Head from 'next/head';
+import Navbar from '../components/Navbar';
 
 export default function Contact() {
-  const [success, setSuccess] = useState<string | null>(null)
+  const [success, setSuccess] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (res.ok) {
+      setSuccess("¡Mensaje enviado correctamente!");
+      // Redirige al calendario de Google
+      window.location.href = "https://calendar.app.google/x7vgHu3dkcHuZbBWA";
+    } else {
+      setSuccess("Hubo un error al enviar el mensaje.");
+    }
+  };
 
   return (
     <>
@@ -101,10 +120,9 @@ export default function Contact() {
           >
             <form
               className="flex flex-col gap-6"
-              action="https://formspree.io/f/xgvzbbry"
-              method="POST"
-              onSubmit={() => setSuccess('¡Mensaje enviado correctamente!')}
+              onSubmit={handleSubmit}
             >
+              <input type="hidden" name="access_key" value="aa72eae3-1c0f-4efb-bd9f-cf9dc1ce91db" />
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex flex-col flex-1 gap-2">
                   <label htmlFor="nombre" className="text-white font-medium text-sm">
