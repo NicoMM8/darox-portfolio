@@ -18,7 +18,7 @@ export default function Contact() {
     if (res.ok) {
       setSuccess("¡Mensaje enviado correctamente!");
       // Redirige al calendario de Google
-      window.location.href = "https://calendar.app.google/x7vgHu3dkcHuZbBWA";
+      window.location.href = "https://calendar.app.google/wDR8DyKaoJwtAtsa8";
     } else {
       setSuccess("Hubo un error al enviar el mensaje.");
     }
@@ -122,7 +122,7 @@ export default function Contact() {
               className="flex flex-col gap-6"
               onSubmit={handleSubmit}
             >
-              <input type="hidden" name="access_key" value="aa72eae3-1c0f-4efb-bd9f-cf9dc1ce91db" />
+              <input type="hidden" name="access_key" value="29919ee5-a12c-4100-91da-959576561176b" />
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex flex-col flex-1 gap-2">
                   <label htmlFor="nombre" className="text-white font-medium text-sm">
