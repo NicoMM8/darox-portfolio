@@ -2,40 +2,48 @@ import React from "react";
 import Image from "next/image";
 
 interface Testimonial {
+  id: string;
+  type: "Local" | "Growth" | "Design";
   name: string;
   position: string;
   image: string;
-  quote: string;
+  problem: string;
+  solution: string;
 }
 
 const testimonials: Testimonial[] = [
   {
-    name: "Marta González",
-    position: "Directora de Marketing en Golden Hole",
-    image: "https://randomuser.me/api/portraits/women/45.jpg",
-    quote:
-      "El equipo de DAROX entendió a la perfección la esencia de nuestro club y la trasladó a una marca elegante y digital. El nuevo branding y la web han elevado la percepción de Golden Hole y hemos notado un aumento real en las solicitudes de membresía.",
-  },
-  {
+    id: "local-anchor",
+    type: "Local",
     name: "Luis Fernández",
     position: "Fundador de El Majuelo del Arlanza",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
-    quote:
-      "Gracias a DAROX, nuestra miel artesanal tiene ahora una imagen profesional y cercana. La web transmite nuestros valores y hemos conseguido llegar a más clientes fuera del pueblo. El trato fue siempre cercano y transparente.",
+    problem:
+      "Buscábamos una empresa de diseño web en Burgos que entendiera nuestro negocio local y no solo nos diera una plantilla.",
+    solution:
+      "Darox no solo mejoró nuestra imagen, sino que el soporte técnico es inmediato y cercano. La mejor inversión para digitalizarse en la ciudad.",
   },
   {
-    name: "Ana Ruiz",
-    position: "Cofundadora de Códice 13",
-    image: "https://randomuser.me/api/portraits/women/84.jpg",
-    quote:
-      "DAROX nos ayudó a crear una experiencia digital inmersiva para nuestro escape room. La narrativa visual y la web han hecho que los jugadores vivan el misterio desde el primer clic. ¡Repetiríamos sin dudarlo!",
-  },
-  {
+    id: "tech-growth",
+    type: "Growth",
     name: "Javier Martín",
     position: "CEO de StartUp Burgos",
     image: "https://randomuser.me/api/portraits/men/65.jpg",
-    quote:
-      "Contar con DAROX para el lanzamiento de nuestra startup fue un acierto. El branding y la estrategia digital nos han diferenciado en el sector y el acompañamiento durante todo el proceso fue excelente.",
+    problem:
+      "Nuestros procesos de venta eran manuales y perdíamos muchas oportunidades por falta de seguimiento ágil.",
+    solution:
+      "Implementaron un sistema con IA que nos ahorra 20 horas semanales. No son solo diseñadores, son ingenieros de negocio.",
+  },
+  {
+    id: "design-authority",
+    type: "Design",
+    name: "Marta González",
+    position: "Directora de Marketing en Golden Hole",
+    image: "https://randomuser.me/api/portraits/women/45.jpg",
+    problem:
+      "Nuestra marca necesitaba un rebranding completo para competir a nivel nacional con estudios de diseño de primer nivel.",
+    solution:
+      "La visión estratégica y la calidad visual que aportó el equipo elevó nuestra percepción de valor. Un trabajo premium y estratégico.",
   },
 ];
 
@@ -45,65 +53,61 @@ const stats = [
   { value: "5+", label: "Sectores diferentes." },
 ];
 
-interface TestimonialCardProps {
-  t: Testimonial;
-  ariaHidden?: boolean;
-  cardKey: string;
-}
+const TestimonialCard: React.FC<{ t: Testimonial }> = ({ t }) => (
+  <div className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] shadow-xl p-6 sm:p-8 flex flex-col h-full overflow-hidden backdrop-blur-[2.5px] transition duration-300 hover:scale-[1.02] hover:shadow-2xl">
+    {/* Línea decorativa superior según tipo */}
+    <div
+      className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${t.type === "Local" ? "blue-500" : t.type === "Growth" ? "emerald-500" : "purple-500"
+        } to-transparent opacity-70`}
+    />
 
-const TestimonialCard: React.FC<TestimonialCardProps> = ({ t, ariaHidden, cardKey }) => (
-  <div
-    key={cardKey}
-    aria-hidden={ariaHidden}
-    className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] shadow-xl p-6 sm:p-8 flex flex-col overflow-hidden backdrop-blur-[2.5px] transition duration-300 hover:scale-[1.03] hover:shadow-2xl min-w-[90vw] max-w-[95vw] sm:min-w-[420px] sm:max-w-lg lg:min-w-[520px] lg:max-w-2xl testimonial-card min-h-[480px] flex-none"
-  >
-    {/* Línea azul decorativa superior */}
-    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-2xl pointer-events-none opacity-70" />
-
-    {/* Imagen circular */}
-    <div className="flex justify-center items-center mb-6 relative">
-      <div className="bg-white/10 p-5 rounded-xl border border-white/20 shadow-lg">
-        <Image
-          src={t.image}
-          alt={ariaHidden ? "" : `Foto de ${t.name}, ${t.position} - Testimonio sobre DAROX`}
-          width={96}
-          height={96}
-          className="h-24 w-24 object-cover rounded-full img-shadow-indigo"
-        />
+    {/* Header: Foto + Datos */}
+    <div className="flex items-start gap-4 mb-6">
+      <div className="relative flex-shrink-0">
+        <div className="p-1 rounded-full border border-white/20 bg-white/5">
+          <Image
+            src={t.image}
+            alt={`Foto de ${t.name}`}
+            width={64}
+            height={64}
+            className="h-16 w-16 object-cover rounded-full"
+          />
+        </div>
+        <div className="absolute -bottom-2 -right-2 bg-blue-900/80 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] font-bold border border-white/10 uppercase tracking-wider">
+          {t.type}
+        </div>
+      </div>
+      <div>
+        <h3 className="text-xl font-bold text-white leading-tight">{t.name}</h3>
+        <p className="text-sm text-white/60 mt-1">{t.position}</p>
       </div>
     </div>
 
-    {/* Nombre y posición */}
-    <h3 className="text-2xl font-bold text-white mb-2">{t.name}</h3>
-    <span className="text-base text-white/60 mb-4">{t.position}</span>
+    {/* Problem Section */}
+    <div className="mb-4 relative pl-4 border-l-2 border-red-500/50">
+      <p className="text-xs font-bold text-red-400 uppercase tracking-wider mb-1">El Reto</p>
+      <p className="text-sm text-white/70 italic">&quot;{t.problem}&quot;</p>
+    </div>
 
-    {/* Línea difuminada */}
-    <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-full mb-6" />
+    {/* Solution Section */}
+    <div className="relative pl-4 border-l-2 border-green-500/50 mt-auto">
+      <p className="text-xs font-bold text-green-400 uppercase tracking-wider mb-1">La Solución</p>
+      <p className="text-base text-white font-medium">&quot;{t.solution}&quot;</p>
+    </div>
 
-    {/* Testimonio */}
-    <blockquote className="text-lg text-white/80 italic mb-6 text-center">
-      &quot;{t.quote}&quot;
-    </blockquote>
-
-    {/* Rating */}
-    <div className="flex items-center gap-2 mt-auto">
-      <span className="bg-blue-700 text-white text-xs font-semibold px-3 py-1 rounded-lg border border-white/15 shadow about-shadow">
-        5.0
-      </span>
-      <div className="flex gap-1">
-        {[...Array(5)].map((_, idx) => (
-          <svg
-            key={idx}
-            className="w-6 h-6"
-            fill="#FFD700"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-          </svg>
-        ))}
-      </div>
+    {/* Rating Stars */}
+    <div className="flex gap-1 mt-6 pt-4 border-t border-white/5">
+      {[...Array(5)].map((_, idx) => (
+        <svg
+          key={idx}
+          className="w-4 h-4 text-yellow-400"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          aria-hidden="true"
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
     </div>
   </div>
 );
@@ -111,99 +115,82 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ t, ariaHidden, cardKe
 const TestimonialsBlock: React.FC = () => {
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 text-white bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] backdrop-blur-[2.5px] overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col gap-16">
-        {/* Tag destacado */}
-        <div
-          className="
-            relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px]
-            border border-white/10
-            bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)]
-            backdrop-blur-[2.5px]
-            mb-4 animate-fade-in-up
-            shadow
-            overflow-hidden
-            tag-destacado
-          "
-        >
-          <div className="absolute left-0 top-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-[10px] pointer-events-none opacity-70" />
-          <span className="w-2 h-2 rounded-full bg-white inline-block border border-white/50" />
-          <span className="font-semibold text-base tag-destacado-text bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-            Testimonios
-          </span>
+      <div className="max-w-7xl mx-auto flex flex-col gap-16 relative z-10">
+        {/* Header Section */}
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6 shadow-lg">
+            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+            <span className="font-semibold text-sm tracking-wide text-blue-100 uppercase">
+              Historias de Éxito
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
+            Lo que dicen los empresarios <br className="hidden md:block" /> que ya escalan con Darox
+          </h2>
+          <p className="text-lg text-white/60">
+            Resultados reales de empresas locales, startups tecnológicas y marcas que buscan la excelencia.
+          </p>
         </div>
-        {/* Estadísticas */}
-        <div className="w-full flex flex-col md:flex-row gap-8 justify-center items-center mb-8">
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {stats.map((s) => (
             <div
               key={s.label}
-              className="flex flex-col items-center justify-center bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] rounded-xl shadow-lg px-8 py-6 border border-white/10 min-w-[180px]"
+              className="flex flex-col items-center justify-center bg-white/5 rounded-2xl p-6 border border-white/5 backdrop-blur-sm"
             >
-              <h3 className="text-3xl font-extrabold gradient-text mb-2 text-center">{s.value}</h3>
-              <p className="text-base text-white/70 text-center">{s.label}</p>
+              <h3 className="text-3xl font-extrabold text-white mb-2">{s.value}</h3>
+              <p className="text-sm text-white/60 text-center">{s.label}</p>
             </div>
           ))}
         </div>
-        {/* Carrusel infinito */}
-        <div className="w-full flex flex-col items-center">
-          <div className="relative w-full overflow-hidden">
-            <div className="flex gap-8 animate-scroll-carousel w-max">
-              {/* Pasada original — visible para crawlers */}
-              {testimonials.map((t) => (
-                <TestimonialCard key={`original-${t.name}`} cardKey={`original-${t.name}`} t={t} />
-              ))}
-              {/* Pasada duplicada — oculta para crawlers */}
-              {testimonials.map((t) => (
-                <TestimonialCard key={`duplicate-${t.name}`} cardKey={`duplicate-${t.name}`} t={t} ariaHidden />
-              ))}
-            </div>
-          </div>
+
+        {/* Testimonials Grid - Problem/Solution Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((t) => (
+            <TestimonialCard key={t.id} t={t} />
+          ))}
         </div>
       </div>
-      {/* Schema.org Reviews */}
-      <script type="application/ld+json">
-        {`{
-          "@context": "https://schema.org",
-          "@type": "Review",
-          "itemReviewed": { "@type": "Organization", "name": "DAROX" },
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "author": { "@type": "Person", "name": "Marta González" },
-          "reviewBody": "El equipo de DAROX entendió a la perfección la esencia de nuestro club y la trasladó a una marca elegante y digital.",
-          "publisher": { "@type": "Organization", "name": "Golden Hole" }
-        }`}
-      </script>
-      <script type="application/ld+json">
-        {`{
-          "@context": "https://schema.org",
-          "@type": "Review",
-          "itemReviewed": { "@type": "Organization", "name": "DAROX" },
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "author": { "@type": "Person", "name": "Luis Fernández" },
-          "reviewBody": "Gracias a DAROX, nuestra miel artesanal tiene ahora una imagen profesional y cercana.",
-          "publisher": { "@type": "Organization", "name": "El Majuelo del Arlanza" }
-        }`}
-      </script>
-      <script type="application/ld+json">
-        {`{
-          "@context": "https://schema.org",
-          "@type": "Review",
-          "itemReviewed": { "@type": "Organization", "name": "DAROX" },
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "author": { "@type": "Person", "name": "Ana Ruiz" },
-          "reviewBody": "DAROX nos ayudó a crear una experiencia digital inmersiva para nuestro escape room.",
-          "publisher": { "@type": "Organization", "name": "Códice 13" }
-        }`}
-      </script>
-      <script type="application/ld+json">
-        {`{
-          "@context": "https://schema.org",
-          "@type": "Review",
-          "itemReviewed": { "@type": "Organization", "name": "DAROX" },
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "author": { "@type": "Person", "name": "Javier Martín" },
-          "reviewBody": "Contar con DAROX para el lanzamiento de nuestra startup fue un acierto.",
-          "publisher": { "@type": "Organization", "name": "StartUp Burgos" }
-        }`}
-      </script>
+
+      {/* Schema.org Implementation */}
+      {testimonials.map((t) => (
+        <script
+          key={`schema-${t.id}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Review",
+              itemReviewed: {
+                "@type": "LocalBusiness",
+                name: "DAROX",
+                image: "https://darox.es/logo.png",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Burgos",
+                  addressRegion: "Burgos",
+                  addressCountry: "ES"
+                }
+              },
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: "5",
+                bestRating: "5",
+              },
+              author: {
+                "@type": "Person",
+                name: t.name,
+              },
+              reviewBody: `${t.problem} ${t.solution}`,
+              publisher: {
+                "@type": "Organization",
+                name: t.position.split(" de ")[1] || t.position, // Basic extraction attempt
+              },
+            }),
+          }}
+        />
+      ))}
     </section>
   );
 };
