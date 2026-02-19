@@ -2,16 +2,11 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const router = useRouter()
 
-  const isActive = (href: string) => {
-    if (href === '/#faq') return router.pathname === '/'
-    return router.pathname === href
-  }
 
   const links = [
     { label: 'Inicio', href: '/' },
@@ -48,10 +43,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-3 py-2 text-sm font-medium transition-colors border-b-2 ${isActive(link.href)
-                    ? 'text-indigo-400 border-indigo-400'
-                    : 'border-transparent hover:text-indigo-400 hover:border-indigo-400/50'
-                  }`}
+                className="px-3 py-2 text-sm font-medium hover:text-indigo-400 transition-colors"
               >
                 {link.label}
               </Link>
@@ -101,10 +93,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block px-3 py-2 text-base font-medium transition-colors ${isActive(link.href)
-                      ? 'text-indigo-400 bg-white/10'
-                      : 'text-gray-300 hover:text-indigo-400 hover:bg-white/5'
-                    }`}
+                  className="block px-3 py-2 text-base font-medium hover:text-indigo-400 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
