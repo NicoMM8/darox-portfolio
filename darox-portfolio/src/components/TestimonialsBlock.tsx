@@ -17,7 +17,7 @@ const testimonials: Testimonial[] = [
     type: "Local",
     name: "Luis Fernández",
     position: "Fundador de El Majuelo del Arlanza",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    image: "/images/luis.png",
     problem:
       "Buscábamos una empresa de diseño web en Burgos que entendiera nuestro negocio local y no solo nos diera una plantilla.",
     solution:
@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
     type: "Growth",
     name: "Javier Martín",
     position: "CEO de StartUp Burgos",
-    image: "https://randomuser.me/api/portraits/men/65.jpg",
+    image: "/images/javi.png",
     problem:
       "Nuestros procesos de venta eran manuales y perdíamos muchas oportunidades por falta de seguimiento ágil.",
     solution:
@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
     type: "Design",
     name: "Marta González",
     position: "Directora de Marketing en Golden Hole",
-    image: "https://randomuser.me/api/portraits/women/45.jpg",
+    image: "/images/marta.png",
     problem:
       "Nuestra marca necesitaba un rebranding completo para competir a nivel nacional con estudios de diseño de primer nivel.",
     solution:
@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
     type: "Local",
     name: "Dra. Elena Vega",
     position: "Directora de Clínica Dental San Pablo",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    image: "/images/Elena.png",
     problem:
       "La gente buscaba 'dentista en Burgos' y no aparecíamos. Necesitábamos transmitir confianza y cercanía.",
     solution:
@@ -61,7 +61,7 @@ const testimonials: Testimonial[] = [
     type: "Growth",
     name: "Roberto Méndez",
     position: "Gerente de Logística Norte",
-    image: "https://randomuser.me/api/portraits/men/44.jpg",
+    image: "/images/Roberto.png",
     problem:
       "La gestión de pedidos era un caos de excels y llamadas. Necesitábamos automatizar para no morir de éxito.",
     solution:
@@ -72,7 +72,7 @@ const testimonials: Testimonial[] = [
     type: "Design",
     name: "Sofía Aranda",
     position: "Arquitecta Principal en Atelier V",
-    image: "https://randomuser.me/api/portraits/women/33.jpg",
+    image: "/images/sofia.png",
     problem:
       "Nuestro portafolio antiguo no hacía justicia a la calidad de nuestras obras. Parecía una web de los años 2000.",
     solution:
