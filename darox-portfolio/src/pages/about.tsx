@@ -97,13 +97,13 @@ export default function About() {
       </video>
       {/* Capa oscura encima del video */}
       <div className="fixed inset-0 bg-black/60 z-0 pointer-events-none" />
-      <main className="min-h-screen w-full flex flex-col items-center justify-start pt-24 pb-16 px-4 relative overflow-hidden">
-        <section className="w-full max-w-5xl relative z-10 flex flex-col items-center">
+        <main className="min-h-screen w-full flex flex-col items-center justify-start pt-24 pb-16 px-4 relative overflow-hidden">
+          <section className="w-full max-w-5xl relative z-10 flex flex-col items-center">
           {/* Badge */}
           <div className="flex justify-center mb-8">
             <span className="flex items-center gap-3 bg-white/10 border border-white/10 rounded-xl px-6 py-2 shadow-lg backdrop-blur-md">
               <span className="inline-block rounded-md px-3 py-1 bg-blue-600 text-xs font-bold text-white shadow">
-                2025
+                {new Date().getFullYear()}
               </span>
               <span className="text-base font-medium text-white/80">
                 Profundiza sobre nosotros
