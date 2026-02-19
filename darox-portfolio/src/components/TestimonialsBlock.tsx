@@ -45,6 +45,39 @@ const testimonials: Testimonial[] = [
     solution:
       "La visión estratégica y la calidad visual que aportó el equipo elevó nuestra percepción de valor. Un trabajo premium y estratégico.",
   },
+  {
+    id: "local-trust",
+    type: "Local",
+    name: "Dra. Elena Vega",
+    position: "Directora de Clínica Dental San Pablo",
+    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    problem:
+      "La gente buscaba 'dentista en Burgos' y no aparecíamos. Necesitábamos transmitir confianza y cercanía.",
+    solution:
+      "Desde el rediseño, las citas online han subido un 40%. Los pacientes nuevos nos dicen que la web les dio mucha seguridad.",
+  },
+  {
+    id: "growth-b2b",
+    type: "Growth",
+    name: "Roberto Méndez",
+    position: "Gerente de Logística Norte",
+    image: "https://randomuser.me/api/portraits/men/44.jpg",
+    problem:
+      "La gestión de pedidos era un caos de excels y llamadas. Necesitábamos automatizar para no morir de éxito.",
+    solution:
+      "El sistema que crearon conecta la web con nuestro almacén en tiempo real. Hemos reducido errores a cero y facturamos el doble.",
+  },
+  {
+    id: "design-aesthetics",
+    type: "Design",
+    name: "Sofía Aranda",
+    position: "Arquitecta Principal en Atelier V",
+    image: "https://randomuser.me/api/portraits/women/33.jpg",
+    problem:
+      "Nuestro portafolio antiguo no hacía justicia a la calidad de nuestras obras. Parecía una web de los años 2000.",
+    solution:
+      "Darox diseñó una galería minimalista que respira elegancia. Ahora mostramos nuestros proyectos con el orgullo que merecen.",
+  },
 ];
 
 const stats = [
