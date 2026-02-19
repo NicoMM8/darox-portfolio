@@ -47,6 +47,44 @@ function useIsMobile() {
 	return isMobile;
 }
 
+const StepContent: React.FC<{ step: typeof steps[0] }> = ({ step }) => (
+	<>
+		<div className="flex items-center gap-4 mb-6 relative z-10">
+			<div className="bg-indigo-900/80 rounded-xl flex items-center justify-center shadow-lg border border-indigo-400/30 transition-transform duration-300 hover:scale-105 hover:shadow-indigo-500/40 h-16 w-16 overflow-hidden">
+				<Image
+					src={step.icon}
+					alt={`Icono de la etapa ${step.titulo} del proceso DAROX`}
+					width={64}
+					height={64}
+					className="h-full w-full object-cover img-shadow-indigo"
+					loading="lazy"
+				/>
+			</div>
+			<div className="relative flex items-center">
+				<span className="px-4 py-1 rounded-lg bg-indigo-800/80 text-xs font-semibold text-gray-300 shadow border border-indigo-500/30 relative z-10">
+					{step.etapa}
+				</span>
+			</div>
+		</div>
+		<h4 className="text-xl font-bold text-white mb-4 drop-shadow-lg">
+			{step.titulo}
+		</h4>
+		<p className="text-gray-400 mb-6">
+			{step.descripcion}
+		</p>
+		<div className="flex gap-3 flex-wrap mb-4">
+			{step.features.map((f, i) => (
+				<span
+					key={i}
+					className="bg-black/40 border border-indigo-800 text-gray-400 px-4 py-2 rounded-xl text-xs font-medium shadow hover:bg-indigo-900/60 transition hover:scale-105"
+				>
+					{f}
+				</span>
+			))}
+		</div>
+	</>
+);
+
 const Process: React.FC = () => {
 	const isMobile = useIsMobile();
 
@@ -110,39 +148,8 @@ const Process: React.FC = () => {
 											<div className="absolute inset-0 rounded-3xl border-2 border-blue-900/40 animate-glow border-dashed"></div>
 										</div>
 										{/* Contenido */}
-										<div className="flex items-center gap-4 mb-6 relative z-10">
-											<div className="bg-indigo-900/80 rounded-xl flex items-center justify-center shadow-lg border border-indigo-400/30 transition-transform duration-300 hover:scale-105 hover:shadow-indigo-500/40 h-16 w-16 overflow-hidden">
-												<Image
-													src={step.icon}
-													alt={`Icono de la etapa ${step.titulo} del proceso DAROX`}
-													width={64}
-													height={64}
-													className="h-full w-full object-cover img-shadow-indigo"
-													priority
-												/>
-											</div>
-											<div className="relative flex items-center">
-												<span className="px-4 py-1 rounded-lg bg-indigo-800/80 text-xs font-semibold text-gray-300 shadow border border-indigo-500/30 relative z-10">
-													{step.etapa}
-												</span>
-											</div>
-										</div>
-										<h4 className="text-xl font-bold text-white mb-4 drop-shadow-lg">
-											{step.titulo}
-										</h4>
-										<p className="text-gray-400 mb-6">
-											{step.descripcion}
-										</p>
-										<div className="flex gap-3 flex-wrap mb-4">
-											{step.features.map((f, i) => (
-												<span
-													key={i}
-													className="bg-black/40 border border-indigo-800 text-gray-400 px-4 py-2 rounded-xl text-xs font-medium shadow hover:bg-indigo-900/60 transition hover:scale-105"
-												>
-													{f}
-												</span>
-											))}
-										</div>
+										{/* Contenido */}
+										<StepContent step={step} />
 									</div>
 								</SwiperSlide>
 							))}
@@ -169,39 +176,8 @@ const Process: React.FC = () => {
 							{/* Línea azul decorativa superior */}
 							<div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-2xl" />
 							{/* Contenido */}
-							<div className="flex items-center gap-4 mb-6 relative z-10">
-								<div className="bg-indigo-900/80 rounded-xl flex items-center justify-center shadow-lg border border-indigo-400/30 transition-transform duration-300 hover:scale-105 hover:shadow-indigo-500/40 h-16 w-16 overflow-hidden">
-									<Image
-										src={step.icon}
-										alt={`Icono de la etapa ${step.titulo} del proceso DAROX`}
-										width={64}
-										height={64}
-										className="h-full w-full object-cover img-shadow-indigo"
-										priority
-									/>
-								</div>
-								<div className="relative flex items-center">
-									<span className="px-4 py-1 rounded-lg bg-indigo-800/80 text-xs font-semibold text-gray-300 shadow border border-indigo-500/30 relative z-10">
-										{step.etapa}
-									</span>
-								</div>
-							</div>
-							<h4 className="text-xl font-bold text-white mb-4 drop-shadow-lg">
-								{step.titulo}
-							</h4>
-							<p className="text-gray-400 mb-6">
-								{step.descripcion}
-							</p>
-							<div className="flex gap-3 flex-wrap mb-4">
-								{step.features.map((f, i) => (
-									<span
-										key={i}
-										className="bg-black/40 border border-indigo-800 text-gray-400 px-4 py-2 rounded-xl text-xs font-medium shadow hover:bg-indigo-900/60 transition hover:scale-105"
-									>
-										{f}
-									</span>
-								))}
-							</div>
+							{/* Contenido */}
+							<StepContent step={step} />
 						</motion.div>
 					))
 				)}

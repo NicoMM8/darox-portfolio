@@ -2,6 +2,7 @@
 
 export interface Result {
   id: string
+  slug: string              // URL slug para /proyectos/[slug]
   title: string
   status?: string
   imageUrl: string // Imagen por defecto
@@ -11,14 +12,15 @@ export interface Result {
   description: string         // SOLO para SEO/meta
   webDescription: string      // SOLO para mostrar en la web
   metrics: { value: string; label: string }[]
-  url: string                
-  year: number               
-  categories: string[]       
+  url: string
+  year: number
+  categories: string[]
 }
 
 export const results: Result[] = [
   {
     id: 'hole',
+    slug: 'golden-hole',
     title: 'Golden Hole',
     status: 'NUEVO',
     imageUrl: '/images/golf5.png', // Imagen por defecto
@@ -31,12 +33,13 @@ export const results: Result[] = [
       { value: '30%', label: 'Aumento en Ventas' },
       { value: '40%', label: 'Impulso en Retención' },
     ],
-    url: '/proyectos/golden-hole', 
+    url: '/proyectos/golden-hole',
     year: 2024,
     categories: ['Branding', 'Campañas']
   },
   {
     id: 'majuelo',
+    slug: 'majuelo-del-arlanza',
     title: 'El Majuelo del Arlanza',
     imageUrl: '/images/miel6.png',
     portfolioImageUrl: '/images/miel7.png', // Imagen para /portfolio
@@ -48,12 +51,13 @@ export const results: Result[] = [
       { value: '25%', label: 'Tasas de Conversión' },
       { value: '50%', label: 'Reducción en CPA' },
     ],
-    url: '/proyectos/MajueloDelArlanza', 
+    url: '/proyectos/majuelo-del-arlanza',
     year: 2024,
     categories: ['Estrategia de Marca', 'Marca Casera']
   },
   {
     id: 'codice13',
+    slug: 'codice-13',
     title: 'Códice 13',
     status: 'FRESCO',
     imageUrl: '/images/scaperoom.png',
@@ -66,7 +70,7 @@ export const results: Result[] = [
       { value: '60%', label: 'Aumento de Tráfico' },
       { value: '35%', label: 'Crecimiento en Reservas' },
     ],
-    url: '/proyectos/codice-13', 
+    url: '/proyectos/codice-13',
     year: 2022,
     categories: ['Entretenimiento', 'Escape Room']
   },

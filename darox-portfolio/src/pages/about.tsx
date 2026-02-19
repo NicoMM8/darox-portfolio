@@ -1,20 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image';
 
 export default function About() {
-  const [showVideo, setShowVideo] = useState(false)
   const [showFull, setShowFull] = useState(false)
 
-  // Cierra el modal si se hace click fuera del iframe
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      setShowVideo(false)
-    }
-  } 
-  
   const features = [
     {
       icon: "/images/n8n.svg",
@@ -41,7 +33,7 @@ export default function About() {
       url: "https://drive.google.com",
     },
     {
-      icon: "https://framerusercontent.com/images/WMhDTCktsKDsmcWo1JrYGg6fe1c.png",
+      icon: "/images/stripe-logo.png",
       title: "Stripe",
       badge: "",
       subtitle: "Pagos",
@@ -49,7 +41,7 @@ export default function About() {
       url: "https://stripe.com",
     },
     {
-      icon: "https://framerusercontent.com/images/xtU2n341VGGcU87PrpBxCo4PEFo.svg",
+      icon: "/images/mailchimp-logo.svg",
       title: "Mailchimp",
       badge: "PRO",
       subtitle: "Email Marketing",
@@ -57,7 +49,7 @@ export default function About() {
       url: "https://mailchimp.com",
     },
     {
-      icon: "https://framerusercontent.com/images/e1zEk4xxTPo4zzl3Y6DhP5avQA.svg",
+      icon: "/images/github-logo.svg",
       title: "GitHub",
       badge: "",
       subtitle: "Control de versiones",
@@ -75,7 +67,7 @@ export default function About() {
           content="Conoce al equipo de DAROX, nuestra filosofía y cómo ayudamos a empresas y emprendedores a crecer con branding, diseño web y marketing digital."
         />
         <script type="application/ld+json">
-{`
+          {`
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -89,8 +81,8 @@ export default function About() {
   }
 }
 `}
-</script>
-<link rel="canonical" href="https://darox.es/about" />
+        </script>
+        <link rel="canonical" href="https://darox.es/about" />
       </Head>
       <Navbar />
       {/* Fondo de video animado */}
@@ -101,7 +93,7 @@ export default function About() {
         playsInline
         className="fixed inset-0 w-full h-full object-cover object-top z-0 pointer-events-none"
       >
-        <source src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4" type="video/mp4" />
+        <source src="/images/fondo.mp4" type="video/mp4" />
       </video>
       {/* Capa oscura encima del video */}
       <div className="fixed inset-0 bg-black/60 z-0 pointer-events-none" />
@@ -126,7 +118,7 @@ export default function About() {
           {/* Subtítulo */}
           <p className="text-base sm:text-lg md:text-xl text-gray-300 text-justify max-w-2xl mb-10 font-medium">
             En Darox BM combinamos diseño, estrategia y tecnología para transformar ideas en negocios rentables.
-            Somos tu socio creativo y resolutivo: expertos en branding, desarrollo web, automatización con 
+            Somos tu socio creativo y resolutivo: expertos en branding, desarrollo web, automatización con
             <span className="block text-center">
               IA y marketing digital. Creemos en el poder de construir marcas
               auténticas con resultados tangibles.
@@ -153,61 +145,7 @@ export default function About() {
               ¿Qué es DAROX?
             </button>
           </div>
-          {/* Imagen clicable con botón de play */}
-          {/* <div className="w-full flex justify-center mb-20">
-            <button
-              className="w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 bg-black relative group focus:outline-none"
-              onClick={() => setShowVideo(true)}
-              aria-label="Reproducir vídeo"
-              type="button"
-            >
-              <Image
-                src="https://img.youtube.com/vi/nziHP21GXRw/maxresdefault.jpg"
-                alt="DAROX video"
-                width={1280}
-                height={720}
-                className="w-full h-full object-cover group-hover:brightness-75 transition"
-                loading="lazy"
-              />
-              <span className="absolute inset-0 flex items-center justify-center">
-                <span className="bg-black/60 rounded-full p-6">
-                  <svg className="w-16 h-16 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 64 64">
-                    <circle cx="32" cy="32" r="32" fill="currentColor" opacity="0.3"/>
-                    <polygon points="26,20 50,32 26,44" fill="#fff"/>
-                  </svg>
-                </span>
-              </span>
-            </button>
-          </div>
-          {/* Modal de vídeo */}
-          {showVideo && (
-            <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
-              onClick={handleOverlayClick}
-            >
-              <button
-                className="absolute top-6 right-8 text-white text-4xl font-bold z-50 hover:text-blue-400 transition"
-                onClick={() => setShowVideo(false)}
-                aria-label="Cerrar vídeo"
-                type="button"
-              >
-                &times;
-              </button>
-              <div className="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 bg-black relative">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/nziHP21GXRw?autoplay=1"
-                  title="YouTube video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
-              </div>
-            </div>
-          )}
-        
-          {/* Bloque de presentación de Darío, alineado a la izquierda con imagen a la derecha */}
+          {/* Bloque de presentación de Darío */}
           <section
             id="bloque-dario"
             className="w-full max-w-4xl mx-auto bg-black/80 border border-white/10 rounded-3xl shadow-xl p-8 md:p-12 mb-16 mt-4 flex flex-col md:flex-row items-center gap-8"
@@ -219,29 +157,28 @@ export default function About() {
                 <span className="text-white/80 font-semibold">Darío, CEO de Darox BM</span>
               </div>
               <p
-                className={`text-lg md:text-xl text-white font-semibold mb-2 ${
-                  showFull ? 'text-justify' : 'text-left'
-                }`}
+                className={`text-lg md:text-xl text-white font-semibold mb-2 ${showFull ? 'text-justify' : 'text-left'
+                  }`}
               >
                 {showFull
                   ? <>
-                      Soy Darío, fundador y CEO de Darox BM.<br /><br />
-                      No nací con contactos, ni con presupuesto, ni con un máster en negocios. Lo que sí tenía era algo que probablemente tú también tienes:<br />
-                      una idea potente, una ambición que no se apaga y unas ganas inmensas de vivir de lo mío.<br /><br />
-                      Creé Darox BM para ayudar a personas como tú: emprendedores con visión, con talento, pero sin un sistema claro para hacer que su idea funcione.<br /><br />
-                      En Darox BM no vendemos servicios sueltos.<br />
-                      No hacemos “logos bonitos” ni webs que no convierten.<br />
-                      Creamos marcas reales, estratégicas, con una identidad clara, presencia profesional y una base sólida para crecer.<br /><br />
-                      Y lo hacemos aplicando diseño, estrategia de negocio e inteligencia artificial como herramientas prácticas para un solo objetivo:<br />
-                      que tu marca no solo se vea bien…<br />
-                      sino que te dé clientes, ingresos y libertad real.<br /><br />
-                      Aquí, no eres un número.<br />
-                      Eres alguien que quiere construir algo que le cambie la vida.<br />
-                      Y eso, créeme, también me importa a mí.
-                    </>
+                    Soy Darío, fundador y CEO de Darox BM.<br /><br />
+                    No nací con contactos, ni con presupuesto, ni con un máster en negocios. Lo que sí tenía era algo que probablemente tú también tienes:<br />
+                    una idea potente, una ambición que no se apaga y unas ganas inmensas de vivir de lo mío.<br /><br />
+                    Creé Darox BM para ayudar a personas como tú: emprendedores con visión, con talento, pero sin un sistema claro para hacer que su idea funcione.<br /><br />
+                    En Darox BM no vendemos servicios sueltos.<br />
+                    No hacemos “logos bonitos” ni webs que no convierten.<br />
+                    Creamos marcas reales, estratégicas, con una identidad clara, presencia profesional y una base sólida para crecer.<br /><br />
+                    Y lo hacemos aplicando diseño, estrategia de negocio e inteligencia artificial como herramientas prácticas para un solo objetivo:<br />
+                    que tu marca no solo se vea bien…<br />
+                    sino que te dé clientes, ingresos y libertad real.<br /><br />
+                    Aquí, no eres un número.<br />
+                    Eres alguien que quiere construir algo que le cambie la vida.<br />
+                    Y eso, créeme, también me importa a mí.
+                  </>
                   : <>
-                      Soy Darío, creador de Darox BM. <br />Ayudo a emprendedores con grandes ideas a construir marcas reales que les den libertad, ingresos y visibilidad. <br />Lo hacemos combinando estrategia, diseño e inteligencia artificial. <br />No vendemos servicios. <br />Construimos negocios que funcionan.
-                    </>
+                    Soy Darío, creador de Darox BM. <br />Ayudo a emprendedores con grandes ideas a construir marcas reales que les den libertad, ingresos y visibilidad. <br />Lo hacemos combinando estrategia, diseño e inteligencia artificial. <br />No vendemos servicios. <br />Construimos negocios que funcionan.
+                  </>
                 }
               </p>
               <button
@@ -280,13 +217,13 @@ export default function About() {
             {/* Detalle decorativo SVG izquierda */}
             <div className="hidden md:block absolute left-0 top-0 h-40 w-64 -translate-y-1/2 -translate-x-1/3 pointer-events-none opacity-60">
               <svg viewBox="0 0 567 237" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <path d="M0,237 Q283.5,0 567,237" stroke="#0055FF" strokeOpacity="0.08" strokeWidth="40" fill="none"/>
+                <path d="M0,237 Q283.5,0 567,237" stroke="#0055FF" strokeOpacity="0.08" strokeWidth="40" fill="none" />
               </svg>
             </div>
             {/* Detalle decorativo SVG derecha */}
             <div className="hidden md:block absolute right-0 top-0 h-40 w-64 -translate-y-1/2 translate-x-1/3 pointer-events-none opacity-60">
               <svg viewBox="0 0 567 237" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <path d="M0,237 Q283.5,0 567,237" stroke="#0055FF" strokeOpacity="0.08" strokeWidth="40" fill="none"/>
+                <path d="M0,237 Q283.5,0 567,237" stroke="#0055FF" strokeOpacity="0.08" strokeWidth="40" fill="none" />
               </svg>
             </div>
             <div className="relative z-10 w-full max-w-5xl mx-auto">

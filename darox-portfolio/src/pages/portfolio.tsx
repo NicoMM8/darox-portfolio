@@ -15,7 +15,7 @@ const customDescriptions: Record<string, string> = {
 function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total: number }) {
   const ref = useRef(null)
   const [vh, setVh] = useState(0)
-  const { scrollY } = useScroll() 
+  const { scrollY } = useScroll()
 
   useEffect(() => {
     setVh(window.innerHeight)
@@ -34,11 +34,8 @@ function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total:
   )
   const filter = useTransform(grayscale, (g: number) => `grayscale(${g})`)
 
-  // Asigna el enlace según el orden de aparición
-  let href = '#'
-  if (idx === 0) href = '/proyectos/golden-hole'
-  else if (idx === 1) href = '/proyectos/MajueloDelArlanza'
-  else if (idx === 2) href = '/proyectos/codice-13'
+  // Usa el slug del item para generar el href dinámicamente
+  const href = `/proyectos/${item.slug}`;
 
   return (
     <div
@@ -132,6 +129,7 @@ export default function Portfolio() {
         <meta property="og:image" content="https://darox.es/images/logo_horizontal.png" />
         <meta property="og:url" content="https://darox.es/portfolio" />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_ES" />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Portafolio de Proyectos | Branding y Web | DAROX" />
@@ -139,7 +137,7 @@ export default function Portfolio() {
         <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.png" />
         {/* Schema.org para Google */}
         <script type="application/ld+json">
-{`
+          {`
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -152,7 +150,7 @@ export default function Portfolio() {
     {
       "@type": "ListItem",
       "position": 2,
-      "url": "https://darox.es/proyectos/MajueloDelArlanza"
+      "url": "https://darox.es/proyectos/majuelo-del-arlanza"
     },
     {
       "@type": "ListItem",
@@ -162,7 +160,7 @@ export default function Portfolio() {
   ]
 }
 `}
-</script>
+        </script>
         <link rel="canonical" href="https://darox.es/portfolio" />
       </Head>
       <Navbar />
@@ -180,10 +178,10 @@ export default function Portfolio() {
               {/* Detalle decorativo SVG */}
               <div className="w-full flex justify-between items-center mb-2">
                 <svg width="120" height="40" viewBox="0 0 120 40" fill="none" className="hidden md:block">
-                  <rect x="0" y="0" width="120" height="40" rx="20" fill="#000" fillOpacity="0.2"/>
+                  <rect x="0" y="0" width="120" height="40" rx="20" fill="#000" fillOpacity="0.2" />
                 </svg>
                 <svg width="120" height="40" viewBox="0 0 120 40" fill="none" className="hidden md:block">
-                  <rect x="0" y="0" width="120" height="40" rx="20" fill="#000" fillOpacity="0.2"/>
+                  <rect x="0" y="0" width="120" height="40" rx="20" fill="#000" fillOpacity="0.2" />
                 </svg>
               </div>
               {/* Badge y título */}
@@ -203,7 +201,7 @@ export default function Portfolio() {
               </h2>
               <div className="w-32 h-1 rounded-full bg-gradient-to-r from-transparent via-blue-600 to-transparent my-2" />
               <p className="text-base text-gray-400 text-center max-w-2xl">
-                Conecta fácilmente con tus herramientas favoritas. Ya sea tu CRM, plataforma de email marketing...
+                Cada proyecto es una historia de transformación real. Explora nuestros casos de éxito en branding, diseño web y estrategia digital.
               </p>
             </div>
           </section>

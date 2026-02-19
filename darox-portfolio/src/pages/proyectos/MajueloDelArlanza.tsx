@@ -16,8 +16,9 @@ export default function Proyecto2() {
         <meta property="og:title" content="Proyecto Branding Marca Artesanal | DAROX" />
         <meta property="og:description" content="Descubre cómo DAROX impulsó el crecimiento digital de una marca artesanal con branding, desarrollo web y estrategia digital personalizada." />
         <meta property="og:image" content="https://darox.es/images/miel1.png" />
-        <meta property="og:url" content="https://darox.es/proyectos/MajueloDelArlanza" />
+        <meta property="og:url" content="https://darox.es/proyectos/majuelo-del-arlanza" />
         <meta property="og:type" content="article" />
+        <link rel="canonical" href="https://darox.es/proyectos/majuelo-del-arlanza" />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Proyecto Branding Marca Artesanal | DAROX" />

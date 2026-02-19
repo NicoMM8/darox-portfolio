@@ -9,7 +9,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
   const { ref, inView } = useInView({
-    threshold: 0.2, 
+    threshold: 0.2,
   });
 
   // Notifica el cambio de visibilidad al padre
@@ -20,18 +20,16 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
   return (
     <footer
       ref={ref}
-      className={`relative w-full border-t border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.09)] to-[rgba(153,153,153,0.09)] pt-12 pb-6 px-4 ${
-        inView ? "" : "backdrop-blur-lg"
-      }`}
+      className={`relative w-full border-t border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.09)] to-[rgba(153,153,153,0.09)] pt-12 pb-6 px-4 ${inView ? "" : "backdrop-blur-lg"
+        }`}
     >
       {/* Fondo decorativo */}
       <div className="absolute inset-0 w-full h-full -z-10 rounded-xl overflow-hidden">
         <Image
-          src="https://framerusercontent.com/images/Yup0Khoh6jiKcA1Ad9mojCjB7M.png"
+          src="/images/footer-bg.png"
           alt=""
           fill
           className="object-cover object-center"
-          priority
         />
       </div>
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-10 relative z-10">
@@ -39,11 +37,10 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
         <div className="flex flex-col gap-4 md:w-1/3">
           <Link href="/" className="inline-block w-16 h-6 relative">
             <Image
-              src="/images/logo.png"
+              src="/images/logo.ico"
               alt="Logo de DAROX, agencia de branding y diseño web"
               fill
               className="object-contain"
-              priority
             />
           </Link>
           <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-white/15 to-transparent rounded-full my-2" />
@@ -120,9 +117,9 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
           <h4 className="text-base font-semibold text-white mb-2">Social</h4>
           <div className="flex flex-col gap-2">
             <a
-              href=":https://x.com/DaroxBrandMaker"
+              href="https://x.com/DaroxBrandMaker"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
               Twitter (X)
@@ -130,7 +127,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
             <a
               href="https://www.instagram.com/darox.bm/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
               Instagram
@@ -138,7 +135,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
             <a
               href="https://www.youtube.com/@daroxbrandmaker"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
               Youtube
@@ -154,7 +151,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
       <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full my-6" />
       {/* Copyright y links legales */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
-        <span>© 2025 DAROX</span>
+        <span>© {new Date().getFullYear()} DAROX</span>
         <div className="flex gap-4">
           <Link href="/terms-conditions" className="hover:text-white">
             Términos & Condiciones

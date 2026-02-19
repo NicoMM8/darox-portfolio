@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DAROX Portfolio
 
-## Getting Started
+Sitio web oficial de **DAROX** — Agencia de Branding, Diseño Web y Marketing Digital.
 
-First, run the development server:
+## Stack
+
+- [Next.js 15](https://nextjs.org/) — Framework React con Static Export
+- [React 19](https://react.dev/)
+- [TypeScript 5](https://www.typescriptlang.org/)
+- [TailwindCSS v3](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/) — Animaciones
+- [Vercel Speed Insights](https://vercel.com/docs/speed-insights)
+
+## Instalación
+
+```bash
+npm install
+```
+
+## Variables de entorno
+
+Crea un archivo `.env.local` en la raíz del proyecto copiando `.env.example`:
+
+```bash
+cp .env.example .env.local
+```
+
+Rellena las variables:
+
+| Variable | Descripción |
+|---|---|
+| `NEXT_PUBLIC_WEB3FORMS_KEY` | Clave API de [Web3Forms](https://web3forms.com/) para el formulario de contacto |
+
+## Desarrollo local
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en el navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build y Export estático
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Genera la carpeta `/out` lista para servir como sitio estático.
 
-To learn more about Next.js, take a look at the following resources:
+## Estructura del proyecto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── components/     # Componentes reutilizables (Navbar, Footer, Hero, etc.)
+├── data/           # Datos estáticos (results.ts con los proyectos del portfolio)
+├── estilos/        # CSS global (globals.css)
+└── pages/          # Páginas Next.js
+    ├── proyectos/  # Páginas individuales de cada proyecto
+    ├── index.tsx   # Landing principal
+    ├── about.tsx   # Sobre DAROX
+    ├── portfolio.tsx
+    └── contacto.tsx
+public/
+└── images/         # Imágenes y assets estáticos
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Añadir un nuevo proyecto al portfolio
 
-## Deploy on Vercel
+1. Añade los datos del proyecto en `src/data/results.ts` (con un `slug` único)
+2. Crea la página en `src/pages/proyectos/[tu-slug].tsx`
+3. Añade las imágenes en `public/images/`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+El proyecto usa `output: 'export'` en `next.config.ts`, generando un sitio completamente estático apto para cualquier hosting (Apache, Nginx, Vercel, Cloudflare Pages...).

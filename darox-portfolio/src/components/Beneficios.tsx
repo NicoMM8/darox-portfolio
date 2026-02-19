@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useAnimationFrame } from "framer-motion";
+import Image from "next/image";
 
 const benefitsList = [
 	"Mejora UX",
@@ -132,15 +133,20 @@ const Benefits: React.FC = () => {
 						viewport={{ once: true }}
 					>
 						<div className="rounded-xl overflow-hidden mb-4 border border-white/10 relative">
-							<motion.img
-								src="https://framerusercontent.com/images/nt3TDX5zl4zsmwO69xL44yiUM.jpg"
-								alt="Abstracto 3D Azul"
-								className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
-								loading="lazy"
+							<motion.div
 								initial={{ scale: 1 }}
 								whileHover={{ scale: 1.04 }}
 								transition={{ duration: 0.4 }}
-							/>
+								className="relative w-full h-56"
+							>
+								<Image
+									src="/images/beneficios-main.jpg"
+									alt="Abstracto 3D Azul — Beneficios de trabajar con DAROX"
+									fill
+									className="object-cover group-hover:scale-105 transition-transform duration-500"
+									loading="lazy"
+								/>
+							</motion.div>
 							{/* Glow animado */}
 							<div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-28 h-10 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
 						</div>
@@ -152,11 +158,11 @@ const Benefits: React.FC = () => {
 							<p className="text-white/60 text-base mb-6 max-w-md">
 								Disfruta de la libertad de enviar solicitudes ilimitadas sin
 								restricciones. Ajustes de diseño, nuevas ideas o retoques: te
-							 acompañamos en cada paso.
+								acompañamos en cada paso.
 							</p>
 							<div className="flex gap-4 mt-auto">
 								<motion.a
-									href="contacto"
+									href="/contacto"
 									className="px-6 py-2 rounded-[10px] bg-blue-600 text-white font-semibold shadow-lg hover:bg-blue-700 transition border-2 border-blue-600"
 									whileHover={{
 										scale: 1.08,
@@ -167,7 +173,7 @@ const Benefits: React.FC = () => {
 									Reserva una llamada
 								</motion.a>
 								<motion.a
-									href="about"
+									href="/about"
 									className="px-6 py-2 rounded-[10px] bg-white/10 text-white font-semibold shadow hover:bg-white/20 transition border-2 border-white/15 backdrop-blur-[2px]"
 									whileHover={{
 										scale: 1.08,
@@ -193,15 +199,20 @@ const Benefits: React.FC = () => {
 							viewport={{ once: true }}
 						>
 							<div className="rounded-xl overflow-hidden mb-4 border border-white/10 relative">
-								<motion.img
-									src="/images/precios.png"
-									alt="Precios sin sorpresas en servicios de branding y web de DAROX"
-									className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500"
-									loading="lazy"
+								<motion.div
 									initial={{ scale: 1 }}
 									whileHover={{ scale: 1.04 }}
 									transition={{ duration: 0.4 }}
-								/>
+									className="relative w-full h-32"
+								>
+									<Image
+										src="/images/precios.png"
+										alt="Precios sin sorpresas en servicios de branding y web de DAROX"
+										fill
+										className="object-cover group-hover:scale-105 transition-transform duration-500"
+										loading="lazy"
+									/>
+								</motion.div>
 								{/* Glow animado */}
 								<div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
 							</div>
@@ -210,12 +221,12 @@ const Benefits: React.FC = () => {
 									Precios sin sorpresas
 								</h4>
 								<span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">
-									NUEVO
+									TRANSPARENTE
 								</span>
 							</div>
 							<p className="text-white/60 text-base">
 								Ya sea que comiences o estés en pleno crecimiento, nuestros planes
-								flexibles.
+								flexibles se adaptan a tu ritmo y presupuesto sin costes ocultos.
 							</p>
 						</motion.div>
 						{/* Card 4 */}
@@ -229,26 +240,31 @@ const Benefits: React.FC = () => {
 							viewport={{ once: true }}
 						>
 							<div className="rounded-xl overflow-hidden mb-4 border border-white/10 relative">
-								<motion.img
-									src="/images/Beneficios1.png"
-									alt="Integraciones continuas para automatización y CRM en proyectos DAROX"
-									className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500"
-									loading="lazy"
+								<motion.div
 									initial={{ scale: 1 }}
 									whileHover={{ scale: 1.04 }}
 									transition={{ duration: 0.4 }}
-								/>
+									className="relative w-full h-32"
+								>
+									<Image
+										src="/images/Beneficios1.png"
+										alt="Integraciones continuas para automatización y CRM en proyectos DAROX"
+										fill
+										className="object-cover group-hover:scale-105 transition-transform duration-500"
+										loading="lazy"
+									/>
+								</motion.div>
 								{/* Glow animado */}
 								<div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
 							</div>
 							<div className="flex items-center gap-2 mb-2">
 								<h4 className="text-xl font-bold text-white">Entrega rápida</h4>
 								<span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">
-									NUEVO
+									RÁPIDO
 								</span>
 							</div>
 							<p className="text-white/60 text-base">
-								Prioritzamos la eficiencia sin sacrificar la calidad. Tu proyecto
+								Priorizamos la eficiencia sin sacrificar la calidad. Tu proyecto
 								listo en 24–48 horas para que nunca pierdas ritmo.
 							</p>
 						</motion.div>
@@ -268,15 +284,20 @@ const Benefits: React.FC = () => {
 					>
 						<div className="bg-black/80 border border-white/10 rounded-2xl shadow-xl p-6 flex flex-col h-full overflow-hidden">
 							<div className="rounded-xl overflow-hidden mb-4 border border-white/10 relative">
-								<motion.img
-									src="https://framerusercontent.com/images/ldgnQLBGvrfDRFhMWwp0l01S1M.png"
-									alt="Solicitudes y revisiones ilimitadas en proyectos de diseño web DAROX"
-									className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500"
-									loading="lazy"
+								<motion.div
 									initial={{ scale: 1 }}
 									whileHover={{ scale: 1.04 }}
 									transition={{ duration: 0.4 }}
-								/>
+									className="relative w-full h-32"
+								>
+									<Image
+										src="/images/beneficios-revisiones.png"
+										alt="Solicitudes y revisiones ilimitadas en proyectos de diseño web DAROX"
+										fill
+										className="object-cover group-hover:scale-105 transition-transform duration-500"
+										loading="lazy"
+									/>
+								</motion.div>
 								{/* Glow animado */}
 								<div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
 							</div>
@@ -285,7 +306,7 @@ const Benefits: React.FC = () => {
 									Solicitudes y revisiones
 								</h4>
 								<span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">
-									NUEVO
+									ILIMITADO
 								</span>
 							</div>
 							<p className="text-white/60 text-base">
@@ -306,22 +327,27 @@ const Benefits: React.FC = () => {
 					>
 						<div className="bg-black/80 border border-white/10 rounded-2xl shadow-xl p-6 flex flex-col h-full overflow-hidden">
 							<div className="rounded-xl overflow-hidden mb-4 border border-white/10 relative">
-								<motion.img
-									src="/images/reales.png"
-									alt="Testimonios reales de clientes satisfechos con DAROX"
-									className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500"
-									loading="lazy"
+								<motion.div
 									initial={{ scale: 1 }}
 									whileHover={{ scale: 1.04 }}
 									transition={{ duration: 0.4 }}
-								/>
+									className="relative w-full h-32"
+								>
+									<Image
+										src="/images/reales.png"
+										alt="Testimonios reales de clientes satisfechos con DAROX"
+										fill
+										className="object-cover group-hover:scale-105 transition-transform duration-500"
+										loading="lazy"
+									/>
+								</motion.div>
 								{/* Glow animado */}
 								<div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
 							</div>
 							<div className="flex items-center gap-2 mb-2">
 								<h4 className="text-xl font-bold text-white">Testimonios reales</h4>
 								<span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">
-									NUEVO
+									VERIFICADO
 								</span>
 							</div>
 							<p className="text-white/60 text-base">
@@ -342,15 +368,20 @@ const Benefits: React.FC = () => {
 					>
 						<div className="bg-black/80 border border-white/10 rounded-2xl shadow-xl p-6 flex flex-col h-full overflow-hidden">
 							<div className="rounded-xl overflow-hidden mb-4 border border-white/10 relative">
-								<motion.img
-									src="/images/Beneficios2.png"
-									alt="Integraciones continuas para automatización y CRM en proyectos DAROX"
-									className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500"
-									loading="lazy"
+								<motion.div
 									initial={{ scale: 1 }}
 									whileHover={{ scale: 1.04 }}
 									transition={{ duration: 0.4 }}
-								/>
+									className="relative w-full h-32"
+								>
+									<Image
+										src="/images/Beneficios2.png"
+										alt="Integraciones continuas para automatización y CRM en proyectos DAROX"
+										fill
+										className="object-cover group-hover:scale-105 transition-transform duration-500"
+										loading="lazy"
+									/>
+								</motion.div>
 								{/* Glow animado */}
 								<div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
 							</div>
@@ -359,7 +390,7 @@ const Benefits: React.FC = () => {
 									Integraciones continuas
 								</h4>
 								<span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">
-									NUEVO
+									AUTOMATIZADO
 								</span>
 							</div>
 							<p className="text-white/60 text-base">

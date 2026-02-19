@@ -1,7 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
-const testimonials = [
+interface Testimonial {
+  name: string;
+  position: string;
+  image: string;
+  quote: string;
+}
+
+const testimonials: Testimonial[] = [
   {
     name: "Marta González",
     position: "Directora de Marketing en Golden Hole",
@@ -38,6 +45,69 @@ const stats = [
   { value: "5+", label: "Sectores diferentes." },
 ];
 
+interface TestimonialCardProps {
+  t: Testimonial;
+  ariaHidden?: boolean;
+  cardKey: string;
+}
+
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ t, ariaHidden, cardKey }) => (
+  <div
+    key={cardKey}
+    aria-hidden={ariaHidden}
+    className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] shadow-xl p-6 sm:p-8 flex flex-col overflow-hidden backdrop-blur-[2.5px] transition duration-300 hover:scale-[1.03] hover:shadow-2xl min-w-[90vw] max-w-[95vw] sm:min-w-[420px] sm:max-w-lg lg:min-w-[520px] lg:max-w-2xl testimonial-card min-h-[480px] flex-none"
+  >
+    {/* Línea azul decorativa superior */}
+    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-2xl pointer-events-none opacity-70" />
+
+    {/* Imagen circular */}
+    <div className="flex justify-center items-center mb-6 relative">
+      <div className="bg-white/10 p-5 rounded-xl border border-white/20 shadow-lg">
+        <Image
+          src={t.image}
+          alt={ariaHidden ? "" : `Foto de ${t.name}, ${t.position} - Testimonio sobre DAROX`}
+          width={96}
+          height={96}
+          className="h-24 w-24 object-cover rounded-full img-shadow-indigo"
+        />
+      </div>
+    </div>
+
+    {/* Nombre y posición */}
+    <h3 className="text-2xl font-bold text-white mb-2">{t.name}</h3>
+    <span className="text-base text-white/60 mb-4">{t.position}</span>
+
+    {/* Línea difuminada */}
+    <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-full mb-6" />
+
+    {/* Testimonio */}
+    <blockquote className="text-lg text-white/80 italic mb-6 text-center">
+      &quot;{t.quote}&quot;
+    </blockquote>
+
+    {/* Rating */}
+    <div className="flex items-center gap-2 mt-auto">
+      <span className="bg-blue-700 text-white text-xs font-semibold px-3 py-1 rounded-lg border border-white/15 shadow about-shadow">
+        5.0
+      </span>
+      <div className="flex gap-1">
+        {[...Array(5)].map((_, idx) => (
+          <svg
+            key={idx}
+            className="w-6 h-6"
+            fill="#FFD700"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+          </svg>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
 const TestimonialsBlock: React.FC = () => {
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 text-white bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] backdrop-blur-[2.5px] overflow-hidden">
@@ -63,9 +133,9 @@ const TestimonialsBlock: React.FC = () => {
         </div>
         {/* Estadísticas */}
         <div className="w-full flex flex-col md:flex-row gap-8 justify-center items-center mb-8">
-          {stats.map((s, i) => (
+          {stats.map((s) => (
             <div
-              key={i}
+              key={s.label}
               className="flex flex-col items-center justify-center bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] rounded-xl shadow-lg px-8 py-6 border border-white/10 min-w-[180px]"
             >
               <h3 className="text-3xl font-extrabold gradient-text mb-2 text-center">{s.value}</h3>
@@ -77,169 +147,61 @@ const TestimonialsBlock: React.FC = () => {
         <div className="w-full flex flex-col items-center">
           <div className="relative w-full overflow-hidden">
             <div className="flex gap-8 animate-scroll-carousel w-max">
-              {[...testimonials, ...testimonials].map((t, i) => (
-                <div
-                  key={i}
-                  className="
-                    relative group rounded-2xl border border-white/10
-                    bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)]
-                    shadow-xl p-6 sm:p-8 flex flex-col overflow-hidden
-                    backdrop-blur-[2.5px]
-                    transition duration-300 hover:scale-[1.03] hover:shadow-2xl
-                    min-w-[90vw] max-w-[95vw] sm:min-w-[420px] sm:max-w-lg lg:min-w-[520px] lg:max-w-2xl
-                    testimonial-card
-                    min-h-[480px] flex-none
-                  "
-                >
-                  {/* Línea azul decorativa superior */}
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-2xl pointer-events-none opacity-70" />
-
-                  {/* Imagen circular con borde y sombra, SIN glow */}
-                  <div className="flex justify-center items-center mb-6 relative">
-                    <div className="bg-white/10 p-5 rounded-xl border border-white/20 shadow-lg">
-                      <Image
-                        src={t.image}
-                        alt={`Foto de ${t.name}, ${t.position} - Testimonio sobre DAROX`}
-                        width={96}
-                        height={96}
-                        className="h-24 w-24 object-cover rounded-full img-shadow-indigo"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Nombre y posición */}
-                  <h3 className="text-2xl font-bold text-white mb-2">{t.name}</h3>
-                  <span className="text-base text-white/60 mb-4">{t.position}</span>
-
-                  {/* Línea difuminada */}
-                  <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-full mb-6" />
-
-                  {/* Testimonio */}
-                  <blockquote className="text-lg text-white/80 italic mb-6 text-center">
-                    “{t.quote}”
-                  </blockquote>
-
-                  {/* Rating tipo badge */}
-                  <div className="flex items-center gap-2 mt-auto">
-                    <span className="bg-blue-700 text-white text-xs font-semibold px-3 py-1 rounded-lg border border-white/15 shadow about-shadow">
-                      5.0
-                    </span>
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, idx) => (
-                        <svg
-                          key={idx}
-                          className="w-6 h-6"
-                          fill="#FFD700"
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                          focusable="false"
-                        >
-                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+              {/* Pasada original — visible para crawlers */}
+              {testimonials.map((t) => (
+                <TestimonialCard key={`original-${t.name}`} cardKey={`original-${t.name}`} t={t} />
+              ))}
+              {/* Pasada duplicada — oculta para crawlers */}
+              {testimonials.map((t) => (
+                <TestimonialCard key={`duplicate-${t.name}`} cardKey={`duplicate-${t.name}`} t={t} ariaHidden />
               ))}
             </div>
           </div>
         </div>
       </div>
-      {/* Schema.org markup for Google+ */}
+      {/* Schema.org Reviews */}
       <script type="application/ld+json">
         {`{
           "@context": "https://schema.org",
           "@type": "Review",
-          "itemReviewed": {
-            "@type": "Organization",
-            "name": "DAROX"
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Marta González"
-          },
-          "reviewBody": "El equipo de DAROX entendió a la perfección la esencia de nuestro club y la trasladó a una marca elegante y digital. El nuevo branding y la web han elevado la percepción de Golden Hole y hemos notado un aumento real en las solicitudes de membresía.",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Golden Hole"
-          }
+          "itemReviewed": { "@type": "Organization", "name": "DAROX" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Marta González" },
+          "reviewBody": "El equipo de DAROX entendió a la perfección la esencia de nuestro club y la trasladó a una marca elegante y digital.",
+          "publisher": { "@type": "Organization", "name": "Golden Hole" }
         }`}
       </script>
       <script type="application/ld+json">
         {`{
           "@context": "https://schema.org",
           "@type": "Review",
-          "itemReviewed": {
-            "@type": "Organization",
-            "name": "DAROX"
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Luis Fernández"
-          },
-          "reviewBody": "Gracias a DAROX, nuestra miel artesanal tiene ahora una imagen profesional y cercana. La web transmite nuestros valores y hemos conseguido llegar a más clientes fuera del pueblo. El trato fue siempre cercano y transparente.",
-          "publisher": {
-            "@type": "Organization",
-            "name": "El Majuelo del Arlanza"
-          }
+          "itemReviewed": { "@type": "Organization", "name": "DAROX" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Luis Fernández" },
+          "reviewBody": "Gracias a DAROX, nuestra miel artesanal tiene ahora una imagen profesional y cercana.",
+          "publisher": { "@type": "Organization", "name": "El Majuelo del Arlanza" }
         }`}
       </script>
       <script type="application/ld+json">
         {`{
           "@context": "https://schema.org",
           "@type": "Review",
-          "itemReviewed": {
-            "@type": "Organization",
-            "name": "DAROX"
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Ana Ruiz"
-          },
-          "reviewBody": "DAROX nos ayudó a crear una experiencia digital inmersiva para nuestro escape room. La narrativa visual y la web han hecho que los jugadores vivan el misterio desde el primer clic. ¡Repetiríamos sin dudarlo!",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Códice 13"
-          }
+          "itemReviewed": { "@type": "Organization", "name": "DAROX" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Ana Ruiz" },
+          "reviewBody": "DAROX nos ayudó a crear una experiencia digital inmersiva para nuestro escape room.",
+          "publisher": { "@type": "Organization", "name": "Códice 13" }
         }`}
       </script>
       <script type="application/ld+json">
         {`{
           "@context": "https://schema.org",
           "@type": "Review",
-          "itemReviewed": {
-            "@type": "Organization",
-            "name": "DAROX"
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Javier Martín"
-          },
-          "reviewBody": "Contar con DAROX para el lanzamiento de nuestra startup fue un acierto. El branding y la estrategia digital nos han diferenciado en el sector y el acompañamiento durante todo el proceso fue excelente.",
-          "publisher": {
-            "@type": "Organization",
-            "name": "StartUp Burgos"
-          }
+          "itemReviewed": { "@type": "Organization", "name": "DAROX" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Javier Martín" },
+          "reviewBody": "Contar con DAROX para el lanzamiento de nuestra startup fue un acierto.",
+          "publisher": { "@type": "Organization", "name": "StartUp Burgos" }
         }`}
       </script>
     </section>

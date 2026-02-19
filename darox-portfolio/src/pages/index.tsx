@@ -19,21 +19,26 @@ export default function Home() {
         <title>Agencia de Branding, Web y Marketing Digital | DAROX</title>
         <meta
           name="description"
-          content="Impulsa tu marca con DAROX: expertos en branding, diseño web, marketing digital e inteligencia artificial. Creamos marcas, webs y estrategias que convierten visitantes en clientes."
+          content="Agencia de branding y diseño web en España. Creamos marcas, su branding y su web. Automatización, IA y marketing digital."
         />
+        <meta name="keywords" content="agencia branding españa, diseño web empresas, automatización, marketing, branding startup, darox" />
+        <link rel="canonical" href="https://darox.es/" />
+
         {/* Open Graph */}
         <meta property="og:title" content="Agencia de Branding, Web y Marketing Digital | DAROX" />
-        <meta property="og:description" content="Impulsa tu marca con DAROX: expertos en branding, diseño web, marketing digital e inteligencia artificial. Creamos marcas, webs y estrategias que convierten visitantes en clientes." />
-        <meta property="og:image" content="https://darox.es/images/logo_horizontal.png" />
+        <meta property="og:description" content="Agencia de branding y diseño web en España. Creamos marcas, webs y estrategias digitales." />
         <meta property="og:url" content="https://darox.es/" />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:image" content="https://darox.es/images/logo_horizontal.png" />
+
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Agencia de Branding, Web y Marketing Digital | DAROX" />
-        <meta name="twitter:description" content="Impulsa tu marca con DAROX: expertos en branding, diseño web, marketing digital e inteligencia artificial. Creamos marcas, webs y estrategias que convierten visitantes en clientes." />
+        <meta name="twitter:description" content="Agencia de branding y diseño web en España. Creamos marcas, webs y estrategias digitales." />
         <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.png" />
-        <link rel="canonical" href="https://darox.es/" />
       </Head>
+
       <Navbar />
       <Hero />
       <LogoCarousel />

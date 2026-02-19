@@ -11,57 +11,59 @@ interface Service {
   icon: string
 }
 
+// Datos estáticos fuera del componente para evitar recrearlos en cada render
+const services: Service[] = [
+  {
+    title: "Start Pack",
+    description: "Ideal para emprendedores que quieren lanzar su idea con una identidad profesional desde el primer día.",
+    price: "490€",
+    duration: "2 - 3 Semanas",
+    features: [
+      "Análisis estratégico del proyecto (revisión de mercado + definición de objetivos)",
+      "Naming + eslogan (si no lo tiene)",
+      "Branding visual completo",
+      "Logo principal + adaptaciones (horizontal, vertical, responsive)",
+      "Paleta de colores + tipografías",
+      "Manual visual básico (.PDF)",
+      "Kit para redes sociales",
+      "Foto de perfil, portada, plantilla de publicaciones"
+    ],
+    icon: "/images/Start_Pack.png"
+  },
+  {
+    title: "Grow Pack",
+    description: "Para emprendedores que ya tienen la idea clara y quieren construir una marca sólida, digital y preparada para escalar.",
+    price: "980€",
+    duration: "3 - 4 Semanas",
+    features: [
+      "Todo lo incluido en el Start Pack",
+      "Desarrollo de propuesta de valor, tono de marca y storytelling",
+      "Página web profesional (One Page con scroll fluido)",
+      "Diseño responsive + copy estratégico",
+      "Optimizada para SEO básico",
+      "Optimización de bio y estrategia de redes sociales",
+      "Integración de herramientas básicas con IA (por ejemplo: generación de contenido, automatización de respuestas, etc.)"
+    ],
+    icon: "/images/Growth_Pack.png"
+  },
+  {
+    title: "Real Business Pack",
+    description: "Para quienes quieren lanzar un negocio con todo: imagen, presencia digital, estrategia comercial y automatización con IA.",
+    price: "1.950€",
+    duration: "4 - 6 Semanas",
+    features: [
+      "Todo lo incluido en el Grow Pack",
+      "Branding avanzado (motion logo, versión animada + versiones para apps/productos físicos)",
+      "Sitio web completo (hasta 5 secciones, con blog o portfolio si aplica)",
+      "Implementación de embudo de conversión con automatización (correo, CRM, IA)",
+      "Calendario editorial + asesoramiento de contenido",
+      "1 mes de seguimiento personalizado para ayudarte a lanzar todo"
+    ],
+    icon: "/images/Bussiness_Pack.png"
+  }
+]
+
 const Services: React.FC = () => {
-  const services: Service[] = [
-    {
-      title: "Start Pack",
-      description: "Ideal para emprendedores que quieren lanzar su idea con una identidad profesional desde el primer día.",
-      price: "490€",
-      duration: "2 - 3 Semanas",
-      features: [
-        "Análisis estratégico del proyecto (revisión de mercado + definición de objetivos)",
-        "Naming + slogan (si no lo tiene)",
-        "Branding visual completo",
-        "Logo principal + adaptaciones (horizontal, vertical, responsive)",
-        "Paleta de colores + tipografías",
-        "Manual visual básico (.PDF)",
-        "Kit para redes sociales",
-        "Foto de perfil, portada, plantilla de publicaciones"
-      ],
-      icon: "/images/Start_Pack.png"
-    },
-    {
-      title: "Grow Pack",
-      description: "Para emprendedores que ya tienen la idea clara y quieren construir una marca sólida, digital y preparada para escalar.",
-      price: "980€",
-      duration: "3 - 4 Semanas",
-      features: [
-        "Todo lo incluido en el Start Pack",
-        "Desarrollo de propuesta de valor, tono de marca y storytelling",
-        "Página web profesional (One Page con scroll fluido)",
-        "Diseño responsive + copy estratégico",
-        "Optimizada para SEO básico",
-        "Optimización de bio y estrategia de redes sociales",
-        "Integración de herramientas básicas con IA (por ejemplo: generación de contenido, automatización de respuestas, etc.)"
-      ],
-      icon: "/images/Growth_Pack.png"
-    },
-    {
-      title: "Real Business Pack",
-      description: "Para quienes quieren lanzar un negocio con todo: imagen, presencia digital, estrategia comercial y automatización con IA.",
-      price: "1.950€",
-      duration: "4 - 6 Semanas",
-      features: [
-        "Todo lo incluido en el Grow Pack",
-        "Branding avanzado (motion logo, versión animada + versiones para apps/productos físicos)",
-        "Sitio web completo (hasta 5 secciones, con blog o portfolio si aplica)",
-        "Implementación de embudo de conversión con automatización (correo, CRM, IA)",
-        "Calendario editorial + asesoramiento de contenido",
-        "1 mes de seguimiento personalizado para ayudarte a lanzar todo"
-      ],
-      icon: "/images/Bussiness_Pack.png"
-    }
-  ]
 
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 text-white bg-black/10 overflow-hidden">

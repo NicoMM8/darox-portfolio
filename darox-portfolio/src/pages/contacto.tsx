@@ -4,23 +4,37 @@ import Navbar from '../components/Navbar';
 
 export default function Contact() {
   const [success, setSuccess] = useState<string | null>(null);
+  const [isError, setIsError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (loading) return;
+    setLoading(true);
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
-    if (res.ok) {
-      setSuccess("¡Mensaje enviado correctamente!");
-      // Redirige al calendario de Google
-      window.location.href = "https://calendar.app.google/wDR8DyKaoJwtAtsa8";
-    } else {
-      setSuccess("Hubo un error al enviar el mensaje.");
+      if (res.ok) {
+        setIsError(false);
+        setSuccess("¡Mensaje enviado correctamente! Redirigiendo al calendario...");
+        setTimeout(() => {
+          window.location.href = "https://calendar.app.google/wDR8DyKaoJwtAtsa8";
+        }, 2000);
+      } else {
+        setIsError(true);
+        setSuccess("Hubo un error al enviar el mensaje. Inténtalo de nuevo.");
+      }
+    } catch {
+      setIsError(true);
+      setSuccess("Hubo un error al enviar el mensaje. Inténtalo de nuevo.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -38,6 +52,7 @@ export default function Contact() {
         <meta property="og:image" content="https://darox.es/images/logo_horizontal.png" />
         <meta property="og:url" content="https://darox.es/contacto" />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_ES" />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contacto Agencia de Branding y Web en España | DAROX" />
@@ -122,7 +137,7 @@ export default function Contact() {
               className="flex flex-col gap-6"
               onSubmit={handleSubmit}
             >
-              <input type="hidden" name="access_key" value="29919ee5-a12c-4100-91da-959576561176" />
+              <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY} />
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex flex-col flex-1 gap-2">
                   <label htmlFor="nombre" className="text-white font-medium text-sm">
@@ -133,6 +148,7 @@ export default function Contact() {
                     type="text"
                     name="nombre"
                     placeholder="Nombre"
+                    autoComplete="given-name"
                     className="bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-700 transition"
                     required
                   />
@@ -146,6 +162,7 @@ export default function Contact() {
                     type="text"
                     name="apellidos"
                     placeholder="Apellidos"
+                    autoComplete="family-name"
                     className="bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-700 transition"
                     required
                   />
@@ -174,6 +191,7 @@ export default function Contact() {
                     type="text"
                     name="pais"
                     placeholder="Selecciona tu país..."
+                    autoComplete="country-name"
                     className="bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-700 transition"
                     required
                   />
@@ -220,16 +238,30 @@ export default function Contact() {
                   name="mensaje"
                   placeholder="Escribe tu mensaje..."
                   rows={4}
+                  autoComplete="off"
                   className="bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-700 transition"
                 />
               </div>
               <button
                 type="submit"
-                className="mt-2 inline-flex items-center justify-center px-6 py-3 rounded-[10px] border-4 border-white/15 bg-blue-700 about-shadow text-white font-semibold transition-all duration-300 hover:bg-blue-800 hover:scale-105 animate-fade-in-up w-full md:w-auto text-center"
+                disabled={loading}
+                className="mt-2 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[10px] border-4 border-white/15 bg-blue-700 about-shadow text-white font-semibold transition-all duration-300 hover:bg-blue-800 hover:scale-105 animate-fade-in-up w-full md:w-auto text-center disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
               >
-                Enviar mensaje
+                {loading ? (
+                  <>
+                    <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                    </svg>
+                    Enviando...
+                  </>
+                ) : "Enviar mensaje"}
               </button>
-              {success && <p className="text-green-400 mt-2">{success}</p>}
+              {success && (
+                <p className={`mt-2 text-sm font-medium ${isError ? 'text-red-400' : 'text-green-400'}`}>
+                  {success}
+                </p>
+              )}
             </form>
           </section>
 
@@ -240,7 +272,7 @@ export default function Contact() {
               <div className="flex items-center gap-3">
                 {/* Icono de email */}
                 <svg width="22" height="22" fill="none" viewBox="0 0 24 24" className="text-white/80">
-                  <path d="M4 4h16v16H4V4zm0 0l8 8 8-8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M4 4h16v16H4V4zm0 0l8 8 8-8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span className="text-white font-medium text-lg">Email</span>
                 <span className="inline-block rounded-md px-2 py-0.5 bg-blue-600 text-xs font-bold text-white ml-2">24/7</span>
