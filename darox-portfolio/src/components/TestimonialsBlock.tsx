@@ -87,7 +87,7 @@ const stats = [
 ];
 
 const TestimonialCard: React.FC<{ t: Testimonial }> = ({ t }) => (
-  <div className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] shadow-xl p-6 sm:p-8 flex flex-col h-full overflow-hidden backdrop-blur-[2.5px] transition duration-300 hover:scale-[1.02] hover:shadow-2xl">
+  <div className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] shadow-xl p-6 sm:p-8 flex flex-col h-full overflow-hidden transition duration-300 hover:scale-[1.02] hover:shadow-2xl">
     {/* Línea decorativa superior según tipo */}
     <div
       className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${t.type === "Local" ? "blue-500" : t.type === "Growth" ? "emerald-500" : "purple-500"
@@ -147,7 +147,7 @@ const TestimonialCard: React.FC<{ t: Testimonial }> = ({ t }) => (
 
 const TestimonialsBlock: React.FC = () => {
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 text-white bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] backdrop-blur-[2.5px] overflow-hidden">
+    <section className="relative py-20 px-4 sm:px-6 lg:px-8 text-white bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col gap-16 relative z-10">
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto">
