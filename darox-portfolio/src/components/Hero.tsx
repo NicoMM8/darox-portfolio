@@ -33,9 +33,12 @@ export default function Hero() {
                     transition={{ duration: 0.7, delay: 0.2 }}
                     className="relative z-20 text-center max-w-4xl mx-auto px-2 flex flex-col items-center"
                 >
-                    <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 text-white drop-shadow-lg leading-tight">
-                        Construye Tu Marca
+                    <h1 className="sr-only">
+                        Agencia de Marketing Digital y Desarrollo Web Especializada en Branding Estratégico
                     </h1>
+                    <span className="block text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 text-white drop-shadow-lg leading-tight" role="heading" aria-level={2}>
+                        Construye Tu Marca
+                    </span>
                     <p className="text-lg sm:text-2xl md:text-3xl font-normal text-gray-200 mb-8 max-w-3xl mx-auto drop-shadow">
                         Transformamos ideas en marcas auténticas y potentes que atraen clientes, generan ingresos y te posicionan como líder en tu sector.
                     </p>

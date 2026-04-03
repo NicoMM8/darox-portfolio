@@ -14,7 +14,7 @@ const faqs = [
 	{
 		question: "¿Cómo se calcula el precio final?",
 		answer:
-			"Tras definir el alcance y las funcionalidades, te ofrecemos un presupuesto cerrado. No hay costes ocultos ni sorpresas.",
+			"Trabajamos con paquetes de precios cerrados y transparentes desde el inicio (490€ a 1.950€). Cualquier funcionalidad extra fuera del paquete se presupuesta previamente sin costes ocultos.",
 	},
 	{
 		question: "¿Qué tipo de personalización está disponible?",
@@ -37,9 +37,9 @@ const faqs = [
 			"Recibes todos los archivos fuente (PSD/Figma), manuales de uso, acceso al repositorio y un mes de soporte post-lanzamiento.",
 	},
 	{
-		question: "¿Ofrecen hosting y dominio?",
+		question: "¿Están incluidos el hosting y dominio en los paquetes?",
 		answer:
-			"Podemos gestionar tu hosting y registrar tu dominio, optimizados para velocidad y seguridad. También te asesoramos si ya tienes tu propio proveedor.",
+			"Los costes de infraestructura (hosting web y dominio anual) no están incluidos en la tarifa de desarrollo. Te indicaremos proveedores recomendados y los gestionaremos por ti si lo deseas, o trabajaremos sobre tu servidor actual.",
 	},
 	{
 		question: "¿Cómo garantizan el SEO?",
@@ -47,9 +47,9 @@ const faqs = [
 			"Implementamos prácticas SEO on-page (estructura, etiquetas, velocidad) y te asesoramos en estrategia de contenidos para mejorar tu visibilidad.",
 	},
 	{
-		question: "¿Qué sucede si no estoy satisfecho?",
+		question: "¿Qué garantías tengo si no estoy satisfecho?",
 		answer:
-			"Contamos con una garantía de devolución en los primeros 7 días después de la entrega, tras evaluar sus causas y proponer mejoras.",
+			"Establecemos hitos de aprobación durante el diseño. Si en las iteraciones pactadas el resultado no se alinea con el briefing, aplicamos nuestra política de refactorización o resolución estipulada por contrato antes de entregar el proyecto.",
 	},
 	{
 		question: "¿Necesito saber programar?",

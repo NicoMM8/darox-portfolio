@@ -37,6 +37,38 @@ export default function Home() {
         <meta name="twitter:title" content="Agencia de Branding, Web y Marketing Digital | DAROX" />
         <meta name="twitter:description" content="Agencia de branding y diseño web en España. Creamos marcas, webs y estrategias digitales." />
         <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.png" />
+
+        {/* LocalBusiness Schema - Entity Disambiguation */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "DAROX Brandmaker",
+              "image": "https://darox.es/images/logo_horizontal.png",
+              "url": "https://darox.es",
+              "email": "daroxbrandmaker@gmail.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Burgos",
+                "addressRegion": "Castilla y León",
+                "addressCountry": "ES"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "42.3439",
+                "longitude": "-3.6969"
+              },
+              "priceRange": "490€ - 1950€",
+              "description": "Agencia de marketing digital y desarrollo web especializada en branding estratégico en Burgos, España.",
+              "sameAs": [
+                "https://www.instagram.com/darox.es",
+                "https://twitter.com/darox_es"
+              ]
+            })
+          }}
+        />
       </Head>
 
       <Navbar />

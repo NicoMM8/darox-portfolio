@@ -47,7 +47,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
           <p className="text-sm text-white/60 leading-relaxed">
             Hecho con amor y pasión 💙
             <br />
-            <span>- DAROX.</span>
+            <span>DAROX Branding - Agencia de Marketing Digital y Desarrollo Web en Burgos.</span>
           </p>
           {/* Newsletter */}
           <form
@@ -142,8 +142,8 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
             </a>
           </div>
           {/* Información de contacto */}
-          <h4 className="text-base font-semibold text-white mb-2">Contacto</h4>
-          <span className="text-white/60 text-sm">09001 Burgos, España</span>
+          <h4 className="text-base font-semibold text-white mb-2">Contacto y Sede</h4>
+          <span className="text-white/60 text-sm">09001 Burgos, Castilla y León (España)</span>
           <span className="text-white/60 text-sm">Email: daroxbrandmaker@gmail.com</span>
         </div>
       </div>

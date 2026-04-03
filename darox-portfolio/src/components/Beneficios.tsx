@@ -152,13 +152,12 @@ const Benefits: React.FC = () => {
 						</div>
 						<div className="w-full flex flex-col justify-center items-start mt-8 flex-1">
 							<h4 className="text-2xl md:text-3xl font-bold text-white mb-2">
-								Solicitudes ilimitadas
+								Revisiones Estructuradas
 							</h4>
 							<div className="w-8 h-1 bg-gradient-to-r from-transparent via-blue-600 to-transparent rounded-full mb-4" />
 							<p className="text-white/60 text-base mb-6 max-w-md">
-								Disfruta de la libertad de enviar solicitudes ilimitadas sin
-								restricciones. Ajustes de diseño, nuevas ideas o retoques: te
-								acompañamos en cada paso.
+								Ofrecemos rondas de revisión definidas en cada hito del proyecto.
+								Garantizamos que tu feedback se aplique con precisión matemática para un resultado final perfecto, cumpliendo los plazos.
 							</p>
 							<div className="flex gap-4 mt-auto">
 								<motion.a
@@ -303,15 +302,15 @@ const Benefits: React.FC = () => {
 							</div>
 							<div className="flex items-center gap-2 mb-2">
 								<h4 className="text-xl font-bold text-white">
-									Solicitudes y revisiones
+									Iteraciones Definidas
 								</h4>
 								<span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">
-									ILIMITADO
+									GARANTIZADO
 								</span>
 							</div>
 							<p className="text-white/60 text-base">
-								Incluimos varias rondas de solicitudes y revisiones para que tu
-								feedback se incorpore al 100 % y el resultado sea perfecto.
+								Incluimos fases de revisión estructuradas por cada componente para
+								asegurar la máxima calidad sin retrasos en la entrega.
 							</p>
 						</div>
 					</motion.div>
