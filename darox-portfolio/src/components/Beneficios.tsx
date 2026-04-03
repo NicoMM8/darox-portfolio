@@ -108,11 +108,11 @@ const Benefits: React.FC = () => {
 						</span>
 					</div>
 					<h2 className="text-4xl md:text-5xl font-extrabold mb-2 gradient-text">
-						No Solo Diseñamos, Construimos.
+						No te vendemos una web bonita.
 						<br />
 					</h2>
 					<h3 className="text-2xl text-white font-semibold mb-4">
-						Si puedes soñarlo, ¡podemos hacerlo realidad!
+						Diseñamos sistemas que captan clientes y facturan 24/7.
 					</h3>
 				</div>
 				{/* Carrusel infinito de pills */}

@@ -13,10 +13,10 @@ const Divider = ({ className = '' }) => (
 const titleWords = ['Construimos', 'marcas', 'exitosas']
 const subtitleWords = ['Estrategia,', 'diseño', 'y', 'tecnología']
 const description =
-  'En DAROX combinamos inteligencia artificial, creatividad humana y un enfoque estratégico para diseñar experiencias digitales que convierten visitantes en clientes y hacen crecer tu negocio.'
+  'En DAROX no solo diseñamos identidades visuales atractivas; somos "Ingenieros de Negocio". Combinamos diseño UI/UX de nivel Startup con inteligencia artificial y embudos automatizados para que tu empresa facture en automático.'
 const metrics = [
-  'Experiencia avanzada en proyectos reales',
-  '47 % de aumento en tasa de conversión',
+  'Diseño y desarrollo enfocado a conversión',
+  'Integración de CRM y automatizaciones',
 ]
 
 const About: React.FC = () => {

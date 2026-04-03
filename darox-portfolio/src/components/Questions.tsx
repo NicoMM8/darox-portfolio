@@ -81,6 +81,11 @@ const faqs = [
 		answer:
 			"Desde el briefing inicial hasta la entrega final, seguimos un flujo ágil con revisiones periódicas para asegurar que cumplimos tus expectativas.",
 	},
+	{
+		question: "¿Por qué hacer una web sin un CRM automatizado no sirve de nada hoy en día?",
+		answer:
+			"Tener una web bonita es útil, pero si no captura los datos del cliente, los almacena en un CRM y automatiza el seguimiento comercial, estás perdiendo dinero. Nuestro enfoque integra todo en un motor de ventas para que no pierdas ni un solo lead y factures en piloto automático.",
+	},
 ];
 
 const Questions: React.FC = () => {

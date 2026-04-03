@@ -15,7 +15,7 @@ interface Service {
 const services: Service[] = [
   {
     title: "Start Pack (Paquete Inicial)",
-    description: "Ideal para emprendedores que quieren lanzar su idea con una identidad profesional desde el primer día.",
+    description: "No diseñamos logos bonitos para ganar premios; diseñamos identidades preparadas para vender desde el día 1. Listo en 3 semanas, sin procesos infinitos ni presupuestos sorpresa.",
     price: "490€",
     duration: "2 - 3 Semanas",
     features: [
@@ -32,7 +32,7 @@ const services: Service[] = [
   },
   {
     title: "Grow Pack (Paquete Crecimiento)",
-    description: "Para emprendedores que ya tienen la idea clara y quieren construir una marca sólida, digital y preparada para escalar.",
+    description: "Diseño UI/UX de calidad nacional (nivel startup), a precios accesibles. Entregamos una web enfocada en ventas, rápida, con SEO local y textos persuasivos.",
     price: "980€",
     duration: "3 - 4 Semanas",
     features: [
@@ -48,7 +48,7 @@ const services: Service[] = [
   },
   {
     title: "Real Business Pack (Paquete Ejecutivo)",
-    description: "Para quienes quieren un negocio listo para operar: imagen, presencia digital, estrategia comercial y automatización con IA.",
+    description: "A tu negocio no le sirve de nada tener visitas si gestionas clientes en un Excel. Construimos un sistema (Embudo + CRM + Automatizaciones) para facturar en automático.",
     price: "1.950€",
     duration: "4 - 6 Semanas",
     features: [
@@ -211,23 +211,51 @@ const Services: React.FC = () => {
           ))}
         </div>
       </div>
-      {/* Schema.org markup for Google+ */}
-      <script type="application/ld+json">
-        {`
-          {
+      {/* Schema.org markup for AEO / Services */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "Branding y Diseño Web",
-            "provider": {
-              "@type": "Organization",
-              "name": "DAROX",
-              "url": "https://darox.es"
-            },
-            "areaServed": "España",
-            "description": "Servicios de branding, diseño web, marketing digital e inteligencia artificial para empresas y startups."
-          }
-        `}
-      </script>
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "Offer",
+                  "name": "Start Pack (Branding Inicial)",
+                  "description": "Identidades visuales preparadas para vender desde el día 1. Logo principal, paleta, tipografías y manual básico.",
+                  "price": "490.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "Offer",
+                  "name": "Grow Pack (Diseño Web UX/UI)",
+                  "description": "Diseño UI/UX de calidad startup con SEO local y copywriting persuasivo.",
+                  "price": "980.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "Offer",
+                  "name": "Real Business Pack (CRM y Automatizaciones)",
+                  "description": "Embudo de ventas con automatización, CRM integrado y seguimiento comercial.",
+                  "price": "1950.00",
+                  "priceCurrency": "EUR"
+                }
+              }
+            ]
+          })
+        }}
+      />
     </section>
   )
 }

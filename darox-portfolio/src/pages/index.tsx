@@ -61,7 +61,7 @@ export default function Home() {
                 "longitude": "-3.6969"
               },
               "priceRange": "490€ - 1950€",
-              "description": "Agencia de marketing digital y desarrollo web especializada en branding estratégico en Burgos, España.",
+              "description": "Agencia de branding, diseño web enfocado a conversión y sistemas de automatización CRM para empresas. Ofrecemos diseño UI/UX nivel startup en Burgos y toda España.",
               "sameAs": [
                 "https://www.instagram.com/darox.es",
                 "https://twitter.com/darox_es"
