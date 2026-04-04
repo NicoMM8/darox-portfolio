@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Navbar from '../../components/Navbar';
 import Link from 'next/link';
 import React, { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform, useVelocity, useSpring, useAnimationFrame } from "framer-motion";
+import { motion, useScroll, useTransform, useVelocity, useSpring } from "framer-motion";
 import Questions from '../../components/Questions';
 import LogoCarousel from '../../components/LogoCarousel';
 
@@ -92,9 +92,6 @@ const MaskedTitle = () => {
 export default function BrandingIdentidad() {
   const { scrollY, scrollYProgress } = useScroll();
   
-  // Parallax del Hero
-  const titleY = useTransform(scrollYProgress, [0, 0.4], [0, 400]);
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.2], [0.08, 0]);
 
   // Skew basado en velocidad (Si el usuario escrollea rápido, la sección se inclina)
   const scrollVelocity = useVelocity(scrollY);
@@ -255,7 +252,7 @@ export default function BrandingIdentidad() {
 
              <MagneticHover>
                  <Link href="/contacto" className="inline-flex items-center justify-center w-64 h-64 rounded-full bg-black text-white text-2xl font-black uppercase tracking-widest hover:scale-105 transition-transform duration-500 shadow-[0_0_100px_rgba(0,0,0,0.5)]">
-                     490€ / Let's Go
+                     490€ / Let&apos;s Go
                  </Link>
              </MagneticHover>
          </div>

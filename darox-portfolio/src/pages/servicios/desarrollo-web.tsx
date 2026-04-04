@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Questions from '../../components/Questions';
 import LogoCarousel from '../../components/LogoCarousel';
-import React, { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform, useSpring, useAnimationFrame, useVelocity } from "framer-motion";
+import React, { useRef, useState } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 
 // SVG Noise Filter para matar el "look plano" de IA
@@ -531,7 +531,7 @@ export default function DesarrolloWeb() {
 
                 <div className="w-full md:w-7/12 flex flex-col justify-center">
                     <h2 className="text-3xl md:text-5xl font-serif italic text-white mb-10 leading-[1.2]">
-                        "Tener una web que no convierte es como alquilar un local y <span className="text-red-500 font-sans font-black not-italic px-2">CERRAR LA PUERTA.</span>"
+                        &quot;Tener una web que no convierte es como alquilar un local y <span className="text-red-500 font-sans font-black not-italic px-2">CERRAR LA PUERTA.</span>&quot;
                     </h2>
                     
                     <div className="text-lg md:text-xl text-zinc-400 font-light space-y-6 leading-relaxed max-w-xl">
