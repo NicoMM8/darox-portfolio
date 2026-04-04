@@ -9,6 +9,7 @@ interface Service {
   duration: string
   features: string[]
   icon: string
+  url: string
 }
 
 // Datos estáticos fuera del componente para evitar recrearlos en cada render
@@ -28,7 +29,8 @@ const services: Service[] = [
       "Kit para redes sociales",
       "Foto de perfil, portada, plantilla de publicaciones"
     ],
-    icon: "/images/Start_Pack.png"
+    icon: "/images/Start_Pack.png",
+    url: "/servicios/branding-identidad"
   },
   {
     title: "Grow Pack (Paquete Crecimiento)",
@@ -44,7 +46,8 @@ const services: Service[] = [
       "Optimización de perfil social y estrategia de contenido",
       "Integración de herramientas básicas con Inteligencia Artificial"
     ],
-    icon: "/images/Growth_Pack.png"
+    icon: "/images/Growth_Pack.png",
+    url: "/servicios/desarrollo-web"
   },
   {
     title: "Real Business Pack (Paquete Ejecutivo)",
@@ -59,7 +62,8 @@ const services: Service[] = [
       "Calendario editorial + asesoramiento de contenido",
       "1 mes de seguimiento técnico y estratégico post-lanzamiento"
     ],
-    icon: "/images/Business_Pack.png"
+    icon: "/images/Business_Pack.png",
+    url: "/servicios/automatizacion-ia-sistemas"
   }
 ]
 
@@ -177,9 +181,9 @@ const Services: React.FC = () => {
                   ))}
                 </ul>
               </div>
-              {/* Botón */}
+              {/* Botón hacia la Landing del Servicio */}
               <Link
-                href="/contacto"
+                href={service.url}
                 className="
                   inline-flex items-center justify-center
                   px-4 py-2
@@ -194,7 +198,7 @@ const Services: React.FC = () => {
                   w-full mt-auto text-center
                 "
               >
-                Reserva una llamada
+                Ver detalles en profundidad &rarr;
               </Link>
               {/* Imagen en la esquina inferior derecha SOLO para la última card */}
               {index === 2 && (

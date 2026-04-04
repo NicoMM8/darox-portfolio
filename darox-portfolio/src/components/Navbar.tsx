@@ -8,12 +8,13 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
+
   const links = [
-    { label: 'Inicio', href: '/' },
-    { label: 'Sobre Nosotros', href: '/about' },
-    { label: 'Portfolio', href: '/portfolio' },
+    { label: 'Proyectos', href: '/portfolio' },
+    { label: 'Filosofía', href: '/about' },
     { label: 'Contacto', href: '/contacto' },
-    { label: 'Preguntas', href: '/#faq' }
+    { label: 'FAQ', href: '/#faq' }
   ]
 
   return (
@@ -38,7 +39,40 @@ export default function Navbar() {
           </div>
 
           {/* Menú escritorio */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
+            <Link href="/" className="px-3 py-2 text-sm font-medium hover:text-indigo-400 transition-colors">
+              Inicio
+            </Link>
+
+            {/* Dropdown de Servicios Estilo Elite */}
+            <div className="relative group">
+              <button className="px-3 py-2 text-sm font-medium hover:text-indigo-400 transition-colors flex items-center gap-1">
+                Servicios
+                <svg className="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 pointer-events-none group-hover:pointer-events-auto">
+                 {/* Invisible hover bridge */}
+                 <div className="absolute -top-4 left-0 w-full h-4 bg-transparent" />
+                 
+                 <div className="bg-[#050505]/90 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl flex flex-col p-2 overflow-hidden">
+                    <Link href="/servicios/branding-identidad" className="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                        <span className="block text-sm font-bold text-white group-hover/item:text-blue-400 transition-colors">Branding Premium</span>
+                        <span className="block text-xs text-zinc-500 mt-0.5">Identidad que vende sola.</span>
+                    </Link>
+                    <Link href="/servicios/desarrollo-web" className="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                        <span className="block text-sm font-bold text-white group-hover/item:text-blue-400 transition-colors">Ingeniería Web</span>
+                        <span className="block text-xs text-zinc-500 mt-0.5">Sistemas de Alta Conversión.</span>
+                    </Link>
+                    <Link href="/servicios/automatizacion-ia-sistemas" className="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                        <span className="block text-sm font-bold text-white group-hover/item:text-blue-400 transition-colors">Automatización & IA</span>
+                        <span className="block text-xs text-zinc-500 mt-0.5">Factura mientras duermes.</span>
+                    </Link>
+                 </div>
+              </div>
+            </div>
+
             {links.map(link => (
               <Link
                 key={link.href}
@@ -84,11 +118,35 @@ export default function Navbar() {
       {/* Menú móvil desplegable */}
       {
         isMenuOpen && (
-          <div className="md:hidden">
+          <div className="md:hidden border-t border-white/10">
             <div className="
-            px-2 pt-2 pb-3 space-y-1
-            bg-black/40 backdrop-blur-sm
+            px-4 pt-4 pb-6 space-y-2
+            bg-[#050505]/95 backdrop-blur-xl shadow-2xl
           ">
+              <Link href="/" className="block px-3 py-2 text-base font-medium hover:text-indigo-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
+                Inicio
+              </Link>
+
+              {/* Botón Servicios en Móvil */}
+              <button 
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  className="w-full flex items-center justify-between px-3 py-2 text-base font-medium hover:text-indigo-400 transition-colors text-left"
+              >
+                Servicios Nav
+                <svg className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Sub-links móviles expuestos */}
+              {isServicesOpen && (
+                  <div className="pl-6 flex flex-col gap-1 border-l mx-3 border-white/10">
+                      <Link href="/servicios/branding-identidad" className="block px-3 py-2 text-sm text-zinc-400 hover:text-white" onClick={() => setIsMenuOpen(false)}>Branding Premium</Link>
+                      <Link href="/servicios/desarrollo-web" className="block px-3 py-2 text-sm text-zinc-400 hover:text-white" onClick={() => setIsMenuOpen(false)}>Ingeniería Web (UI/UX)</Link>
+                      <Link href="/servicios/automatizacion-ia-sistemas" className="block px-3 py-2 text-sm text-zinc-400 hover:text-white" onClick={() => setIsMenuOpen(false)}>Automatización & CRM</Link>
+                  </div>
+              )}
+
               {links.map(link => (
                 <Link
                   key={link.href}

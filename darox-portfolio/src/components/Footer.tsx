@@ -75,39 +75,43 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
             </button>
           </form>
         </div>
-        {/* Centro: Páginas */}
+        {/* Centro: Páginas Ocultas y Servicios */}
         <div className="flex flex-col gap-4 md:w-1/3">
-          <h4 className="text-base font-semibold text-white mb-2">Páginas</h4>
-          <div className="flex flex-col gap-2">
+          <h4 className="text-base font-semibold text-white mb-2">Servicios DAROX</h4>
+          <div className="flex flex-col gap-2 mb-6">
             <Link
-              href="/"
+              href="/servicios/branding-identidad"
               className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
-              Home
+              Branding de Alta Costura
             </Link>
+            <Link
+              href="/servicios/desarrollo-web"
+              className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
+            >
+              Ingeniería Web (UI/UX)
+            </Link>
+            <Link
+              href="/servicios/automatizacion-ia-sistemas"
+              className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
+            >
+              Automatización & Sistemas IA
+            </Link>
+          </div>
+
+          <h4 className="text-base font-semibold text-white mb-2">Páginas</h4>
+          <div className="flex flex-col gap-2">
             <Link
               href="/about"
               className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
-              About
-            </Link>
-            <Link
-              href="/portfolio"
-              className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
-            >
-              Portfolio
+              Nuestra Filosofía (About)
             </Link>
             <Link
               href="/contacto"
               className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
             >
-              Contacto
-            </Link>
-            <Link
-              href="/#faq"
-              className="text-white/40 transition bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-white hover:to-gray-400"
-            >
-              FAQ
+              Auditoría Gratuita
             </Link>
           </div>
         </div>

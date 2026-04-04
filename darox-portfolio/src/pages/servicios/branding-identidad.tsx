@@ -1,152 +1,270 @@
 import Head from 'next/head';
 import Navbar from '../../components/Navbar';
 import Link from 'next/link';
-import Image from 'next/image';
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useVelocity, useSpring, useAnimationFrame } from "framer-motion";
 import Questions from '../../components/Questions';
 import LogoCarousel from '../../components/LogoCarousel';
 
-export default function BrandingIdentidad() {
-  return (
-    <>
-      <Head>
-        <title>Agencia de Branding Rápido | Diseño de Identidad Visual | DAROX</title>
-        <meta
-          name="description"
-          content="Diseño de identidad visual para empresas y startups. Agencia de branding rápido, sin procesos infinitos ni presupuestos sorpresa. Tu marca lista en 3 semanas."
+// 1. Efecto Ruido de Película
+const NoiseOverlay = () => (
+  <div className="fixed inset-0 w-full h-full pointer-events-none z-[100] mix-blend-overlay opacity-30">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" /></filter>
+      <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+    </svg>
+  </div>
+);
+
+// 2. Cursor Blend Diference (Look Agencia Awwwards)
+const BlendCursor = () => {
+    const cursorRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const moveCursor = (e: MouseEvent) => {
+            if (cursorRef.current) {
+                // Posicionar el centro del círculo en el ratón
+                cursorRef.current.style.transform = `translate3d(${e.clientX - 100}px, ${e.clientY - 100}px, 0)`;
+            }
+        };
+        window.addEventListener('mousemove', moveCursor);
+        return () => window.removeEventListener('mousemove', moveCursor);
+    }, []);
+
+    return (
+        <div 
+            ref={cursorRef} 
+            className="fixed top-0 left-0 w-[200px] h-[200px] bg-white rounded-full pointer-events-none z-[90] mix-blend-difference transition-transform duration-75 ease-out hidden lg:block"
+            // transition-transform duration-75 suaviza el seguimiento levemente
         />
-        <meta name="keywords" content="agencia de branding rápido, diseño de identidad visual para empresas, branding startup, identidad corporativa, DAROX" />
-        <link rel="canonical" href="https://darox.es/servicios/branding-identidad" />
+    );
+};
+
+// 3. Botón Magnético que sigue al ratón
+const MagneticHover = ({ children }: { children: React.ReactNode }) => {
+    const ref = useRef<HTMLDivElement>(null);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+
+    const handleMouse = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!ref.current) return;
+        const { clientX, clientY } = e;
+        const { height, width, left, top } = ref.current.getBoundingClientRect();
+        const middleX = clientX - (left + width / 2);
+        const middleY = clientY - (top + height / 2);
+        setPosition({ x: middleX * 0.3, y: middleY * 0.3 }); // Intensidad del imán
+    };
+
+    const reset = () => setPosition({ x: 0, y: 0 });
+
+    return (
+        <motion.div
+            ref={ref}
+            onMouseMove={handleMouse}
+            onMouseLeave={reset}
+            animate={{ x: position.x, y: position.y }}
+            transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+            className="relative cursor-pointer inline-block"
+        >
+            {children}
+        </motion.div>
+    );
+};
+
+// 4. Texto Enmascarado Stagger (Animación premium de entrada letra a letra desfasada por línea)
+const MaskedTitle = () => {
+    const line1 = "DISEÑAMOS";
+    const line2 = "IDENTIDADES";
+    return (
+        <h1 className="text-6xl md:text-[8rem] lg:text-[10rem] font-black tracking-tighter text-white leading-[0.8] uppercase flex flex-col items-center">
+            <div className="overflow-hidden">
+                <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 1, ease: [0.77, 0, 0.175, 1], delay: 0.2 }}>
+                    {line1}
+                </motion.div>
+            </div>
+            <div className="overflow-hidden mt-2 md:mt-4">
+                <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 1, ease: [0.77, 0, 0.175, 1], delay: 0.4 }} className="text-indigo-500">
+                    {line2}
+                </motion.div>
+            </div>
+        </h1>
+    );
+};
+
+export default function BrandingIdentidad() {
+  const { scrollY, scrollYProgress } = useScroll();
+  
+  // Parallax del Hero
+  const titleY = useTransform(scrollYProgress, [0, 0.4], [0, 400]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.2], [0.08, 0]);
+
+  // Skew basado en velocidad (Si el usuario escrollea rápido, la sección se inclina)
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
+  const velocitySkew = useTransform(smoothVelocity, [-1000, 1000], [3, -3]); // Inclinación en grados
+
+  return (
+    <div className="bg-[#020202] min-h-screen font-sans selection:bg-indigo-500/50 overflow-hidden cursor-none">
+      {/* El atributo cursor-none fuerza al usuario a usar nuestro cursor blend en escritorio */}
+      <BlendCursor />
+      <NoiseOverlay />
+      
+      <Head>
+        <title>Branding Estratégico & Visual | DAROX</title>
+        <meta name="description" content="Diseño de identidad estructurado." />
       </Head>
 
       <Navbar />
 
-      {/* Custom Hero para la Landing de Branding */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black text-white pt-20">
-        <div className="container mx-auto px-6 text-center z-10">
-          <div className="relative z-20 text-center max-w-4xl mx-auto px-2 flex flex-col items-center">
-            {/* Tag Destacado */}
-            <div className="relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px] border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] backdrop-blur-[2.5px] mb-6 shadow overflow-hidden tag-destacado">
-              <div className="absolute left-0 top-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-900 to-transparent rounded-t-[10px] pointer-events-none opacity-70" />
-              <span className="w-2 h-2 rounded-full bg-white inline-block border border-white/50" />
-              <span className="font-semibold text-sm tag-destacado-text text-white">
-                Agencia de Branding Estratégico
-              </span>
-            </div>
+      {/* HERO AWWWARDS */}
+      <section className="relative min-h-[100vh] flex items-center justify-center pt-20 px-4">
+        {/* Glow Radial que respira */}
+        <motion.div 
+            animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-indigo-900/10 blur-[150px] rounded-full pointer-events-none z-0" 
+        />
 
-            <h1 className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-white drop-shadow-lg leading-tight">
-              Diseño de Identidad Visual para <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-500">Empresas que quieren Vender.</span>
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl font-normal text-gray-200 mb-8 max-w-3xl mx-auto drop-shadow">
-              No diseñamos logos bonitos para ganar premios de arte; construimos identidades visuales preparadas para enamorar a tu cliente ideal desde el día uno. <strong>Todo listo en 3 semanas. Sin mareos.</strong>
-            </p>
+        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center justify-center">
             
-            <div className="flex flex-col sm:flex-row gap-4 mt-2">
-              <Link
-                  href="/contacto"
-                  className="px-8 py-4 rounded-[10px] text-lg font-bold shadow-xl transition-all duration-300 hover:scale-105 text-white bg-blue-700 hover:bg-blue-800 border-2 border-blue-600 about-shadow"
-              >
-                  Quiero modernizar mi marca
-              </Link>
-            </div>
-          </div>
-        </div>
+            <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.8, duration: 1 }}
+                className="mb-12 font-mono text-zinc-500 tracking-[0.3em] uppercase text-xs border border-white/10 px-6 py-2 rounded-full flex items-center gap-4"
+            >
+                <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-ping" /> LEVEL_01
+            </motion.div>
 
-        {/* Fondo sutil */}
-        <div className="absolute inset-0 bg-[url('/images/fondo.png')] bg-no-repeat bg-center bg-[length:150%] opacity-20 pointer-events-none" />
+            <MaskedTitle />
+            
+            <div className="overflow-hidden mt-6 md:mt-10">
+                <motion.h2 
+                    initial={{ y: "100%", opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
+                    className="text-3xl md:text-[5rem] lg:text-[6rem] font-serif italic text-zinc-400 leading-none"
+                >
+                    No más <span className="line-through decoration-white/30 decoration-[4px] whitespace-nowrap">arte inútil.</span>
+                </motion.h2>
+            </div>
+
+            <motion.p 
+                initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }}
+                className="mt-16 text-xl md:text-3xl text-zinc-300 font-light max-w-3xl text-center leading-relaxed mix-blend-difference"
+            >
+                Construimos bases visuales corporativas para proyectos de alto rendimiento. Todo en 3 semanas y listo para impactar.
+            </motion.p>
+            
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.5 }} className="mt-20">
+                {/* BOTÓN MAGNÉTICO */}
+                <MagneticHover>
+                    <Link href="/contacto" className="relative flex items-center justify-center w-40 h-40 rounded-full bg-white text-black hover:bg-zinc-200 hover:scale-110 transition-all duration-300 pointer-events-auto">
+                        <span className="font-black uppercase tracking-widest text-sm text-center leading-tight">
+                            Iniciar<br/>Marca
+                        </span>
+                    </Link>
+                </MagneticHover>
+            </motion.div>
+        </div>
       </section>
 
       <LogoCarousel />
 
-      {/* Sección: El Problema (Vs.) / Antes y Después Espiritual */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 text-white relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 gradient-text">La diferencia entre una marca estancada <br/> y una marca líder.</h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Muchas agencias locales te atrapan en meses de revisiones subjetivas. Nosotros nos enfocamos en lo que funciona en el mercado digital actual.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Tarjeta Negativa */}
-            <div className="bg-black/60 border border-red-900/30 rounded-2xl p-8 relative overflow-hidden backdrop-blur-sm">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-900 to-transparent" />
-              <h3 className="text-2xl font-bold text-red-400 mb-6 flex items-center gap-3">
-                <span className="bg-red-900/40 p-2 rounded-full">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-                </span>
-                Marcas Estancadas
-              </h3>
-              <ul className="space-y-4 text-gray-300">
-                <li className="flex items-start gap-3"><span className="text-red-500 mt-1">✗</span> Logos anticuados que no se adaptan a pantallas móviles.</li>
-                <li className="flex items-start gap-3"><span className="text-red-500 mt-1">✗</span> Identidades creadas con plantillas o generadores genéricos.</li>
-                <li className="flex items-start gap-3"><span className="text-red-500 mt-1">✗</span> Agencias que tardan 3 meses en entregarte un PDF.</li>
-                <li className="flex items-start gap-3"><span className="text-red-500 mt-1">✗</span> Mensajes confusos que no conectan con tu público objetivo.</li>
-              </ul>
+      {/* SECCIÓN KINÉTICA CON VELOCITY SKEW (Se deforma al scrollear rápido) */}
+      <motion.section 
+        style={{ skewY: velocitySkew }}
+        className="py-32 px-4 bg-zinc-900 origin-center"
+      >
+        <div className="max-w-7xl mx-auto flex flex-col xl:flex-row gap-12 group">
+            
+            {/* Tarjeta Split 1 con Zoom Parallax Interno */}
+            <div className="flex-1 overflow-hidden relative rounded-[40px] bg-[#000] border border-white/5 h-[500px] flex items-center justify-center group-hover:blur-sm hover:!blur-none transition-all duration-500">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(200,0,0,0.1),transparent)] pointer-events-none" />
+                <div className="relative z-10 text-center p-8">
+                    <span className="text-red-600 font-mono text-sm tracking-widest uppercase block mb-4">Error Crítico</span>
+                    <h3 className="text-5xl lg:text-7xl font-black text-zinc-500 uppercase tracking-tighter leading-none mb-8">
+                        Marcas<br/>Planísimas
+                    </h3>
+                    <p className="text-zinc-500 max-w-sm mx-auto">Logos creados en 5 minutos que mueren al imprimirse o adaptarse a móvil.</p>
+                </div>
             </div>
 
-            {/* Tarjeta Positiva (DAROX) */}
-            <div className="bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] border border-blue-500/30 rounded-2xl p-8 relative overflow-hidden backdrop-blur-sm shadow-[0_0_40px_rgba(0,85,255,0.1)]">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-600 to-transparent" />
-              <h3 className="text-2xl font-bold text-blue-400 mb-6 flex items-center gap-3">
-                <span className="bg-blue-900/40 p-2 rounded-full">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                </span>
-                Proyectos DAROX
-              </h3>
-              <ul className="space-y-4 text-gray-200">
-                <li className="flex items-start gap-3"><span className="text-blue-500 mt-1">✓</span> Diseño Responsive y escalable, perfecto para perfiles y webs.</li>
-                <li className="flex items-start gap-3"><span className="text-blue-500 mt-1">✓</span> Construcción basada en psicología del color y arquitectura de marca.</li>
-                <li className="flex items-start gap-3"><span className="text-blue-500 mt-1">✓</span> Rapidez y eficacia: Entregamos tu Start Pack en solo 2 a 3 semanas.</li>
-                <li className="flex items-start gap-3"><span className="text-blue-500 mt-1">✓</span> Posicionamiento premium, manual corporativo y assets listos.</li>
-              </ul>
+            {/* Tarjeta Split 2 DAROX */}
+            <div className="flex-1 overflow-hidden relative rounded-[40px] bg-indigo-950 border border-indigo-500/20 h-[500px] flex items-center justify-center group-hover:blur-sm hover:!blur-none transition-all duration-500">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.2),transparent)] pointer-events-none" />
+                <div className="relative z-10 text-center p-8">
+                    <span className="text-indigo-400 font-mono text-sm tracking-widest uppercase block mb-4 border border-indigo-500 px-4 py-1 rounded-full inline-block">El Start Pack</span>
+                    <h3 className="text-5xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-none mb-8">
+                        Sistemas<br/>DAROX
+                    </h3>
+                    <p className="text-white max-w-sm mx-auto">Vectores matemáticos, colores HSL psicológicos y manual cerrado corporativo.</p>
+                </div>
             </div>
-          </div>
+
+        </div>
+      </motion.section>
+
+      {/* PROCESO STICKY EDITORIAL CON CLIPPING (Improvisación extrema) */}
+      <section className="relative py-40 bg-[#020202] px-4 border-t border-white/10">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-24 relative">
+            
+            {/* Columna Anclada (Sticky) */}
+            <div className="w-full lg:w-1/3 relative z-10 pointer-events-none mix-blend-difference">
+                <div className="lg:sticky lg:top-1/3 text-white">
+                     <h2 className="text-5xl md:text-[5rem] lg:text-[7rem] font-black uppercase text-white leading-[0.8] tracking-tighter mix-blend-difference">
+                        El<br/>
+                        <span className="text-zinc-500 font-serif italic lowercase tracking-normal text-6xl md:text-[6rem] lg:text-[8rem]">Método.</span>
+                     </h2>
+                </div>
+            </div>
+
+            {/* Columna Interactiva de Scrolleos */}
+            <div className="w-full lg:w-2/3 flex flex-col space-y-40">
+                
+                {/* Paso interactivo */}
+                <motion.div initial={{opacity:0, scale:0.95}} whileInView={{opacity:1, scale:1}} viewport={{once:true, margin:"-20%"}} transition={{duration:0.8}} className="group relative">
+                     <div className="text-[10rem] md:text-[15rem] font-serif italic text-zinc-900 leading-[0.7] mb-8 group-hover:text-transparent group-hover:text-stroke-1 transition-colors duration-700" style={{WebkitTextStroke: '2px rgba(255,255,255,0.1)'}}>
+                        1
+                     </div>
+                     <h3 className="text-4xl md:text-6xl font-black uppercase text-white tracking-tight mb-8">La Autopsia</h3>
+                     <p className="text-2xl text-zinc-400 font-light leading-relaxed">Arrancamos con una auditoría brutal. Destripamos tu mercado potencial, aislamos tus diferenciadores y definimos la arquitectura visual mediante leyes de cognición humana.</p>
+                </motion.div>
+
+                <motion.div initial={{opacity:0, scale:0.95}} whileInView={{opacity:1, scale:1}} viewport={{once:true, margin:"-20%"}} transition={{duration:0.8}} className="group relative">
+                     <div className="text-[10rem] md:text-[15rem] font-serif italic text-zinc-900 leading-[0.7] mb-8 group-hover:text-transparent transition-colors duration-700" style={{WebkitTextStroke: '2px rgba(255,255,255,0.1)'}}>
+                        2
+                     </div>
+                     <h3 className="text-4xl md:text-6xl font-black uppercase text-white tracking-tight mb-8">Vectors & Gradients</h3>
+                     <p className="text-2xl text-zinc-400 font-light leading-relaxed">No hay borradores a lápiz. Vamos de lleno al software construyendo Naming y Geometría perfecta. Aquí nace el logotipo principal y las paletas HSL para pantallas retina.</p>
+                </motion.div>
+
+                <motion.div initial={{opacity:0, scale:0.95}} whileInView={{opacity:1, scale:1}} viewport={{once:true, margin:"-20%"}} transition={{duration:0.8}} className="group relative">
+                     <div className="text-[10rem] md:text-[15rem] font-serif italic text-zinc-900 leading-[0.7] mb-8 group-hover:text-transparent transition-colors duration-700" style={{WebkitTextStroke: '2px rgba(255,255,255,0.1)'}}>
+                        3
+                     </div>
+                     <h3 className="text-4xl md:text-6xl font-black uppercase text-white tracking-tight mb-8">Release The Start Pack</h3>
+                     <p className="text-2xl text-zinc-400 font-light leading-relaxed">Cerrado en 2 a 3 semanas. Obtienes tu libro de marca sagrado, tipografías licenciadas, activos vectoriales y assets para redes. Empaquetado para reventar el mercado.</p>
+                </motion.div>
+                
+            </div>
         </div>
       </section>
 
-      {/* Sección: Nuestro Proceso Rápido */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/40 text-white relative border-y border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-             <div className="relative inline-flex w-fit items-center gap-3 px-5 py-2 rounded-[10px] border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] backdrop-blur-[2.5px] mb-4 shadow overflow-hidden tag-destacado">
-              <span className="font-semibold text-sm text-white">Nuestro Proceso Cero-Mareos</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold">Tu Identidad Visual en <span className="text-blue-500">Solo 3 Pasos</span></h2>
-          </div>
+      {/* FOOTER CTA MAGNÉTICO/FINTECH */}
+      <section className="relative overflow-hidden bg-white text-black px-4 py-40">
+         <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+             
+             <h2 className="text-5xl md:text-[8rem] font-black uppercase tracking-tighter leading-[0.8] mb-12 text-center mix-blend-difference text-white">
+                 ROMPE TU <br/>
+                 <span className="font-serif italic lowercase tracking-normal">mercado.</span>
+             </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { num: "01", title: "Auditoría Estratégica", desc: "No dibujamos a ciegas. Analizamos tu sector, tu competencia y tu propuesta de valor para diseñar con lógica comercial." },
-              { num: "02", title: "Concepto y Diseño", desc: "Creamos las propuestas maestras de tu identidad: Naming (si lo necesitas), Logo, Tipografías y Paletas de colores adaptadas al 2026." },
-              { num: "03", title: "Entrega del Start Pack", desc: "En 2-3 semanas tienes tu Manual de Identidad y los assets de redes sociales listos para publicar y empezar a generar ventas." }
-            ].map((step, i) => (
-              <div key={i} className="bg-black/60 border border-white/10 p-8 rounded-2xl relative group hover:border-blue-500/50 transition-colors">
-                <span className="absolute -top-6 left-8 text-5xl font-black text-white/5 group-hover:text-blue-500/20 transition-colors">{step.num}</span>
-                <h3 className="text-2xl font-bold mb-4 mt-2">{step.title}</h3>
-                <p className="text-gray-400">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA final orientado al Start Pack */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-white">No dejes que una imagen amateur arruine un buen negocio.</h2>
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Consigue el <strong>Start Pack</strong> por solo 490€. Diseño de nivel startup nacional, sin letras pequeñas.</p>
-          <Link
-              href="/contacto"
-              className="inline-flex items-center justify-center px-10 py-5 rounded-xl border-4 border-white/15 bg-blue-700 shadow-[0_0_30px_rgba(0,100,255,0.4)] text-white text-xl font-bold transition-all duration-300 hover:bg-blue-800 hover:scale-105"
-          >
-              Empezar mi Branding Hoy
-          </Link>
-        </div>
+             <MagneticHover>
+                 <Link href="/contacto" className="inline-flex items-center justify-center w-64 h-64 rounded-full bg-black text-white text-2xl font-black uppercase tracking-widest hover:scale-105 transition-transform duration-500 shadow-[0_0_100px_rgba(0,0,0,0.5)]">
+                     490€ / Let's Go
+                 </Link>
+             </MagneticHover>
+         </div>
       </section>
       
-      <Questions />
-    </>
+      <div className="bg-[#020202] text-white">
+        <Questions />
+      </div>
+
+    </div>
   );
 }
