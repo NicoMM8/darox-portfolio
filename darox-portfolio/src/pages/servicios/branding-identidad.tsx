@@ -90,7 +90,7 @@ const MaskedTitle = () => {
 };
 
 export default function BrandingIdentidad() {
-  const { scrollY, scrollYProgress } = useScroll();
+    const { scrollY } = useScroll();
   
 
   // Skew basado en velocidad (Si el usuario escrollea rápido, la sección se inclina)
