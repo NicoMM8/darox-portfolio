@@ -33,12 +33,11 @@ export default function Hero() {
                     transition={{ duration: 0.7, delay: 0.2 }}
                     className="relative z-20 text-center max-w-4xl mx-auto px-2 flex flex-col items-center"
                 >
-                    <h1 className="block text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-white drop-shadow-lg leading-tight">
-                        Construimos Motores de Ventas.<br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-500">Empezando por tu Marca.</span>
+                    <h1 className="block text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 text-white drop-shadow-lg leading-tight">
+                        Construye Tu Marca
                     </h1>
-                    <p className="text-lg sm:text-xl md:text-2xl font-normal text-gray-200 mb-8 max-w-3xl mx-auto drop-shadow">
-                        Diseño UI/UX nivel Startup e Inteligencia Artificial, sin inflar precios. Ayudamos a empresas a facturar en automático mediante un despliegue completo en semanas, no meses.
+                    <p className="text-lg sm:text-2xl md:text-3xl font-normal text-gray-200 mb-8 max-w-3xl mx-auto drop-shadow">
+                        Transformamos ideas en marcas auténticas y potentes que atraen clientes, generan ingresos y te posicionan como líder en tu sector.
                     </p>
                     <Link
                         href="/contacto"
@@ -55,7 +54,7 @@ export default function Hero() {
                             mt-2
                         "
                     >
-                        Quiero un motor de ventas
+                        Descubre cómo construir tu marca
                     </Link>
                 </motion.div>
             </div>
