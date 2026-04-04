@@ -1,11 +1,10 @@
 import Head from 'next/head';
 import Navbar from '../../components/Navbar';
 import Link from 'next/link';
-import Image from 'next/image';
 import Questions from '../../components/Questions';
 import LogoCarousel from '../../components/LogoCarousel';
-import React, { useRef, useEffect, useState } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 // Typewriter Effect (Hacker / Terminal look)
 const TypewriterText = ({ text, delay = 0 }: { text: string; delay?: number }) => {
@@ -137,7 +136,7 @@ export default function AutomatizacionIA() {
                         <div className="max-w-lg relative z-10">
                             <div className="font-mono text-purple-400 text-xs mb-4">01 // DATA CENTER</div>
                             <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4 text-white">Central de Mandos CRM</h3>
-                            <p className="text-zinc-400 text-lg">Unificamos todas tus fuentes de leads (WhatsApp, Emails, Web) en un solo panel de cristal. Jamás volverás a perder una venta porque alguien "se olvidó de contestar".</p>
+                            <p className="text-zinc-400 text-lg">Unificamos todas tus fuentes de leads (WhatsApp, Emails, Web) en un solo panel de cristal. Jamás volverás a perder una venta porque alguien &quot;se olvidó de contestar&quot;.</p>
                         </div>
                         {/* Gráfico falso estilo dashboard */}
                         <div className="absolute right-0 bottom-0 w-[40%] h-[70%] border-t border-l border-white/5 bg-gradient-to-tl from-white/5 to-transparent rounded-tl-3xl translate-x-4 translate-y-4 flex items-end p-4">
