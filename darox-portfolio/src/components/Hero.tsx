@@ -49,8 +49,8 @@ export default function Hero() {
                             transition-transform duration-200
                             about-shadow
                             text-white
-                            bg-gradient-to-r from-purple-700 to-fuchsia-500
-                            hover:from-purple-800 hover:to-fuchsia-600
+                            bg-blue-700 hover:bg-blue-800
+                            border-4 border-white/10
                             mt-2
                         "
                     >
