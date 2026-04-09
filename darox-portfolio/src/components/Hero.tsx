@@ -65,10 +65,9 @@ export default function Hero() {
                 bg-[url('/images/fondo.webp')]
                 bg-no-repeat
                 bg-center
-                opacity-50
                 bg-[length:180%]
                 sm:bg-[length:120%]
-                animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite]
+                animate-[heartbeat_3s_ease-in-out_infinite]
                 transform origin-center
             " />
 
