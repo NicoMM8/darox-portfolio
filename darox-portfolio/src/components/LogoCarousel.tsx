@@ -5,13 +5,13 @@ import { useAnimationFrame } from 'framer-motion';
 const LogoCarousel: React.FC = () => {
     const items = [
         { type: 'img', src: '/images/amazon.svg', alt: 'AWS' },
-        { type: 'text', text: 'Vercel ▲' },
+        { type: 'img', src: '/images/vercel.svg', alt: 'Vercel' },
         { type: 'img', src: '/images/Hostinger.svg', alt: 'Hostinger' },
-        { type: 'text', text: 'Stripe' },
+        { type: 'img', src: '/images/stripe.svg', alt: 'Stripe' },
         { type: 'img', src: '/images/whop.svg', alt: 'Whop' },
-        { type: 'text', text: 'Figma' },
-        { type: 'text', text: 'React ⚛' },
-        { type: 'text', text: 'Next.js' }
+        { type: 'img', src: '/images/figma.svg', alt: 'Figma' },
+        { type: 'img', src: '/images/react.svg', alt: 'React' },
+        { type: 'img', src: '/images/nextjs.svg', alt: 'Next.js' }
     ];
 
     const fullItems = [...items, ...items, ...items, ...items];
@@ -50,23 +50,19 @@ const LogoCarousel: React.FC = () => {
                     {fullItems.map((item, index) => (
                         <div 
                             key={index} 
-                            // Contenedor con ancho fijo para garantizar exactamente el mismo espacio entre logotipos
-                            className="flex-shrink-0 w-40 md:w-52 flex justify-center items-center opacity-60 grayscale transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:opacity-20 group-hover:blur-[4px] hover:!opacity-100 hover:!blur-none hover:!scale-110 hover:!grayscale-0 cursor-crosshair z-0 hover:z-50"
+                            // Ancho fijo. brightness-0 invert convierte svg colored/black a full blanco.
+                            className="flex-shrink-0 w-40 md:w-52 px-4 flex justify-center items-center cursor-crosshair z-0 hover:z-50 group/logo"
                         >
-                            {item.type === 'img' ? (
+                            <div className="relative transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] opacity-50 brightness-0 invert group-hover/logo:brightness-100 group-hover/logo:invert-0 group-hover/logo:opacity-100 group-hover/logo:scale-110 group-hover/logo:drop-shadow-[0_0_15px_rgba(255,255,255,0.7)]">
                                 <Image
                                     src={item.src!}
                                     alt={item.alt!}
                                     width={140}
                                     height={50}
-                                    className="h-8 md:h-9 w-auto object-contain pointer-events-none drop-shadow-[0_0_10px_rgba(255,255,255,0.05)]"
+                                    className="h-8 md:h-10 w-auto object-contain pointer-events-none"
                                     loading="lazy"
                                 />
-                            ) : (
-                                <span className={`text-xl md:text-2xl font-bold uppercase tracking-wider pointer-events-none text-zinc-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.05)]`}>
-                                    {item.text}
-                                </span>
-                            )}
+                            </div>
                         </div>
                     ))}
                 </div>
