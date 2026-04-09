@@ -72,6 +72,16 @@ export default function Home() {
       </Head>
 
       <Navbar />
+      {/* Fondo global de video animado para toda la landing */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="fixed inset-0 w-full h-full object-cover object-center z-[-1] opacity-80 pointer-events-none"
+      >
+        <source src="/images/fondo2.mp4" type="video/mp4" />
+      </video>
       <Hero />
       <LogoCarousel />
       <About />

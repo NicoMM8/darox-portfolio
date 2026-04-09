@@ -1,42 +1,57 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
+import { useAnimationFrame } from 'framer-motion';
 
 const LogoCarousel: React.FC = () => {
     const items = [
         { name: 'Amazon', src: '/images/amazon.svg', hideName: false },
-        { name: 'Hostinger', src: '/images/Hostinger.svg', hideName: false },
         { name: 'Whop', src: '/images/whop.svg', hideName: true },
         { name: 'Figma', src: '/images/figma.svg', hideName: false },
         { name: 'React', src: '/images/react.svg', hideName: false },
         { name: 'Next.js', src: '/images/nextjs.svg', hideName: false }
     ];
 
+    const fullItems = [...items, ...items, ...items, ...items];
 
+    const baseX = useRef(0);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const speed = 35; 
 
+    useAnimationFrame((t, delta) => {
+        if (!containerRef.current) return;
+        const width = containerRef.current.scrollWidth / 2;
+        baseX.current += speed * (delta / 1000);
+        if (baseX.current >= width) baseX.current -= width;
+        containerRef.current.style.transform = `translateX(${-baseX.current}px)`;
+    });
     return (
         <section className="py-20 relative overflow-hidden bg-transparent border-y border-white/5">
             <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.02),transparent_70%)]" />
             
 
 
-            <div className="w-full max-w-7xl mx-auto px-4 relative">
-                <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-12 group">
-                    {items.map((item, index) => (
+            <div className="w-full max-w-[100vw] relative mx-auto [mask-image:_linear-gradient(to_right,transparent_0,_black_150px,_black_calc(100%-150px),transparent_100%)]">
+                <div 
+                    ref={containerRef} 
+                    className="flex min-w-max items-center cursor-ew-resize group" 
+                >
+                    {fullItems.map((item, index) => (
                         <div 
                             key={index} 
-                            className="flex justify-center items-center cursor-default z-0 hover:z-50 group/logo"
+                            // Ancho fijo optimizado y padding vertical para evitar cortes en el escalado
+                            className="flex-shrink-0 w-36 md:w-48 px-4 py-8 flex justify-center items-center cursor-crosshair z-0 hover:z-50 group/logo"
                         >
-                            <div className="flex items-center gap-4 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] opacity-40 brightness-0 invert group-hover/logo:brightness-100 group-hover/logo:invert-0 group-hover/logo:opacity-100 group-hover/logo:scale-110">
+                            <div className="flex items-center gap-3 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] opacity-40 brightness-0 invert group-hover/logo:brightness-100 group-hover/logo:invert-0 group-hover/logo:opacity-100 group-hover/logo:scale-110">
                                 <Image
                                     src={item.src}
                                     alt={item.name}
                                     width={120}
                                     height={60}
-                                    className="h-10 md:h-12 w-auto object-contain pointer-events-none"
+                                    className="h-8 md:h-10 w-auto object-contain pointer-events-none"
                                     loading="lazy"
                                 />
                                 {!item.hideName && (
-                                    <span className="text-xl md:text-2xl font-extrabold tracking-tight text-white whitespace-nowrap">
+                                    <span className="text-base md:text-xl font-bold tracking-tight text-white whitespace-nowrap">
                                         {item.name}
                                     </span>
                                 )}
