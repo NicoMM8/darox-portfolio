@@ -116,12 +116,10 @@ export default function About() {
             <span className="text-white/80">Lideramos ideas hacia el éxito real</span>
           </h1>
           {/* Subtítulo */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 text-justify max-w-2xl mb-10 font-medium">
-            En Darox BM combinamos diseño, estrategia y tecnología para transformar ideas en negocios rentables.
-            Somos tu socio creativo y resolutivo: expertos en branding, desarrollo web, automatización con
-            <span className="block text-center">
-              IA y marketing digital. Creemos en el poder de construir marcas
-              auténticas con resultados tangibles.
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 text-justify max-w-3xl mb-10 font-medium">
+            Bienvenido, sobre DAROX te confirmamos que somos más que una consultora promedio: somos tu Agencia de Branding y Web preferida. Dentro de todo el universo de DAROX BM combinamos diseño, estrategia y tecnología para transformar ideas brillantes en negocios rentables.
+            <span className="block text-center mt-3">
+              Somos tu socio creativo: expertos en branding, desarrollo web, automatización con IA y marketing digital. Nuestra misión es simple, pero ambiciosa: lideramos ideas hacia el éxito real. Creemos fielmente en el poder de construir marcas potentes y estéticas con métricas y resultados tangibles.
             </span>
           </p>
           {/* Botones */}
@@ -239,8 +237,8 @@ export default function About() {
                 Impulsando nuestra productividad
               </h3>
               {/* Descripción */}
-              <p className="text-lg text-center text-white/60 mb-10 max-w-2xl mx-auto">
-                Nuestro stack está compuesto por tecnología moderna y fiable para que tu proyecto se ejecute a la perfección.
+              <p className="text-lg text-center text-white/60 mb-10 max-w-3xl mx-auto">
+                Para consolidarnos como una destacada Agencia de Branding y Web, nuestro ecosistema está totalmente compuesto por tecnología moderna y fiable. Esto certifica que cada rincón del universo de DAROX BM dispone de la infraestructura necesaria para ejecutar tu proyecto a la perfección y acercarte al éxito real que mereces.
               </p>
               {/* Cards */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 w-full">

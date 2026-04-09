@@ -57,11 +57,11 @@ export default function Contact() {
         <title>Contacto Agencia de Branding y Web en España | DAROX</title>
         <meta
           name="description"
-          content="Contacta con DAROX, agencia líder en branding, diseño web y marketing digital en España. Solicita asesoría gratuita para tu proyecto, empresa o startup. ¡Impulsa tu presencia online hoy!"
+          content="Contacta con DAROX, agencia de branding y diseño web en España. Solicita asesoría para tu proyecto o startup e impulsa tu negocio online."
         />
         {/* Open Graph */}
         <meta property="og:title" content="Contacto Agencia de Branding y Web en España | DAROX" />
-        <meta property="og:description" content="Contacta con DAROX, agencia líder en branding, diseño web y marketing digital en España. Solicita asesoría gratuita para tu proyecto, empresa o startup. ¡Impulsa tu presencia online hoy!" />
+        <meta property="og:description" content="Contacta con DAROX, agencia de branding y diseño web en España. Solicita asesoría para tu proyecto o startup e impulsa tu negocio online." />
         <meta property="og:image" content="https://darox.es/images/logo_horizontal.webp" />
         <meta property="og:url" content="https://darox.es/contacto" />
         <meta property="og:type" content="website" />
@@ -69,7 +69,7 @@ export default function Contact() {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contacto Agencia de Branding y Web en España | DAROX" />
-        <meta name="twitter:description" content="Contacta con DAROX, agencia líder en branding, diseño web y marketing digital en España. Solicita asesoría gratuita para tu proyecto, empresa o startup. ¡Impulsa tu presencia online hoy!" />
+        <meta name="twitter:description" content="Contacta con DAROX, agencia de branding y diseño web en España. Solicita asesoría para tu proyecto o startup e impulsa tu negocio online." />
         <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.webp" />
         <link rel="canonical" href="https://darox.es/contacto" />
         <script type="application/ld+json">
@@ -117,9 +117,14 @@ export default function Contact() {
             <h1 className="text-6xl md:text-7xl font-extrabold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent leading-tight text-center">
               ¿Listo para dar el primer paso?
             </h1>
-            <span className="text-base text-gray-400 text-center">
-              Estamos aquí para ayudarte a convertir tu visión en resultados.
-            </span>
+            <div className="flex flex-col items-center gap-4 max-w-2xl text-center mt-2">
+              <h2 className="text-xl md:text-2xl font-medium text-white/90">
+                Transforma tu Estrategia de Branding y Diseño Web
+              </h2>
+              <p className="text-base text-gray-400">
+                Estamos aquí para ayudarte a dar el primer paso y convertir tu visión en resultados. Ya seas una startup, un negocio local o una empresa corporativa en España, nuestro equipo de expertos en marketing digital y desarrollo web analizará tu proyecto paso a paso.
+              </p>
+            </div>
             <a
               href="#form"
               className="
