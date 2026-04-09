@@ -13,6 +13,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" type="image/png" />
         <script
           type="application/ld+json"
@@ -22,7 +23,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               "@type": "Organization",
               name: "DAROX",
               url: "https://darox.es",
-              logo: "https://darox.es/images/logo_horizontal.png",
+              logo: "https://darox.es/images/logo_horizontal.webp",
               contactPoint: {
                 "@type": "ContactPoint",
                 email: "daroxbrandmaker@gmail.com",
@@ -44,7 +45,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: "DAROX",
-              image: "https://darox.es/images/logo_horizontal.png",
+              image: "https://darox.es/images/logo_horizontal.webp",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Burgos",

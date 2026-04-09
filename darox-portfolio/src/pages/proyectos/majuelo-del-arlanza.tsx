@@ -15,20 +15,20 @@ export default function Proyecto2() {
         {/* Open Graph */}
         <meta property="og:title" content="Proyecto Branding Marca Artesanal | DAROX" />
         <meta property="og:description" content="Descubre cómo DAROX impulsó el crecimiento digital de una marca artesanal con branding, desarrollo web y estrategia digital personalizada." />
-        <meta property="og:image" content="https://darox.es/images/miel1.png" />
+        <meta property="og:image" content="https://darox.es/images/miel1.webp" />
         <meta property="og:url" content="https://darox.es/proyectos/majuelo-del-arlanza" />
         <meta property="og:type" content="article" />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Proyecto Branding Marca Artesanal | DAROX" />
         <meta name="twitter:description" content="Descubre cómo DAROX impulsó el crecimiento digital de una marca artesanal con branding, desarrollo web y estrategia digital personalizada." />
-        <meta name="twitter:image" content="https://darox.es/images/miel1.png" />
+        <meta name="twitter:image" content="https://darox.es/images/miel1.webp" />
       </Head>
       <Navbar />
       <main className="min-h-screen w-full bg-gradient-to-br from-black via-[#0a1333] to-[#1a237e] relative overflow-hidden pt-24 pb-16">
         {/* Fondo decorativo */}
         <div className="fixed inset-0 z-0 pointer-events-none">
-          <div className="w-full h-full bg-[url('/images/moon.png')] bg-cover bg-[center_top]" />
+          <div className="w-full h-full bg-[url('/images/moon.webp')] bg-cover bg-[center_top]" />
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -z-10 blur-3xl opacity-40 pointer-events-none animate-pulse-slow">
@@ -118,7 +118,7 @@ export default function Proyecto2() {
         <div className="relative z-10 max-w-6xl mx-auto mt-16 px-4">
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
-              src="/images/miel4.png"
+              src="/images/miel4.webp"
               alt="El Majuelo del Arlanza: branding, desarrollo web y estrategia digital para marca de miel artesanal realizado por DAROX"
               width={1200}
               height={600}
@@ -183,7 +183,7 @@ export default function Proyecto2() {
         <div className="relative z-10 max-w-6xl mx-auto mt-16 px-4">
           <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/10">
             <Image
-              src="/images/miel2.png"
+              src="/images/miel2.webp"
               alt="El Majuelo del Arlanza: detalle visual del branding y experiencia digital desarrollados por DAROX"
               width={1200}
               height={600}
@@ -216,7 +216,7 @@ export default function Proyecto2() {
           <div className="flex flex-col md:flex-row gap-0 w-full max-w-6xl px-4">
             <div className="flex-1">
               <Image
-                src="/images/miel5.png"
+                src="/images/miel5.webp"
                 alt="El Majuelo del Arlanza: detalle visual de packaging y branding para miel artesanal realizado por DAROX"
                 width={1200}
                 height={800}
@@ -226,7 +226,7 @@ export default function Proyecto2() {
             </div>
             <div className="flex-1">
               <Image
-                src="/images/miel3.png"
+                src="/images/miel3.webp"
                 alt="El Majuelo del Arlanza: detalle visual adicional del proyecto de branding y web realizado por DAROX"
                 width={1200}
                 height={800}
@@ -250,7 +250,7 @@ export default function Proyecto2() {
             >
               <div className="relative w-full h-64">
                 <Image
-                  src="/images/golf8.png"
+                  src="/images/golf8.webp"
                   alt="Vista previa del proyecto Golden Hole: branding, web y estrategia digital realizados por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
@@ -271,7 +271,7 @@ export default function Proyecto2() {
             >
               <div className="relative w-full h-64">
                 <Image
-                  src="/images/scaperoom.png"
+                  src="/images/scaperoom.webp"
                   alt="Vista previa del proyecto Códice 13: branding, web y narrativa inmersiva realizados por DAROX"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"

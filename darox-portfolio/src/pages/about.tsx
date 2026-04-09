@@ -33,7 +33,7 @@ export default function About() {
       url: "https://drive.google.com",
     },
     {
-      icon: "/images/stripe-logo.png",
+      icon: "/images/stripe-logo.webp",
       title: "Stripe",
       badge: "",
       subtitle: "Pagos",
@@ -73,7 +73,7 @@ export default function About() {
   "@type": "Organization",
   "name": "DAROX",
   "url": "https://darox.es",
-  "logo": "https://darox.es/images/logo_horizontal.png",
+  "logo": "https://darox.es/images/logo_horizontal.webp",
   "founder": {
     "@type": "Person",
     "name": "Darío",
@@ -198,7 +198,7 @@ export default function About() {
             {/* Imagen a la derecha */}
             <div className="flex-1 flex justify-center items-center">
               <Image
-                src="/images/bio.png"
+                src="/images/bio.webp"
                 alt="Darío, CEO de Darox BM"
                 width={320}
                 height={320}

@@ -126,7 +126,7 @@ export default function Portfolio() {
         {/* Open Graph */}
         <meta property="og:title" content="Portafolio de Proyectos | Branding y Web | DAROX" />
         <meta property="og:description" content="Explora casos de éxito en branding, diseño web y marketing digital realizados por DAROX. Resultados tangibles para empresas y startups." />
-        <meta property="og:image" content="https://darox.es/images/logo_horizontal.png" />
+        <meta property="og:image" content="https://darox.es/images/logo_horizontal.webp" />
         <meta property="og:url" content="https://darox.es/portfolio" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_ES" />
@@ -134,7 +134,7 @@ export default function Portfolio() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Portafolio de Proyectos | Branding y Web | DAROX" />
         <meta name="twitter:description" content="Explora casos de éxito en branding, diseño web y marketing digital realizados por DAROX. Resultados tangibles para empresas y startups." />
-        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.png" />
+        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.webp" />
         {/* Schema.org para Google */}
         <script type="application/ld+json">
           {`
@@ -168,7 +168,7 @@ export default function Portfolio() {
       <main className="min-h-screen w-full bg-black relative overflow-hidden">
         {/* Fondo decorativo */}
         <div className="fixed inset-0 z-0 pointer-events-none">
-          <div className="w-full h-full bg-[url('/images/moon.png')] bg-cover bg-[center_top]" />
+          <div className="w-full h-full bg-[url('/images/moon.webp')] bg-cover bg-[center_top]" />
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="relative z-10 w-full">

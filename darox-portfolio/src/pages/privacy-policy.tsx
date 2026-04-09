@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
         />
         <meta
           property="og:image"
-          content="https://darox.es/images/logo_horizontal.png"
+          content="https://darox.es/images/logo_horizontal.webp"
         />
         <meta property="og:url" content="https://darox.es/privacy-policy" />
         <meta property="og:type" content="article" />
@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
         />
         <meta
           name="twitter:image"
-          content="https://darox.es/images/logo_horizontal.png"
+          content="https://darox.es/images/logo_horizontal.webp"
         />
         <script type="application/ld+json">
           {`{

@@ -23,10 +23,10 @@ export const results: Result[] = [
     slug: 'golden-hole',
     title: 'Golden Hole',
     status: 'NUEVO',
-    imageUrl: '/images/golf5.png', // Imagen por defecto
-    portfolioImageUrl: '/images/golf1.png', // Imagen para /portfolio
-    resultImageUrl: '/images/golf5.png',    // Imagen para Resultados del index
-    logoUrl: '/images/golf5.png',
+    imageUrl: '/images/golf5.webp', // Imagen por defecto
+    portfolioImageUrl: '/images/golf1.webp', // Imagen para /portfolio
+    resultImageUrl: '/images/golf5.webp',    // Imagen para Resultados del index
+    logoUrl: '/images/golf5.webp',
     description: 'Aumentó el compromiso del cliente con presencia digital y campañas dirigidas.',
     webDescription: 'Desarrollamos una campaña integral para Golden Hole, que incluyó desde el rediseño de su imagen de marca hasta la implementación de estrategias de marketing digital. El objetivo era aumentar el compromiso del cliente y mejorar la presencia en línea.',
     metrics: [
@@ -41,10 +41,10 @@ export const results: Result[] = [
     id: 'majuelo',
     slug: 'majuelo-del-arlanza',
     title: 'El Majuelo del Arlanza',
-    imageUrl: '/images/miel6.png',
-    portfolioImageUrl: '/images/miel7.png', // Imagen para /portfolio
-    resultImageUrl: '/images/miel6.png',    // Imagen para Resultados del index
-    logoUrl: '/images/miel6.png',
+    imageUrl: '/images/miel6.webp',
+    portfolioImageUrl: '/images/miel7.webp', // Imagen para /portfolio
+    resultImageUrl: '/images/miel6.webp',    // Imagen para Resultados del index
+    logoUrl: '/images/miel6.webp',
     description: 'Proyecto de branding, desarrollo y estrategia digital para una marca casera.',
     webDescription: 'Proyecto de branding, desarrollo y estrategia digital para una marca casera. Diseño, creatividad y resultados para crecer online.',
     metrics: [
@@ -60,10 +60,10 @@ export const results: Result[] = [
     slug: 'codice-13',
     title: 'Códice 13',
     status: 'FRESCO',
-    imageUrl: '/images/scaperoom.png',
-    portfolioImageUrl: '/images/scaperoom4.png', // Imagen para /portfolio
-    resultImageUrl: '/images/scaperoom.png',    // Imagen para Resultados del index
-    logoUrl: '/images/scaperoom.png',
+    imageUrl: '/images/scaperoom.webp',
+    portfolioImageUrl: '/images/scaperoom4.webp', // Imagen para /portfolio
+    resultImageUrl: '/images/scaperoom.webp',    // Imagen para Resultados del index
+    logoUrl: '/images/scaperoom.webp',
     description: 'Estrategia personalizada que disparó reservas y engagement en solo seis meses.',
     webDescription: 'Desarrollamos la identidad visual y la experiencia digital de Códice 13, integrando narrativa inmersiva, branding enigmático y una web que convierte visitantes en jugadores. El reto fue transmitir misterio y aumentar la conversión en un sector competitivo.',
     metrics: [

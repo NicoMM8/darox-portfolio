@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 
@@ -6,6 +6,19 @@ export default function Contact() {
   const [success, setSuccess] = useState<string | null>(null);
   const [isError, setIsError] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const [utmSource, setUtmSource] = useState("Desconocido/Orgánico");
+  const [referrer, setReferrer] = useState("Desconocido");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const urlParams = new URLSearchParams(window.location.search);
+      const utm = urlParams.get("utm_source") || urlParams.get("ref") || "Desconocido/Orgánico";
+      setUtmSource(utm);
+      setReferrer(document.referrer || "Búsqueda Directa");
+    }
+  }, []);
+
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -49,7 +62,7 @@ export default function Contact() {
         {/* Open Graph */}
         <meta property="og:title" content="Contacto Agencia de Branding y Web en España | DAROX" />
         <meta property="og:description" content="Contacta con DAROX, agencia líder en branding, diseño web y marketing digital en España. Solicita asesoría gratuita para tu proyecto, empresa o startup. ¡Impulsa tu presencia online hoy!" />
-        <meta property="og:image" content="https://darox.es/images/logo_horizontal.png" />
+        <meta property="og:image" content="https://darox.es/images/logo_horizontal.webp" />
         <meta property="og:url" content="https://darox.es/contacto" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_ES" />
@@ -57,7 +70,7 @@ export default function Contact() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contacto Agencia de Branding y Web en España | DAROX" />
         <meta name="twitter:description" content="Contacta con DAROX, agencia líder en branding, diseño web y marketing digital en España. Solicita asesoría gratuita para tu proyecto, empresa o startup. ¡Impulsa tu presencia online hoy!" />
-        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.png" />
+        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.webp" />
         <link rel="canonical" href="https://darox.es/contacto" />
         <script type="application/ld+json">
           {`
@@ -86,7 +99,7 @@ export default function Contact() {
         {/* Fondo imagen */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div
-            className="w-full h-full bg-[url('/images/moon.png')] bg-cover bg-[center_top]"
+            className="w-full h-full bg-[url('/images/moon.webp')] bg-cover bg-[center_top]"
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
@@ -138,6 +151,8 @@ export default function Contact() {
               onSubmit={handleSubmit}
             >
               <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY} />
+              <input type="hidden" name="utm_source" value={utmSource} />
+              <input type="hidden" name="referrer" value={referrer} />
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex flex-col flex-1 gap-2">
                   <label htmlFor="nombre" className="text-white font-medium text-sm">

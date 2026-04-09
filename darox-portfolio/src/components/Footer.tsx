@@ -26,7 +26,7 @@ const Footer: React.FC<FooterProps> = ({ onInViewChange }) => {
       {/* Fondo decorativo */}
       <div className="absolute inset-0 w-full h-full -z-10 rounded-xl overflow-hidden">
         <Image
-          src="/images/footer-bg.png"
+          src="/images/footer-bg.webp"
           alt=""
           fill
           className="object-cover object-center"

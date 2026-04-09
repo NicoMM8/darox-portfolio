@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface Testimonial {
   id: string;
@@ -17,7 +18,7 @@ const testimonials: Testimonial[] = [
     type: "Local",
     name: "Luis Fernández",
     position: "Fundador de El Majuelo del Arlanza",
-    image: "/images/luis.png",
+    image: "/images/luis.webp",
     problem:
       "Buscábamos una empresa de diseño web en Burgos que entendiera nuestro negocio local y no solo nos diera una plantilla.",
     solution:
@@ -28,7 +29,7 @@ const testimonials: Testimonial[] = [
     type: "Growth",
     name: "Javier Martín",
     position: "CEO de StartUp Burgos",
-    image: "/images/javi.png",
+    image: "/images/javi.webp",
     problem:
       "Nuestros procesos de venta eran manuales y perdíamos muchas oportunidades por falta de seguimiento ágil.",
     solution:
@@ -39,7 +40,7 @@ const testimonials: Testimonial[] = [
     type: "Design",
     name: "Marta González",
     position: "Directora de Marketing en Golden Hole",
-    image: "/images/marta.png",
+    image: "/images/marta.webp",
     problem:
       "Nuestra marca necesitaba un rebranding completo para competir a nivel nacional con estudios de diseño de primer nivel.",
     solution:
@@ -50,7 +51,7 @@ const testimonials: Testimonial[] = [
     type: "Local",
     name: "Dra. Elena Vega",
     position: "Directora de Clínica Dental San Pablo",
-    image: "/images/Elena.png",
+    image: "/images/Elena.webp",
     problem:
       "La gente buscaba 'dentista en Burgos' y no aparecíamos. Necesitábamos transmitir confianza y cercanía.",
     solution:
@@ -61,7 +62,7 @@ const testimonials: Testimonial[] = [
     type: "Growth",
     name: "Roberto Méndez",
     position: "Gerente de Logística Norte",
-    image: "/images/Roberto.png",
+    image: "/images/Roberto.webp",
     problem:
       "La gestión de pedidos era un caos de excels y llamadas. Necesitábamos automatizar para no morir de éxito.",
     solution:
@@ -72,7 +73,7 @@ const testimonials: Testimonial[] = [
     type: "Design",
     name: "Sofía Aranda",
     position: "Arquitecta Principal en Atelier V",
-    image: "/images/sofia.png",
+    image: "/images/sofia.webp",
     problem:
       "Nuestro portafolio antiguo no hacía justicia a la calidad de nuestras obras. Parecía una web de los años 2000.",
     solution:
@@ -86,12 +87,25 @@ const stats = [
   { value: "5+", label: "Sectores diferentes." },
 ];
 
-const TestimonialCard: React.FC<{ t: Testimonial }> = ({ t }) => (
-  <div className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] shadow-xl p-6 sm:p-8 flex flex-col h-full overflow-hidden transition duration-300 hover:scale-[1.02] hover:shadow-2xl">
+const TestimonialCard: React.FC<{ t: Testimonial; index: number }> = ({ t, index }) => (
+  <motion.div 
+    initial={{ opacity: 0, y: 50, scale: 0.95 }}
+    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+    viewport={{ once: true, margin: "-50px" }}
+    transition={{ duration: 0.6, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+    whileHover={{ y: -8, scale: 1.02 }}
+    className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-[rgba(0,85,255,0.08)] to-[rgba(153,153,153,0.10)] shadow-xl p-6 sm:p-8 flex flex-col h-full overflow-hidden transition-all duration-300"
+  >
+    {/* Efecto Glow Brillante Interno en Hover */}
+    <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/0 via-white/5 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-2xl" />
+    
+    {/* Micro-glow azul radial estático */}
+    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-32 h-16 bg-blue-500 opacity-0 blur-3xl group-hover:opacity-15 transition-opacity duration-700 pointer-events-none" />
+
     {/* Línea decorativa superior según tipo */}
     <div
-      className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${t.type === "Local" ? "blue-500" : t.type === "Growth" ? "emerald-500" : "purple-500"
-        } to-transparent opacity-70`}
+      className={`absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-${t.type === "Local" ? "blue-500" : t.type === "Growth" ? "emerald-500" : "purple-500"
+        } to-transparent opacity-70 shadow-[0_0_10px_currentColor]`}
     />
 
     {/* Header: Foto + Datos */}
@@ -142,7 +156,7 @@ const TestimonialCard: React.FC<{ t: Testimonial }> = ({ t }) => (
         </svg>
       ))}
     </div>
-  </div>
+  </motion.div>
 );
 
 const TestimonialsBlock: React.FC = () => {
@@ -179,9 +193,9 @@ const TestimonialsBlock: React.FC = () => {
         </div>
 
         {/* Testimonials Grid - Problem/Solution Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((t) => (
-            <TestimonialCard key={t.id} t={t} />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10">
+          {testimonials.map((t, idx) => (
+            <TestimonialCard key={t.id} t={t} index={idx} />
           ))}
         </div>
       </div>

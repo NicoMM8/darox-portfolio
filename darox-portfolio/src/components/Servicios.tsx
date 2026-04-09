@@ -29,7 +29,7 @@ const services: Service[] = [
       "Kit para redes sociales",
       "Foto de perfil, portada, plantilla de publicaciones"
     ],
-    icon: "/images/Start_Pack.png",
+    icon: "/images/Start_Pack.webp",
     url: "/servicios/branding-identidad"
   },
   {
@@ -46,7 +46,7 @@ const services: Service[] = [
       "Optimización de perfil social y estrategia de contenido",
       "Integración de herramientas básicas con Inteligencia Artificial"
     ],
-    icon: "/images/Growth_Pack.png",
+    icon: "/images/Growth_Pack.webp",
     url: "/servicios/desarrollo-web"
   },
   {
@@ -62,7 +62,7 @@ const services: Service[] = [
       "Calendario editorial + asesoramiento de contenido",
       "1 mes de seguimiento técnico y estratégico post-lanzamiento"
     ],
-    icon: "/images/Business_Pack.png",
+    icon: "/images/Business_Pack.webp",
     url: "/servicios/automatizacion-ia-sistemas"
   }
 ]
@@ -169,7 +169,7 @@ const Services: React.FC = () => {
                   {service.features.map((feature, i) => (
                     <li key={i} className="flex items-center text-white/80 text-sm">
                       <Image
-                        src="/images/tick.png"
+                        src="/images/tick.webp"
                         alt=""
                         width={20}
                         height={20}

@@ -13,14 +13,14 @@ export default function TermsConditions() {
         {/* Open Graph */}
         <meta property="og:title" content="Términos y Condiciones de DAROX" />
         <meta property="og:description" content="Consulta los términos y condiciones de uso de los servicios de DAROX. Información legal y derechos del usuario." />
-        <meta property="og:image" content="https://darox.es/images/logo_horizontal.png" />
+        <meta property="og:image" content="https://darox.es/images/logo_horizontal.webp" />
         <meta property="og:url" content="https://darox.es/terms-conditions" />
         <meta property="og:type" content="article" />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Términos y Condiciones de DAROX" />
         <meta name="twitter:description" content="Consulta los términos y condiciones de uso de los servicios de DAROX. Información legal y derechos del usuario." />
-        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.png" />
+        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.webp" />
         <link rel="canonical" href="https://darox.es/terms-conditions" />
         <script type="application/ld+json">
           {`

@@ -140,7 +140,7 @@ const Benefits: React.FC = () => {
 								className="relative w-full h-56"
 							>
 								<Image
-									src="/images/beneficios-main.jpg"
+									src="/images/beneficios-main.webp"
 									alt="Abstracto 3D Azul — Beneficios de trabajar con DAROX"
 									fill
 									className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -205,7 +205,7 @@ const Benefits: React.FC = () => {
 									className="relative w-full h-32"
 								>
 									<Image
-										src="/images/precios.png"
+										src="/images/precios.webp"
 										alt="Precios sin sorpresas en servicios de branding y web de DAROX"
 										fill
 										className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -246,7 +246,7 @@ const Benefits: React.FC = () => {
 									className="relative w-full h-32"
 								>
 									<Image
-										src="/images/Beneficios1.png"
+										src="/images/Beneficios1.webp"
 										alt="Integraciones continuas para automatización y CRM en proyectos DAROX"
 										fill
 										className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -290,7 +290,7 @@ const Benefits: React.FC = () => {
 									className="relative w-full h-32"
 								>
 									<Image
-										src="/images/beneficios-revisiones.png"
+										src="/images/beneficios-revisiones.webp"
 										alt="Solicitudes y revisiones ilimitadas en proyectos de diseño web DAROX"
 										fill
 										className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -333,7 +333,7 @@ const Benefits: React.FC = () => {
 									className="relative w-full h-32"
 								>
 									<Image
-										src="/images/reales.png"
+										src="/images/reales.webp"
 										alt="Testimonios reales de clientes satisfechos con DAROX"
 										fill
 										className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -374,7 +374,7 @@ const Benefits: React.FC = () => {
 									className="relative w-full h-32"
 								>
 									<Image
-										src="/images/Beneficios2.png"
+										src="/images/Beneficios2.webp"
 										alt="Integraciones continuas para automatización y CRM en proyectos DAROX"
 										fill
 										className="object-cover group-hover:scale-105 transition-transform duration-500"

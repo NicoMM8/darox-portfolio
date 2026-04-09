@@ -14,7 +14,7 @@ export default function Custom404() {
       <main className="min-h-screen w-full flex flex-col items-center justify-center pt-32 pb-16 px-4 bg-gradient-to-br from-black via-[#0a1333] to-[#1a237e] relative overflow-hidden">
         {/* Fondo decorativo */}
         <div className="fixed inset-0 z-0 pointer-events-none">
-          <div className="w-full h-full bg-[url('/images/moon.png')] bg-cover bg-[center_top]" />
+          <div className="w-full h-full bg-[url('/images/moon.webp')] bg-cover bg-[center_top]" />
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="relative z-10 flex flex-col items-center gap-8">

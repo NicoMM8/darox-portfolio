@@ -16,7 +16,7 @@ export default function Hero() {
                         className="relative z-10 -mt-8 mb-6"
                     >
                         <Image
-                            src="/images/logo_horizontal.png"
+                            src="/images/logo_horizontal.webp"
                             alt="Logo de DAROX, agencia de branding y diseño web"
                             width={400}
                             height={400}
@@ -62,12 +62,13 @@ export default function Hero() {
             {/* Fondo pulsante */}
             <div className="
                 absolute inset-0
-                bg-[url('/images/fondo.png')]
+                bg-[url('/images/fondo.webp')]
                 bg-no-repeat
                 bg-center
+                opacity-50
                 bg-[length:180%]
                 sm:bg-[length:120%]
-                animate-[heartbeat_1.5s_ease-in-out_infinite]
+                animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite]
                 transform origin-center
             " />
 

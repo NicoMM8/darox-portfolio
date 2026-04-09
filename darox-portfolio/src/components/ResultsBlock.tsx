@@ -8,7 +8,7 @@ const ResultsBlock: React.FC = () => (
     {/* Fondo decorativo esquina inferior izquierda */}
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img
-      src="/images/bg-left.png"
+      src="/images/bg-left.webp"
       alt=""
       className="absolute bottom-0 left-0 w-[40vw] h-auto pointer-events-none select-none z-0"
       draggable={false}
@@ -16,7 +16,7 @@ const ResultsBlock: React.FC = () => (
     {/* Fondo decorativo SVG esquina inferior derecha */}
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img
-      src="/images/bg-right.png"
+      src="/images/bg-right.webp"
       alt=""
       className="absolute bottom-0 right-0 w-[40vw] h-auto pointer-events-none select-none z-0"
       draggable={false}

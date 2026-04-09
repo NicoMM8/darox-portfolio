@@ -9,11 +9,11 @@ export default function Document() {
         <link rel="icon" type="image/png" sizes="16x16" href="/logo.png" />
 
         {/* Apple Touch Icon */}
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
 
         {/* Android Chrome */}
-        <link rel="icon" type="image/png" sizes="192x192" href="/images/logo.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/images/logo.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/logo.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/logo.png" />
 
         {/* Clarity tracking code for https://darox.es/ */}
         <script

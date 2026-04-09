@@ -522,7 +522,7 @@ export default function DesarrolloWeb() {
                     style={{ y: useTransform(smoothProgress, [0.6, 1], [50, -50]) }}
                     className="w-full md:w-5/12 h-[40vh] md:h-[60vh] relative grayscale hover:grayscale-0 transition-all duration-[2s] rounded-xl overflow-hidden border border-white/5"
                 >
-                    <Image src="/images/sobre1.png" alt="Nicolás DAROX" fill className="object-cover" />
+                    <Image src="/images/sobre1.webp" alt="Nicolás DAROX" fill className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
                     <div className="absolute bottom-6 left-6 font-mono text-xs uppercase tracking-widest text-zinc-500">
                         FUNDADOR — 2026

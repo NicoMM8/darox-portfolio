@@ -30,13 +30,13 @@ export default function Home() {
         <meta property="og:url" content="https://darox.es/" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_ES" />
-        <meta property="og:image" content="https://darox.es/images/logo_horizontal.png" />
+        <meta property="og:image" content="https://darox.es/images/logo_horizontal.webp" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Agencia de Branding, Web y Marketing Digital | DAROX" />
         <meta name="twitter:description" content="Agencia de branding y diseño web en España. Creamos marcas, webs y estrategias digitales." />
-        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.png" />
+        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.webp" />
 
         {/* LocalBusiness Schema - Entity Disambiguation */}
         <script
@@ -46,7 +46,7 @@ export default function Home() {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "DAROX Brandmaker",
-              "image": "https://darox.es/images/logo_horizontal.png",
+              "image": "https://darox.es/images/logo_horizontal.webp",
               "url": "https://darox.es",
               "email": "daroxbrandmaker@gmail.com",
               "address": {
