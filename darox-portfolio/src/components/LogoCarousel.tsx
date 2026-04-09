@@ -5,13 +5,13 @@ import { useAnimationFrame } from 'framer-motion';
 const LogoCarousel: React.FC = () => {
     const items = [
         { type: 'img', src: '/images/amazon.svg', alt: 'AWS' },
-        { type: 'text', text: 'Vercel ▲', style: 'font-sans font-bold tracking-tighter' },
+        { type: 'text', text: 'Vercel ▲' },
         { type: 'img', src: '/images/Hostinger.svg', alt: 'Hostinger' },
-        { type: 'text', text: 'Stripe', style: 'font-mono font-bold tracking-wider' },
+        { type: 'text', text: 'Stripe' },
         { type: 'img', src: '/images/whop.svg', alt: 'Whop' },
-        { type: 'text', text: 'Figma', style: 'font-serif italic font-bold' },
-        { type: 'text', text: 'React ⚛', style: 'font-sans font-light tracking-widest' },
-        { type: 'text', text: 'Next.js', style: 'font-black tracking-tighter uppercase' }
+        { type: 'text', text: 'Figma' },
+        { type: 'text', text: 'React ⚛' },
+        { type: 'text', text: 'Next.js' }
     ];
 
     const fullItems = [...items, ...items, ...items, ...items];
@@ -32,11 +32,7 @@ const LogoCarousel: React.FC = () => {
         <section className="py-20 relative overflow-hidden bg-transparent border-y border-white/5">
             <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.02),transparent_70%)]" />
             
-            <div className="text-center mb-12 relative z-10">
-                <span className="text-zinc-600 font-mono text-[10px] tracking-[0.4em] uppercase border border-zinc-800 px-4 py-1 rounded-full">
-                    Tech Stack & Partners
-                </span>
-            </div>
+
 
             <div className="w-full max-w-[100vw] relative mx-auto [mask-image:_linear-gradient(to_right,transparent_0,_black_150px,_black_calc(100%-150px),transparent_100%)]">
                 
@@ -54,8 +50,8 @@ const LogoCarousel: React.FC = () => {
                     {fullItems.map((item, index) => (
                         <div 
                             key={index} 
-                            // La clase clave es peer/hover y el manejo de opacidades y desenfoques.
-                            className="flex-shrink-0 px-10 md:px-16 flex justify-center items-center opacity-60 grayscale transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:opacity-20 group-hover:blur-[4px] group-hover:scale-95 hover:!opacity-100 hover:!blur-none hover:!scale-125 hover:!grayscale-0 cursor-crosshair z-0 hover:z-50"
+                            // Contenedor con ancho fijo para garantizar exactamente el mismo espacio entre logotipos
+                            className="flex-shrink-0 w-40 md:w-52 flex justify-center items-center opacity-60 grayscale transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:opacity-20 group-hover:blur-[4px] hover:!opacity-100 hover:!blur-none hover:!scale-110 hover:!grayscale-0 cursor-crosshair z-0 hover:z-50"
                         >
                             {item.type === 'img' ? (
                                 <Image
@@ -63,11 +59,11 @@ const LogoCarousel: React.FC = () => {
                                     alt={item.alt!}
                                     width={140}
                                     height={50}
-                                    className="h-8 md:h-10 w-auto object-contain pointer-events-none drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                                    className="h-8 md:h-9 w-auto object-contain pointer-events-none drop-shadow-[0_0_10px_rgba(255,255,255,0.05)]"
                                     loading="lazy"
                                 />
                             ) : (
-                                <span className={`text-2xl md:text-3xl pointer-events-none text-zinc-400 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] ${item.style}`}>
+                                <span className={`text-xl md:text-2xl font-bold uppercase tracking-wider pointer-events-none text-zinc-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.05)]`}>
                                     {item.text}
                                 </span>
                             )}
