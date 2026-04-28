@@ -7,6 +7,7 @@ export default function ProyectoMiel() {
   return (
     <>
       <Head>
+        <meta name="robots" content="index, follow" />
         <title>Golden Hole | Branding, Web y Estrategia Digital | DAROX</title>
         <meta
           name="description"
@@ -28,16 +29,38 @@ export default function ProyectoMiel() {
           {`
           {
             "@context": "https://schema.org",
-            "@type": "CreativeWork",
-            "name": "Golden Hole",
-            "description": "Branding, packaging y desarrollo web para un Club de Golf. Estrategia, diseño y resultados medibles para aumentar ventas y mayor presencia.",
-            "image": "https://darox.es/images/golf1.webp",
-            "url": "https://darox.es/proyectos/golden-hole",
-            "author": {
-              "@type": "Organization",
-              "name": "DAROX"
-            },
-            "datePublished": "2024-01-01"
+            "@graph": [
+              {
+                "@type": "CreativeWork",
+                "@id": "https://darox.es/proyectos/golden-hole/#work",
+                "name": "Golden Hole",
+                "description": "Branding, packaging y desarrollo web para un Club de Golf. Estrategia, diseño y resultados medibles para aumentar ventas y mayor presencia.",
+                "image": "https://darox.es/images/golf1.webp",
+                "url": "https://darox.es/proyectos/golden-hole",
+                "author": { "@id": "https://darox.es/#organization" },
+                "datePublished": "2024-01-01",
+                "isPartOf": { "@id": "https://darox.es/proyectos/golden-hole/#webpage" }
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://darox.es/proyectos/golden-hole/#webpage",
+                "url": "https://darox.es/proyectos/golden-hole",
+                "name": "Proyecto Golden Hole | Branding, Web y Estrategia Digital | DAROX",
+                "description": "Caso de éxito: Branding, packaging y desarrollo web para un Club de Golf. Estrategia, diseño y resultados medibles para aumentar ventas y mayor presencia.",
+                "isPartOf": { "@id": "https://darox.es/#website" },
+                "breadcrumb": { "@id": "https://darox.es/proyectos/golden-hole/#breadcrumb" },
+                "mainEntity": { "@id": "https://darox.es/proyectos/golden-hole/#work" }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://darox.es/proyectos/golden-hole/#breadcrumb",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://darox.es/" },
+                  { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://darox.es/#portfolio" },
+                  { "@type": "ListItem", "position": 3, "name": "Golden Hole", "item": "https://darox.es/proyectos/golden-hole" }
+                ]
+              }
+            ]
           }
           `}
         </script>

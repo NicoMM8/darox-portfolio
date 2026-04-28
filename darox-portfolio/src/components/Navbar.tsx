@@ -12,6 +12,7 @@ export default function Navbar() {
 
   const links = [
     { label: 'Proyectos', href: '/portfolio' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Filosofía', href: '/about' },
     { label: 'Contacto', href: '/contacto' },
     { label: 'FAQ', href: '/#faq' }
@@ -132,7 +133,7 @@ export default function Navbar() {
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
                   className="w-full flex items-center justify-between px-3 py-2 text-base font-medium hover:text-indigo-400 transition-colors text-left"
               >
-                Servicios Nav
+                Servicios
                 <svg className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>

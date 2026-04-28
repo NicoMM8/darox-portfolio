@@ -1,11 +1,30 @@
-// src/components/Hero.tsx
 import Image from 'next/image'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
+import { Button } from './ui/Button'
 
 export default function Hero() {
+    const containerRef = useRef(null)
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end start"]
+    })
+
+    // Animaciones cinemáticas de "alejamiento" (Zoom-Out)
+    // El planeta se hace pequeño para ganar nitidez y sensación de profundidad
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.75])
+    
+    // Desvanecimiento suave conforme se hace pequeño
+    const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0])
+    
+    // El planeta "cae" hacia abajo simulando que ganamos altura respecto a él
+    const yParallax = useTransform(scrollYProgress, [0, 1], [0, 350])
+
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black text-white">
+        <section 
+            ref={containerRef}
+            className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent text-white"
+        >
             <div className="container mx-auto px-6 text-center z-10">
                 {/* Logo grande y elevado */}
                 <div className="flex justify-center">
@@ -22,6 +41,7 @@ export default function Hero() {
                             height={400}
                             className="w-80 md:w-96 lg:w-[28rem] h-auto"
                             priority
+                            loading="eager"
                         />
                     </motion.div>
                 </div>
@@ -33,46 +53,48 @@ export default function Hero() {
                     transition={{ duration: 0.7, delay: 0.2 }}
                     className="relative z-20 text-center max-w-4xl mx-auto px-2 flex flex-col items-center"
                 >
-                    <h1 className="block text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 text-white drop-shadow-lg leading-tight">
-                        Construye Tu Marca
-                    </h1>
-                    <p className="text-lg sm:text-2xl md:text-3xl font-normal text-gray-200 mb-8 max-w-3xl mx-auto drop-shadow">
-                        Transformamos ideas en marcas auténticas y potentes que atraen clientes, generan ingresos y te posicionan como líder en tu sector.
-                    </p>
-                    <Link
-                        href="/contacto"
-                        className="
-                            px-8 py-4 rounded-full
-                            text-lg sm:text-xl font-bold
-                            shadow-xl
-                            hover:scale-105
-                            transition-transform duration-200
-                            about-shadow
-                            text-white
-                            bg-gradient-to-r from-purple-700 to-fuchsia-500
-                            hover:from-purple-800 hover:to-fuchsia-600
-                            mt-2
-                        "
-                    >
-                        Descubre cómo construir tu marca
-                    </Link>
+					<h1 className="flex flex-col items-center mb-6 gap-3">
+						{/* SEO Kicker: keyword principal visible y prominente */}
+						<span className="text-sm md:text-base font-bold tracking-[0.25em] uppercase text-fuchsia-400 drop-shadow-md">
+							Agencia de Branding y Diseño Web
+						</span>
+						<span className="block text-4xl sm:text-6xl md:text-7xl font-extrabold text-white drop-shadow-lg leading-tight text-center">
+							Construye Tu Marca
+						</span>
+					</h1>
+					<p
+						id="hero-description"
+						className="text-lg sm:text-2xl md:text-3xl font-normal text-gray-200 mb-8 max-w-3xl mx-auto drop-shadow"
+					>
+						Transformamos ideas en marcas auténticas y potentes que atraen clientes, generan ingresos y te posicionan como líder en tu sector.
+					</p>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full sm:w-auto">
+                        <Button href="/contacto" variant="primary" className="w-full sm:w-auto px-10">
+                            Descubre cómo construir tu marca
+                        </Button>
+                    </div>
                 </motion.div>
+                
             </div>
 
-            {/* Fondo pulsante */}
-            <div className="
-                absolute inset-0
-                bg-[url('/images/fondo.webp')]
-                bg-no-repeat
-                bg-center
-                bg-[length:180%]
-                sm:bg-[length:120%]
-                animate-[heartbeat_3s_ease-in-out_infinite]
-                transform origin-center
-            " />
-
-            {/* Overlay de contraste */}
-            <div className="absolute inset-0 bg-black/20" />
+            {/* Fondo con animación de alejamiento y caída */}
+            <motion.div 
+                style={{ opacity, scale, y: yParallax }}
+                className="absolute inset-0 z-0 mix-blend-screen"
+            >
+                <div className="
+                    absolute inset-0
+                    bg-[url('/images/fondo_hero.webp')]
+                    bg-no-repeat
+                    bg-center
+                    bg-[length:180%]
+                    sm:bg-[length:120%]
+                    transform origin-center
+                " />
+                
+                {/* Overlay muy sutil */}
+                <div className="absolute inset-0 bg-black/10" />
+            </motion.div>
         </section>
     )
 }

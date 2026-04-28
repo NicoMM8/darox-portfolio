@@ -7,6 +7,7 @@ export default function Proyecto2() {
   return (
     <>
       <Head>
+        <meta name="robots" content="index, follow" />
         <title>Majuelo del Arlanza | Proyecto Branding Marca Artesanal | DAROX</title>
         <meta
           name="description"
@@ -23,6 +24,47 @@ export default function Proyecto2() {
         <meta name="twitter:title" content="Proyecto Branding Marca Artesanal | DAROX" />
         <meta name="twitter:description" content="Descubre cómo DAROX impulsó el crecimiento digital de una marca artesanal con branding, desarrollo web y estrategia digital personalizada." />
         <meta name="twitter:image" content="https://darox.es/images/miel1.webp" />
+        {/* Schema.org JSON-LD */}
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "CreativeWork",
+                "@id": "https://darox.es/proyectos/majuelo-del-arlanza/#work",
+                "name": "El Majuelo del Arlanza",
+                "description": "Descubre cómo DAROX impulsó el crecimiento digital de una marca artesanal con branding, desarrollo web y estrategia digital personalizada.",
+                "image": "https://darox.es/images/miel1.webp",
+                "url": "https://darox.es/proyectos/majuelo-del-arlanza",
+                "author": { "@id": "https://darox.es/#organization" },
+                "datePublished": "2024-01-01",
+                "isPartOf": { "@id": "https://darox.es/proyectos/majuelo-del-arlanza/#webpage" }
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://darox.es/proyectos/majuelo-del-arlanza/#webpage",
+                "url": "https://darox.es/proyectos/majuelo-del-arlanza",
+                "name": "Majuelo del Arlanza | Proyecto Branding Marca Artesanal | DAROX",
+                "description": "Descubre cómo DAROX impulsó el crecimiento digital de una marca artesanal con branding, desarrollo web y estrategia digital personalizada.",
+                "isPartOf": { "@id": "https://darox.es/#website" },
+                "breadcrumb": { "@id": "https://darox.es/proyectos/majuelo-del-arlanza/#breadcrumb" },
+                "mainEntity": { "@id": "https://darox.es/proyectos/majuelo-del-arlanza/#work" }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://darox.es/proyectos/majuelo-del-arlanza/#breadcrumb",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://darox.es/" },
+                  { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://darox.es/#portfolio" },
+                  { "@type": "ListItem", "position": 3, "name": "El Majuelo del Arlanza", "item": "https://darox.es/proyectos/majuelo-del-arlanza" }
+                ]
+              }
+            ]
+          }
+          `}
+        </script>
+        <link rel="canonical" href="https://darox.es/proyectos/majuelo-del-arlanza" />
       </Head>
       <Navbar />
       <main className="min-h-screen w-full bg-gradient-to-br from-black via-[#0a1333] to-[#1a237e] relative overflow-hidden pt-24 pb-16">

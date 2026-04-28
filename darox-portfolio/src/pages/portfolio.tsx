@@ -48,8 +48,8 @@ function PortfolioItem({ item, idx, total }: { item: Result, idx: number, total:
         className="sticky top-24 md:top-32 w-full h-[80vh] max-w-5xl rounded-3xl shadow-2xl border border-neutral-800 bg-neutral-900 overflow-hidden"
         initial={{ opacity: 0, y: 40, scale: 0.85 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.7 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: idx === 0 ? 0.05 : 0.25 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         style={{ scale }}
       >
         <Link
@@ -118,6 +118,7 @@ export default function Portfolio() {
   return (
     <>
       <Head>
+        <meta name="robots" content="index, follow" />
         <title>Portafolio de Proyectos | Branding y Web | DAROX</title>
         <meta
           name="description"
@@ -184,13 +185,12 @@ export default function Portfolio() {
                   <rect x="0" y="0" width="120" height="40" rx="20" fill="#000" fillOpacity="0.2" />
                 </svg>
               </div>
-              {/* Badge y título */}
               <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-2 shadow">
                 <span className="inline-block rounded-md px-3 py-1 bg-blue-600 text-xs font-bold text-white shadow">
                   Portfolio
                 </span>
                 <span className="text-base font-medium text-white/80">
-                  Proyectos reales
+                  Seleccionados
                 </span>
               </div>
               <h1 className="gradient-text text-5xl md:text-7xl font-extrabold leading-tight text-center">
@@ -201,7 +201,7 @@ export default function Portfolio() {
               </h2>
               <div className="w-32 h-1 rounded-full bg-gradient-to-r from-transparent via-blue-600 to-transparent my-2" />
               <p className="text-base text-gray-400 text-center max-w-2xl">
-                Cada proyecto es una historia de transformación real. Explora nuestros casos de éxito en branding, diseño web y estrategia digital.
+                Cada proyecto es una muestra de nuestro enfoque estratégico y ejecución técnica. Explora cómo transformamos visiones en experiencias digitales de alto nivel.
               </p>
             </div>
           </section>

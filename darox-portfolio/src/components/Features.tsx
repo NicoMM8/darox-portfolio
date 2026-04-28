@@ -151,12 +151,11 @@ const Features: React.FC = () => {
 						</span>
 					</div>
 					<h3 className="text-3xl md:text-4xl font-bold text-white mb-4 animate-fade-in-up">
-						Características de Diseño Ilimitadas <br />
+						Características de Diseño Estratégicas <br />
 						<span className="gradient-text">¡Entregadas en un Segundo!</span>
 					</h3>
 					<p className="text-lg text-gray-200 max-w-3xl mx-auto">
-						Obtén características de diseño ilimitadas que te brindan la libertad de
-						crear sin límites.
+						Obtén características de diseño de alto impacto que te brindan una estética premium y funcional.
 					</p>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

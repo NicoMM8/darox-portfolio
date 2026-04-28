@@ -9,12 +9,12 @@ const benefitsList = [
 	"Optimización SEO",
 	"Personalizable",
 	"Escalable",
-	"Compromiso Aumentado",
-	"Expandable",
+	"Mayor Retención",
+	"Arquitectura Escalable",
 	"Seguro",
 	"Fácil de Usar",
 	"Integraciones Sencillas",
-	"Soporte 24/7",
+	"Soporte Personalizado",
 	"Multiplataforma",
 	"Accesible",
 	"Analíticas Integradas",
@@ -26,7 +26,7 @@ const benefitsList = [
 	"Diseño UI Moderno",
 	"Adaptable al Cliente",
 	"Control Total de Datos",
-	"Backup Automático",
+	"Copias de Seguridad Reales",
 ];
 
 // Carrusel infinito sin cortes ni saltos
@@ -112,7 +112,7 @@ const Benefits: React.FC = () => {
 						<br />
 					</h2>
 					<h3 className="text-2xl text-white font-semibold mb-4">
-						Diseñamos sistemas que captan clientes y facturan 24/7.
+						Diseñamos sistemas que captan clientes y facturan.
 					</h3>
 				</div>
 				{/* Carrusel infinito de pills */}
@@ -257,14 +257,14 @@ const Benefits: React.FC = () => {
 								<div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-8 bg-blue-500 opacity-20 blur-2xl rounded-full pointer-events-none group-hover:opacity-40 transition" />
 							</div>
 							<div className="flex items-center gap-2 mb-2">
-								<h4 className="text-xl font-bold text-white">Entrega rápida</h4>
+								<h4 className="text-xl font-bold text-white">Entrega en plazo garantizado</h4>
 								<span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">
-									RÁPIDO
+									GARANTIZADO
 								</span>
 							</div>
 							<p className="text-white/60 text-base">
-								Priorizamos la eficiencia sin sacrificar la calidad. Tu proyecto
-								listo en 24–48 horas para que nunca pierdas ritmo.
+								Definimos el plazo de entrega en contrato antes de empezar.
+								Sin retrasos ni excusas: cumplimos lo que firmamos.
 							</p>
 						</motion.div>
 					</div>
@@ -291,7 +291,7 @@ const Benefits: React.FC = () => {
 								>
 									<Image
 										src="/images/beneficios-revisiones.webp"
-										alt="Solicitudes y revisiones ilimitadas en proyectos de diseño web DAROX"
+										alt="Fases de revisión estructuradas y solicitud de cambios en proyectos de diseño web DAROX"
 										fill
 										className="object-cover group-hover:scale-105 transition-transform duration-500"
 										loading="lazy"
@@ -302,15 +302,14 @@ const Benefits: React.FC = () => {
 							</div>
 							<div className="flex items-center gap-2 mb-2">
 								<h4 className="text-xl font-bold text-white">
-									Iteraciones Definidas
+									Carga en Milisegundos
 								</h4>
 								<span className="bg-blue-600 text-xs font-semibold text-white px-2 py-0.5 rounded ml-1">
-									GARANTIZADO
+									PERFORMANCE
 								</span>
 							</div>
 							<p className="text-white/60 text-base">
-								Incluimos fases de revisión estructuradas por cada componente para
-								asegurar la máxima calidad sin retrasos en la entrega.
+								Arquitectura técnica sin código basura. Diseñada para pasar los test de rendimiento de Google y retener a los usuarios más impacientes.
 							</p>
 						</div>
 					</motion.div>

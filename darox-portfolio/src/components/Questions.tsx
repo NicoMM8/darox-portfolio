@@ -1,90 +1,38 @@
 import React, { useState } from "react";
+import Head from "next/head";
 
 const faqs = [
 	{
-		question: "¿Qué necesito para empezar?",
-		answer:
-			"Solo tu idea, visión y ganas de crecer. Nosotros nos encargamos de la planificación, el diseño y la implementación.",
+		question: "¿Por qué decís que una web sin un CRM automatizado no sirve de nada?",
+		answer: "Sin automatización, una web pierde entre el 40% y el 70% de los leads captados. Si un cliente entra a tu web, te deja sus datos y tú tardas 24 horas en responderle manualmente desde un Excel, lo has perdido. Integramos automatizaciones para que tu sistema capture, filtre y nutra a los leads en piloto automático.",
 	},
 	{
-		question: "¿Cuánto tiempo tarda un proyecto típico?",
-		answer:
-			"De media, entre 4 y 6 semanas desde el briefing inicial hasta la entrega final, según el alcance y la complejidad.",
+		question: "¿Qué significa exactamente que garantizáis el SEO?",
+		answer: "Garantizamos que tu web estará técnicamente optimizada para posicionarse en Google desde el primer día: velocidad de carga extrema (Core Web Vitals superiores), arquitectura semántica correcta y textos estructurados para tu intención de búsqueda local. No instalamos un plugin y lo llamamos SEO: construimos la base técnica completa.",
 	},
 	{
-		question: "¿Cómo se calcula el precio final?",
-		answer:
-			"Trabajamos con paquetes de precios cerrados y transparentes desde el inicio (490€ a 1.950€). Cualquier funcionalidad extra fuera del paquete se presupuesta previamente sin costes ocultos.",
+		question: "Mi sector es muy tradicional o específico, ¿podéis ayudarme?",
+		answer: "Sí. Hemos digitalizado negocios en sectores tan distintos como clínicas dentales, empresas de logística industrial, bodegas y bufetes de abogados. La ingeniería de negocio y la psicología de ventas funcionan en cualquier sector. Analizamos a tu competencia, detectamos sus puntos débiles y construimos un sistema para superarlos.",
 	},
 	{
-		question: "¿Qué tipo de personalización está disponible?",
-		answer:
-			"Adaptamos la estética, la estructura y las funcionalidades exactamente a tus necesidades, desde el branding hasta integraciones a medida.",
+		question: "¿Hay costes ocultos, hosting o licencias sorpresa?",
+		answer: "No. Todos los costes están blindados por contrato antes de empezar. En nuestra propuesta detallamos exactamente qué incluye el desarrollo, qué tecnologías usamos y si hay costes de terceros (hosting, dominio, herramientas). Sin cargos inesperados a mitad del proyecto.",
 	},
 	{
-		question: "¿Puedo pedir cambios una vez entregado?",
-		answer:
-			"Incluimos varias rondas de revisiones gratuitas. Después de la entrega, ofrecemos paquetes de mantenimiento y soporte a medida.",
+		question: "¿Cuánto tiempo tardaremos en lanzar el proyecto?",
+		answer: "Entre 3 y 6 semanas según el pack contratado. Un sistema web de una página (Grow Pack) está listo en 3-4 semanas; un proyecto corporativo completo (Business Pack) en 4-6 semanas. Los plazos se firman en contrato: la fecha de lanzamiento es inamovible.",
 	},
 	{
-		question: "¿Es fácil editar para principiantes?",
-		answer:
-			"Sí. Entregamos un CMS intuitivo y tutoriales en vídeo para que gestiones tu contenido sin conocimientos técnicos.",
+		question: "¿Seré dueño de mi web y podré gestionarla yo mismo?",
+		answer: "Sí, eres el propietario total de todos los activos: código, dominio, contenidos y accesos. Te entregamos el sistema completamente documentado y fácil de actualizar sin tocar una línea de código. También ofrecemos sesiones de formación para que tu equipo tome el control desde el primer día.",
 	},
 	{
-		question: "¿Qué recibo exactamente tras la compra?",
-		answer:
-			"Recibes todos los archivos fuente (PSD/Figma), manuales de uso, acceso al repositorio y un mes de soporte post-lanzamiento.",
+		question: "¿Qué pasa si el diseño final no me convence?",
+		answer: "Cada proyecto incluye rondas de revisión estructuradas en cada hito. No desaparecemos un mes y volvemos con algo que no te gusta: revisamos cada componente estratégico contigo durante el proceso. Si al final del proyecto el resultado no cumple lo acordado en el briefing, lo ajustamos sin coste adicional.",
 	},
 	{
-		question: "¿Están incluidos el hosting y dominio en los paquetes?",
-		answer:
-			"Los costes de infraestructura (hosting web y dominio anual) no están incluidos en la tarifa de desarrollo. Te indicaremos proveedores recomendados y los gestionaremos por ti si lo deseas, o trabajaremos sobre tu servidor actual.",
-	},
-	{
-		question: "¿Cómo garantizan el SEO?",
-		answer:
-			"Implementamos prácticas SEO on-page (estructura, etiquetas, velocidad) y te asesoramos en estrategia de contenidos para mejorar tu visibilidad.",
-	},
-	{
-		question: "¿Qué garantías tengo si no estoy satisfecho?",
-		answer:
-			"Establecemos hitos de aprobación durante el diseño. Si en las iteraciones pactadas el resultado no se alinea con el briefing, aplicamos nuestra política de refactorización o resolución estipulada por contrato antes de entregar el proyecto.",
-	},
-	{
-		question: "¿Necesito saber programar?",
-		answer:
-			"No, nada. Tú decides el contenido y la dirección, nosotros nos encargamos de todo el desarrollo técnico.",
-	},
-	{
-		question: "¿Cómo gestionan la seguridad de mis datos?",
-		answer:
-			"Aplicamos certificados SSL, copias de seguridad automáticas y monitorización 24/7 para proteger tu información y la de tus usuarios.",
-	},
-	{
-		question: "¿Qué tecnologías utilizan?",
-		answer:
-			"Trabajamos con Next.js, React, Tailwind, Node.js y soluciones serverless en Vercel para ofrecerte performance y escalabilidad.",
-	},
-	{
-		question: "¿Puedo escalar el proyecto en el futuro?",
-		answer:
-			"Sí. Nuestra arquitectura modular permite añadir nuevas funcionalidades o micrositios sin rehacer la base existente.",
-	},
-	{
-		question: "¿Tienen experiencia en mi sector?",
-		answer:
-			"Contamos con proyectos en diversos sectores: e-commerce, educación, salud, tecnología... Nos adaptamos a tus necesidades específicas.",
-	},
-	{
-		question: "¿Cómo es el proceso de trabajo?",
-		answer:
-			"Desde el briefing inicial hasta la entrega final, seguimos un flujo ágil con revisiones periódicas para asegurar que cumplimos tus expectativas.",
-	},
-	{
-		question: "¿Por qué hacer una web sin un CRM automatizado no sirve de nada hoy en día?",
-		answer:
-			"Tener una web bonita es útil, pero si no captura los datos del cliente, los almacena en un CRM y automatiza el seguimiento comercial, estás perdiendo dinero. Nuestro enfoque integra todo en un motor de ventas para que no pierdas ni un solo lead y factures en piloto automático.",
+		question: "Me interesa. ¿Cuál es el primer paso para empezar a trabajar juntos?",
+		answer: "El primer paso es una sesión estratégica gratuita de 15 minutos. Analizamos la situación actual de tu negocio, identificamos las mayores oportunidades de mejora y te presentamos una hoja de ruta clara. Sin compromiso y sin presión comercial. Puedes agendarla directamente desde la página de contacto.",
 	},
 ];
 
@@ -173,23 +121,25 @@ const Questions: React.FC = () => {
 			</section>
 
 			{/* Schema.org FAQPage para rich snippets en Google */}
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "FAQPage",
-						mainEntity: faqs.map((faq) => ({
-							"@type": "Question",
-							name: faq.question,
-							acceptedAnswer: {
-								"@type": "Answer",
-								text: faq.answer,
-							},
-						})),
-					}),
-				}}
-			/>
+			<Head>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							"@context": "https://schema.org",
+							"@type": "FAQPage",
+							mainEntity: faqs.map((faq) => ({
+								"@type": "Question",
+								name: faq.question,
+								acceptedAnswer: {
+									"@type": "Answer",
+									text: faq.answer,
+								},
+							})),
+						}),
+					}}
+				/>
+			</Head>
 		</>
 	);
 };

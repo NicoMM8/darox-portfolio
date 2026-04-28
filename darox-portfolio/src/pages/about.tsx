@@ -61,6 +61,7 @@ export default function About() {
   return (
     <>
       <Head>
+        <meta name="robots" content="index, follow" />
         <title>Sobre DAROX | Agencia de Branding y Web</title>
         <meta
           name="description"

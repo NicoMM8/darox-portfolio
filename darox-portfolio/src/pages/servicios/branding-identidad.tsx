@@ -105,8 +105,58 @@ export default function BrandingIdentidad() {
       <NoiseOverlay />
       
       <Head>
-        <title>Branding Estratégico & Visual | DAROX</title>
-        <meta name="description" content="Diseño de identidad estructurado." />
+        <meta name="robots" content="index, follow" />
+        <title>Branding Estratégico & Identidad Visual en Burgos | DAROX</title>
+        <meta name="description" content="Agencia de branding en Burgos. Construimos identidades visuales estratégicas para negocios B2B. Naming, paletas HSL, vectores y manual de marca cerrado en 3 semanas." />
+        <link rel="canonical" href="https://darox.es/servicios/branding-identidad" />
+        <meta property="og:title" content="Branding Estratégico & Identidad Visual | DAROX" />
+        <meta property="og:description" content="Construimos bases visuales corporativas para proyectos de alto rendimiento. Diseño de marca, logotipo y manual corporativo." />
+        <meta property="og:image" content="https://darox.es/images/logo_horizontal.webp" />
+        <meta property="og:url" content="https://darox.es/servicios/branding-identidad" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Branding Estratégico & Identidad Visual | DAROX" />
+        <meta name="twitter:description" content="Construimos bases visuales corporativas para proyectos de alto rendimiento. Diseño de marca, logotipo y manual corporativo." />
+        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.webp" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Service",
+              "@id": "https://darox.es/servicios/branding-identidad/#service",
+              "name": "Branding Estratégico e Identidad Visual",
+              "provider": { "@id": "https://darox.es/#organization" },
+              "areaServed": "ES",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "EUR",
+                "price": "490"
+              }
+            },
+            {
+              "@type": "WebPage",
+              "@id": "https://darox.es/servicios/branding-identidad/#webpage",
+              "url": "https://darox.es/servicios/branding-identidad",
+              "name": "Branding Estratégico & Visual | DAROX",
+              "description": "Diseño de identidad estructurado.",
+              "isPartOf": { "@id": "https://darox.es/#website" },
+              "breadcrumb": { "@id": "https://darox.es/servicios/branding-identidad/#breadcrumb" },
+              "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": ["h1", "h2", "h3"]
+              }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "@id": "https://darox.es/servicios/branding-identidad/#breadcrumb",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://darox.es/" },
+                { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://darox.es/#servicios" },
+                { "@type": "ListItem", "position": 3, "name": "Branding", "item": "https://darox.es/servicios/branding-identidad" }
+              ]
+            }
+          ]
+        })}} />
       </Head>
 
       <Navbar />

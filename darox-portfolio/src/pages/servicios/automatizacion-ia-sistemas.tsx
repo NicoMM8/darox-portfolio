@@ -69,8 +69,19 @@ export default function AutomatizacionIA() {
   return (
     <div className="bg-[#000] min-h-screen text-white font-sans selection:bg-purple-500/30">
       <Head>
-        <title>Sistemas IA & Automatización | DAROX</title>
-        <meta name="description" content="Automatiza procesos, implanta CRM y despliega IA 24/7 en tu negocio para multiplicar beneficios reduciendo personal." />
+        <meta name="robots" content="index, follow" />
+        <title>Automatización CRM e Inteligencia Artificial en Burgos | DAROX</title>
+        <meta name="description" content="Sistemas de IA y automatización CRM para empresas en Burgos. Captura, filtra y nutre leads en piloto automático para escalar tu negocio sin fricción ni horas extra." />
+        <link rel="canonical" href="https://darox.es/servicios/automatizacion-ia-sistemas" />
+        <meta property="og:title" content="Automatización CRM e Inteligencia Artificial | DAROX" />
+        <meta property="og:description" content="Sistemas de IA y automatización CRM para escalar tu negocio. Menos humanos, más márgenes y cero fricción." />
+        <meta property="og:image" content="https://darox.es/images/logo_horizontal.webp" />
+        <meta property="og:url" content="https://darox.es/servicios/automatizacion-ia-sistemas" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Automatización CRM e Inteligencia Artificial | DAROX" />
+        <meta name="twitter:description" content="Sistemas de IA y automatización CRM para escalar tu negocio. Menos humanos, más márgenes y cero fricción." />
+        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.webp" />
       </Head>
       
       <Navbar />

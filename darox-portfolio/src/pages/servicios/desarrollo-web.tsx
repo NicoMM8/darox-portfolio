@@ -385,8 +385,19 @@ export default function DesarrolloWeb() {
       <NoiseOverlay />
       <MobileDynamicIsland />
       <Head>
-        <title>Ingeniería Web de Alta Conversión | DAROX</title>
-        <meta name="description" content="No hacemos webs bonitas. Construimos máquinas de facturar con tecnología de vanguardia." />
+        <meta name="robots" content="index, follow" />
+        <title>Desarrollo Web Corporativo en Burgos | Alta Conversión | DAROX</title>
+        <meta name="description" content="Agencia de desarrollo web en Burgos. Construimos webs rápidas, optimizadas en SEO técnico y diseñadas para convertir visitas en leads. No hacemos arte inútil." />
+        <link rel="canonical" href="https://darox.es/servicios/desarrollo-web" />
+        <meta property="og:title" content="Desarrollo Web de Alta Conversión | DAROX" />
+        <meta property="og:description" content="Webs ultrarrápidas y optimizadas en SEO técnico, diseñadas para vender y captar leads de alto valor." />
+        <meta property="og:image" content="https://darox.es/images/logo_horizontal.webp" />
+        <meta property="og:url" content="https://darox.es/servicios/desarrollo-web" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Desarrollo Web de Alta Conversión | DAROX" />
+        <meta name="twitter:description" content="Webs ultrarrápidas y optimizadas en SEO técnico, diseñadas para vender y captar leads de alto valor." />
+        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.webp" />
       </Head>
       
       <Navbar />

@@ -7,6 +7,7 @@ export default function Proyecto3() {
   return (
     <>
       <Head>
+        <meta name="robots" content="index, follow" />
         <title>Códice 13 | Branding, Web y Estrategia Digital | DAROX</title>
         <meta
           name="description"
@@ -23,6 +24,47 @@ export default function Proyecto3() {
         <meta name="twitter:title" content="Códice 13 | Branding, Web y Estrategia Digital | DAROX" />
         <meta name="twitter:description" content="Caso de éxito: Branding, narrativa y desarrollo web para un Escape Room. Misterio, intriga y resultados tangibles." />
         <meta name="twitter:image" content="https://darox.es/images/scaperoom4.webp" />
+        {/* Schema.org JSON-LD */}
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "CreativeWork",
+                "@id": "https://darox.es/proyectos/codice-13/#work",
+                "name": "Códice 13",
+                "description": "Caso de éxito: Branding, narrativa y desarrollo web para un Escape Room. Misterio, intriga y resultados tangibles.",
+                "image": "https://darox.es/images/scaperoom4.webp",
+                "url": "https://darox.es/proyectos/codice-13",
+                "author": { "@id": "https://darox.es/#organization" },
+                "datePublished": "2024-01-01",
+                "isPartOf": { "@id": "https://darox.es/proyectos/codice-13/#webpage" }
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://darox.es/proyectos/codice-13/#webpage",
+                "url": "https://darox.es/proyectos/codice-13",
+                "name": "Códice 13 | Branding, Web y Estrategia Digital | DAROX",
+                "description": "Caso de éxito: Branding, narrativa y desarrollo web para un Escape Room. Misterio, intriga y resultados tangibles.",
+                "isPartOf": { "@id": "https://darox.es/#website" },
+                "breadcrumb": { "@id": "https://darox.es/proyectos/codice-13/#breadcrumb" },
+                "mainEntity": { "@id": "https://darox.es/proyectos/codice-13/#work" }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://darox.es/proyectos/codice-13/#breadcrumb",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://darox.es/" },
+                  { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://darox.es/#portfolio" },
+                  { "@type": "ListItem", "position": 3, "name": "Códice 13", "item": "https://darox.es/proyectos/codice-13" }
+                ]
+              }
+            ]
+          }
+          `}
+        </script>
+        <link rel="canonical" href="https://darox.es/proyectos/codice-13" />
       </Head>
       <Navbar />
       <main className="min-h-screen w-full bg-gradient-to-br from-black via-[#0a1333] to-[#1a237e] relative overflow-hidden pt-24 pb-16">

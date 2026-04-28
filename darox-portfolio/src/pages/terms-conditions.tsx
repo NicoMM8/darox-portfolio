@@ -130,10 +130,10 @@ export default function TermsConditions() {
               <p>
                 Si tienes preguntas o comentarios sobre estos Términos, escribe a{' '}
                 <a
-                  href="mailto:legal@darox.com"
+                  href="mailto:contacto@darox.es"
                   className="text-indigo-400 hover:underline"
                 >
-                  legal@darox.com
+                  contacto@darox.es
                 </a>
                 .
               </p>

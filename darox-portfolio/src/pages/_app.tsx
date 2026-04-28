@@ -15,49 +15,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" type="image/png" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "DAROX",
-              url: "https://darox.es",
-              logo: "https://darox.es/images/logo_horizontal.webp",
-              contactPoint: {
-                "@type": "ContactPoint",
-                email: "daroxbrandmaker@gmail.com",
-                contactType: "customer support",
-                areaServed: "ES",
-              },
-              sameAs: [
-                "https://www.instagram.com/darox.bm/",
-                "https://x.com/DaroxBrandMaker",
-                "https://www.youtube.com/@daroxbrandmaker",
-              ],
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "DAROX",
-              image: "https://darox.es/images/logo_horizontal.webp",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Burgos",
-                addressRegion: "Castilla y León",
-                postalCode: "09001",
-                addressCountry: "ES",
-              },
-              email: "daroxbrandmaker@gmail.com",
-              url: "https://darox.es",
-            }),
-          }}
-        />
       </Head>
       <StarsBackground />
       <Component {...pageProps} />

@@ -137,10 +137,10 @@ export default function PrivacyPolicy() {
               <p>
                 Si tienes preguntas o deseas ejercer tus derechos, escríbenos a{' '}
                 <a
-                  href="mailto:legal@darox.com"
+                  href="mailto:contacto@darox.es"
                   className="text-indigo-400 hover:underline"
                 >
-                  legal@darox.com
+                  contacto@darox.es
                 </a>
                 .
               </p>

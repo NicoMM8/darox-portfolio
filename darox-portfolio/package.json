@@ -12,9 +12,12 @@
     "optimize:webp": "node scripts/optimize-to-webp.js"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "@vercel/speed-insights": "^1.2.0",
     "framer-motion": "^12.23.0",
+    "gray-matter": "^4.0.3",
     "next": "^15.5.15",
+    "next-mdx-remote": "^6.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-intersection-observer": "^9.16.0",

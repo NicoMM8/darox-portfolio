@@ -9,6 +9,7 @@ export default function Contact() {
 
   const [utmSource, setUtmSource] = useState("Desconocido/Orgánico");
   const [referrer, setReferrer] = useState("Desconocido");
+  const [packSelect, setPackSelect] = useState("");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -16,9 +17,13 @@ export default function Contact() {
       const utm = urlParams.get("utm_source") || urlParams.get("ref") || "Desconocido/Orgánico";
       setUtmSource(utm);
       setReferrer(document.referrer || "Búsqueda Directa");
+      
+      const packParam = urlParams.get("pack");
+      if (packParam === "start") setPackSelect("Start Pack (Branding Base)");
+      else if (packParam === "grow") setPackSelect("Grow Pack (Web Alta Conversión)");
+      else if (packParam === "business") setPackSelect("Business Pack (Sistema Completo)");
     }
   }, []);
-
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,255 +59,237 @@ export default function Contact() {
   return (
     <>
       <Head>
-        <title>Contacto Agencia de Branding y Web en España | DAROX</title>
+        <meta name="robots" content="index, follow" />
+        <title>Contacto | DAROX - Agencia de Branding y Diseño Web</title>
         <meta
           name="description"
-          content="Contacta con DAROX, agencia de branding y diseño web en España. Solicita asesoría para tu proyecto o startup e impulsa tu negocio online."
+          content="¿Listo para escalar tu negocio? Contacta con DAROX. Especialistas en branding, diseño web de alta conversión y automatización para empresas en toda España."
         />
+        <link rel="canonical" href="https://darox.es/contacto" />
+        
         {/* Open Graph */}
-        <meta property="og:title" content="Contacto Agencia de Branding y Web en España | DAROX" />
-        <meta property="og:description" content="Contacta con DAROX, agencia de branding y diseño web en España. Solicita asesoría para tu proyecto o startup e impulsa tu negocio online." />
-        <meta property="og:image" content="https://darox.es/images/logo_horizontal.webp" />
+        <meta property="og:title" content="Contacto | DAROX - Agencia de Branding y Diseño Web" />
+        <meta property="og:description" content="¿Listo para escalar tu negocio? Contacta con DAROX. Especialistas en branding, diseño web de alta conversión y automatización." />
+        <meta property="og:image" content="https://darox.es/images/fondo_hero.webp" />
         <meta property="og:url" content="https://darox.es/contacto" />
         <meta property="og:type" content="website" />
-        <meta property="og:locale" content="es_ES" />
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contacto Agencia de Branding y Web en España | DAROX" />
-        <meta name="twitter:description" content="Contacta con DAROX, agencia de branding y diseño web en España. Solicita asesoría para tu proyecto o startup e impulsa tu negocio online." />
-        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.webp" />
-        <link rel="canonical" href="https://darox.es/contacto" />
-        <script type="application/ld+json">
-          {`
-          {
-            "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "mainEntity": {
-              "@type": "Organization",
-              "name": "DAROX",
-              "url": "https://darox.es",
-              "contactPoint": {
+        
+        {/* === SCHEMA SEO GRAPH (10/10 Interconnected Structure) === */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "ContactPage",
+              "@id": "https://darox.es/contacto/#webpage",
+              "url": "https://darox.es/contacto",
+              "name": "Contacto | DAROX - Agencia de Branding y Diseño Web",
+              "description": "Página de contacto de DAROX, agencia de branding y diseño web de alto impacto.",
+              "inLanguage": "es-ES",
+              "isPartOf": { "@id": "https://darox.es/#website" },
+              "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": ["h1", "#contact-intro"]
+              },
+              "breadcrumb": { "@id": "https://darox.es/contacto/#breadcrumb" },
+              "mainEntity": {
                 "@type": "ContactPoint",
-                "email": "daroxbrandmaker@gmail.com",
                 "contactType": "customer support",
-                "areaServed": "ES"
+                "email": "contacto@darox.es",
+                "availableLanguage": ["Spanish", "English"],
+                "hoursAvailable": {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "09:00",
+                  "closes": "19:00"
+                }
               }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "@id": "https://darox.es/contacto/#breadcrumb",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://darox.es/" },
+                { "@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://darox.es/contacto" }
+              ]
+            },
+            {
+              "@type": "FAQPage",
+              "@id": "https://darox.es/contacto/#faq",
+              "isPartOf": { "@id": "https://darox.es/contacto/#webpage" },
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "¿Cuánto tardáis en responder?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Solemos responder en menos de 24 horas laborables. Si es urgente, una vez rellenes el formulario podrás agendar una llamada directa en nuestro calendario."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Trabajáis con empresas de fuera de España?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí. Trabajamos de forma 100% remota con empresas de cualquier parte del mundo, aunque nuestro foco principal es el mercado de habla hispana (España y Latinoamérica)."
+                  }
+                }
+              ]
             }
-          }
-          `}
-        </script>
+          ]
+        })}} />
       </Head>
 
       <Navbar />
 
-      <main className="min-h-screen w-full flex items-start justify-center pt-24 pb-16 px-4 bg-radial-darox relative overflow-hidden">
-        {/* Fondo imagen */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div
-            className="w-full h-full bg-[url('/images/moon.webp')] bg-cover bg-[center_top]"
-          />
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
-        <div className="w-full max-w-4xl relative z-10">
-          {/* Badge y título */}
-          <div className="flex flex-col items-center gap-6 mb-12">
-            <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-2 shadow">
-              <span className="inline-block rounded-md px-3 py-1 bg-blue-600 text-xs font-bold text-white shadow">
-                24/7
-              </span>
-              <span className="text-base font-medium text-white/80">
-                ¡Hablemos!
-              </span>
-            </div>
-            <h1 className="text-6xl md:text-7xl font-extrabold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent leading-tight text-center">
-              ¿Listo para dar el primer paso?
+      <main className="min-h-screen bg-black text-white pt-32 pb-24 px-6 sm:px-8 lg:px-16">
+        <div className="max-w-7xl mx-auto">
+          
+          {/* ─── HERO EDITORIAL ─── */}
+          <div className="flex flex-col mb-24">
+            <p className="text-xs font-bold tracking-[0.35em] uppercase text-blue-400 mb-10">
+              Contacto — DAROX Brandmaker
+            </p>
+            <h1 className="text-[clamp(2.5rem,8vw,6rem)] font-extrabold leading-[0.95] tracking-tighter mb-10 max-w-4xl">
+              Hagamos que<br />
+              tu marca sea<br />
+              <span className="gradient-text">inolvidable.</span>
             </h1>
-            <div className="flex flex-col items-center gap-4 max-w-2xl text-center mt-2">
-              <h2 className="text-xl md:text-2xl font-medium text-white/90">
-                Transforma tu Estrategia de Branding y Diseño Web
-              </h2>
-              <p className="text-base text-gray-400">
-                Estamos aquí para ayudarte a dar el primer paso y convertir tu visión en resultados. Ya seas una startup, un negocio local o una empresa corporativa en España, nuestro equipo de expertos en marketing digital y desarrollo web analizará tu proyecto paso a paso.
+            <div className="flex flex-col md:flex-row md:items-end gap-10 md:gap-20">
+              <p id="contact-intro" className="text-lg md:text-xl text-white/55 max-w-xl leading-relaxed font-light">
+                Estamos aquí para convertir tu visión en una herramienta de ventas imparable. Rellena el formulario y agendaremos una consultoría estratégica gratuita.
               </p>
             </div>
-            <a
-              href="#form"
-              className="
-                inline-flex items-center justify-center
-                px-6 py-3
-                rounded-[10px]
-                border-4 border-white/15
-                bg-blue-700
-                about-shadow
-                text-white font-semibold
-                transition-all duration-300
-                hover:bg-blue-800 hover:scale-105
-                animate-fade-in-up
-                w-full md:w-auto text-center
-                mt-2
-              "
-            >
-              ¡Rellena el formulario!
-            </a>
           </div>
 
-          {/* Formulario de contacto */}
-          <section
-            id="form"
-            className="bg-black/80 border border-white/10 rounded-2xl p-8 md:p-12 shadow-lg mb-12"
-          >
-            <form
-              className="flex flex-col gap-6"
-              onSubmit={handleSubmit}
-            >
-              <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY} />
-              <input type="hidden" name="utm_source" value={utmSource} />
-              <input type="hidden" name="referrer" value={referrer} />
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className="flex flex-col flex-1 gap-2">
-                  <label htmlFor="nombre" className="text-white font-medium text-sm">
-                    Nombre*
-                  </label>
-                  <input
-                    id="nombre"
-                    type="text"
-                    name="nombre"
-                    placeholder="Nombre"
-                    autoComplete="given-name"
-                    className="bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-700 transition"
-                    required
-                  />
-                </div>
-                <div className="flex flex-col flex-1 gap-2">
-                  <label htmlFor="apellidos" className="text-white font-medium text-sm">
-                    Apellidos*
-                  </label>
-                  <input
-                    id="apellidos"
-                    type="text"
-                    name="apellidos"
-                    placeholder="Apellidos"
-                    autoComplete="family-name"
-                    className="bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-700 transition"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-white font-medium text-sm">
-                  ¿Cómo podemos contactarte?*
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  placeholder="tu@email.com"
-                  className="bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-700 transition"
-                  required
-                />
-              </div>
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className="flex flex-col flex-1 gap-2">
-                  <label htmlFor="pais" className="text-white font-medium text-sm">
-                    ¿De dónde eres?*
-                  </label>
-                  <input
-                    id="pais"
-                    type="text"
-                    name="pais"
-                    placeholder="Selecciona tu país..."
-                    autoComplete="country-name"
-                    className="bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-700 transition"
-                    required
-                  />
-                </div>
-                <div className="flex flex-col flex-1 gap-2 relative">
-                  <label htmlFor="tipo" className="text-white font-medium text-sm">
-                    ¿Cuál es el tipo de tu empresa?*
-                  </label>
-                  <select
-                    id="tipo"
-                    name="tipo"
-                    className="
-                      bg-neutral-900 border border-white/10 rounded-2xl px-4 py-3 pr-10
-                      text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-700 transition
-                      appearance-none
-                      cursor-pointer
-                    "
-                    required
-                    defaultValue=""
-                  >
-                    <option value="" disabled className="text-white/40">
-                      Selecciona categoría
-                    </option>
-                    <option value="Agencia">Agencia</option>
-                    <option value="SAAS">SAAS</option>
-                    <option value="Banca">Banca</option>
-                    <option value="Negocio">Negocio</option>
-                    <option value="Otro">Otro</option>
-                  </select>
-                  {/* Icono flecha */}
-                  <div className="pointer-events-none absolute right-3 top-11 md:top-11 flex items-center h-5">
-                    <svg className="w-4 h-4 text-white/60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
+          <div className="flex flex-col lg:flex-row gap-20">
+            
+            {/* ─── INFO DE CONTACTO (Izquierda) ─── */}
+            <div className="lg:w-1/3 flex flex-col gap-12">
+              <div>
+                <p className="text-xs font-bold tracking-[0.35em] uppercase text-white/30 mb-6">Canales directos</p>
+                <div className="flex flex-col gap-8">
+                  <div className="group">
+                    <p className="text-sm text-white/40 mb-1">Email</p>
+                    <a href="mailto:contacto@darox.es" className="text-xl font-bold hover:text-blue-400 transition-colors">
+                      contacto@darox.es
+                    </a>
+                  </div>
+                  <div className="group">
+                    <p className="text-sm text-white/40 mb-1">LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/darox/" target="_blank" rel="noopener noreferrer" className="text-xl font-bold hover:text-blue-400 transition-colors">
+                      Darío Muñoz Miguel
+                    </a>
+                  </div>
+                  <div className="group">
+                    <p className="text-sm text-white/40 mb-1">Horario</p>
+                    <p className="text-xl font-bold">Lunes a Viernes<br />09:00 — 19:00</p>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="mensaje" className="text-white font-medium text-sm">
-                  Mensaje
-                </label>
-                <textarea
-                  id="mensaje"
-                  name="mensaje"
-                  placeholder="Escribe tu mensaje..."
-                  rows={4}
-                  autoComplete="off"
-                  className="bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-700 transition"
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={loading}
-                className="mt-2 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[10px] border-4 border-white/15 bg-blue-700 about-shadow text-white font-semibold transition-all duration-300 hover:bg-blue-800 hover:scale-105 animate-fade-in-up w-full md:w-auto text-center disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
-              >
-                {loading ? (
-                  <>
-                    <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
-                    </svg>
-                    Enviando...
-                  </>
-                ) : "Enviar mensaje"}
-              </button>
-              {success && (
-                <p className={`mt-2 text-sm font-medium ${isError ? 'text-red-400' : 'text-green-400'}`}>
-                  {success}
-                </p>
-              )}
-            </form>
-          </section>
 
-          {/* Info de contacto */}
-          <div className="grid md:grid-cols-2 gap-6 text-left">
-            {/* Email */}
-            <div className="bg-black/80 border border-white/10 rounded-2xl p-6 shadow flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                {/* Icono de email */}
-                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" className="text-white/80">
-                  <path d="M4 4h16v16H4V4zm0 0l8 8 8-8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <span className="text-white font-medium text-lg">Email</span>
-                <span className="inline-block rounded-md px-2 py-0.5 bg-blue-600 text-xs font-bold text-white ml-2">24/7</span>
+              <div>
+                <p className="text-xs font-bold tracking-[0.35em] uppercase text-white/30 mb-6">FAQ Rápida</p>
+                <div className="flex flex-col border-t border-white/10">
+                  {[
+                    { q: "¿Tardáis mucho en responder?", a: "Menos de 24h. Garantizado." },
+                    { q: "¿La consultoría es gratuita?", a: "Sí. Analizamos tu caso sin compromiso." }
+                  ].map((item, i) => (
+                    <div key={i} className="py-4 border-b border-white/10">
+                      <p className="text-sm font-bold text-white mb-1">{item.q}</p>
+                      <p className="text-sm text-white/50">{item.a}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <hr className="border-white/10 my-1" />
-              <span className="text-gray-400 text-base break-all">daroxbrandmaker@gmail.com</span>
             </div>
+
+            {/* ─── FORMULARIO (Derecha) ─── */}
+            <div className="lg:w-2/3">
+              <div className="bg-white/[0.03] border border-white/10 rounded-3xl p-8 md:p-12">
+                <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
+                  <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY} />
+                  <input type="hidden" name="utm_source" value={utmSource} />
+                  <input type="hidden" name="referrer" value={referrer} />
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="nombre" className="text-xs font-bold uppercase tracking-widest text-white/40">Tu nombre</label>
+                      <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        required
+                        placeholder="Juan Pérez"
+                        className="bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors placeholder:text-white/10"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-white/40">Email corporativo</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="juan@empresa.com"
+                        className="bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors placeholder:text-white/10"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="pack" className="text-xs font-bold uppercase tracking-widest text-white/40">¿En qué estás interesado?</label>
+                    <select
+                      id="pack"
+                      name="pack"
+                      required
+                      defaultValue={packSelect}
+                      className="bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors appearance-none cursor-pointer"
+                    >
+                      <option value="" disabled className="bg-neutral-900">Selecciona una opción</option>
+                      <option value="Start Pack" className="bg-neutral-900">Start Pack (Branding Base)</option>
+                      <option value="Grow Pack" className="bg-neutral-900">Grow Pack (Web Alta Conversión)</option>
+                      <option value="Business Pack" className="bg-neutral-900">Business Pack (Sistema Completo)</option>
+                      <option value="Consultoría" className="bg-neutral-900">Consultoría Estratégica / Otros</option>
+                    </select>
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="mensaje" className="text-xs font-bold uppercase tracking-widest text-white/40">Cuéntanos sobre tu proyecto</label>
+                    <textarea
+                      id="mensaje"
+                      name="mensaje"
+                      rows={4}
+                      required
+                      placeholder="Busco rediseñar mi web para captar más leads..."
+                      className="bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors resize-none placeholder:text-white/10"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-6">
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="group relative flex items-center justify-center gap-3 px-10 py-5 bg-white text-black rounded-full font-bold text-lg hover:bg-blue-500 hover:text-white transition-all duration-500 disabled:opacity-50"
+                    >
+                      {loading ? "Enviando..." : "Enviar propuesta"}
+                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </button>
+                    
+                    {success && (
+                      <p className={`text-center font-bold p-4 rounded-xl ${isError ? 'bg-red-500/10 text-red-400 border border-red-500/20' : 'bg-green-500/10 text-green-400 border border-green-500/20'}`}>
+                        {success}
+                      </p>
+                    )}
+                  </div>
+                </form>
+              </div>
+            </div>
+
           </div>
         </div>
       </main>
     </>
-  )
+  );
 }

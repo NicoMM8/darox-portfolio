@@ -72,6 +72,6 @@ export const results: Result[] = [
     ],
     url: '/proyectos/codice-13',
     year: 2022,
-    categories: ['Entretenimiento', 'Escape Room']
+    categories: ['Ocio Inmersivo', 'Escape Room']
   },
 ]
