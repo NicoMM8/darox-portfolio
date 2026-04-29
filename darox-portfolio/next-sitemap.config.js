@@ -8,8 +8,8 @@ module.exports = {
   exclude: ['/404', '/500', '/privacy-policy', '/terms-conditions'],
   // Añadir páginas de SEO local y blog no detectadas automáticamente
   additionalPaths: async (config) => [
-    await config.transform(config, '/agencia-web-burgos'),
-    await config.transform(config, '/agencia-web-castilla-leon'),
+    await config.transform(config, '/agencia-branding-burgos'),
+    await config.transform(config, '/agencia-branding-castilla-leon'),
     await config.transform(config, '/blog'),
   ],
   transform: async (config, path) => {
@@ -19,8 +19,8 @@ module.exports = {
       '/servicios/branding-identidad': 0.9,
       '/servicios/desarrollo-web': 0.9,
       '/servicios/automatizacion-ia-sistemas': 0.9,
-      '/agencia-web-burgos': 0.85,
-      '/agencia-web-castilla-leon': 0.85,
+      '/agencia-branding-burgos': 0.85,
+      '/agencia-branding-castilla-leon': 0.85,
       '/blog': 0.8,
       '/contacto': 0.8,
       '/about': 0.75,

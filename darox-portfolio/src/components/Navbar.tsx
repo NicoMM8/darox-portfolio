@@ -14,8 +14,7 @@ export default function Navbar() {
     { label: 'Proyectos', href: '/portfolio' },
     { label: 'Blog', href: '/blog' },
     { label: 'Filosofía', href: '/about' },
-    { label: 'Contacto', href: '/contacto' },
-    { label: 'FAQ', href: '/#faq' }
+    { label: 'Contacto', href: '/contacto' }
   ]
 
   return (
@@ -41,13 +40,13 @@ export default function Navbar() {
 
           {/* Menú escritorio */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="px-3 py-2 text-sm font-medium hover:text-indigo-400 transition-colors">
+            <Link href="/" className="px-3 py-2 text-sm font-medium hover:text-fuchsia-400 transition-colors">
               Inicio
             </Link>
 
             {/* Dropdown de Servicios Estilo Elite */}
             <div className="relative group">
-              <button className="px-3 py-2 text-sm font-medium hover:text-indigo-400 transition-colors flex items-center gap-1">
+              <button className="px-3 py-2 text-sm font-medium hover:text-fuchsia-400 transition-colors flex items-center gap-1">
                 Servicios
                 <svg className="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -59,16 +58,16 @@ export default function Navbar() {
                  
                  <div className="bg-[#050505]/90 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl flex flex-col p-2 overflow-hidden">
                     <Link href="/servicios/branding-identidad" className="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
-                        <span className="block text-sm font-bold text-white group-hover/item:text-blue-400 transition-colors">Branding Premium</span>
+                        <span className="block text-sm font-bold text-white group-hover/item:text-fuchsia-400 transition-colors">Branding</span>
                         <span className="block text-xs text-zinc-500 mt-0.5">Identidad que vende sola.</span>
                     </Link>
                     <Link href="/servicios/desarrollo-web" className="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
-                        <span className="block text-sm font-bold text-white group-hover/item:text-blue-400 transition-colors">Ingeniería Web</span>
+                        <span className="block text-sm font-bold text-white group-hover/item:text-fuchsia-400 transition-colors">Ingeniería Web</span>
                         <span className="block text-xs text-zinc-500 mt-0.5">Sistemas de Alta Conversión.</span>
                     </Link>
                     <Link href="/servicios/automatizacion-ia-sistemas" className="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
-                        <span className="block text-sm font-bold text-white group-hover/item:text-blue-400 transition-colors">Automatización & IA</span>
-                        <span className="block text-xs text-zinc-500 mt-0.5">Factura mientras duermes.</span>
+                        <span className="block text-sm font-bold text-white group-hover/item:text-fuchsia-400 transition-colors">Automatización & IA</span>
+                        <span className="block text-xs text-zinc-500 mt-0.5">Optimiza tus procesos.</span>
                     </Link>
                  </div>
               </div>
@@ -78,7 +77,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm font-medium hover:text-indigo-400 transition-colors"
+                className="px-3 py-2 text-sm font-medium hover:text-fuchsia-400 transition-colors"
               >
                 {link.label}
               </Link>
@@ -90,7 +89,7 @@ export default function Navbar() {
             <button
               type="button"
               aria-label="Abrir menú principal"
-              className="p-2 rounded-md text-gray-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              className="p-2 rounded-md text-gray-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-fuchsia-500"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <span className="sr-only">Abrir menú principal</span>
@@ -124,14 +123,14 @@ export default function Navbar() {
             px-4 pt-4 pb-6 space-y-2
             bg-[#050505]/95 backdrop-blur-xl shadow-2xl
           ">
-              <Link href="/" className="block px-3 py-2 text-base font-medium hover:text-indigo-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/" className="block px-3 py-2 text-base font-medium hover:text-fuchsia-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Inicio
               </Link>
 
               {/* Botón Servicios en Móvil */}
               <button 
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className="w-full flex items-center justify-between px-3 py-2 text-base font-medium hover:text-indigo-400 transition-colors text-left"
+                  className="w-full flex items-center justify-between px-3 py-2 text-base font-medium hover:text-fuchsia-400 transition-colors text-left"
               >
                 Servicios
                 <svg className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -142,7 +141,7 @@ export default function Navbar() {
               {/* Sub-links móviles expuestos */}
               {isServicesOpen && (
                   <div className="pl-6 flex flex-col gap-1 border-l mx-3 border-white/10">
-                      <Link href="/servicios/branding-identidad" className="block px-3 py-2 text-sm text-zinc-400 hover:text-white" onClick={() => setIsMenuOpen(false)}>Branding Premium</Link>
+                      <Link href="/servicios/branding-identidad" className="block px-3 py-2 text-sm text-zinc-400 hover:text-white" onClick={() => setIsMenuOpen(false)}>Branding</Link>
                       <Link href="/servicios/desarrollo-web" className="block px-3 py-2 text-sm text-zinc-400 hover:text-white" onClick={() => setIsMenuOpen(false)}>Ingeniería Web (UI/UX)</Link>
                       <Link href="/servicios/automatizacion-ia-sistemas" className="block px-3 py-2 text-sm text-zinc-400 hover:text-white" onClick={() => setIsMenuOpen(false)}>Automatización & CRM</Link>
                   </div>
@@ -152,7 +151,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block px-3 py-2 text-base font-medium hover:text-indigo-400 transition-colors"
+                  className="block px-3 py-2 text-base font-medium hover:text-fuchsia-400 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}

@@ -27,6 +27,26 @@ export default function BlogIndex({ posts }: BlogProps) {
           content="Artículos sobre estrategias de branding, diseño web que convierte y automatización con IA para negocios en Burgos y España."
         />
         <link rel="canonical" href="https://darox.es/blog" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Blog sobre Branding, Web y Automatización | DAROX" />
+        <meta property="og:description" content="Artículos sobre estrategias de branding, diseño web que convierte y automatización con IA para negocios en Burgos y España." />
+        <meta property="og:image" content="https://darox.es/images/fondo_hero.webp" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="900" />
+        <meta property="og:image:alt" content="DAROX Blog — Branding, Diseño Web y Automatización" />
+        <meta property="og:url" content="https://darox.es/blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_ES" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@DaroxBrandMaker" />
+        <meta name="twitter:creator" content="@DaroxBrandMaker" />
+        <meta name="twitter:title" content="Blog sobre Branding, Web y Automatización | DAROX" />
+        <meta name="twitter:description" content="Artículos sobre estrategias de branding, diseño web que convierte y automatización con IA para negocios en Burgos y España." />
+        <meta name="twitter:image" content="https://darox.es/images/fondo_hero.webp" />
+
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
@@ -60,6 +80,7 @@ export default function BlogIndex({ posts }: BlogProps) {
               "@id": "https://darox.es/blog/#webpage",
               "url": "https://darox.es/blog",
               "name": "Blog sobre Branding, Web y Automatización | DAROX",
+              "dateModified": new Date().toISOString().split('T')[0],
               "isPartOf": { "@id": "https://darox.es/#website" },
               "breadcrumb": { "@id": "https://darox.es/blog/#breadcrumb" },
               "mainEntity": { "@id": "https://darox.es/blog/#itemlist" }
@@ -84,6 +105,9 @@ export default function BlogIndex({ posts }: BlogProps) {
         loop
         muted
         playsInline
+        preload="none"
+        poster="/images/fondo2_poster.webp"
+        aria-hidden="true"
         className="fixed inset-0 w-full h-full object-cover object-center z-[-1] opacity-80 pointer-events-none"
       >
         <source src="/images/fondo2.mp4" type="video/mp4" />

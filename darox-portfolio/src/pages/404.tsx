@@ -7,6 +7,7 @@ export default function Custom404() {
   return (
     <>
       <Head>
+        <meta name="robots" content="noindex, follow" />
         <title>Página no encontrada | DAROX</title>
         <meta name="description" content="La página que buscas no existe. Descubre nuestros servicios de branding, web y marketing digital." />
       </Head>

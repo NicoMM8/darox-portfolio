@@ -80,9 +80,9 @@ export default function Home({ posts }: HomeProps) {
                   "logo": "https://darox.es/images/logo_horizontal.webp",
                   "url": "https://darox.es",
                   "email": "contacto@darox.es",
+                  "telephone": "+34 XXX XXX XXX", // TODO: reemplazar con el número real
                   "address": {
                     "@type": "PostalAddress",
-                    "streetAddress": "Burgos Capital",
                     "addressLocality": "Burgos",
                     "addressRegion": "Castilla y León",
                     "postalCode": "09001",
@@ -93,7 +93,19 @@ export default function Home({ posts }: HomeProps) {
                     "latitude": "42.3439",
                     "longitude": "-3.6969"
                   },
+                  "hasMap": "https://www.google.com/maps/search/DAROX+Brandmaker+Burgos/", // TODO: reemplazar con URL real del GBP
+                  "currenciesAccepted": "EUR",
+                  "paymentAccepted": "Transferencia Bancaria, Tarjeta de Crédito, Stripe, PayPal",
                   "areaServed": ["Burgos", "Castilla y León", "España"],
+                  "serviceArea": {
+                    "@type": "GeoCircle",
+                    "geoMidpoint": {
+                      "@type": "GeoCoordinates",
+                      "latitude": "42.3439",
+                      "longitude": "-3.6969"
+                    },
+                    "geoRadius": "150000"
+                  },
                   "priceRange": "490€ - 1950€",
                   "description": "Agencia de branding y diseño web en Burgos y España. Especialistas en identidad visual, desarrollo web de alta conversión y automatización CRM para pymes y startups.",
                   "knowsAbout": ["Branding", "Diseño Web", "SEO", "Automatización CRM", "UI/UX", "Marketing Digital"],
@@ -107,7 +119,8 @@ export default function Home({ posts }: HomeProps) {
                   "sameAs": [
                     "https://www.instagram.com/darox.bm/",
                     "https://x.com/DaroxBrandMaker",
-                    "https://www.youtube.com/@daroxbrandmaker"
+                    "https://www.youtube.com/@daroxbrandmaker",
+                    "https://www.google.com/maps/search/DAROX+Brandmaker+Burgos/" // TODO: reemplazar con URL real del GBP
                   ]
                 },
                 {
@@ -136,7 +149,7 @@ export default function Home({ posts }: HomeProps) {
                   "inLanguage": "es-ES",
                   "isPartOf": { "@id": "https://darox.es/#website" },
                   "about": { "@id": "https://darox.es/#organization" },
-                  "dateModified": "2026-04-24",
+                  "dateModified": new Date().toISOString().split('T')[0],
                   "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["#hero-description", "#about-geo-text", "#servicios-intro"]

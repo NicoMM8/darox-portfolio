@@ -76,27 +76,27 @@ const About: React.FC = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch gap-12">
         {/* Animación de Logo Horizontal Orgánica y Profesional con Framer Motion */}
         <div className="md:w-1/2 flex justify-center items-center perspective-1000">
-          <div 
+          <div
             className="relative rounded-[20px] overflow-hidden border border-white/5 w-full max-w-[420px] md:max-w-[500px] h-[400px] md:h-[500px] bg-[#030303] flex items-center justify-center cursor-pointer"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onTouchStart={() => setIsHovered(true)}
             onTouchEnd={() => setIsHovered(false)}
           >
-            
+
             {/* Fondo estelar muy elegante */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)] z-0" />
 
             {/* Brillo suave de fondo que reacciona a la fase */}
-            <motion.div 
+            <motion.div
               animate={{
                 opacity: phase === 2 ? 0.7 : phase === 1 ? 0.3 : 0.1,
                 scale: phase === 2 ? 1 : 0.9,
               }}
               transition={{ duration: 1.2, ease: "circOut" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(30,58,138,0.3)_0%,transparent_60%)] blur-[50px] z-0" 
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(30,58,138,0.3)_0%,transparent_60%)] blur-[50px] z-0"
             />
-            
+
             {/* El Logo que interactúa por fases */}
             <div className="relative z-10 w-4/5 max-w-[320px]">
               <motion.div
@@ -107,16 +107,16 @@ const About: React.FC = () => {
                 }}
                 transition={{ duration: 0.8, ease: "circOut" }}
               >
-                 <Image
-                    src="/images/logo_horizontal.webp"
-                    alt="Logo DAROX Horizontal"
-                    width={600}
-                    height={200}
-                    className="w-full h-auto object-contain"
-                    priority
-                  />
+                <Image
+                  src="/images/logo_horizontal.webp"
+                  alt="Logo DAROX Horizontal"
+                  width={600}
+                  height={200}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
               </motion.div>
-              
+
               {/* Overlay de simulación en Fase 0 - mask interactiva */}
               <AnimatePresence>
                 {phase === 0 && (
@@ -139,7 +139,7 @@ const About: React.FC = () => {
                 )}
               </AnimatePresence>
             </div>
-            
+
             {/* Texto muy minimalista que indica la fase orgánicamente */}
             <div className="absolute bottom-8 left-0 right-0 flex justify-center z-30">
               <AnimatePresence mode="wait">
@@ -200,20 +200,20 @@ const About: React.FC = () => {
             className="flex flex-col gap-5 mb-8 max-w-prose animate-fade-in-up"
           >
             {/* P1: contexto/descripción — más discreto */}
-            <p className="text-sm md:text-base text-gray-400 leading-relaxed font-normal">
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed font-normal">
               DAROX es una agencia de branding y diseño web con sede en Burgos, España. Nos especializamos en
               crear identidades de marca, páginas web de alta conversión y sistemas de automatización CRM
               para pymes, startups y profesionales independientes.
             </p>
 
             {/* P2: gancho — blockquote con acento azul */}
-            <blockquote className="border-l-2 border-blue-500 pl-4 text-base md:text-lg text-white font-normal leading-relaxed">
+            <blockquote className="border-l-2 border-blue-500 pl-4 text-lg md:text-xl text-white font-normal leading-relaxed">
               Si tu web es idéntica a la de tu competencia y tu marca no transmite autoridad, terminarás
               peleando siempre por ser la opción más barata.
             </blockquote>
 
             {/* P3: propuesta de valor — palabras clave en blanco */}
-            <p className="text-sm md:text-base text-gray-400 leading-relaxed font-normal">
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed font-normal">
               En DAROX vamos al grano. <strong className="text-white font-medium">No vendemos aire ni adornos innecesarios.</strong>{' '}
               Analizamos tu modelo de negocio para encontrar lo que realmente te hace diferente y diseñamos marcas y webs que{' '}
               <strong className="text-white font-medium">hablan claro, generan confianza y cierran ventas.</strong> Sin rodeos.

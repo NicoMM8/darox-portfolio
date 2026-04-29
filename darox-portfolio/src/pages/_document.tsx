@@ -15,6 +15,14 @@ export default function Document() {
         <link rel="icon" type="image/png" sizes="192x192" href="/logo.png" />
         <link rel="icon" type="image/png" sizes="512x512" href="/logo.png" />
 
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <meta name="theme-color" content="#0055FF" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="DAROX" />
+
         {/* Clarity tracking code for https://darox.es/ */}
         <script
           dangerouslySetInnerHTML={{

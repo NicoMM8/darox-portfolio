@@ -67,23 +67,70 @@ export default function About() {
           name="description"
           content="Conoce al equipo de DAROX, nuestra filosofía y cómo ayudamos a empresas y emprendedores a crecer con branding, diseño web y marketing digital."
         />
-        <script type="application/ld+json">
-          {`
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "DAROX",
-  "url": "https://darox.es",
-  "logo": "https://darox.es/images/logo_horizontal.webp",
-  "founder": {
-    "@type": "Person",
-    "name": "Darío",
-    "jobTitle": "CEO"
-  }
-}
-`}
-        </script>
         <link rel="canonical" href="https://darox.es/about" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Sobre DAROX | Agencia de Branding y Web" />
+        <meta property="og:description" content="Conoce al equipo de DAROX, nuestra filosofía y cómo ayudamos a empresas y emprendedores a crecer con branding, diseño web y marketing digital." />
+        <meta property="og:image" content="https://darox.es/images/fondo_hero.webp" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="900" />
+        <meta property="og:image:alt" content="DAROX — Sobre nuestra agencia de branding y web" />
+        <meta property="og:url" content="https://darox.es/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_ES" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@DaroxBrandMaker" />
+        <meta name="twitter:creator" content="@DaroxBrandMaker" />
+        <meta name="twitter:title" content="Sobre DAROX | Agencia de Branding y Web" />
+        <meta name="twitter:description" content="Conoce al equipo de DAROX, nuestra filosofía y cómo ayudamos a empresas y emprendedores a crecer con branding, diseño web y marketing digital." />
+        <meta name="twitter:image" content="https://darox.es/images/fondo_hero.webp" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://darox.es/#organization",
+                  "name": "DAROX",
+                  "url": "https://darox.es",
+                  "logo": "https://darox.es/images/logo_horizontal.webp",
+                  "founder": {
+                    "@type": "Person",
+                    "name": "Darío Muñoz Miguel",
+                    "jobTitle": "CEO",
+                    "url": "https://darox.es/about",
+                    "sameAs": ["https://www.linkedin.com/in/darox/"]
+                  }
+                },
+                {
+                  "@type": "AboutPage",
+                  "@id": "https://darox.es/about/#webpage",
+                  "url": "https://darox.es/about",
+                  "name": "Sobre DAROX | Agencia de Branding y Web",
+                  "description": "Conoce al equipo de DAROX, nuestra filosofía y cómo ayudamos a empresas y emprendedores a crecer con branding, diseño web y marketing digital.",
+                  "dateModified": new Date().toISOString().split('T')[0],
+                  "isPartOf": { "@id": "https://darox.es/#website" },
+                  "about": { "@id": "https://darox.es/#organization" },
+                  "breadcrumb": { "@id": "https://darox.es/about/#breadcrumb" }
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  "@id": "https://darox.es/about/#breadcrumb",
+                  "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://darox.es/" },
+                    { "@type": "ListItem", "position": 2, "name": "Sobre DAROX", "item": "https://darox.es/about" }
+                  ]
+                }
+              ]
+            })
+          }}
+        />
       </Head>
       <Navbar />
       {/* Fondo de video animado */}
@@ -92,6 +139,9 @@ export default function About() {
         loop
         muted
         playsInline
+        preload="none"
+        poster="/images/fondo2_poster.webp"
+        aria-hidden="true"
         className="fixed inset-0 w-full h-full object-cover object-top z-0 pointer-events-none"
       >
         <source src="/images/fondo.mp4" type="video/mp4" />
@@ -113,36 +163,21 @@ export default function About() {
           </div>
           {/* Título grande */}
           <h1 className="text-[1.8rem] sm:text-[2.5rem] md:text-[3.2rem] font-extrabold leading-[1.1] text-white text-center tracking-tight mb-6">
-            Conoce el universo de DAROX BM<br />
-            <span className="text-white/80">Lideramos ideas hacia el éxito real</span>
+            No somos tu "socio creativo".<br />
+            <span className="text-blue-500">Somos el motor de tu negocio.</span>
           </h1>
           {/* Subtítulo */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 text-justify max-w-3xl mb-10 font-medium">
-            Bienvenido, sobre DAROX te confirmamos que somos más que una consultora promedio: somos tu Agencia de Branding y Web preferida. Dentro de todo el universo de DAROX BM combinamos diseño, estrategia y tecnología para transformar ideas brillantes en negocios rentables.
-            <span className="block text-center mt-3">
-              Somos tu socio creativo: expertos en branding, desarrollo web, automatización con IA y marketing digital. Nuestra misión es simple, pero ambiciosa: lideramos ideas hacia el éxito real. Creemos fielmente en el poder de construir marcas potentes y estéticas con métricas y resultados tangibles.
-            </span>
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 text-center max-w-3xl mb-10 font-medium leading-relaxed">
+            Olvídate de las agencias tradicionales. En DAROX BM combinamos diseño, estrategia pura y automatización para hacer una sola cosa: transformar buenas ideas en negocios que facturan. Construimos marcas potentes que se ven bien, pero que sobre todo, dan resultados tangibles.
           </p>
           {/* Botones */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex justify-center mb-12">
             <Link
               href="/contacto"
-              className="inline-block bg-white text-black font-semibold px-8 py-3 rounded-xl shadow-lg border-2 border-white/10 transition hover:bg-blue-700 hover:text-white hover:border-blue-700 text-base"
+              className="inline-block bg-blue-600 text-white font-bold px-10 py-4 rounded-xl shadow-lg border border-blue-500 transition hover:bg-blue-700 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:scale-105 text-lg"
             >
               Contacta con nosotros
             </Link>
-            <button
-              onClick={() => {
-                const el = document.getElementById('bloque-dario');
-                if (el) {
-                  el.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="inline-block bg-black/70 text-white font-semibold px-8 py-3 rounded-xl border-2 border-white/10 transition hover:bg-white/10 text-base"
-              type="button"
-            >
-              ¿Qué es DAROX?
-            </button>
           </div>
           {/* Bloque de presentación de Darío */}
           <section

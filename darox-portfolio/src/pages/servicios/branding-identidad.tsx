@@ -17,24 +17,33 @@ const NoiseOverlay = () => (
 );
 
 // 2. Cursor Blend Diference (Look Agencia Awwwards)
-const BlendCursor = () => {
-    const cursorRef = useRef<HTMLDivElement>(null);
+const BlendCursor = ({ isOverNavbar }: { isOverNavbar: boolean }) => {
+    const { scrollYProgress } = useScroll();
+    const cursorScale = useTransform(scrollYProgress, [0, 0.15, 0.7, 0.85, 0.95, 1], [1, 0.6, 0.2, 1, 1, 0.2]);
+    
+    // Usamos motion values para evitar conflictos entre manual transform y framer-motion scale
+    const { useMotionValue } = require("framer-motion");
+    const mouseX = useMotionValue(-200);
+    const mouseY = useMotionValue(-200);
+
     useEffect(() => {
         const moveCursor = (e: MouseEvent) => {
-            if (cursorRef.current) {
-                // Posicionar el centro del círculo en el ratón
-                cursorRef.current.style.transform = `translate3d(${e.clientX - 100}px, ${e.clientY - 100}px, 0)`;
-            }
+            mouseX.set(e.clientX - 100);
+            mouseY.set(e.clientY - 100);
         };
         window.addEventListener('mousemove', moveCursor);
         return () => window.removeEventListener('mousemove', moveCursor);
-    }, []);
+    }, [mouseX, mouseY]);
 
     return (
-        <div 
-            ref={cursorRef} 
-            className="fixed top-0 left-0 w-[200px] h-[200px] bg-white rounded-full pointer-events-none z-[90] mix-blend-difference transition-transform duration-75 ease-out hidden lg:block"
-            // transition-transform duration-75 suaviza el seguimiento levemente
+        <motion.div 
+            style={{ 
+                x: mouseX, 
+                y: mouseY, 
+                scale: cursorScale,
+                opacity: isOverNavbar ? 0 : 1 
+            }}
+            className="fixed top-0 left-0 w-[200px] h-[200px] bg-white rounded-full pointer-events-none z-[90] mix-blend-difference transition-opacity duration-300 hidden lg:block"
         />
     );
 };
@@ -75,7 +84,7 @@ const MaskedTitle = () => {
     const line2 = "IDENTIDADES";
     return (
         <h1 className="text-6xl md:text-[8rem] lg:text-[10rem] font-black tracking-tighter text-white leading-[0.8] uppercase flex flex-col items-center">
-            <div className="overflow-hidden">
+            <div className="overflow-hidden pt-4 -mt-4 pb-2">
                 <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 1, ease: [0.77, 0, 0.175, 1], delay: 0.2 }}>
                     {line1}
                 </motion.div>
@@ -91,6 +100,15 @@ const MaskedTitle = () => {
 
 export default function BrandingIdentidad() {
     const { scrollY } = useScroll();
+    const [isOverNavbar, setIsOverNavbar] = useState(false);
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            setIsOverNavbar(e.clientY < 80);
+        };
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
   
 
   // Skew basado en velocidad (Si el usuario escrollea rápido, la sección se inclina)
@@ -99,9 +117,9 @@ export default function BrandingIdentidad() {
   const velocitySkew = useTransform(smoothVelocity, [-1000, 1000], [3, -3]); // Inclinación en grados
 
   return (
-    <div className="bg-[#020202] min-h-screen font-sans selection:bg-indigo-500/50 overflow-hidden cursor-none">
-      {/* El atributo cursor-none fuerza al usuario a usar nuestro cursor blend en escritorio */}
-      <BlendCursor />
+    <div className={`bg-[#020202] min-h-screen font-sans selection:bg-indigo-500/50 overflow-hidden ${isOverNavbar ? '' : 'cursor-none'}`}>
+      {/* El atributo cursor-none fuerza al usuario a usar nuestro cursor blend en escritorio, salvo en Navbar */}
+      <BlendCursor isOverNavbar={isOverNavbar} />
       <NoiseOverlay />
       
       <Head>
@@ -109,15 +127,22 @@ export default function BrandingIdentidad() {
         <title>Branding Estratégico & Identidad Visual en Burgos | DAROX</title>
         <meta name="description" content="Agencia de branding en Burgos. Construimos identidades visuales estratégicas para negocios B2B. Naming, paletas HSL, vectores y manual de marca cerrado en 3 semanas." />
         <link rel="canonical" href="https://darox.es/servicios/branding-identidad" />
+        <meta name="keywords" content="branding estratégico burgos, identidad visual empresas, diseño de logo profesional, agencia branding españa, manual de marca corporativo" />
         <meta property="og:title" content="Branding Estratégico & Identidad Visual | DAROX" />
-        <meta property="og:description" content="Construimos bases visuales corporativas para proyectos de alto rendimiento. Diseño de marca, logotipo y manual corporativo." />
-        <meta property="og:image" content="https://darox.es/images/logo_horizontal.webp" />
+        <meta property="og:description" content="Construimos bases visuales corporativas para proyectos de alto rendimiento. Diseño de marca, logotipo y manual corporativo desde 490€." />
+        <meta property="og:image" content="https://darox.es/images/fondo_hero.webp" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="900" />
+        <meta property="og:image:alt" content="DAROX — Branding Estratégico e Identidad Visual" />
         <meta property="og:url" content="https://darox.es/servicios/branding-identidad" />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_ES" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@DaroxBrandMaker" />
+        <meta name="twitter:creator" content="@DaroxBrandMaker" />
         <meta name="twitter:title" content="Branding Estratégico & Identidad Visual | DAROX" />
-        <meta name="twitter:description" content="Construimos bases visuales corporativas para proyectos de alto rendimiento. Diseño de marca, logotipo y manual corporativo." />
-        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.webp" />
+        <meta name="twitter:description" content="Construimos bases visuales corporativas para proyectos de alto rendimiento. Diseño de marca, logotipo y manual corporativo desde 490€." />
+        <meta name="twitter:image" content="https://darox.es/images/fondo_hero.webp" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
@@ -126,7 +151,7 @@ export default function BrandingIdentidad() {
               "@id": "https://darox.es/servicios/branding-identidad/#service",
               "name": "Branding Estratégico e Identidad Visual",
               "provider": { "@id": "https://darox.es/#organization" },
-              "areaServed": "ES",
+              "areaServed": ["Burgos", "Castilla y León", "España"],
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "EUR",
@@ -139,6 +164,7 @@ export default function BrandingIdentidad() {
               "url": "https://darox.es/servicios/branding-identidad",
               "name": "Branding Estratégico & Visual | DAROX",
               "description": "Diseño de identidad estructurado.",
+              "dateModified": new Date().toISOString().split('T')[0],
               "isPartOf": { "@id": "https://darox.es/#website" },
               "breadcrumb": { "@id": "https://darox.es/servicios/branding-identidad/#breadcrumb" },
               "speakable": {
@@ -161,7 +187,7 @@ export default function BrandingIdentidad() {
 
       <Navbar />
 
-      {/* HERO AWWWARDS */}
+      {/* HERO*/}
       <section className="relative min-h-[100vh] flex items-center justify-center pt-20 px-4">
         {/* Glow Radial que respira */}
         <motion.div 
@@ -185,7 +211,7 @@ export default function BrandingIdentidad() {
                     initial={{ y: "100%", opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
                     className="text-3xl md:text-[5rem] lg:text-[6rem] font-serif italic text-zinc-400 leading-none"
                 >
-                    No más <span className="line-through decoration-white/30 decoration-[4px] whitespace-nowrap">arte inútil.</span>
+                    No más <span className="line-through decoration-white/30 decoration-[4px] whitespace-nowrap">diseño sin propósito.</span>
                 </motion.h2>
             </div>
 
@@ -224,9 +250,9 @@ export default function BrandingIdentidad() {
                 <div className="relative z-10 text-center p-8">
                     <span className="text-red-600 font-mono text-sm tracking-widest uppercase block mb-4">Error Crítico</span>
                     <h3 className="text-5xl lg:text-7xl font-black text-zinc-500 uppercase tracking-tighter leading-none mb-8">
-                        Marcas<br/>Planísimas
+                        Marcas<br/>de Papel
                     </h3>
-                    <p className="text-zinc-500 max-w-sm mx-auto">Logos creados en 5 minutos que mueren al imprimirse o adaptarse a móvil.</p>
+                    <p className="text-zinc-500 max-w-sm mx-auto">Logos de 5 minutos hechos sin estrategia. Se pixelan, no transmiten autoridad y mueren al imprimirse en un rótulo o verse en un móvil.</p>
                 </div>
             </div>
 
@@ -238,7 +264,7 @@ export default function BrandingIdentidad() {
                     <h3 className="text-5xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-none mb-8">
                         Sistemas<br/>DAROX
                     </h3>
-                    <p className="text-white max-w-sm mx-auto">Vectores matemáticos, colores HSL psicológicos y manual cerrado corporativo.</p>
+                    <p className="text-white max-w-sm mx-auto">Diseño milimétrico. Geometría perfecta, colores basados en psicología de ventas y un manual corporativo cerrado para que tu marca sea intocable.</p>
                 </div>
             </div>
 
@@ -268,23 +294,23 @@ export default function BrandingIdentidad() {
                         1
                      </div>
                      <h3 className="text-4xl md:text-6xl font-black uppercase text-white tracking-tight mb-8">La Autopsia</h3>
-                     <p className="text-2xl text-zinc-400 font-light leading-relaxed">Arrancamos con una auditoría brutal. Destripamos tu mercado potencial, aislamos tus diferenciadores y definimos la arquitectura visual mediante leyes de cognición humana.</p>
+                     <p className="text-2xl text-zinc-400 font-light leading-relaxed">Arrancamos con una auditoría brutal. Analizamos tu mercado, destripamos a tu competencia y definimos cómo debe verse tu empresa para posicionarse por encima de ellos.</p>
                 </motion.div>
 
                 <motion.div initial={{opacity:0, scale:0.95}} whileInView={{opacity:1, scale:1}} viewport={{once:true, margin:"-20%"}} transition={{duration:0.8}} className="group relative">
                      <div className="text-[10rem] md:text-[15rem] font-serif italic text-zinc-900 leading-[0.7] mb-8 group-hover:text-transparent transition-colors duration-700" style={{WebkitTextStroke: '2px rgba(255,255,255,0.1)'}}>
                         2
                      </div>
-                     <h3 className="text-4xl md:text-6xl font-black uppercase text-white tracking-tight mb-8">Vectors & Gradients</h3>
-                     <p className="text-2xl text-zinc-400 font-light leading-relaxed">No hay borradores a lápiz. Vamos de lleno al software construyendo Naming y Geometría perfecta. Aquí nace el logotipo principal y las paletas HSL para pantallas retina.</p>
+                     <h3 className="text-4xl md:text-6xl font-black uppercase text-white tracking-tight mb-8">Arquitectura Visual</h3>
+                     <p className="text-2xl text-zinc-400 font-light leading-relaxed">No hacemos dibujitos a lápiz. Vamos directos al software profesional para construir tu identidad: geometría perfecta, tipografías de pago y paletas de color diseñadas para pantallas y formatos físicos.</p>
                 </motion.div>
 
                 <motion.div initial={{opacity:0, scale:0.95}} whileInView={{opacity:1, scale:1}} viewport={{once:true, margin:"-20%"}} transition={{duration:0.8}} className="group relative">
                      <div className="text-[10rem] md:text-[15rem] font-serif italic text-zinc-900 leading-[0.7] mb-8 group-hover:text-transparent transition-colors duration-700" style={{WebkitTextStroke: '2px rgba(255,255,255,0.1)'}}>
                         3
                      </div>
-                     <h3 className="text-4xl md:text-6xl font-black uppercase text-white tracking-tight mb-8">Release The Start Pack</h3>
-                     <p className="text-2xl text-zinc-400 font-light leading-relaxed">Cerrado en 2 a 3 semanas. Obtienes tu libro de marca sagrado, tipografías licenciadas, activos vectoriales y assets para redes. Empaquetado para reventar el mercado.</p>
+                     <h3 className="text-4xl md:text-6xl font-black uppercase text-white tracking-tight mb-8">Lanzamiento del Sistema</h3>
+                     <p className="text-2xl text-zinc-400 font-light leading-relaxed">En 2 o 3 semanas está cerrado. Te entregamos tu manual de marca, los archivos vectoriales originales y el material para redes sociales. Un paquete cerrado, listo para salir a dominar tu sector.</p>
                 </motion.div>
                 
             </div>
@@ -296,13 +322,13 @@ export default function BrandingIdentidad() {
          <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
              
              <h2 className="text-5xl md:text-[8rem] font-black uppercase tracking-tighter leading-[0.8] mb-12 text-center mix-blend-difference text-white">
-                 ROMPE TU <br/>
+                 DOMINA TU <br/>
                  <span className="font-serif italic lowercase tracking-normal">mercado.</span>
              </h2>
 
              <MagneticHover>
-                 <Link href="/contacto" className="inline-flex items-center justify-center w-64 h-64 rounded-full bg-black text-white text-2xl font-black uppercase tracking-widest hover:scale-105 transition-transform duration-500 shadow-[0_0_100px_rgba(0,0,0,0.5)]">
-                     490€ / Let&apos;s Go
+                 <Link href="/contacto" className="inline-flex items-center justify-center w-64 h-64 rounded-full bg-black text-white text-xl md:text-2xl font-black uppercase tracking-widest hover:scale-105 transition-transform duration-500 shadow-[0_0_100px_rgba(0,0,0,0.5)] p-6 text-center leading-tight">
+                     490€ /<br/>Empezar<br/>el proyecto
                  </Link>
              </MagneticHover>
          </div>

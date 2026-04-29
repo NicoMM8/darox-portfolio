@@ -4,6 +4,7 @@ import Head from 'next/head'
 import StarsBackground from '../components/StarsBackground'
 import React, { useState } from "react";
 import Footer from "../components/Footer";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 import type { AppProps } from 'next/app';
 
@@ -22,6 +23,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       {!footerInView && (
         <div className="blur-bottom-overlay" />
       )}
+      <WhatsAppButton />
       <Footer onInViewChange={setFooterInView} />
       <SpeedInsights />
     </>

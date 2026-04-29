@@ -6,6 +6,7 @@ import Questions from '../../components/Questions';
 import LogoCarousel from '../../components/LogoCarousel';
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import Results from '../../components/Resultados';
 
 
 // SVG Noise Filter para matar el "look plano" de IA
@@ -19,6 +20,35 @@ const NoiseOverlay = () => (
     </svg>
   </div>
 );
+
+const MagneticHover = ({ children }: { children: React.ReactNode }) => {
+    const ref = useRef<HTMLDivElement>(null);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+
+    const handleMouse = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!ref.current) return;
+        const { clientX, clientY } = e;
+        const { height, width, left, top } = ref.current.getBoundingClientRect();
+        const middleX = clientX - (left + width / 2);
+        const middleY = clientY - (top + height / 2);
+        setPosition({ x: middleX * 0.3, y: middleY * 0.3 });
+    };
+
+    const reset = () => setPosition({ x: 0, y: 0 });
+
+    return (
+        <motion.div
+            ref={ref}
+            onMouseMove={handleMouse}
+            onMouseLeave={reset}
+            animate={{ x: position.x, y: position.y }}
+            transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+            className="relative cursor-pointer inline-block"
+        >
+            {children}
+        </motion.div>
+    );
+};
 
 // Spotlight Mouse Tracker Effect para las tarjetas
 const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => {
@@ -124,11 +154,6 @@ const FlashlightCode = () => {
           >
            {codeSnippet}
          </div>
-
-         <div className="absolute top-6 right-6 flex items-center gap-2 z-20 opacity-50">
-             <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse hidden md:block" />
-             <span className="text-[10px] md:text-xs font-mono text-zinc-400 tracking-widest uppercase hidden md:inline-block">Inspección Activa</span>
-         </div>
       </div>
     )
 }
@@ -157,48 +182,6 @@ const MagneticPills = () => {
     )
 }
 
-// 3. CINEMATIC HYBRID (Súper Nova + Sticky Scroll Horizontal)
-const CinematicHybrid = () => {
-    const container = useRef(null);
-    const { scrollYProgress } = useScroll({
-      target: container,
-      offset: ["start start", "end end"]
-    });
-  
-    // Escala violenta del 0 al 20% del trayecto
-    const dotScale = useTransform(scrollYProgress, [0, 0.2], [1, 250]);
-    // Scroll horizontal del texto (100vw a -100vw)
-    const textX = useTransform(scrollYProgress, [0.25, 0.8], ["100vw", "-120vw"]);
-    // Brillo neón progresivo
-    const glowOpacity = useTransform(scrollYProgress, [0.4, 0.7], [0.1, 1]);
-  
-    return (
-      <div ref={container} className="h-[300vh] relative bg-[#010101] border-t border-white/5">
-        <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-transparent perspective-1000">
-          
-          {/* El punto expansivo (Super-Nova) */}
-          <motion.div 
-              style={{ scale: dotScale }} 
-              className="absolute z-10 w-8 h-8 bg-zinc-100 rounded-full"
-          />
-  
-          {/* Contenido revelado en horizontal (Sticky Scan) */}
-          <motion.div 
-             style={{ x: textX }} 
-             className="absolute z-20 flex items-center h-full left-0"
-          >
-             <div className="text-[4rem] sm:text-[8rem] md:text-[14rem] font-black uppercase tracking-tighter flex items-center gap-8 md:gap-24 whitespace-nowrap px-[10vw]">
-                <span className="text-zinc-900 drop-shadow-2xl">EL DISEÑO ESTÁ</span>
-                <span className="italic font-serif text-zinc-900 border-4 border-zinc-900 rounded-[5rem] px-8 md:px-24">MUERTO.</span>
-                <motion.span style={{ opacity: glowOpacity }} className="text-white bg-blue-600 px-8 md:px-24 rounded-full drop-shadow-[0_0_80px_rgba(37,99,235,1)]">
-                    SISTEMAS VIVOS.
-                </motion.span>
-             </div>
-          </motion.div>
-        </div>
-      </div>
-    )
-}
 
 // 4. EL COSTE DE LA MEDIOCRIDAD (Neuro-sales Content)
 const CostOfMediocrity = () => {
@@ -218,7 +201,7 @@ const CostOfMediocrity = () => {
                    </h2>
                    <div className="text-lg md:text-xl text-zinc-400 font-light space-y-6">
                        <p>Una web barata de 300€ no es un ahorro. Es una hemorragia financiera mensual. Si tu web tarda más de 3 segundos en cargar, <strong className="text-red-400 drop-shadow-[0_0_10px_rgba(239,68,68,0.4)]">estás perdiendo al 53% de tus clientes potenciales</strong> antes de que lean tu primera frase.</p>
-                       <p>No programamos por hobby y detestamos las plantillas. Programamos ecosistemas <strong>AEO/SEO dominantes</strong> diseñados de cero con un solo propósito: <span className="text-white font-medium">multiplicar tu tasa de conversión y secar a tu competencia local.</span></p>
+                       <p>No programamos por hobby y detestamos las plantillas. Programamos ecosistemas <strong>AEO/SEO dominantes</strong> diseñados de cero con un solo propósito: <span className="text-white font-medium">multiplicar tu tasa de conversión y dominar tu sector a nivel local.</span></p>
                    </div>
                </div>
 
@@ -242,28 +225,6 @@ const CostOfMediocrity = () => {
 }
 
 // ================= MOBILE EXPERIENCES =================
-
-const MobileDynamicIsland = () => {
-    const { scrollYProgress } = useScroll();
-    
-    // Width expands based on scroll
-    const islandWidth = useTransform(scrollYProgress, [0, 0.5, 1], ["120px", "200px", "80px"]);
-    const islandColor = useTransform(scrollYProgress, [0, 0.5, 1], ["#050505", "#1e3a8a", "#050505"]);
-    const textOpacity = useTransform(scrollYProgress, [0, 0.3, 0.4, 0.6, 0.7], [0, 0, 1, 1, 0]);
-
-    return (
-        <div className="fixed top-6 left-0 w-full flex justify-center z-[100] md:hidden pointer-events-none">
-            <motion.div 
-                style={{ width: islandWidth, backgroundColor: islandColor }}
-                className="h-8 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.5)] border border-white/10 transition-colors duration-300"
-            >
-                <motion.span style={{ opacity: textOpacity }} className="text-[10px] font-mono font-bold text-white tracking-widest whitespace-nowrap">
-                    OPT. ACTIVA
-                </motion.span>
-            </motion.div>
-        </div>
-    )
-}
 
 const TinderCard = ({ frontCard, text, subtext, zIndex, drag }: { frontCard?: boolean, text: string, subtext: string, zIndex: number, drag?: boolean | "x" | "y" }) => {
     const [exitX, setExitX] = useState(0);
@@ -383,28 +344,85 @@ export default function DesarrolloWeb() {
   return (
     <div className="bg-[#030303] min-h-screen selection:bg-blue-600/40 relative">
       <NoiseOverlay />
-      <MobileDynamicIsland />
       <Head>
         <meta name="robots" content="index, follow" />
         <title>Desarrollo Web Corporativo en Burgos | Alta Conversión | DAROX</title>
-        <meta name="description" content="Agencia de desarrollo web en Burgos. Construimos webs rápidas, optimizadas en SEO técnico y diseñadas para convertir visitas en leads. No hacemos arte inútil." />
+        <meta name="description" content="Agencia de desarrollo web en Burgos. Construimos webs rápidas, optimizadas en SEO técnico y diseñadas para convertir visitas en leads. No hacemos diseños sin propósito." />
         <link rel="canonical" href="https://darox.es/servicios/desarrollo-web" />
+        <meta name="keywords" content="desarrollo web burgos, diseño web alta conversión, agencia web burgos, next.js empresa, web corporativa seo" />
         <meta property="og:title" content="Desarrollo Web de Alta Conversión | DAROX" />
-        <meta property="og:description" content="Webs ultrarrápidas y optimizadas en SEO técnico, diseñadas para vender y captar leads de alto valor." />
-        <meta property="og:image" content="https://darox.es/images/logo_horizontal.webp" />
+        <meta property="og:description" content="Webs ultrarrápidas y optimizadas en SEO técnico, diseñadas para vender y captar leads de alto valor. Desde 980€." />
+        <meta property="og:image" content="https://darox.es/images/fondo_hero.webp" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="900" />
+        <meta property="og:image:alt" content="DAROX — Desarrollo Web Corporativo de Alta Conversión" />
         <meta property="og:url" content="https://darox.es/servicios/desarrollo-web" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@DaroxBrandMaker" />
+        <meta name="twitter:creator" content="@DaroxBrandMaker" />
         <meta name="twitter:title" content="Desarrollo Web de Alta Conversión | DAROX" />
-        <meta name="twitter:description" content="Webs ultrarrápidas y optimizadas en SEO técnico, diseñadas para vender y captar leads de alto valor." />
-        <meta name="twitter:image" content="https://darox.es/images/logo_horizontal.webp" />
+        <meta name="twitter:description" content="Webs ultrarrápidas y optimizadas en SEO técnico, diseñadas para vender y captar leads de alto valor. Desde 980€." />
+        <meta name="twitter:image" content="https://darox.es/images/fondo_hero.webp" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Service",
+                  "@id": "https://darox.es/servicios/desarrollo-web/#service",
+                  "name": "Desarrollo Web Corporativo",
+                  "provider": {
+                    "@id": "https://darox.es/#organization"
+                  },
+                  "areaServed": ["Burgos", "Castilla y León", "España"],
+                  "description": "Desarrollamos sistemas B2B de alta conversión. Carga en <0.8s, SEO técnico brutal y diseño de alta gama.",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "980",
+                    "priceCurrency": "EUR",
+                    "name": "Grow Pack Web",
+                    "description": "Ingeniería UI/UX, Copywriting híbrido y optimización técnica profunda en 3-4 semanas."
+                  }
+                },
+                {
+                  "@type": "WebPage",
+                  "@id": "https://darox.es/servicios/desarrollo-web/#webpage",
+                  "url": "https://darox.es/servicios/desarrollo-web",
+                  "name": "Desarrollo Web Corporativo en Burgos | Alta Conversión | DAROX",
+                  "description": "No hacemos webs escaparate. Desarrollamos sistemas B2B de alta conversión. Carga en <0.8s, SEO técnico brutal y diseño Awwwards. Desde Burgos al mundo.",
+                  "dateModified": new Date().toISOString().split('T')[0],
+                  "isPartOf": { "@id": "https://darox.es/#website" },
+                  "about": { "@id": "https://darox.es/servicios/desarrollo-web/#service" },
+                  "breadcrumb": { "@id": "https://darox.es/servicios/desarrollo-web/#breadcrumb" },
+                  "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", "h2", "h3"]
+                  }
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  "@id": "https://darox.es/servicios/desarrollo-web/#breadcrumb",
+                  "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://darox.es/" },
+                    { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://darox.es/#servicios" },
+                    { "@type": "ListItem", "position": 3, "name": "Desarrollo Web Corporativo", "item": "https://darox.es/servicios/desarrollo-web" }
+                  ]
+                }
+              ]
+            })
+          }}
+        />
       </Head>
       
       <Navbar />
 
       {/* HERO KINÉTICO (Mezcla de tipografías y posiciones absolutas) */}
       <motion.section 
-        style={{ opacity: heroOpacity, y: heroY }}
+        style={{ opacity: heroOpacity }}
         className="relative min-h-[95vh] w-full flex items-center justify-center p-4 sticky top-0"
       >
         {/* Glow de fondo, ahora centrado uniformemente */}
@@ -450,7 +468,7 @@ export default function DesarrolloWeb() {
                     <Link href="/contacto" className="group relative flex items-center justify-center w-32 h-32 md:w-40 md:h-40 rounded-full bg-blue-600 text-white overflow-hidden hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] shadow-[0_0_50px_rgba(37,99,235,0.3)]">
                         {/* Brillo uniforme y estático al hacer tap para evitar cortes visuales en Android */}
                         <span className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <span className="relative z-10 text-center font-bold text-sm md:text-base uppercase tracking-widest px-4">Comenzar<br/>Sistema</span>
+                        <span className="relative z-10 text-center font-bold text-sm md:text-base uppercase tracking-widest px-4">Construir<br/>mi web</span>
                     </Link>
                 </motion.div>
             </div>
@@ -462,11 +480,12 @@ export default function DesarrolloWeb() {
             <LogoCarousel />
         </div>
 
+        <CostOfMediocrity />
+        <Results />
+
         {/* INYECCIÓN DE EXPERIENCIAS AWWWARDS */}
-        <CinematicHybrid />
         <FlashlightCode />
         <MagneticPills />
-        <CostOfMediocrity />
 
         {/* ESTRUCTURA ASIMÉTRICA DE PRICING (No grid estándar) */}
         <section id="precios" className="relative pb-40 px-4 pt-32 overflow-hidden">
@@ -515,9 +534,9 @@ export default function DesarrolloWeb() {
                         </div>
                         
                         <ul className="space-y-5 text-zinc-300 font-medium text-lg lg:text-xl">
-                            <li className="flex items-center gap-4"><div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)]" /> Ingeniería UI/UX de Rendimiento Startup</li>
-                            <li className="flex items-center gap-4"><div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)]" /> Copywriting Híbrido (Neuroventas + IA)</li>
-                            <li className="flex items-center gap-4"><div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)]" /> Optimización Técnica AEO/SEO profunda</li>
+                            <li className="flex items-center gap-4"><div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)]" /> Diseño web ultrarrápido sin plantillas (Calidad Startup)</li>
+                            <li className="flex items-center gap-4"><div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)]" /> Textos persuasivos que cierran ventas (Copywriting)</li>
+                            <li className="flex items-center gap-4"><div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)]" /> Posicionamiento técnico en Google (SEO profundo)</li>
                             <li className="flex items-center gap-4 pt-4 mt-4 border-t border-white/5"><div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]" /> Llave en mano en solo 3 - 4 semanas</li>
                         </ul>
                     </SpotlightCard>
@@ -525,51 +544,26 @@ export default function DesarrolloWeb() {
             </div>
         </section>
 
-        {/* FOUNDER NOTE (Estilo Editorial Raw) */}
-        <section className="py-32 px-4 bg-[#010101] border-t border-white/5 relative overflow-hidden">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 xl:gap-24 items-center md:items-stretch">
-                
-                <motion.div 
-                    style={{ y: useTransform(smoothProgress, [0.6, 1], [50, -50]) }}
-                    className="w-full md:w-5/12 h-[40vh] md:h-[60vh] relative grayscale hover:grayscale-0 transition-all duration-[2s] rounded-xl overflow-hidden border border-white/5"
-                >
-                    <Image src="/images/sobre1.webp" alt="Nicolás DAROX" fill className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
-                    <div className="absolute bottom-6 left-6 font-mono text-xs uppercase tracking-widest text-zinc-500">
-                        FUNDADOR — 2026
-                    </div>
-                </motion.div>
-
-                <div className="w-full md:w-7/12 flex flex-col justify-center">
-                    <h2 className="text-3xl md:text-5xl font-serif italic text-white mb-10 leading-[1.2]">
-                        &quot;Tener una web que no convierte es como alquilar un local y <span className="text-red-500 font-sans font-black not-italic px-2">CERRAR LA PUERTA.</span>&quot;
-                    </h2>
-                    
-                    <div className="text-lg md:text-xl text-zinc-400 font-light space-y-6 leading-relaxed max-w-xl">
-                        <p>
-                            Muchos clientes llegan a nosotros quemados. Han pagado miles de euros por sitios web que parecen folletos del año 2012. 
-                        </p>
-                        <p className="text-zinc-200">
-                            He construido la infraestructura de DAROX para acabar con eso. Nuestra obsesión no es el código; <strong className="text-blue-400 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">es la caja registradora de tu negocio.</strong> Cada píxel, cada frase y cada interacción está calculada matemáticamente para arrastrar al usuario hacia el CTA.
-                        </p>
-                        <p>
-                            Menos ego artístico. Más facturación para ti.
-                        </p>
-                    </div>
-                    
-                    <div className="mt-16 flex items-center gap-6">
-                        <div className="w-16 h-[1px] bg-white/20" />
-                        <div>
-                            <span className="text-2xl font-black text-white block uppercase tracking-wide">Nicolás M.</span>
-                            <span className="text-sm font-mono tracking-widest text-blue-500 mt-1 block uppercase">CEO & Architect</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <MobileTinderCards />
         <BiometricUnlock />
+
+        {/* FOOTER CTA MAGNÉTICO/FINTECH */}
+        <section className="relative overflow-hidden bg-[#050505] text-white px-4 py-40 border-t border-white/10">
+           <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+               
+               <h2 className="text-5xl md:text-[8rem] font-black uppercase tracking-tighter leading-[0.8] mb-12 text-center text-white">
+                   DOMINA TU <br/>
+                   <span className="font-serif italic lowercase tracking-normal text-zinc-500">sector.</span>
+               </h2>
+
+               <MagneticHover>
+                   <Link href="/contacto" className="inline-flex items-center justify-center w-64 h-64 rounded-full bg-blue-600 text-white text-xl md:text-2xl font-black uppercase tracking-widest hover:scale-105 transition-transform duration-500 shadow-[0_0_80px_rgba(37,99,235,0.4)] p-6 text-center leading-tight">
+                       980€ /<br/>Construir<br/>Sistema
+                   </Link>
+               </MagneticHover>
+           </div>
+        </section>
 
         <Questions />
       </div>
